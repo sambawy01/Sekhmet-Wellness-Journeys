@@ -7,6 +7,7 @@ import {
 } from "../ui/accordion"
 import { motion } from 'framer-motion';
 
+import { useLanguage } from '../../context/LanguageContext';
 const faqs = [
   {
     question: "How much can I save on dental treatments in Egypt?",

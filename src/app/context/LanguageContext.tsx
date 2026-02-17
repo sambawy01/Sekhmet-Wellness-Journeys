@@ -1156,6 +1156,7 @@ export const translations: Record<Language, Record<string, string>> = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const { t, direction } = useLanguage();
   const [language, setLanguage] = useState<Language>('en');
   const [direction, setDirection] = useState<Direction>('ltr');
 

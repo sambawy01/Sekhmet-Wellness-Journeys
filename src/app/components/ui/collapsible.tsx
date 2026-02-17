@@ -2,6 +2,7 @@
 
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
 
+import { useLanguage } from '../../context/LanguageContext';
 function Collapsible({
   ...props
 }: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {

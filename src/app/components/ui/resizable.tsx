@@ -6,6 +6,7 @@ import * as ResizablePrimitive from "react-resizable-panels";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function ResizablePanelGroup({
   className,
   ...props

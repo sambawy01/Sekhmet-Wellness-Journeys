@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sun, Shield, HeartHandshake, Waves } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
 // Custom SVG Icons for Egyptian Theme
 export const IconAnkh: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg

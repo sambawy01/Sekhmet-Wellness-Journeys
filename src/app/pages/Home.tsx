@@ -10,6 +10,7 @@ import { TrustSignals } from '../components/home/TrustSignals';
 import { EgyptEditorial } from '../components/home/EgyptEditorial';
 import { FinalCTA } from '../components/home/FinalCTA';
 
+import { useLanguage } from '../context/LanguageContext';
 export function Home() {
   return (
     <>

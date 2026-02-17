@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 // import { toast } from 'sonner';
 import { Copy } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
 const colors = [
   { name: 'Deep Nile Navy', hex: '#0F1923', role: 'Primary, Trust' },
   { name: 'Pharaoh Gold', hex: '#C9A84C', role: 'CTAs, Accents, Luxury' },
@@ -21,6 +22,7 @@ const ColorSwatch: React.FC<{
   role: string; 
   index: number 
 }> = ({ name, hex, role, index }) => {
+  const { t, direction } = useLanguage();
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     toast.success(`Copied ${text}`);

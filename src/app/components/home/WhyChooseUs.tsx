@@ -4,6 +4,7 @@ import {
 } from '../EgyptianIcons';
 import { Video, ShieldCheck, Percent } from 'lucide-react';
 
+import { useLanguage } from '../../context/LanguageContext';
 const FeatureBlock = ({ icon: Icon, title, description, delay }: { icon: any, title: string, description: string, delay: number }) => (
   <div 
     className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-[#C9A84C]/10 group opacity-0 animate-fade-in-up"
@@ -24,6 +25,7 @@ const FeatureBlock = ({ icon: Icon, title, description, delay }: { icon: any, ti
 );
 
 export const WhyChooseUs: React.FC = () => {
+  const { t, direction } = useLanguage();
   const features = [
     {
       icon: IconLotus, 

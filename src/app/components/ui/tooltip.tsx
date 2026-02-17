@@ -5,6 +5,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function TooltipProvider({
   delayDuration = 0,
   ...props

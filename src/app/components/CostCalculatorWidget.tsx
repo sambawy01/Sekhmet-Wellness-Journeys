@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Plane, Building, Sun } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
 export const CostCalculatorWidget = () => {
+  const { t, direction } = useLanguage();
   const [selectedProcedure, setSelectedProcedure] = useState('Dental Implants');
   const [selectedCountry, setSelectedCountry] = useState('UK');
   const [savings, setSavings] = useState(0);
@@ -90,7 +92,7 @@ export const CostCalculatorWidget = () => {
             animate={{ scale: 1, opacity: 1 }}
             className="bg-[#C84B31]/10 p-3 rounded-lg text-center border border-[#C84B31]/20"
           >
-            <div className="text-sm text-[#C84B31] font-semibold mb-1">You Save</div>
+            <div className="text-sm text-[#C84B31] font-semibold mb-1">t("calculator.youSave")</div>
             <div className="font-mono text-2xl font-bold text-[#C84B31]">
               ${savedAmount.toLocaleString()} ({percentage}%)
             </div>

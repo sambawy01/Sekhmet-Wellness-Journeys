@@ -6,6 +6,7 @@ import { ChevronDownIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function Accordion({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Root>) {

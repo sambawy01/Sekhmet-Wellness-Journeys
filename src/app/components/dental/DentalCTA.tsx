@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '../ui/button';
 
+import { useLanguage } from '../../context/LanguageContext';
 export function DentalCTA() {
   return (
     <section className="py-24 bg-[#0F1923] relative overflow-hidden">

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
 interface DoctorCardProps {
   image: string;
   name: string;
@@ -17,6 +18,7 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
   credentials, 
   affiliation 
 }) => {
+  const { t, direction } = useLanguage();
   return (
     <motion.div 
       className="group relative w-[300px] h-[400px] rounded-xl overflow-hidden cursor-pointer shadow-md bg-[#F5F0E5] border border-transparent hover:border-[#C9A84C]/50 transition-all duration-300"

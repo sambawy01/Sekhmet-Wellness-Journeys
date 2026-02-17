@@ -6,6 +6,7 @@ import { XIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />;
 }

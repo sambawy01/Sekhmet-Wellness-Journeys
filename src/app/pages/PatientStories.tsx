@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Play, Star, Quote, CheckCircle, MapPin } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
+import { useLanguage } from '../context/LanguageContext';
 // Mock Data
 const stories = [
   {

@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '../ui/button';
 
+import { useLanguage } from '../../context/LanguageContext';
 const doctors = [
   {
     image: "https://images.unsplash.com/photo-1631596577204-53ad0d6e6978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxlJTIwZGVudGlzdCUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MTI1NDE3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -32,6 +33,7 @@ export function ImplantsDoctors() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
+  const { t, direction } = useLanguage();
     if (scrollRef.current) {
       const scrollAmount = 320;
       scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });

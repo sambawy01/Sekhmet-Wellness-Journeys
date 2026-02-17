@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+import { useLanguage } from '../../context/LanguageContext';
 export function ImplantsHero() {
   return (
     <section className="relative h-[500px] w-full overflow-hidden">

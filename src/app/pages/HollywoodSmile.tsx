@@ -10,6 +10,7 @@ import { RelatedProcedures } from '../components/dental/RelatedProcedures';
 import { DentalCTA } from '../components/dental/DentalCTA';
 import { MobileStickyCTA } from '../components/MobileStickyCTA';
 
+import { useLanguage } from '../context/LanguageContext';
 export function HollywoodSmile() {
   return (
     <>

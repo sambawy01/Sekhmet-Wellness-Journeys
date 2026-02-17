@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <input

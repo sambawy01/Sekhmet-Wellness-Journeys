@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 
+import { useLanguage } from '../../context/LanguageContext';
 export function HollywoodHero() {
   return (
     <section className="relative h-[500px] w-full overflow-hidden">

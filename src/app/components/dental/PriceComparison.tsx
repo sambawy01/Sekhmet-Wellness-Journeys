@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { cn } from '../../../lib/utils';
 import { Button } from '../ui/button';
 
+import { useLanguage } from '../../context/LanguageContext';
 const currencies = ['USD', 'GBP', 'EUR', 'AED'];
 
 const prices = [
@@ -75,6 +76,7 @@ export function PriceComparison() {
   const [currency, setCurrency] = useState('USD');
 
   const convert = (price: number) => {
+  const { t, direction } = useLanguage();
     return Math.round(price * exchangeRates[currency]).toLocaleString();
   };
 

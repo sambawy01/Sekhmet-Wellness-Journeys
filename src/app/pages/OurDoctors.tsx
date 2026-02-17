@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { DoctorCard } from '../components/DoctorCard';
 import { CheckCircle, Globe, Award, Stethoscope } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
 const doctors = [
   {
     id: 1,

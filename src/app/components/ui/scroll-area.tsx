@@ -5,6 +5,7 @@ import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function ScrollArea({
   className,
   children,

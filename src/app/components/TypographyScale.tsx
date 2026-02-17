@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { useLanguage } from '../context/LanguageContext';
 export const TypographyScale: React.FC = () => {
+  const { t, direction } = useLanguage();
   return (
     <section className="bg-[#FAF6EF] p-12 rounded-3xl space-y-12">
       <div className="border-b border-[#0F1923]/10 pb-4 mb-8">

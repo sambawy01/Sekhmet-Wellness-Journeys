@@ -4,6 +4,7 @@ import { Search, ChevronDown, MessageCircle, Phone, Calendar } from 'lucide-reac
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 
+import { useLanguage } from '../context/LanguageContext';
 const faqCategories = [
   "General",
   "Travel & Logistics",

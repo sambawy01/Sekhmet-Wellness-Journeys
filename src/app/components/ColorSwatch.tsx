@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils'; // Assuming this exists, or I'll implement inline
 import { Check, Copy } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 // import { toast } from 'sonner';
 
 // Helper for clipboard copy
 const copyToClipboard = (text: string) => {
+  const { t, direction } = useLanguage();
   navigator.clipboard.writeText(text);
   toast.success(`Copied ${text} to clipboard`);
 };

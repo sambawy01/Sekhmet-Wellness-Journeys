@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Button } from '../ui/button';
 
+import { useLanguage } from '../../context/LanguageContext';
 const prices = [
   { procedure: "Single Implant (Titanium)", egypt: 250, uk: 2500, us: 3500, turkey: 600 },
   { procedure: "All-on-4 (Per Arch)", egypt: 3500, uk: 15000, us: 24000, turkey: 5500 },

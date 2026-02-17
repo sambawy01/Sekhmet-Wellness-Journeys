@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
+import { useLanguage } from '../context/LanguageContext';
 type ButtonVariant = 'primary' | 'secondary' | 'whatsapp' | 'link' | 'dark';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,6 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props 
 }) => {
+  const { t, direction } = useLanguage();
   const baseStyles = "relative inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-['DM_Sans'] text-[15px] font-bold uppercase tracking-wider transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none";
   
   const variants = {

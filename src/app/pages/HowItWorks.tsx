@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import { useLanguage } from '../context/LanguageContext';
 export function HowItWorks() {
   return (
     <div className="pt-20">

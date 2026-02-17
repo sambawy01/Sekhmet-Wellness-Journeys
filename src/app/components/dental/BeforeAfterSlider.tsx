@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Eye, EyeOff } from 'lucide-react';
 import { Button } from '../ui/button';
 
+import { useLanguage } from '../../context/LanguageContext';
 const cases = [
   {
     title: "Full Mouth Rehabilitation",

@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { useHref, useLinkClickHandler } from 'react-router-dom';
 
+import { useLanguage } from '../context/LanguageContext';
 export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to: string;
   replace?: boolean;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Facebook, Instagram, Youtube, Phone, Mail, MapPin, Globe, Shield } from 'lucide-react';
 import { IconAnkh } from './EgyptianIcons';
 
+import { useLanguage } from '../context/LanguageContext';
 // Custom TikTok Icon since it's not in standard Lucide set usually, or just in case
 const IconTikTok: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
@@ -15,6 +16,7 @@ const IconTikTok: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 export const Footer: React.FC = () => {
+  const { t, direction } = useLanguage();
   return (
     <footer className="relative bg-[#0F1923] text-white pt-20 pb-10 border-t-2 border-[#C9A84C] overflow-hidden">
       {/* Background Pattern Overlay */}
@@ -40,11 +42,11 @@ export const Footer: React.FC = () => {
             </div>
             
             <p className="font-['Playfair_Display'] italic text-[14px] text-[#F5F0E5]">
-              "Heal where history began"
+              {t("footer.description")}
             </p>
             
             <p className="font-['DM_Sans'] text-[13px] text-[#A89F8E] leading-relaxed max-w-[280px]">
-              Premium medical tourism agency connecting global patients with Egypt's finest surgeons and 5-star recovery experiences.
+              {t("footer.description")}
             </p>
             
             <div className="flex gap-4">
@@ -62,9 +64,9 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Treatments */}
           <div className="space-y-6">
-            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">Treatments</h4>
+            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">{t("footer.treatments")}</h4>
             <ul className="space-y-3">
-              {["Dental Care", "Vision Correction", "Cosmetic Surgery", "Comprehensive Checkups", "IVF & Fertility"].map((item, i) => (
+              {[t("treatments.dental.title"), t("treatments.eye.title"), t("treatments.cosmetic.title"), t("dentalCare.services"), t("treatments.fertility.title")].map((item, i) => (
                 <li key={i}>
                   <a href="#" className="font-['DM_Sans'] text-[14px] text-[#A89F8E] hover:text-[#C9A84C] transition-colors flex items-center gap-2 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -77,9 +79,9 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Explore */}
           <div className="space-y-6">
-            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">Explore</h4>
+            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">{t("specialties.explore")}</h4>
             <ul className="space-y-3">
-              {["Packages", "Destinations", "How It Works", "Patient Stories", "Our Doctors", "Prices", "FAQ", "Blog"].map((item, i) => (
+              {[t("pricing.allInclusive"), t("travelGuide.title"), t("nav.howItWorks"), t("stories.title"), t("doctors.title"), t("nav.pricing"), t("nav.faq"), t("nav.blog")].map((item, i) => (
                 <li key={i}>
                   <a href="#" className="font-['DM_Sans'] text-[14px] text-[#A89F8E] hover:text-[#C9A84C] transition-colors flex items-center gap-2 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -92,7 +94,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Contact */}
           <div className="space-y-6">
-            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">Contact Us</h4>
+            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">{t("footer.contactUs")}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#C9A84C] mt-0.5" />
@@ -130,9 +132,9 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 text-[13px] font-['DM_Sans'] text-[#A89F8E]">
             <span>&copy; {new Date().getFullYear()} Sekhmet Wellness.</span>
             <div className="hidden md:block w-1 h-1 rounded-full bg-[#A89F8E]/50" />
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">{t("footer.privacy")}</a>
             <div className="hidden md:block w-1 h-1 rounded-full bg-[#A89F8E]/50" />
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">{t("footer.terms")}</a>
           </div>
 
           <div className="flex items-center gap-6">

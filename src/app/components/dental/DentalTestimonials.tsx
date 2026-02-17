@@ -2,6 +2,7 @@ import React from 'react';
 import { TestimonialCard } from '../TestimonialCard';
 import { motion } from 'framer-motion';
 
+import { useLanguage } from '../../context/LanguageContext';
 const testimonials = [
   {
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",

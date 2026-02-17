@@ -4,6 +4,7 @@ import { Shield, Users, Heart, Award, ArrowRight, Building, Globe, Smile } from 
 import { Link } from 'react-router-dom';
 import { IconAnkh, IconEyeOfHorus, IconPyramid, IconLotus } from '../components/EgyptianIcons';
 
+import { useLanguage } from '../context/LanguageContext';
 const stats = [
   { label: 'Patients Served', value: '2,500+', icon: Users },
   { label: 'Partner Hospitals', value: '12', icon: Building },
@@ -35,6 +36,7 @@ const values = [
 ];
 
 export const About = () => {
+  const { t, direction } = useLanguage();
   return (
     <div className="min-h-screen bg-[#F5F0E5]">
       {/* Hero Section */}
@@ -69,7 +71,7 @@ export const About = () => {
       <div className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-[#C5A059] font-bold tracking-widest uppercase text-sm mb-2 block">Our Mission</span>
+            <span className="text-[#C5A059] font-bold tracking-widest uppercase text-sm mb-2 block">{t("about.mission.title")}</span>
             <h2 className="font-playfair text-4xl text-[#0F1923] mb-6 leading-tight">
               Bridging the gap between world-class care and affordability.
             </h2>
@@ -97,7 +99,7 @@ export const About = () => {
       {/* Our Story */}
       <div className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="font-playfair text-4xl text-[#0F1923] mb-6">Our Story</h2>
+          <h2 className="font-playfair text-4xl text-[#0F1923] mb-6">{t("about.story.title")}</h2>
           <p className="text-[#3D3D3D] text-lg leading-relaxed font-sans max-w-2xl mx-auto">
             Founded in 2022 by a team of Egyptian doctors and travel experts, Sekhmet Wellness Journeys was born from a simple observation: patients abroad were overpaying for treatments that Egyptian specialists perform daily with superior outcomes.
           </p>

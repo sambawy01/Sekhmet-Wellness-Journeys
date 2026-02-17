@@ -4,7 +4,9 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ArrowRight } from 'lucid
 import { Link } from 'react-router-dom';
 import { IconAnkh } from '../components/EgyptianIcons';
 
+import { useLanguage } from '../context/LanguageContext';
 export const Contact = () => {
+  const { t, direction } = useLanguage();
   const [formState, setFormState] = useState({
     name: '',
     email: '',

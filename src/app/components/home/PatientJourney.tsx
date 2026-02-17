@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import { 
   FileText, MessageSquare, UserCheck, Calendar, Activity, Palmtree, Video 
 } from 'lucide-react';
 
 export const PatientJourney: React.FC = () => {
+  const { t, direction } = useLanguage();
   const steps = [
     { icon: MessageSquare, title: "Inquire", desc: "Submit your case online or via WhatsApp" },
     { icon: FileText, title: "Consult", desc: "Free evaluation & quote within 24hrs" },

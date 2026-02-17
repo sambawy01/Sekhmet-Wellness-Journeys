@@ -6,6 +6,7 @@ import { CircleIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function RadioGroup({
   className,
   ...props

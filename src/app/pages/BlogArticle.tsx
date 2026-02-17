@@ -4,7 +4,9 @@ import { Calendar, Clock, Share2, ChevronRight, Facebook, Twitter, Linkedin, Che
 import { Link, useParams } from 'react-router-dom';
 import { CostCalculatorWidget } from '../components/CostCalculatorWidget';
 
+import { useLanguage } from '../context/LanguageContext';
 export const BlogArticle = () => {
+  const { t, direction } = useLanguage();
   const { slug } = useParams(); // In a real app, use slug to fetch data
   const [activeSection, setActiveSection] = useState('');
 

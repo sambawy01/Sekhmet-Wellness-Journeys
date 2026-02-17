@@ -7,6 +7,7 @@ import {
 } from "../ui/accordion"
 import { motion } from 'motion/react';
 
+import { useLanguage } from '../../context/LanguageContext';
 const faqs = [
   {
     question: "How long do dental implants last?",

@@ -5,6 +5,7 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function Avatar({
   className,
   ...props

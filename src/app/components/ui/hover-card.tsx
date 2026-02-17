@@ -5,6 +5,7 @@ import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 
 import { cn } from "./utils";
 
+import { useLanguage } from '../../context/LanguageContext';
 function HoverCard({
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Root>) {

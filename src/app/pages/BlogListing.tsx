@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Search, ChevronRight, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { useLanguage } from '../context/LanguageContext';
 // Mock Data
 const categories = ["All", "Cost Guides", "Treatment Guides", "Patient Stories", "Egypt Travel", "News"];
 
@@ -76,6 +77,7 @@ const articles = [
 ];
 
 export const BlogListing = () => {
+  const { t, direction } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 

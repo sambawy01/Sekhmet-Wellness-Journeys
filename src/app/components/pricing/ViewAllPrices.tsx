@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { useLanguage } from '../../context/LanguageContext';
 // Hardcoded Data based on verified 2024-2026 market data
 const TREATMENTS = [
   // DENTAL

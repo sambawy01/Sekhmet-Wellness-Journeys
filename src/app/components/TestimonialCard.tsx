@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, PlayCircle } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
 interface TestimonialCardProps {
   image: string;
   name: string;
@@ -17,6 +18,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   quote, 
   treatment 
 }) => {
+  const { t, direction } = useLanguage();
   return (
     <motion.div 
       className="relative flex items-center bg-white rounded-xl shadow-lg border-l-4 border-[#C9A84C] overflow-hidden p-6 gap-6 max-w-[400px]"

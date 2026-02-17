@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Eye } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
 // This component doesn't render anything itself, it just manages the toasts
 export const SocialProofManager = () => {
+  const { t, direction } = useLanguage();
   useEffect(() => {
     // Initial delay before first toast
     const initialTimer = setTimeout(() => {

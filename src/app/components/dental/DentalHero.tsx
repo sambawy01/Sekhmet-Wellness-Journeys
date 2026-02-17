@@ -2,6 +2,7 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import { useLanguage } from '../../context/LanguageContext';
 export function DentalHero() {
   return (
     <section className="relative h-[500px] w-full overflow-hidden">

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '../ui/button';
 
+import { useLanguage } from '../../context/LanguageContext';
 export function Hero() {
   return (
     <section className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
