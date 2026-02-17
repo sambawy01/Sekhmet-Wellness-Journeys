@@ -14,7 +14,7 @@ interface SpecialtyCardProps {
 }
 
 const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures, price, delay, link }) => {
-  const { direction } = useLanguage();
+  const { t, direction } = useLanguage();
   const isRTL = direction === 'rtl';
   const ArrowIcon = isRTL ? ArrowUpLeft : ArrowUpRight;
 
