@@ -5,7 +5,14 @@ import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 
 import { useLanguage } from '../context/LanguageContext';
-const faqCategories = [
+
+
+
+
+export function FAQ() {
+  const { t, direction } = useLanguage();
+
+  const faqCategories = [
     t("faq.categories.general"),
     t("faq.categories.travel"),
     t("faq.categories.medical"),
@@ -13,7 +20,7 @@ const faqCategories = [
     t("faq.categories.aftercare")
   ];
 
-const faqs = [
+  const faqs = [
     {
       category: t("faq.categories.general"),
       question: t("faq.q1"),
@@ -56,7 +63,6 @@ const faqs = [
     },
   ];
 
-export function FAQ() {
   const [activeCategory, setActiveCategory] = useState("General");
   const [searchQuery, setSearchQuery] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -68,7 +74,6 @@ export function FAQ() {
     return matchesCategory && matchesSearch;
   });
 
-  const { t, language, direction } = useLanguage();
 
   return (
     <div className="pt-20 bg-[#FAF6EF] min-h-screen">
