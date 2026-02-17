@@ -76,7 +76,6 @@ export function PriceComparison() {
   const [currency, setCurrency] = useState('USD');
 
   const convert = (price: number) => {
-  const { t, direction } = useLanguage();
     return Math.round(price * exchangeRates[currency]).toLocaleString();
   };
 

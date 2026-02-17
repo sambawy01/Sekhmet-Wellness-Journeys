@@ -40,7 +40,6 @@ export function FeaturedDoctors() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
-  const { t, direction } = useLanguage();
     if (scrollRef.current) {
       const scrollAmount = 320;
       scrollRef.current.scrollBy({

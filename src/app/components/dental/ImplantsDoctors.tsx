@@ -33,7 +33,6 @@ export function ImplantsDoctors() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
-  const { t, direction } = useLanguage();
     if (scrollRef.current) {
       const scrollAmount = 320;
       scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });

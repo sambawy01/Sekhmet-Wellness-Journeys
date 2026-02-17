@@ -34,7 +34,7 @@ export const TrustSignals: React.FC = () => {
 
           {/* Logos Grid */}
           <div className="flex flex-wrap justify-center xl:justify-end gap-6 md:gap-8 flex-grow">
-            <LogoPlaceholder name="t("trust.jciAccredited")" />
+            <LogoPlaceholder name={t("trust.jciAccredited")} />
             <LogoPlaceholder name="Dar Al Fouad" />
             <LogoPlaceholder name="As-Salam Int." />
             <LogoPlaceholder name="Andalusia" />
