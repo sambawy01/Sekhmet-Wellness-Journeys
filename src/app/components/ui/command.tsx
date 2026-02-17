@@ -5,7 +5,6 @@ import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
 
 import { cn } from "./utils";
-import { useLanguage } from '../../context/LanguageContext';
 import {
   Dialog,
   DialogContent,

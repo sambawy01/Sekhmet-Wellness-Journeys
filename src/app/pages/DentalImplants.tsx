@@ -9,10 +9,7 @@ import { ImplantsFAQ } from '../components/dental/ImplantsFAQ';
 import { RelatedProcedures } from '../components/dental/RelatedProcedures';
 import { DentalCTA } from '../components/dental/DentalCTA';
 
-import { useLanguage } from '../context/LanguageContext';
 export function DentalImplants() {
-  const { t, language, direction } = useLanguage();
-
   return (
     <>
       <ImplantsHero />

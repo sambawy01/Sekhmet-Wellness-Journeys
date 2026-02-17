@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import { Check, Download, MessageCircle, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 
-import { useLanguage } from '../../context/LanguageContext';
 export function HollywoodContent() {
   const [veneerCount, setVeneerCount] = useState(10); // Typical top arch makeover
   const veneerPrice = 200;

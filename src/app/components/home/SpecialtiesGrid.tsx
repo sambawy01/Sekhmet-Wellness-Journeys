@@ -14,7 +14,7 @@ interface SpecialtyCardProps {
 }
 
 const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures, price, delay, link }) => {
-  const { t, direction } = useLanguage();
+  const { direction } = useLanguage();
   const isRTL = direction === 'rtl';
   const ArrowIcon = isRTL ? ArrowUpLeft : ArrowUpRight;
 
@@ -93,7 +93,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
 export const SpecialtiesGrid: React.FC = () => {
   const specialties = [
     {
-      title: t("nav.dentalCare"),
+      title: "Dental Care",
       image: "https://images.unsplash.com/photo-1675526607070-f5cbd71dde92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJmZWN0JTIwd2hpdGUlMjB0ZWV0aCUyMHNtaWxlJTIwY2xvc2UlMjB1cHxlbnwxfHx8fDE3NzEyNzUyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       procedures: ["Implants & Veneers", "Hollywood Smile", "Full Mouth Rehab"],
       price: "$250",
@@ -107,7 +107,7 @@ export const SpecialtiesGrid: React.FC = () => {
       link: "/consultation?treatment=vision"
     },
     {
-      title: t("nav.cosmetic"),
+      title: "Cosmetic Surgery",
       image: "https://images.unsplash.com/photo-1767396858207-9b9519ff3a2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwd29tYW4lMjBwcm9maWxlJTIwYmVhdXR5JTIwZmFzaGlvbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MTI3NTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       procedures: ["Rhinoplasty", "Breast Augmentation", "Liposuction"],
       price: "$1,800",

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Smile, ScanFace } from 'lucide-react';
 import { Button } from '../ui/button';
 
-import { useLanguage } from '../../context/LanguageContext';
 export function RelatedProcedures() {
   const related = [
     {

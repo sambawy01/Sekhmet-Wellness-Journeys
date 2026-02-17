@@ -2,9 +2,7 @@ import React from 'react';
 import { MessageCircle, CalendarCheck, Phone, Mail } from 'lucide-react';
 import { IconAnkh } from '../EgyptianIcons';
 
-import { useLanguage } from '../../context/LanguageContext';
 export const FinalCTA: React.FC = () => {
-  const { t, direction } = useLanguage();
   return (
     <section className="bg-gradient-to-r from-[#C9A84C] to-[#B3933C] py-24 relative overflow-hidden">
       {/* Background Pattern */}

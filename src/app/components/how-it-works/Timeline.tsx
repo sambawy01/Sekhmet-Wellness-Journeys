@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, Stethoscope, Video, Plane, HeartPulse, Sparkles, PhoneCall } from 'lucide-react';
 
-import { useLanguage } from '../../context/LanguageContext';
 const steps = [
   {
     id: 1,

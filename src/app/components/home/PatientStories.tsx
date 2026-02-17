@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight, Star, Play } from 'lucide-react';
 
-import { useLanguage } from '../../context/LanguageContext';
 const TestimonialCard = ({ 
   name, age, country, treatment, quote, image, flag, delay 
 }: { 
@@ -51,7 +50,6 @@ const TestimonialCard = ({
 );
 
 export const PatientStories: React.FC = () => {
-  const { t, direction } = useLanguage();
   const testimonials = [
     {
       name: "Sarah M.",

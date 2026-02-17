@@ -4,7 +4,6 @@ import { Check, Upload, Calendar, ArrowRight, ArrowLeft, Star, ShieldCheck, Cloc
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 
-import { useLanguage } from '../context/LanguageContext';
 const steps = [
   { id: 1, title: "Treatment" },
   { id: 2, title: "Procedure" },
@@ -49,7 +48,6 @@ export function Consultation() {
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
   const handleSubmit = (e) => {
-  const { t, direction } = useLanguage();
     e.preventDefault();
     setIsSubmitted(true);
   };

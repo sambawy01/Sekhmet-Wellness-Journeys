@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 
-import { useLanguage } from '../context/LanguageContext';
 const WhatsAppIcon = () => (
   <svg 
     viewBox="0 0 24 24" 
@@ -16,7 +15,6 @@ const WhatsAppIcon = () => (
 );
 
 export const FloatingWhatsApp = () => {
-  const { t, direction } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);

@@ -2,9 +2,7 @@ import React from 'react';
 import { Sun, CloudRain, Clock, ScrollText } from 'lucide-react';
 import { IconAnkh } from '../EgyptianIcons';
 
-import { useLanguage } from '../../context/LanguageContext';
 export const EgyptEditorial: React.FC = () => {
-  const { t, direction } = useLanguage();
   return (
     <section className="bg-[#FAF6EF] py-24 border-t border-[#C9A84C]/10">
       <div className="container mx-auto px-6 max-w-[1440px]">

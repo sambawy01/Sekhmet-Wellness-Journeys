@@ -2,9 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, Globe, MessageCircle } from 'lucide-react';
 
-import { useLanguage } from '../context/LanguageContext';
 export const TrustBar: React.FC = () => {
-  const { t, direction } = useLanguage();
   return (
     <div className="bg-[#0F1923] text-white h-[48px] flex items-center overflow-hidden w-full relative z-50">
       <div className="container mx-auto px-4 flex justify-between items-center h-full max-w-[1400px]">

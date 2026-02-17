@@ -5,7 +5,6 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { cn } from "./utils";
 
-import { useLanguage } from '../../context/LanguageContext';
 function Tabs({
   className,
   ...props

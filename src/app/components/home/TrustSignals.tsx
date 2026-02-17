@@ -1,9 +1,7 @@
 import React from 'react';
 import { Shield, Award, CheckCircle } from 'lucide-react';
 
-import { useLanguage } from '../../context/LanguageContext';
 export const TrustSignals: React.FC = () => {
-  const { t, direction } = useLanguage();
   // Mock logos since we don't have real asset URLs for specific hospitals
   const LogoPlaceholder = ({ name }: { name: string }) => (
     <div className="h-10 px-4 flex items-center justify-center border border-gray-200 rounded opacity-60 hover:opacity-100 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300 cursor-pointer grayscale hover:grayscale-0">
@@ -34,7 +32,7 @@ export const TrustSignals: React.FC = () => {
 
           {/* Logos Grid */}
           <div className="flex flex-wrap justify-center xl:justify-end gap-6 md:gap-8 flex-grow">
-            <LogoPlaceholder name={t("trust.jciAccredited")} />
+            <LogoPlaceholder name="JCI Accredited" />
             <LogoPlaceholder name="Dar Al Fouad" />
             <LogoPlaceholder name="As-Salam Int." />
             <LogoPlaceholder name="Andalusia" />

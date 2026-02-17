@@ -9,10 +9,7 @@ import { DentalTestimonials } from '../components/dental/DentalTestimonials';
 import { DentalFAQ } from '../components/dental/DentalFAQ';
 import { DentalCTA } from '../components/dental/DentalCTA';
 
-import { useLanguage } from '../context/LanguageContext';
 export function DentalCare() {
-  const { t, language, direction } = useLanguage();
-
   return (
     <>
       <DentalHero />

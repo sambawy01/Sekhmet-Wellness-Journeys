@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CircleDollarSign, Percent, Calendar, Globe } from 'lucide-react';
 
-import { useLanguage } from '../../context/LanguageContext';
 const stats = [
   {
     icon: CircleDollarSign,

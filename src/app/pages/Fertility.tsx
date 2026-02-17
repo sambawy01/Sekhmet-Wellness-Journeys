@@ -4,10 +4,7 @@ import { ChevronRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { DentalCTA } from '../components/dental/DentalCTA'; // Reuse CTA for now
 
-import { useLanguage } from '../context/LanguageContext';
 export function Fertility() {
-  const { t, language, direction } = useLanguage();
-
   return (
     <>
       {/* Hero Section */}

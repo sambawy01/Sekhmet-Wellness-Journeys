@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../../context/LanguageContext';
 import { 
   Smile, 
   Scissors, 
@@ -205,7 +204,6 @@ export function TreatmentsAccordion() {
     : treatments.filter(t => t.category === (activeTab === "Eye" ? "Eye" : activeTab)); 
 
   const toggleItem = (id: string) => {
-  const { t, direction } = useLanguage();
     setOpenItem(openItem === id ? null : id);
   };
 

@@ -2,9 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import { useLanguage } from '../../context/LanguageContext';
 export const SavingsShockBar: React.FC = () => {
-  const { t, direction } = useLanguage();
   return (
     <section className="bg-[#0F1923] py-10 border-t border-[#C9A84C]/20 border-b border-[#C9A84C]/20 relative overflow-hidden">
       {/* Background Texture */}

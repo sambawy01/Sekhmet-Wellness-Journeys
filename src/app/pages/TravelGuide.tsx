@@ -4,7 +4,6 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { Plane, Sun, CloudSun, Moon, ShieldCheck, Phone, Check, ArrowRight, Download, Luggage, Building, Globe } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
-import { useLanguage } from '../context/LanguageContext';
 const weatherData = [
   { name: 'Jan', temp: 19 },
   { name: 'Feb', temp: 20 },
@@ -21,8 +20,6 @@ const weatherData = [
 ];
 
 export function TravelGuide() {
-  const { t, language, direction } = useLanguage();
-
   return (
     <div className="pt-20 bg-[#FAF6EF] min-h-screen">
       {/* Hero */}

@@ -4,76 +4,78 @@ import { Search, ChevronDown, MessageCircle, Phone, Calendar } from 'lucide-reac
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 
-import { useLanguage } from '../context/LanguageContext';
+const faqCategories = [
+  "General",
+  "Travel & Logistics",
+  "Medical",
+  "Financial",
+  "Post-Treatment"
+];
 
-
-
+const faqs = [
+  {
+    category: "General",
+    question: "Why should I choose Egypt for medical treatment?",
+    answer: "Egypt has a long history of medical excellence with highly trained specialists, many of whom are board-certified in the UK, US, or Europe. Additionally, you can save up to 70% compared to Western prices while enjoying a luxury recovery vacation."
+  },
+  {
+    category: "General",
+    question: "Is it safe to travel to Egypt for surgery?",
+    answer: "Yes. We only partner with JCI-accredited hospitals and clinics located in safe, tourist-friendly areas. Your personal coordinator and chauffeur ensure your safety and comfort throughout your entire stay."
+  },
+  {
+    category: "Travel & Logistics",
+    question: "Do I need a visa for medical travel?",
+    answer: "Most visitors can obtain an e-visa or a visa on arrival. For specific medical treatments, we can assist in obtaining a medical entry visa if required. Our team handles all the paperwork guidance."
+  },
+  {
+    category: "Travel & Logistics",
+    question: "Will someone meet me at the airport?",
+    answer: "Absolutely. A Sekhmet representative will meet you at the gate, assist with luggage and customs, and drive you to your hotel in a private luxury vehicle."
+  },
+  {
+    category: "Medical",
+    question: "How do I know the doctors are qualified?",
+    answer: "We rigorously vet all our specialists. They must have at least 10 years of experience and international fellowship or board certification. You can view their full profiles and credentials before booking."
+  },
+  {
+    category: "Medical",
+    question: "Can I speak with the doctor before traveling?",
+    answer: "Yes, we arrange a comprehensive video consultation with your assigned specialist to discuss your case, treatment plan, and answer any medical questions you may have."
+  },
+  {
+    category: "Financial",
+    question: "Are there hidden costs?",
+    answer: "No. We provide a transparent, all-inclusive quote that covers treatment, medication, accommodation, airport transfers, and your personal coordinator. Any potential extra costs will be clearly outlined upfront."
+  },
+  {
+    category: "Financial",
+    question: "Do you offer financing plans?",
+    answer: "We partner with several international medical financing institutions. Please contact our financial coordinators to discuss the available installment plans for your region."
+  },
+  {
+    category: "Post-Treatment",
+    question: "What happens if I have complications after returning home?",
+    answer: "Your care doesn't end when you leave. We provide 12 months of telemedicine follow-up. If any corrective procedure is needed due to medical error, it is covered under our corrective treatment guarantee."
+  },
+  {
+    category: "Post-Treatment",
+    question: "Can I enjoy a vacation during my recovery?",
+    answer: "Yes! Depending on your procedure, we can curate a relaxing itinerary. For example, dental patients often visit the Pyramids, while recovery from minor cosmetic procedures is perfect for a Red Sea resort stay."
+  }
+];
 
 export function FAQ() {
-  const { t, direction } = useLanguage();
-
-  const faqCategories = [
-    t("faq.categories.general"),
-    t("faq.categories.travel"),
-    t("faq.categories.medical"),
-    t("faq.categories.pricing"),
-    t("faq.categories.aftercare")
-  ];
-
-  const faqs = [
-    {
-      category: t("faq.categories.general"),
-      question: t("faq.q1"),
-      answer: t("faq.a1"),
-    },
-    {
-      category: t("faq.categories.general"),
-      question: t("faq.q2"),
-      answer: t("faq.a2"),
-    },
-    {
-      category: t("faq.categories.travel"),
-      question: t("faq.q4"),
-      answer: t("faq.a4"),
-    },
-    {
-      category: t("faq.categories.travel"),
-      question: t("faq.q5"),
-      answer: t("faq.a5"),
-    },
-    {
-      category: t("faq.categories.medical"),
-      question: t("faq.q1"),
-      answer: t("faq.a1"),
-    },
-    {
-      category: t("faq.categories.pricing"),
-      question: t("faq.q2"),
-      answer: t("faq.a2"),
-    },
-    {
-      category: t("faq.categories.pricing"),
-      question: t("faq.q3"),
-      answer: t("faq.a3"),
-    },
-    {
-      category: t("faq.categories.aftercare"),
-      question: t("faq.q6"),
-      answer: t("faq.a6"),
-    },
-  ];
-
   const [activeCategory, setActiveCategory] = useState("General");
   const [searchQuery, setSearchQuery] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const filteredFAQs = faqs.filter(faq => {
-    const matchesCategory = activeCategory === t("faq.categories.general") || faq.category === activeCategory;
+    const matchesCategory = activeCategory === "All" || faq.category === activeCategory;
     const matchesSearch = faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-
 
   return (
     <div className="pt-20 bg-[#FAF6EF] min-h-screen">
@@ -184,7 +186,7 @@ export function FAQ() {
             <div className="bg-[#0F1923] text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A059] rounded-full filter blur-3xl opacity-20 -mr-10 -mt-10" />
               
-              <h3 className="font-['Playfair_Display'] text-2xl font-bold mb-4 relative z-10">{t("faq.stillHaveQuestions")}</h3>
+              <h3 className="font-['Playfair_Display'] text-2xl font-bold mb-4 relative z-10">Still have questions?</h3>
               <p className="text-white/70 mb-8 relative z-10">
                 Can't find the answer you're looking for? Our team is available 24/7.
               </p>

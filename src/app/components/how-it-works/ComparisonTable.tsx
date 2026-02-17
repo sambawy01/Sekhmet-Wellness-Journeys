@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Check, X, ShieldCheck } from 'lucide-react';
 
-import { useLanguage } from '../../context/LanguageContext';
 const features = [
   { name: "Medical Expertise Verification", sekhmet: true, diy: false, hospital: true },
   { name: "Personal Travel Coordinator", sekhmet: true, diy: false, hospital: false },

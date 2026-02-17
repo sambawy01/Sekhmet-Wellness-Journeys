@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../ui/button';
 
-import { useLanguage } from '../../context/LanguageContext';
 const prices = [
   { procedure: "Emax Veneer (Per Tooth)", egypt: 200, uk: 950, us: 1500, turkey: 250 },
   { procedure: "Porcelain Veneer (Per Tooth)", egypt: 180, uk: 850, us: 1200, turkey: 220 },

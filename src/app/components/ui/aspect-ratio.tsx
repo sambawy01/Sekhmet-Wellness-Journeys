@@ -2,7 +2,6 @@
 
 import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
 
-import { useLanguage } from '../../context/LanguageContext';
 function AspectRatio({
   ...props
 }: React.ComponentProps<typeof AspectRatioPrimitive.Root>) {

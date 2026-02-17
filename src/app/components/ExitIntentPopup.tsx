@@ -3,9 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowRight } from 'lucide-react';
 import { IconAnkh } from './EgyptianIcons';
 
-import { useLanguage } from '../context/LanguageContext';
 export const ExitIntentPopup = () => {
-  const { t, direction } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 

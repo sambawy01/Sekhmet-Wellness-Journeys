@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, Sun, MapPin } from 'lucide-react';
 
-import { useLanguage } from '../../context/LanguageContext';
 const DestinationCard = ({ 
   image, city, temp, highlights, badge, delay 
 }: { 
@@ -49,7 +48,6 @@ const DestinationCard = ({
 );
 
 export const DestinationShowcase: React.FC = () => {
-  const { t, direction } = useLanguage();
   return (
     <section className="bg-[#0F1923] py-24 relative overflow-hidden">
       {/* Background Pattern */}

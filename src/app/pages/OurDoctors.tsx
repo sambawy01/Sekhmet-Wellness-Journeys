@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import { DoctorCard } from '../components/DoctorCard';
 import { CheckCircle, Globe, Award, Stethoscope } from 'lucide-react';
 
-import { useLanguage } from '../context/LanguageContext';
 const doctors = [
   {
     id: 1,
@@ -88,8 +87,6 @@ export function OurDoctors() {
   const filteredDoctors = doctors.filter(doc => 
     activeSpecialty === "All" || doc.specialty === activeSpecialty
   );
-
-  const { t, language, direction } = useLanguage();
 
   return (
     <div className="pt-20 bg-[#FAF6EF] min-h-screen">

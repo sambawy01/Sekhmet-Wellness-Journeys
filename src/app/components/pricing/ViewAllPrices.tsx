@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { useLanguage } from '../../context/LanguageContext';
 // Hardcoded Data based on verified 2024-2026 market data
 const TREATMENTS = [
   // DENTAL
@@ -92,8 +91,6 @@ export function ViewAllPrices() {
     const matchesCategory = activeCategory === "All" || treatment.category === activeCategory;
     return matchesSearch && matchesCategory;
   });
-
-  const { t, language, direction } = useLanguage();
 
   return (
     <div className="w-full py-16 px-4 bg-slate-50 font-sans" id="view-all-prices">

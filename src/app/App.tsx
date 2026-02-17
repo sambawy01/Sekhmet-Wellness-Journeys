@@ -31,7 +31,6 @@ import { Fertility } from './pages/Fertility';
 import { Pricing } from './pages/Pricing';
 import { Treatments } from './pages/Treatments';
 
-import { useLanguage } from './context/LanguageContext';
 // ScrollToTop component to reset scroll on route change
 function ScrollToTop() {
   const { pathname } = useLocation();

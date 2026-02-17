@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { cn } from '../../../lib/utils';
 import { Button } from '../ui/button';
 
-import { useLanguage } from '../../context/LanguageContext';
 const currencies = ['USD', 'GBP', 'EUR', 'AED'];
 
 const prices = [

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Play, Star, Quote, CheckCircle, MapPin } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
-import { useLanguage } from '../context/LanguageContext';
 // Mock Data
 const stories = [
   {
@@ -83,8 +82,6 @@ export function PatientStories() {
     const matchOrigin = activeOrigin === "All" || story.origin === activeOrigin || (activeOrigin === "USA" && story.origin === "USA");
     return matchTreatment && matchOrigin;
   });
-
-  const { t, language, direction } = useLanguage();
 
   return (
     <div className="pt-20 bg-[#FAF6EF] min-h-screen">

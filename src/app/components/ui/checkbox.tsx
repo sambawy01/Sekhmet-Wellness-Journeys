@@ -6,7 +6,6 @@ import { CheckIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
-import { useLanguage } from '../../context/LanguageContext';
 function Checkbox({
   className,
   ...props

@@ -51,7 +51,6 @@ export const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
@@ -67,21 +66,12 @@ export const Navigation: React.FC = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
-    setIsLangOpen(false);
   }, [location.pathname]);
 
-  // Close language dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = () => setIsLangOpen(false);
-    if (isLangOpen) {
-      document.addEventListener('click', handleClickOutside);
-      return () => document.removeEventListener('click', handleClickOutside);
-    }
-  }, [isLangOpen]);
-
-  const toggleLanguage = (lang?: 'en' | 'ar' | 'fr') => {
-    if (lang) { setLanguage(lang); setIsLangOpen(false); return; }
-    setIsLangOpen(!isLangOpen);
+  const toggleLanguage = () => {
+    if (language === 'en') setLanguage('ar');
+    else if (language === 'ar') setLanguage('fr');
+    else setLanguage('en');
   };
 
   return (

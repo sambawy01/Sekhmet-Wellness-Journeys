@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Check, Download, MessageCircle, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 
-import { useLanguage } from '../../context/LanguageContext';
 export function ImplantsContent() {
   const [implantCount, setImplantCount] = useState(1);
   const implantPrice = 250;
