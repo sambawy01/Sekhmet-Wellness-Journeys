@@ -1,0 +1,10 @@
+import fs from 'fs';
+import path from 'path';
+const PROJECT_ROOT = process.cwd();
+const SRC_DIR = path.join(PROJECT_ROOT, 'src');
+const contextPath = path.join(SRC_DIR, 'app', 'context', 'LanguageContext.tsx');
+const original = fs.readFileSync(contextPath, 'utf-8');
+console.log('Original file length:', original.length);
+console.log('File found! Creating backup...');
+fs.writeFileSync(contextPath + '.bak', original, 'utf-8');
+console.log('Backup created. Now replacing with full translations...');
