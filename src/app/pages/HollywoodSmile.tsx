@@ -12,6 +12,8 @@ import { MobileStickyCTA } from '../components/MobileStickyCTA';
 
 import { useLanguage } from '../context/LanguageContext';
 export function HollywoodSmile() {
+  const { t, language, direction } = useLanguage();
+
   return (
     <>
       <HollywoodHero />

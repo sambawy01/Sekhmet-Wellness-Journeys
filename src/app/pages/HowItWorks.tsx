@@ -9,6 +9,8 @@ import { motion } from 'motion/react';
 
 import { useLanguage } from '../context/LanguageContext';
 export function HowItWorks() {
+  const { t, language, direction } = useLanguage();
+
   return (
     <div className="pt-20">
       <Hero />

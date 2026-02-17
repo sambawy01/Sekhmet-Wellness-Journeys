@@ -93,6 +93,8 @@ export function ViewAllPrices() {
     return matchesSearch && matchesCategory;
   });
 
+  const { t, language, direction } = useLanguage();
+
   return (
     <div className="w-full py-16 px-4 bg-slate-50 font-sans" id="view-all-prices">
       <div className="max-w-6xl mx-auto">

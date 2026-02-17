@@ -35,7 +35,7 @@ export const Contact = () => {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-playfair text-4xl md:text-5xl text-[#0F1923] mb-4">Get in Touch</h1>
+          <h1 className="font-playfair text-4xl md:text-5xl text-[#0F1923] mb-4">{t("contact.title")}</h1>
           <div className="flex items-center justify-center gap-2 text-[#C5A059] font-medium font-sans">
             <Clock size={18} />
             <span>We respond to every inquiry within 24 hours</span>

@@ -9,6 +9,8 @@ export function Pricing() {
     document.title = "Pricing & Packages | Sekhmet Wellness Journeys";
   }, []);
 
+  const { t, language, direction } = useLanguage();
+
   return (
     <div className="pt-20">
       <GetFreeQuotes />

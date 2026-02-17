@@ -6,6 +6,8 @@ import { FinalCTA } from '../components/home/FinalCTA';
 
 import { useLanguage } from '../context/LanguageContext';
 export function Treatments() {
+  const { t, language, direction } = useLanguage();
+
   return (
     <>
       <TreatmentsHero />

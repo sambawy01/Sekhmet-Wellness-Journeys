@@ -21,6 +21,8 @@ const weatherData = [
 ];
 
 export function TravelGuide() {
+  const { t, language, direction } = useLanguage();
+
   return (
     <div className="pt-20 bg-[#FAF6EF] min-h-screen">
       {/* Hero */}

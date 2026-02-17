@@ -11,6 +11,8 @@ import { DentalCTA } from '../components/dental/DentalCTA';
 
 import { useLanguage } from '../context/LanguageContext';
 export function DentalImplants() {
+  const { t, language, direction } = useLanguage();
+
   return (
     <>
       <ImplantsHero />

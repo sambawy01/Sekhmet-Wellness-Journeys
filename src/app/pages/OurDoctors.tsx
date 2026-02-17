@@ -89,6 +89,8 @@ export function OurDoctors() {
     activeSpecialty === "All" || doc.specialty === activeSpecialty
   );
 
+  const { t, language, direction } = useLanguage();
+
   return (
     <div className="pt-20 bg-[#FAF6EF] min-h-screen">
       {/* Hero Section */}

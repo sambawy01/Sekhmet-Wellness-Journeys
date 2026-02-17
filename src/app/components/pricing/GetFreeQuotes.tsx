@@ -3,6 +3,8 @@ import { Check, Star, Shield, ArrowRight } from 'lucide-react';
 
 import { useLanguage } from '../../context/LanguageContext';
 export function GetFreeQuotes() {
+  const { t, language, direction } = useLanguage();
+
   return (
     <section className="relative w-full py-16 md:py-24 bg-[#F5F0E5] overflow-hidden" id="get-quote">
       {/* Background Pattern */}

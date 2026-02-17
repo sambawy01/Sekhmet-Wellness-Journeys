@@ -12,6 +12,8 @@ import { FinalCTA } from '../components/home/FinalCTA';
 
 import { useLanguage } from '../context/LanguageContext';
 export function Home() {
+  const { t, language, direction } = useLanguage();
+
   return (
     <>
       <Hero />

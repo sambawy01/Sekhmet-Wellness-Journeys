@@ -15,7 +15,7 @@ const articles = [
     category: "Cost Guides",
     author: "Dr. Ahmed Hassan",
     date: "Feb 14, 2026",
-    readTime: "8 min read",
+    readTime: "8 {t("blog.readTime")}",
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
     featured: true
   },
@@ -26,7 +26,7 @@ const articles = [
     category: "Patient Stories",
     author: "Sarah Jenkins",
     date: "Feb 10, 2026",
-    readTime: "6 min read",
+    readTime: "6 {t("blog.readTime")}",
     image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800",
     featured: false
   },
@@ -37,7 +37,7 @@ const articles = [
     category: "Egypt Travel",
     author: "Editorial Team",
     date: "Feb 05, 2026",
-    readTime: "5 min read",
+    readTime: "5 {t("blog.readTime")}",
     image: "https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?auto=format&fit=crop&q=80&w=800",
     featured: false
   },
@@ -48,7 +48,7 @@ const articles = [
     category: "Treatment Guides",
     author: "Dr. Youssef El-Sayed",
     date: "Jan 28, 2026",
-    readTime: "10 min read",
+    readTime: "10 {t("blog.readTime")}",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
     featured: false
   },
@@ -59,7 +59,7 @@ const articles = [
     category: "News",
     author: "Medical Director",
     date: "Jan 20, 2026",
-    readTime: "7 min read",
+    readTime: "7 {t("blog.readTime")}",
     image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800",
     featured: false
   },
@@ -70,7 +70,7 @@ const articles = [
     category: "Egypt Travel",
     author: "Travel Concierge",
     date: "Jan 15, 2026",
-    readTime: "4 min read",
+    readTime: "4 {t("blog.readTime")}",
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800",
     featured: false
   }
