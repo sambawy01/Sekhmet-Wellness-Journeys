@@ -16,7 +16,6 @@ import {
 import { cn } from "./utils";
 import { Label } from "./label";
 
-import { useLanguage } from '../../context/LanguageContext';
 const Form = FormProvider;
 
 type FormFieldContextValue<
@@ -44,7 +43,6 @@ const FormField = <
 };
 
 const useFormField = () => {
-  const { t, direction } = useLanguage();
   const fieldContext = React.useContext(FormFieldContext);
   const itemContext = React.useContext(FormItemContext);
   const { getFieldState } = useFormContext();

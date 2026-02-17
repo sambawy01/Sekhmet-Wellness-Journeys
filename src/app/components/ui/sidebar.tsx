@@ -18,7 +18,6 @@ import {
   SheetTitle,
 } from "./sheet";
 import { Skeleton } from "./skeleton";
-import { useLanguage } from '../../context/LanguageContext';
 import {
   Tooltip,
   TooltipContent,
@@ -97,7 +96,6 @@ function SidebarProvider({
   // Adds a keyboard shortcut to toggle the sidebar.
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-  const { t, direction } = useLanguage();
       if (
         event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
         (event.metaKey || event.ctrlKey)
