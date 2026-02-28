@@ -16,7 +16,7 @@ const IconTikTok: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#0F1923] text-white pt-20 pb-10 border-t-2 border-[#C9A84C] overflow-hidden">
+    <footer className="relative bg-[#2C2825] text-white pt-20 pb-10 border-t-2 border-[#B5724A] overflow-hidden">
       {/* Background Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -31,19 +31,19 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="text-[#C9A84C] w-10 h-10 flex items-center justify-center border-2 border-[#C9A84C] rounded-full p-2">
+              <div className="text-[#B5724A] w-10 h-10 flex items-center justify-center border-2 border-[#B5724A] rounded-full p-2">
                 <IconAnkh className="w-full h-full" />
               </div>
-              <span className="font-['Playfair_Display'] font-bold text-2xl tracking-wide text-white">
+              <span className="font-['Inter'] font-bold text-2xl tracking-wide text-white">
                 SEKHMET
               </span>
             </div>
             
-            <p className="font-['Playfair_Display'] italic text-[14px] text-[#F5F0E5]">
+            <p className="font-['Inter'] italic text-[14px] text-[#FAF7F2]">
               "Heal where history began"
             </p>
             
-            <p className="font-['DM_Sans'] text-[13px] text-[#A89F8E] leading-relaxed max-w-[280px]">
+            <p className="font-['DM_Sans'] text-[13px] text-[#9B918A] leading-relaxed max-w-[280px]">
               Premium medical tourism agency connecting global patients with Egypt's finest surgeons and 5-star recovery experiences.
             </p>
             
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
                 <a 
                   key={i} 
                   href="#" 
-                  className="w-10 h-10 rounded-full border border-[#C9A84C] flex items-center justify-center text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0F1923] transition-all duration-300 group"
+                  className="w-10 h-10 rounded-full border border-[#B5724A] flex items-center justify-center text-[#B5724A] hover:bg-[#B5724A] hover:text-[#2C2825] transition-all duration-300 group"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -62,12 +62,12 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Treatments */}
           <div className="space-y-6">
-            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">Treatments</h4>
+            <h4 className="font-['Inter'] text-lg text-white font-medium">Treatments</h4>
             <ul className="space-y-3">
               {["Dental Care", "Vision Correction", "Cosmetic Surgery", "Comprehensive Checkups", "IVF & Fertility"].map((item, i) => (
                 <li key={i}>
-                  <a href="#" className="font-['DM_Sans'] text-[14px] text-[#A89F8E] hover:text-[#C9A84C] transition-colors flex items-center gap-2 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href="#" className="font-['DM_Sans'] text-[14px] text-[#9B918A] hover:text-[#B5724A] transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B5724A] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </a>
                 </li>
@@ -77,12 +77,12 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Explore */}
           <div className="space-y-6">
-            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">Explore</h4>
+            <h4 className="font-['Inter'] text-lg text-white font-medium">Explore</h4>
             <ul className="space-y-3">
               {["Packages", "Destinations", "How It Works", "Patient Stories", "Our Doctors", "Prices", "FAQ", "Blog"].map((item, i) => (
                 <li key={i}>
-                  <a href="#" className="font-['DM_Sans'] text-[14px] text-[#A89F8E] hover:text-[#C9A84C] transition-colors flex items-center gap-2 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href="#" className="font-['DM_Sans'] text-[14px] text-[#9B918A] hover:text-[#B5724A] transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B5724A] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </a>
                 </li>
@@ -92,31 +92,31 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Contact */}
           <div className="space-y-6">
-            <h4 className="font-['Playfair_Display'] text-lg text-white font-medium">Contact Us</h4>
+            <h4 className="font-['Inter'] text-lg text-white font-medium">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#C9A84C] mt-0.5" />
+                <Phone className="w-5 h-5 text-[#B5724A] mt-0.5" />
                 <div className="flex flex-col">
-                  <span className="font-['DM_Sans'] text-[14px] text-[#F5F0E5]">+20 100 123 4567</span>
-                  <span className="font-['DM_Sans'] text-[12px] text-[#A89F8E]">Mon-Sun, 9am - 9pm EST</span>
+                  <span className="font-['DM_Sans'] text-[14px] text-[#FAF7F2]">+20 100 123 4567</span>
+                  <span className="font-['DM_Sans'] text-[12px] text-[#9B918A]">Mon-Sun, 9am - 9pm EST</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full border border-[#C9A84C] flex items-center justify-center text-[#C9A84C] text-[10px] font-bold mt-0.5">W</div>
+                <div className="w-5 h-5 rounded-full border border-[#B5724A] flex items-center justify-center text-[#B5724A] text-[10px] font-bold mt-0.5">W</div>
                 <div className="flex flex-col">
-                  <span className="font-['DM_Sans'] text-[14px] text-[#F5F0E5]">+20 122 987 6543</span>
-                  <span className="font-['DM_Sans'] text-[12px] text-[#A89F8E]">WhatsApp Support</span>
+                  <span className="font-['DM_Sans'] text-[14px] text-[#FAF7F2]">+20 122 987 6543</span>
+                  <span className="font-['DM_Sans'] text-[12px] text-[#9B918A]">WhatsApp Support</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#C9A84C] mt-0.5" />
-                <a href="mailto:care@sekhmet.com" className="font-['DM_Sans'] text-[14px] text-[#F5F0E5] hover:text-[#C9A84C] transition-colors">
+                <Mail className="w-5 h-5 text-[#B5724A] mt-0.5" />
+                <a href="mailto:care@sekhmet.com" className="font-['DM_Sans'] text-[14px] text-[#FAF7F2] hover:text-[#B5724A] transition-colors">
                   care@sekhmet.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#C9A84C] mt-0.5" />
-                <span className="font-['DM_Sans'] text-[14px] text-[#A89F8E]">
+                <MapPin className="w-5 h-5 text-[#B5724A] mt-0.5" />
+                <span className="font-['DM_Sans'] text-[14px] text-[#9B918A]">
                   Grand Egyptian Museum Complex,<br />
                   Giza Governorate, Egypt
                 </span>
@@ -127,11 +127,11 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-6 text-[13px] font-['DM_Sans'] text-[#A89F8E]">
+          <div className="flex flex-col md:flex-row items-center gap-6 text-[13px] font-['DM_Sans'] text-[#9B918A]">
             <span>&copy; {new Date().getFullYear()} Sekhmet Wellness.</span>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-[#A89F8E]/50" />
+            <div className="hidden md:block w-1 h-1 rounded-full bg-[#9B918A]/50" />
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-[#A89F8E]/50" />
+            <div className="hidden md:block w-1 h-1 rounded-full bg-[#9B918A]/50" />
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
 
@@ -139,19 +139,19 @@ export const Footer: React.FC = () => {
             {/* JCI Accreditation Mockup */}
             <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
               <div className="w-8 h-8 relative">
-                 <div className="absolute inset-0 bg-[#C9A84C] rounded-full animate-pulse opacity-20" />
-                 <Shield className="w-8 h-8 text-[#C9A84C]" fill="currentColor" fillOpacity={0.2} />
+                 <div className="absolute inset-0 bg-[#B5724A] rounded-full animate-pulse opacity-20" />
+                 <Shield className="w-8 h-8 text-[#B5724A]" fill="currentColor" fillOpacity={0.2} />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="text-[10px] font-bold text-[#C9A84C] font-['DM_Sans']">JCI ACCREDITED</span>
+                <span className="text-[10px] font-bold text-[#B5724A] font-['DM_Sans']">JCI ACCREDITED</span>
                 <span className="text-[9px] text-white/60 font-['DM_Sans']">Global Standard</span>
               </div>
             </div>
 
             {/* Language Selector */}
-            <div className="flex items-center gap-2 border border-white/20 rounded-full px-3 py-1.5 cursor-pointer hover:border-[#C9A84C] transition-colors group">
-              <Globe className="w-4 h-4 text-[#A89F8E] group-hover:text-[#C9A84C]" />
-              <span className="text-[13px] font-medium text-white group-hover:text-[#C9A84C]">English (UK)</span>
+            <div className="flex items-center gap-2 border border-white/20 rounded-full px-3 py-1.5 cursor-pointer hover:border-[#B5724A] transition-colors group">
+              <Globe className="w-4 h-4 text-[#9B918A] group-hover:text-[#B5724A]" />
+              <span className="text-[13px] font-medium text-white group-hover:text-[#B5724A]">English (UK)</span>
             </div>
           </div>
         </div>
