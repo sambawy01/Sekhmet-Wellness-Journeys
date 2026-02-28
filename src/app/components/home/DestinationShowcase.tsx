@@ -14,32 +14,32 @@ const DestinationCard = ({
       className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
       style={{ backgroundImage: `url('${image}')` }}
     />
-    <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923] via-[#0F1923]/40 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+    <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825] via-[#2C2825]/40 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
     
     <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2 text-white">
-      <Sun className="w-4 h-4 text-[#C9A84C]" />
+      <Sun className="w-4 h-4 text-[#B5724A]" />
       <span className="font-['DM_Sans'] text-sm font-medium">{temp}</span>
     </div>
 
     <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end h-full">
       <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-        <div className="bg-[#C9A84C] text-[#0F1923] text-xs font-bold px-3 py-1 rounded-full w-fit mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+        <div className="bg-[#B5724A] text-[#2C2825] text-xs font-bold px-3 py-1 rounded-full w-fit mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
           {badge}
         </div>
         
-        <h3 className="font-['Playfair_Display'] text-4xl text-white mb-2">{city}</h3>
-        <div className="h-1 w-12 bg-[#C9A84C] mb-6 group-hover:w-24 transition-all duration-500" />
+        <h3 className="font-['Inter'] text-4xl text-white mb-2">{city}</h3>
+        <div className="h-1 w-12 bg-[#B5724A] mb-6 group-hover:w-24 transition-all duration-500" />
         
         <div className="space-y-2 mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
           {highlights.map((h, i) => (
             <div key={i} className="flex items-center gap-2 text-white/90 font-['DM_Sans'] text-sm">
-              <MapPin className="w-3 h-3 text-[#C9A84C]" />
+              <MapPin className="w-3 h-3 text-[#B5724A]" />
               {h}
             </div>
           ))}
         </div>
         
-        <button className="flex items-center gap-2 text-[#C9A84C] group-hover:text-white transition-colors font-['DM_Sans'] font-medium text-lg group/btn">
+        <button className="flex items-center gap-2 text-[#B5724A] group-hover:text-white transition-colors font-['DM_Sans'] font-medium text-lg group/btn">
           Explore {city} <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
         </button>
       </div>
@@ -49,7 +49,7 @@ const DestinationCard = ({
 
 export const DestinationShowcase: React.FC = () => {
   return (
-    <section className="bg-[#0F1923] py-24 relative overflow-hidden">
+    <section className="bg-[#2C2825] py-24 relative overflow-hidden">
       {/* Background Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -60,9 +60,9 @@ export const DestinationShowcase: React.FC = () => {
 
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl text-white font-bold relative inline-block">
+          <h2 className="font-['Inter'] text-4xl md:text-5xl text-white font-bold relative inline-block">
             Where Will You Heal?
-            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#C9A84C]" />
+            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#B5724A]" />
           </h2>
         </div>
 
