@@ -6,14 +6,14 @@ import { Video, ShieldCheck, Percent } from 'lucide-react';
 
 const FeatureBlock = ({ icon: Icon, title, description, delay }: { icon: any, title: string, description: string, delay: number }) => (
   <div 
-    className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-[#C9A84C]/10 group opacity-0 animate-fade-in-up"
+    className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-[#B5724A]/10 group opacity-0 animate-fade-in-up"
     style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
   >
-    <div className="w-14 h-14 rounded-full bg-[#FAF6EF] flex items-center justify-center mb-6 group-hover:bg-[#C9A84C] transition-colors duration-300">
-      <Icon className="w-7 h-7 text-[#C9A84C] group-hover:text-white transition-colors" />
+    <div className="w-14 h-14 rounded-full bg-[#F6F2EC] flex items-center justify-center mb-6 group-hover:bg-[#B5724A] transition-colors duration-300">
+      <Icon className="w-7 h-7 text-[#B5724A] group-hover:text-white transition-colors" />
     </div>
     
-    <h3 className="font-['DM_Sans'] text-xl font-bold text-[#0F1923] mb-3 group-hover:text-[#C9A84C] transition-colors">
+    <h3 className="font-['DM_Sans'] text-xl font-bold text-[#2C2825] mb-3 group-hover:text-[#B5724A] transition-colors">
       {title}
     </h3>
     
@@ -58,7 +58,7 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#F5F0E5] py-24 relative overflow-hidden">
+    <section className="bg-[#FAF7F2] py-24 relative overflow-hidden">
        {/* Background Decoration */}
        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.03]" 
             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L0 0v60L30 30zM30 30L60 0v60L30 30z' fill='%23C9A84C' fill-rule='evenodd'/%3E%3C/svg%3E")` }} 
@@ -66,9 +66,9 @@ export const WhyChooseUs: React.FC = () => {
 
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F1923] relative inline-block">
+          <h2 className="font-['Inter'] text-4xl font-bold text-[#2C2825] relative inline-block">
             The Sekhmet Difference
-            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#C9A84C]" />
+            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#B5724A]" />
           </h2>
         </div>
 
