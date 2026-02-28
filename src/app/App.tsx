@@ -47,7 +47,7 @@ export default function App() {
     <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <LanguageProvider>
         <ScrollToTop />
-        <div className="min-h-screen bg-[#F5F0E5] text-[#0F1923] font-['DM_Sans'] transition-all duration-300">
+        <div className="min-h-screen bg-[#FAF7F2] text-[#2C2825] font-['DM_Sans'] transition-all duration-300">
           {/* <Toaster position="bottom-left" toastOptions={{
             style: { background: 'transparent', border: 'none', boxShadow: 'none' },
           }} /> */}
