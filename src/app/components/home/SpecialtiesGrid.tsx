@@ -21,7 +21,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
   return (
     <Link 
       to={link}
-      className="group relative h-[360px] md:h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-[#C9A84C]/20 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up block"
+      className="group relative h-[360px] md:h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-[#B5724A]/20 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up block"
       style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
       dir={direction}
     >
@@ -32,7 +32,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923] via-[#0F1923]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825] via-[#2C2825]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
       
       {/* Content */}
       <div className={cn(
@@ -42,13 +42,13 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
           <h3 className={cn(
             "text-3xl text-white mb-2",
-            isRTL ? "font-['Amiri']" : "font-['Playfair_Display']"
+            isRTL ? "font-['Amiri']" : "font-['Inter']"
           )}>
             {title}
           </h3>
           
           <div className={cn(
-            "h-0.5 w-12 bg-[#C9A84C] mb-4 group-hover:w-full transition-all duration-500 ease-out",
+            "h-0.5 w-12 bg-[#B5724A] mb-4 group-hover:w-full transition-all duration-500 ease-out",
             isRTL ? "ml-auto" : "mr-auto"
           )} />
           
@@ -61,7 +61,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
                 "text-white/80 text-sm flex items-center gap-2",
                 isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['DM_Sans']"
               )}>
-                <span className="w-1 h-1 rounded-full bg-[#C9A84C]" />
+                <span className="w-1 h-1 rounded-full bg-[#B5724A]" />
                 {proc}
               </li>
             ))}
@@ -72,12 +72,12 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
             isRTL && "flex-row-reverse"
           )}>
             <span className={cn(
-              "font-['Space_Mono'] text-[#C9A84C] text-lg font-bold",
+              "font-['Space_Mono'] text-[#B5724A] text-lg font-bold",
               isRTL && "text-right"
             )}>
               {isRTL ? `من ${price}` : `From ${price}`}
             </span>
-            <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] group-hover:text-[#0F1923] transition-colors duration-300">
+            <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-[#B5724A] group-hover:border-[#B5724A] group-hover:text-[#2C2825] transition-colors duration-300">
               <ArrowIcon className="w-5 h-5" />
             </div>
           </div>
@@ -85,7 +85,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
       </div>
       
       {/* Border Glow on Hover */}
-      <div className="absolute inset-0 border-2 border-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+      <div className="absolute inset-0 border-2 border-[#B5724A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
     </Link>
   );
 };
@@ -130,16 +130,16 @@ export const SpecialtiesGrid: React.FC = () => {
   ];
 
   return (
-    <section id="specialties" className="bg-[#FAF6EF] py-24">
+    <section id="specialties" className="bg-[#F6F2EC] py-24">
       <div className="container mx-auto px-6 max-w-[1440px]">
         
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl text-[#0F1923] font-bold relative inline-block">
+          <h2 className="font-['Inter'] text-4xl md:text-5xl text-[#2C2825] font-bold relative inline-block">
             Our Specialties
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#C9A84C] rounded-full" />
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#B5724A] rounded-full" />
           </h2>
-          <p className="font-['DM_Sans'] text-[#A89F8E] max-w-2xl mx-auto text-lg pt-4">
+          <p className="font-['DM_Sans'] text-[#9B918A] max-w-2xl mx-auto text-lg pt-4">
             Combining world-class medical expertise with the luxury of ancient Egyptian hospitality.
           </p>
         </div>
