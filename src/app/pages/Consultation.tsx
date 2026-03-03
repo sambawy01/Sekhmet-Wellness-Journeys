@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Check, Upload, Calendar, ArrowRight, ArrowLeft, Star, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
+import { submitLead } from '../../lib/supabase';
 
 const steps = [
   { id: 1, title: "Treatment" },
@@ -43,13 +44,33 @@ export function Consultation() {
     notes: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 5));
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setError('');
+    try {
+      await submitLead({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        treatment_interest: formData.treatment ? `${formData.treatment}${formData.procedure ? ' - ' + formData.procedure : ''}` : undefined,
+        message: formData.notes || undefined,
+        preferred_dates: formData.dateRange || undefined,
+        passport_country: formData.country || undefined,
+        source_form: 'consultation',
+      });
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const updateForm = (field, value) => {
@@ -317,13 +338,20 @@ export function Consultation() {
                   />
                 </div>
 
+                {error && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                    {error}
+                  </div>
+                )}
+
                 <div className="flex justify-between mt-8">
                   <Button variant="ghost" onClick={prevStep}>Back</Button>
-                  <Button 
-                    onClick={handleSubmit} 
-                    className="bg-[#C5A059] hover:bg-[#B08D55] text-white px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-all"
+                  <Button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className="bg-[#C5A059] hover:bg-[#B08D55] text-white px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-60"
                   >
-                    Get My Free Quote
+                    {isSubmitting ? 'Submitting...' : 'Get My Free Quote'}
                   </Button>
                 </div>
               </motion.div>
@@ -379,7 +407,7 @@ export function Consultation() {
               {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
             </div>
             <p className="text-white/90 italic mb-4">
-              "The team at Sekhmet handled everything. I just showed up and focused on my recovery. Truly a world-class experience."
+              \u201CThe team at Sekhmet handled everything. I just showed up and focused on my recovery. Truly a world-class experience.\u201D
             </p>
             <div className="flex items-center gap-3">
               <img 
