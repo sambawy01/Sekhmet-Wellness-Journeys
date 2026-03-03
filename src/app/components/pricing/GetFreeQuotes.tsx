@@ -1,7 +1,37 @@
-import React from 'react';
-import { Check, Star, Shield, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Check, Star, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { submitLead } from '../../../lib/supabase';
 
 export function GetFreeQuotes() {
+  const [formData, setFormData] = useState({
+    name: '', email: '', phone: '', treatment: '', destination: '', notes: '',
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email) return;
+    setIsSubmitting(true);
+    setError('');
+    try {
+      await submitLead({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        treatment_interest: formData.treatment || undefined,
+        message: [formData.destination ? `Destination: ${formData.destination}` : '', formData.notes].filter(Boolean).join('\n') || undefined,
+        source_form: 'get-free-quote',
+      });
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="relative w-full py-16 md:py-24 bg-[#F5F0E5] overflow-hidden" id="get-quote">
       {/* Background Pattern */}
@@ -75,22 +105,40 @@ export function GetFreeQuotes() {
 
           {/* Right Panel: Form */}
           <div className="w-full lg:w-[500px] bg-white rounded-3xl shadow-xl shadow-[#1A5276]/5 p-6 md:p-8 border border-[#1A5276]/10">
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            {isSubmitted ? (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#1A5276] mb-2">Quote Request Received!</h3>
+                <p className="text-[#0F1923]/60 mb-6">Our team will get back to you within 24 hours with a personalized quote.</p>
+                <button onClick={() => { setIsSubmitted(false); setFormData({ name: '', email: '', phone: '', treatment: '', destination: '', notes: '' }); }} className="text-[#1A5276] font-bold hover:underline">
+                  Submit Another Request
+                </button>
+              </div>
+            ) : (
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="firstName" className="text-sm font-medium text-gray-700">Full Name</label>
-                  <input 
-                    id="firstName" 
-                    placeholder="Enter your name" 
+                  <input
+                    id="firstName"
+                    placeholder="Enter your name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-gray-700">Email Address</label>
-                  <input 
-                    id="email" 
-                    type="email" 
-                    placeholder="name@example.com" 
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="name@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
                   />
                 </div>
@@ -99,7 +147,7 @@ export function GetFreeQuotes() {
               <div className="space-y-2">
                 <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</label>
                 <div className="flex gap-2">
-                  <select 
+                  <select
                     className="w-[110px] px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
                     defaultValue="us"
                   >
@@ -109,10 +157,12 @@ export function GetFreeQuotes() {
                     <option value="de">🇩🇪 +49</option>
                     <option value="ae">🇦🇪 +971</option>
                   </select>
-                  <input 
-                    id="phone" 
-                    type="tel" 
-                    placeholder="Phone number" 
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="Phone number"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="flex-1 px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
                   />
                 </div>
@@ -121,9 +171,10 @@ export function GetFreeQuotes() {
               <div className="space-y-2">
                 <label htmlFor="treatment" className="text-sm font-medium text-gray-700">Treatment Type</label>
                 <div className="relative">
-                  <select 
+                  <select
                     className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
-                    defaultValue=""
+                    value={formData.treatment}
+                    onChange={(e) => setFormData({ ...formData, treatment: e.target.value })}
                   >
                     <option value="" disabled>Select a treatment</option>
                     <option value="implants">Dental Implants</option>
@@ -148,9 +199,10 @@ export function GetFreeQuotes() {
               <div className="space-y-2">
                 <label htmlFor="destination" className="text-sm font-medium text-gray-700">Preferred Destination</label>
                 <div className="relative">
-                  <select 
+                  <select
                     className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
-                    defaultValue=""
+                    value={formData.destination}
+                    onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
                   >
                     <option value="" disabled>Choose a location</option>
                     <option value="cairo">Cairo (Historical & Medical Hub)</option>
@@ -167,22 +219,31 @@ export function GetFreeQuotes() {
 
               <div className="space-y-2">
                 <label htmlFor="notes" className="text-sm font-medium text-gray-700">Brief Description (Optional)</label>
-                <textarea 
-                  id="notes" 
-                  placeholder="Tell us about your needs or any questions you have..." 
-                  className="w-full min-h-[80px] px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors resize-none" 
+                <textarea
+                  id="notes"
+                  placeholder="Tell us about your needs or any questions you have..."
+                  value={formData.notes}
+                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  className="w-full min-h-[80px] px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors resize-none"
                 />
               </div>
 
-              <button type="submit" className="w-full bg-[#E85D4A] hover:bg-[#D44C3A] text-white font-bold py-4 text-lg rounded-xl shadow-lg shadow-[#E85D4A]/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2">
-                Get My Free Quote
-                <ArrowRight className="w-5 h-5" />
+              {error && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                  {error}
+                </div>
+              )}
+
+              <button type="submit" disabled={isSubmitting} className="w-full bg-[#E85D4A] hover:bg-[#D44C3A] text-white font-bold py-4 text-lg rounded-xl shadow-lg shadow-[#E85D4A]/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-60 disabled:hover:scale-100">
+                {isSubmitting ? 'Submitting...' : 'Get My Free Quote'}
+                {!isSubmitting && <ArrowRight className="w-5 h-5" />}
               </button>
 
               <p className="text-xs text-center text-[#0F1923]/50 mt-4">
                 By submitting this form, you agree to our privacy policy. We respect your data.
               </p>
             </form>
+            )}
           </div>
         </div>
       </div>
