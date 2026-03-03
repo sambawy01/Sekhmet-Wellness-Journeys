@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { IconAnkh } from '../components/EgyptianIcons';
+import { submitLead } from '../../lib/supabase';
 
 export const Contact = () => {
   const [formState, setFormState] = useState({
@@ -13,11 +14,28 @@ export const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission
-    setTimeout(() => setIsSubmitted(true), 1000);
+    setIsSubmitting(true);
+    setError('');
+    try {
+      await submitLead({
+        name: formState.name,
+        email: formState.email,
+        phone: formState.phone || undefined,
+        treatment_interest: formState.interest || undefined,
+        message: formState.message || undefined,
+        source_form: 'contact',
+      });
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -141,11 +159,18 @@ export const Contact = () => {
                   />
                 </div>
 
+                {error && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                    {error}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#C5A059] text-white font-bold py-4 rounded-lg hover:bg-[#B08D4B] transition-colors shadow-lg flex items-center justify-center gap-2 group"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#C5A059] text-white font-bold py-4 rounded-lg hover:bg-[#B08D4B] transition-colors shadow-lg flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                  {isSubmitting ? 'Sending...' : 'Send Message'} {!isSubmitting && <Send size={18} className="group-hover:translate-x-1 transition-transform" />}
                 </button>
               </form>
             )}
