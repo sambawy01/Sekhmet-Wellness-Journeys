@@ -31,6 +31,15 @@ import { Fertility } from './pages/Fertility';
 import { Pricing } from './pages/Pricing';
 import { Treatments } from './pages/Treatments';
 
+// Admin CRM Components
+import AdminLogin from './components/admin/AdminLogin';
+import AdminLayout from './components/admin/AdminLayout';
+import Dashboard from './components/admin/Dashboard';
+import LeadsList from './components/admin/LeadsList';
+import LeadDetail from './components/admin/LeadDetail';
+import AdminSettings from './components/admin/AdminSettings';
+import ProtectedRoute from './components/admin/ProtectedRoute';
+
 // ScrollToTop component to reset scroll on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,45 +51,51 @@ function ScrollToTop() {
   return null;
 }
 
+// Website layout wrapper (with Navigation + Footer)
+function WebsiteLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen bg-[#FAF7F2] text-[#2C2825] font-['DM_Sans'] transition-all duration-300">
+      <Navigation />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <LanguageProvider>
         <ScrollToTop />
-        <div className="min-h-screen bg-[#FAF7F2] text-[#2C2825] font-['DM_Sans'] transition-all duration-300">
-          {/* <Toaster position="bottom-left" toastOptions={{
-            style: { background: 'transparent', border: 'none', boxShadow: 'none' },
-          }} /> */}
-          {/* <SocialProofManager /> */}
-          {/* <FloatingWhatsApp /> */}
-          {/* <ExitIntentPopup /> */}
-          
-          <Navigation />
-          
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/treatments" element={<Treatments />} />
-              <Route path="/treatments/dental" element={<DentalCare />} />
-              <Route path="/treatments/dental/implants" element={<DentalImplants />} />
-              <Route path="/treatments/dental/hollywood-smile" element={<HollywoodSmile />} />
-              <Route path="/treatments/fertility" element={<Fertility />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
-              <Route path="/patient-stories" element={<PatientStories />} />
-              <Route path="/doctors" element={<OurDoctors />} />
-              <Route path="/consultation" element={<Consultation />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/travel-guide" element={<TravelGuide />} />
-              <Route path="/blog" element={<BlogListing />} />
-              <Route path="/blog/:slug" element={<BlogArticle />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </main>
+        <Routes>
+          {/* Admin CRM Routes - No Navigation/Footer */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+            <Route index element={<Dashboard />} />
+            <Route path="leads" element={<LeadsList />} />
+            <Route path="leads/:id" element={<LeadDetail />} />
+            <Route path="settings" element={<AdminSettings />} />
+          </Route>
 
-          <Footer />
-        </div>
+          {/* Website Routes - With Navigation + Footer */}
+          <Route path="/" element={<WebsiteLayout><Home /></WebsiteLayout>} />
+          <Route path="/treatments" element={<WebsiteLayout><Treatments /></WebsiteLayout>} />
+          <Route path="/treatments/dental" element={<WebsiteLayout><DentalCare /></WebsiteLayout>} />
+          <Route path="/treatments/dental/implants" element={<WebsiteLayout><DentalImplants /></WebsiteLayout>} />
+          <Route path="/treatments/dental/hollywood-smile" element={<WebsiteLayout><HollywoodSmile /></WebsiteLayout>} />
+          <Route path="/treatments/fertility" element={<WebsiteLayout><Fertility /></WebsiteLayout>} />
+          <Route path="/pricing" element={<WebsiteLayout><Pricing /></WebsiteLayout>} />
+          <Route path="/how-it-works" element={<WebsiteLayout><HowItWorks /></WebsiteLayout>} />
+          <Route path="/patient-stories" element={<WebsiteLayout><PatientStories /></WebsiteLayout>} />
+          <Route path="/doctors" element={<WebsiteLayout><OurDoctors /></WebsiteLayout>} />
+          <Route path="/consultation" element={<WebsiteLayout><Consultation /></WebsiteLayout>} />
+          <Route path="/faq" element={<WebsiteLayout><FAQ /></WebsiteLayout>} />
+          <Route path="/travel-guide" element={<WebsiteLayout><TravelGuide /></WebsiteLayout>} />
+          <Route path="/blog" element={<WebsiteLayout><BlogListing /></WebsiteLayout>} />
+          <Route path="/blog/:slug" element={<WebsiteLayout><BlogArticle /></WebsiteLayout>} />
+          <Route path="/about" element={<WebsiteLayout><About /></WebsiteLayout>} />
+          <Route path="/contact" element={<WebsiteLayout><Contact /></WebsiteLayout>} />
+        </Routes>
       </LanguageProvider>
     </HashRouter>
   );
