@@ -48,6 +48,7 @@ export interface JourneyHistory {
 }
 
 // Helper to submit a lead from any form
+// Note: Journey history is auto-created via database trigger
 export async function submitLead(data: {
   name: string;
   email: string;
@@ -60,7 +61,7 @@ export async function submitLead(data: {
   passport_country?: string;
   source_form: string;
 }) {
-  const { data: lead, error } = await supabase
+  const { error } = await supabase
     .from('leads')
     .insert([{
       name: data.name,
@@ -75,19 +76,7 @@ export async function submitLead(data: {
       source_form: data.source_form,
       status: 'New Inquiry',
       notes: [],
-    }])
-    .select()
-    .single();
+    }]);
 
   if (error) throw error;
-
-  // Also create initial journey history entry
-  await supabase.from('journey_history').insert([{
-    lead_id: lead.id,
-    from_stage: null,
-    to_stage: 'New Inquiry',
-    note: `Lead created from ${data.source_form} form`,
-  }]);
-
-  return lead;
 }
