@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight } from 'lucide-react';
+import { X, ArrowRight, CheckCircle } from 'lucide-react';
 import { IconAnkh } from './EgyptianIcons';
+import { submitLead } from '../../lib/supabase';
 
 export const ExitIntentPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
+  const [popupForm, setPopupForm] = useState({ name: '', email: '', treatment: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
@@ -62,23 +66,58 @@ export const ExitIntentPopup = () => {
                 Get your free personalized quote in 24 hours
               </p>
 
-              <form className="w-full max-w-sm space-y-4 text-left" onSubmit={(e) => { e.preventDefault(); handleClose(); }}>
+              {isSubmitted ? (
+                <div className="w-full max-w-sm text-center py-4">
+                  <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3" />
+                  <p className="font-bold text-[#0F1923] mb-1">Quote Request Sent!</p>
+                  <p className="text-sm text-gray-500">We'll be in touch within 24 hours.</p>
+                </div>
+              ) : (
+              <form className="w-full max-w-sm space-y-4 text-left" onSubmit={async (e) => {
+                e.preventDefault();
+                if (!popupForm.name || !popupForm.email) return;
+                setIsSubmitting(true);
+                try {
+                  await submitLead({
+                    name: popupForm.name,
+                    email: popupForm.email,
+                    treatment_interest: popupForm.treatment || undefined,
+                    source_form: 'exit-intent',
+                  });
+                  setIsSubmitted(true);
+                  setTimeout(handleClose, 2500);
+                } catch {
+                  handleClose();
+                } finally {
+                  setIsSubmitting(false);
+                }
+              }}>
                 <div>
                   <input
                     type="text"
+                    required
                     placeholder="Your Name"
+                    value={popupForm.name}
+                    onChange={(e) => setPopupForm({ ...popupForm, name: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] outline-none transition-all"
                   />
                 </div>
                 <div>
                   <input
                     type="email"
+                    required
                     placeholder="Email Address"
+                    value={popupForm.email}
+                    onChange={(e) => setPopupForm({ ...popupForm, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] outline-none transition-all"
                   />
                 </div>
                 <div>
-                  <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] outline-none transition-all bg-white text-gray-600">
+                  <select
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] outline-none transition-all bg-white text-gray-600"
+                    value={popupForm.treatment}
+                    onChange={(e) => setPopupForm({ ...popupForm, treatment: e.target.value })}
+                  >
                     <option value="">Select Treatment Interest</option>
                     <option value="dental">Dental Care</option>
                     <option value="cosmetic">Cosmetic Surgery</option>
@@ -89,11 +128,13 @@ export const ExitIntentPopup = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#C5A059] text-white font-bold py-3 rounded-lg hover:bg-[#B08D4B] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 duration-200"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#C5A059] text-white font-bold py-3 rounded-lg hover:bg-[#B08D4B] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 duration-200 disabled:opacity-60"
                 >
-                  Get My Quote
+                  {isSubmitting ? 'Sending...' : 'Get My Quote'}
                 </button>
               </form>
+              )}
 
               <div className="mt-6 pt-6 border-t border-gray-100 w-full">
                 <a 
