@@ -187,6 +187,7 @@ export function GetFreeQuotes() {
                     <option value="bariatric">Gastric Sleeve</option>
                     <option value="liposuction">Liposuction</option>
                     <option value="smile">Hollywood Smile</option>
+                    <option value="wisdom">Wisdom Tooth Removal</option>
                     <option value="checkup">Full Health Checkup</option>
                     <option value="other">Other / Not Listed</option>
                   </select>

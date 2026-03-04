@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BadgeDollarSign, ScanFace, Smile, Crown, Sparkles, Activity, FileCheck, Layers } from 'lucide-react';
+import { ArrowRight, BadgeDollarSign, ScanFace, Smile, Crown, Sparkles, Activity, FileCheck, Layers, CircleX } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import { Link } from 'react-router-dom';
@@ -60,6 +60,13 @@ const procedures = [
     price: "$1,200",
     description: "Invisible alternative to traditional braces",
     link: "/treatments/dental/aligners"
+  },
+  {
+    icon: CircleX,
+    title: "Wisdom Tooth Removal",
+    price: "$80",
+    description: "Safe surgical extraction of impacted or problematic wisdom teeth",
+    link: "/treatments/dental"
   }
 ];
 

@@ -50,6 +50,24 @@ const treatments = [
     savings: "75%"
   },
   {
+    id: "wisdom",
+    name: "Wisdom Tooth Removal",
+    category: "Dental",
+    tagline: "Safe extraction of problematic wisdom teeth",
+    price: "From $80",
+    description: "Surgical removal of impacted, partially erupted, or problematic wisdom teeth using modern techniques for minimal discomfort and fast recovery.",
+    includes: ["Consultation", "Panoramic X-ray", "Local anesthesia", "Surgical extraction", "Sutures", "Post-op care kit"],
+    pricing: [
+      { item: "Simple Extraction", price: "$80 – $150" },
+      { item: "Surgical Extraction (impacted)", price: "$150 – $300" }
+    ],
+    recovery: "2–3 days",
+    duration: "30–60 minutes",
+    icon: Activity,
+    color: "bg-blue-100 text-blue-700",
+    savings: "75%"
+  },
+  {
     id: "hair",
     name: "Hair Transplant (FUE)",
     category: "Hair",

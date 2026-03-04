@@ -22,7 +22,7 @@ const treatments = [
 ];
 
 const procedures = {
-  dental: ['Implants', 'Veneers', 'Hollywood Smile', 'Whitening'],
+  dental: ['Implants', 'Veneers', 'Hollywood Smile', 'Whitening', 'Wisdom Tooth Removal'],
   vision: ['LASIK', 'Cataract', 'Retina', 'Glaucoma'],
   cosmetic: ['Rhinoplasty', 'Liposuction', 'Breast Augmentation', 'Facelift'],
   checkups: ['Full Body', 'Cancer Screening', 'Heart Health', 'Executive Checkup'],

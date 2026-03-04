@@ -171,7 +171,8 @@ export const Navigation: React.FC = () => {
                   { name: "Hollywood Smile", path: "/treatments/dental/hollywood-smile" },
                   { name: "Dental Implants", path: "/treatments/dental/implants" },
                   { name: "Veneers", path: "/treatments/dental/hollywood-smile" },
-                  { name: "Full Mouth Rehab", path: "/treatments/dental" }
+                  { name: "Full Mouth Rehab", path: "/treatments/dental" },
+                  { name: "Wisdom Tooth Removal", path: "/treatments/dental" }
                 ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
