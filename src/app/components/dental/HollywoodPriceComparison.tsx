@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Button } from '../ui/button';
 
 const prices = [
-  { procedure: "Emax Veneer (Per Tooth)", egypt: 200, uk: 950, us: 1500, turkey: 250 },
-  { procedure: "Porcelain Veneer (Per Tooth)", egypt: 180, uk: 850, us: 1200, turkey: 220 },
-  { procedure: "Lumineer (No-Prep)", egypt: 350, uk: 1100, us: 1800, turkey: 450 },
-  { procedure: "Composite Bonding (Per Tooth)", egypt: 80, uk: 350, us: 500, turkey: 120 },
-  { procedure: "Laser Teeth Whitening", egypt: 150, uk: 500, us: 600, turkey: 200 }
+  { procedure: "Emax Veneer (Per Tooth)", egypt: 200, uk: 950, us: 1500 },
+  { procedure: "Porcelain Veneer (Per Tooth)", egypt: 180, uk: 850, us: 1200 },
+  { procedure: "Lumineer (No-Prep)", egypt: 350, uk: 1100, us: 1800 },
+  { procedure: "Composite Bonding (Per Tooth)", egypt: 80, uk: 350, us: 500 },
+  { procedure: "Laser Teeth Whitening", egypt: 150, uk: 500, us: 600 }
 ];
 
 export function HollywoodPriceComparison() {
@@ -31,14 +31,13 @@ export function HollywoodPriceComparison() {
         </div>
 
         <div className="overflow-x-auto rounded-xl shadow-lg border border-[#C5A059]/20 bg-white">
-          <table className="w-full min-w-[700px]">
+          <table className="w-full min-w-[600px]">
             <thead className="bg-[#F0F7F4]">
               <tr>
                 <th className="p-4 text-left font-bold text-[#0F172A]">Procedure</th>
                 <th className="p-4 text-center font-bold text-[#14B8A6] bg-[#E8F3F1]">Egypt</th>
                 <th className="p-4 text-center font-medium text-[#0F172A]/60">UK</th>
                 <th className="p-4 text-center font-medium text-[#0F172A]/60">US</th>
-                <th className="p-4 text-center font-medium text-[#0F172A]/60">Turkey</th>
               </tr>
             </thead>
             <tbody>
@@ -48,7 +47,6 @@ export function HollywoodPriceComparison() {
                   <td className="p-4 text-center font-bold text-[#14B8A6] bg-[#E8F3F1]/30">{currencySymbols[currency]}{convert(row.egypt)}</td>
                   <td className="p-4 text-center text-[#0F172A]/60 line-through decoration-red-500/30">{currencySymbols[currency]}{convert(row.uk)}</td>
                   <td className="p-4 text-center text-[#0F172A]/60 line-through decoration-red-500/30">{currencySymbols[currency]}{convert(row.us)}</td>
-                  <td className="p-4 text-center text-[#0F172A]/60">{currencySymbols[currency]}{convert(row.turkey)}</td>
                 </tr>
               ))}
             </tbody>
