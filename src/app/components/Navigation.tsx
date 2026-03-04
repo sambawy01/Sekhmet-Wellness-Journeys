@@ -76,13 +76,14 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <header 
+      <header
         className={cn(
           "fixed top-0 left-0 w-full z-40 transition-all duration-300",
           isScrolled
             ? "bg-[#1A2332] shadow-lg border-b border-[#0D9488]/30 py-3"
             : "bg-[#1A2332]/90 backdrop-blur-sm py-6"
         )}
+        onMouseLeave={() => setIsMegaMenuOpen(false)}
       >
         <div className="container mx-auto px-6 max-w-[1400px] flex justify-between items-center h-[60px]">
           
@@ -102,8 +103,8 @@ export const Navigation: React.FC = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-10 h-full" onMouseLeave={() => setIsMegaMenuOpen(false)}>
-            <div 
+          <nav className="hidden md:flex items-center gap-10 h-full">
+            <div
               className="h-full flex items-center"
               onMouseEnter={() => setIsMegaMenuOpen(true)}
             >
@@ -111,12 +112,12 @@ export const Navigation: React.FC = () => {
                 <NavItem label={t("nav.treatments")} hasDropdown isActive={isMegaMenuOpen} />
               </Link>
             </div>
-            <Link to="/how-it-works" className="h-full flex items-center"><NavItem label={t("nav.howItWorks")} /></Link>
-            <Link to="/pricing" className="h-full flex items-center"><NavItem label="Pricing" /></Link>
-            <Link to="/doctors" className="h-full flex items-center"><NavItem label={t("nav.doctors")} /></Link>
-            <Link to="/patient-stories" className="h-full flex items-center"><NavItem label={t("nav.stories")} /></Link>
-            <Link to="/travel-guide" className="h-full flex items-center"><NavItem label={t("nav.travelGuide")} /></Link>
-            <Link to="/faq" className="h-full flex items-center"><NavItem label={t("nav.faq")} /></Link>
+            <Link to="/how-it-works" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.howItWorks")} /></Link>
+            <Link to="/pricing" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label="Pricing" /></Link>
+            <Link to="/doctors" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.doctors")} /></Link>
+            <Link to="/patient-stories" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.stories")} /></Link>
+            <Link to="/travel-guide" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.travelGuide")} /></Link>
+            <Link to="/faq" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.faq")} /></Link>
           </nav>
 
           {/* CTA & Actions */}
