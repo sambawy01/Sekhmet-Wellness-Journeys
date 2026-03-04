@@ -45,7 +45,7 @@ const doctors = [
     name: "Dr. Omar Farouk",
     specialty: "Vision",
     title: "Ophthalmologist",
-    image: "https://images.unsplash.com/photo-1748200100041-3d815ae01dd1?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1762066436595-67edb4610539?auto=format&fit=crop&q=80&w=800",
     credentials: ["FRCOphth (UK)", "LASIK Expert", "18+ Years Experience"],
     affiliation: "Vision Correction Center"
   },
@@ -72,7 +72,7 @@ const doctors = [
     name: "Dr. Nadia Ezzat",
     specialty: "Checkups",
     title: "Cardiologist",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1659353888906-adb3e0041693?auto=format&fit=crop&q=80&w=800",
     credentials: ["FACC (USA)", "Interventional Cardio", "22+ Years Experience"],
     affiliation: "Heart Care Center"
   }
