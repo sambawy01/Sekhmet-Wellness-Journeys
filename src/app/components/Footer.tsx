@@ -31,12 +31,15 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="text-[#0D9488] w-10 h-10 flex items-center justify-center border-2 border-[#0D9488] rounded-full p-2">
-                <IconAnkh className="w-full h-full" />
+              <img src="/logo-icon.svg" alt="Sekhmet" className="w-10 h-10" />
+              <div className="flex flex-col leading-none">
+                <span className="font-['Outfit'] font-bold text-2xl tracking-wide text-[#C5A059]">
+                  SEKHMET
+                </span>
+                <span className="font-['Outfit'] text-[10px] text-[#C5A059]/60 uppercase tracking-[0.2em]">
+                  Wellness Journeys
+                </span>
               </div>
-              <span className="font-['Outfit'] font-bold text-2xl tracking-wide text-white">
-                SEKHMET
-              </span>
             </div>
             
             <p className="font-['Outfit'] italic text-[14px] text-[#F8FAFB]">

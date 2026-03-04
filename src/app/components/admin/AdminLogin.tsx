@@ -31,10 +31,10 @@ export default function AdminLogin() {
       <div className="w-full max-w-md">
         {/* Logo / Brand */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#0D9488]/20 mb-4">
-            <Shield className="w-8 h-8 text-[#0D9488]" />
+          <div className="inline-flex items-center justify-center w-20 h-20 mb-4">
+            <img src="/logo-icon.svg" alt="Sekhmet" className="w-full h-full" />
           </div>
-          <h1 className="text-2xl font-bold text-white">Sekhmet CRM</h1>
+          <h1 className="text-2xl font-bold text-[#C5A059]">Sekhmet CRM</h1>
           <p className="text-[#64748B] mt-1">Admin Dashboard</p>
         </div>
 

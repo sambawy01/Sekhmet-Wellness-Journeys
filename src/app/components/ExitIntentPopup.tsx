@@ -55,8 +55,8 @@ export const ExitIntentPopup = () => {
             </button>
 
             <div className="relative z-10 p-8 flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-[#F0F7F4] rounded-full flex items-center justify-center mb-6 text-[#C5A059]">
-                <IconAnkh className="w-6 h-6" />
+              <div className="w-14 h-14 mb-6">
+                <img src="/logo-icon.svg" alt="Sekhmet" className="w-full h-full" />
               </div>
 
               <h2 className="font-playfair text-3xl text-[#0F172A] mb-2">

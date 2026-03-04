@@ -89,14 +89,12 @@ export const Navigation: React.FC = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 z-50">
-            <div className="text-[#0D9488] w-10 h-10 flex items-center justify-center border-2 border-[#0D9488] rounded-full p-2">
-              <IconAnkh className="w-full h-full" />
-            </div>
+            <img src="/logo-icon.svg" alt="Sekhmet" className="w-10 h-10" />
             <div className="flex flex-col leading-none">
-              <span className="font-['Outfit'] font-bold text-[22px] text-white tracking-wide">
+              <span className="font-['Outfit'] font-bold text-[22px] text-[#C5A059] tracking-wide">
                 SEKHMET
               </span>
-              <span className="font-['Outfit'] text-[10px] text-[#64748B] uppercase tracking-[0.2em] ml-1">
+              <span className="font-['Outfit'] text-[10px] text-[#C5A059]/60 uppercase tracking-[0.2em] ml-1">
                 Wellness Journeys
               </span>
             </div>
