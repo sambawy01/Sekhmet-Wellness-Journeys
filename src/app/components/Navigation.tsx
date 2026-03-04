@@ -79,9 +79,9 @@ export const Navigation: React.FC = () => {
       <header 
         className={cn(
           "fixed top-0 left-0 w-full z-40 transition-all duration-300",
-          isScrolled 
-            ? "bg-[#1A2332] shadow-lg border-b border-[#0D9488]/30 py-3" 
-            : "bg-transparent py-6"
+          isScrolled
+            ? "bg-[#1A2332] shadow-lg border-b border-[#0D9488]/30 py-3"
+            : "bg-[#1A2332]/90 backdrop-blur-sm py-6"
         )}
       >
         <div className="container mx-auto px-6 max-w-[1400px] flex justify-between items-center h-[60px]">
