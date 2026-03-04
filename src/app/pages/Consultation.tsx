@@ -79,17 +79,17 @@ export function Consultation() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-[#F5F0E5] flex items-center justify-center p-6 pt-24">
+      <div className="min-h-screen bg-[#F0F7F4] flex items-center justify-center p-6 pt-24">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="bg-white p-12 rounded-2xl shadow-xl max-w-2xl text-center border-t-4 border-[#C5A059]"
         >
-          <div className="w-24 h-24 bg-[#1B7A6E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-             <CheckCircle className="w-12 h-12 text-[#1B7A6E]" />
+          <div className="w-24 h-24 bg-[#14B8A6]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+             <CheckCircle className="w-12 h-12 text-[#14B8A6]" />
           </div>
-          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F1923] mb-4">Request Received!</h2>
-          <p className="font-['DM_Sans'] text-xl text-[#0F1923]/70 mb-8">
+          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">Request Received!</h2>
+          <p className="font-['Outfit'] text-xl text-[#0F172A]/70 mb-8">
             Thank you, {formData.name}. Your personal medical coordinator will contact you within 24 hours via {formData.contactMethod}.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -99,7 +99,7 @@ export function Consultation() {
                 <ArrowRight className="w-4 h-4" />
               </a>
             </Button>
-            <Button asChild variant="outline" className="border-[#0F1923]/20 rounded-full px-8 py-4">
+            <Button asChild variant="outline" className="border-[#0F172A]/20 rounded-full px-8 py-4">
               <Link to="/">Back to Home</Link>
             </Button>
           </div>
@@ -109,14 +109,14 @@ export function Consultation() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F0E5] pt-20 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#F0F7F4] pt-20 flex flex-col md:flex-row">
       {/* Left Side - Form */}
       <div className="w-full md:w-3/5 p-6 md:p-12 lg:p-16 flex flex-col">
         <div className="mb-8">
-          <h1 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0F1923] mb-2">
+          <h1 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0F172A] mb-2">
             Start Your Journey
           </h1>
-          <p className="font-['DM_Sans'] text-[#0F1923]/60">
+          <p className="font-['Outfit'] text-[#0F172A]/60">
             Tell us about your needs and get a personalized quote.
           </p>
         </div>
@@ -128,14 +128,14 @@ export function Consultation() {
               <div 
                 key={step.id}
                 className={`text-xs font-bold uppercase tracking-wider ${
-                  step.id <= currentStep ? 'text-[#C5A059]' : 'text-[#0F1923]/20'
+                  step.id <= currentStep ? 'text-[#C5A059]' : 'text-[#0F172A]/20'
                 }`}
               >
                 {step.title}
               </div>
             ))}
           </div>
-          <div className="h-1 bg-[#0F1923]/10 w-full rounded-full overflow-hidden">
+          <div className="h-1 bg-[#0F172A]/10 w-full rounded-full overflow-hidden">
             <motion.div 
               className="h-full bg-[#C5A059]"
               initial={{ width: 0 }}
@@ -165,12 +165,12 @@ export function Consultation() {
                     }}
                     className={`p-6 rounded-xl border-2 text-left transition-all hover:shadow-md ${
                       formData.treatment === t.id 
-                        ? 'border-[#C5A059] bg-[#FAF6EF]' 
-                        : 'border-[#0F1923]/10 bg-white hover:border-[#C5A059]/50'
+                        ? 'border-[#C5A059] bg-[#F0F7F4]' 
+                        : 'border-[#0F172A]/10 bg-white hover:border-[#C5A059]/50'
                     }`}
                   >
                     <span className="text-3xl mb-2 block">{t.icon}</span>
-                    <span className="font-bold text-[#0F1923]">{t.name}</span>
+                    <span className="font-bold text-[#0F172A]">{t.name}</span>
                   </button>
                 ))}
               </motion.div>
@@ -195,15 +195,15 @@ export function Consultation() {
                       }}
                       className={`p-4 rounded-xl border-2 text-left transition-all ${
                         formData.procedure === proc 
-                          ? 'border-[#C5A059] bg-[#FAF6EF]' 
-                          : 'border-[#0F1923]/10 bg-white hover:border-[#C5A059]/50'
+                          ? 'border-[#C5A059] bg-[#F0F7F4]' 
+                          : 'border-[#0F172A]/10 bg-white hover:border-[#C5A059]/50'
                       }`}
                     >
-                      <span className="font-medium text-[#0F1923]">{proc}</span>
+                      <span className="font-medium text-[#0F172A]">{proc}</span>
                     </button>
                   ))}
                 </div>
-                <button onClick={prevStep} className="text-[#0F1923]/50 hover:text-[#0F1923] mt-4 flex items-center gap-2">
+                <button onClick={prevStep} className="text-[#0F172A]/50 hover:text-[#0F172A] mt-4 flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" /> Back
                 </button>
               </motion.div>
@@ -216,16 +216,16 @@ export function Consultation() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
               >
-                <div className="border-2 border-dashed border-[#C5A059]/50 rounded-xl p-10 text-center bg-[#FAF6EF] hover:bg-[#F5F0E5] transition-colors cursor-pointer group">
+                <div className="border-2 border-dashed border-[#C5A059]/50 rounded-xl p-10 text-center bg-[#F0F7F4] hover:bg-[#F0F7F4] transition-colors cursor-pointer group">
                   <Upload className="w-10 h-10 text-[#C5A059] mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="font-bold text-[#0F1923] mb-2">Upload Medical Records or Photos</p>
-                  <p className="text-[#0F1923]/50 text-sm mb-6">Drag and drop files here, or click to browse (Optional)</p>
+                  <p className="font-bold text-[#0F172A] mb-2">Upload Medical Records or Photos</p>
+                  <p className="text-[#0F172A]/50 text-sm mb-6">Drag and drop files here, or click to browse (Optional)</p>
                   <Button variant="outline" className="border-[#C5A059] text-[#C5A059]">Choose Files</Button>
                 </div>
                 
                 <div className="flex justify-between mt-8">
                   <Button variant="ghost" onClick={prevStep}>Back</Button>
-                  <Button onClick={nextStep} className="bg-[#0F1923] text-white">Skip / Continue</Button>
+                  <Button onClick={nextStep} className="bg-[#0F172A] text-white">Skip / Continue</Button>
                 </div>
               </motion.div>
             )}
@@ -239,10 +239,10 @@ export function Consultation() {
                 className="space-y-6"
               >
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0F1923]">Full Name</label>
+                  <label className="text-sm font-bold text-[#0F172A]">Full Name</label>
                   <input 
                     type="text" 
-                    className="w-full p-4 rounded-xl border border-[#0F1923]/10 bg-white focus:outline-none focus:border-[#C5A059]"
+                    className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
                     placeholder="Enter your full name"
                     value={formData.name}
                     onChange={(e) => updateForm('name', e.target.value)}
@@ -250,20 +250,20 @@ export function Consultation() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0F1923]">Email</label>
+                    <label className="text-sm font-bold text-[#0F172A]">Email</label>
                     <input 
                       type="email" 
-                      className="w-full p-4 rounded-xl border border-[#0F1923]/10 bg-white focus:outline-none focus:border-[#C5A059]"
+                      className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
                       placeholder="name@example.com"
                       value={formData.email}
                       onChange={(e) => updateForm('email', e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0F1923]">Phone</label>
+                    <label className="text-sm font-bold text-[#0F172A]">Phone</label>
                     <input 
                       type="tel" 
-                      className="w-full p-4 rounded-xl border border-[#0F1923]/10 bg-white focus:outline-none focus:border-[#C5A059]"
+                      className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
                       placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => updateForm('phone', e.target.value)}
@@ -272,15 +272,15 @@ export function Consultation() {
                 </div>
                 
                 <div className="space-y-2">
-                   <label className="text-sm font-bold text-[#0F1923]">Preferred Contact Method</label>
+                   <label className="text-sm font-bold text-[#0F172A]">Preferred Contact Method</label>
                    <div className="flex gap-2">
                      {['whatsapp', 'email', 'phone'].map((method) => (
                        <label 
                          key={method} 
                          className={`flex-1 flex items-center justify-center gap-2 cursor-pointer py-3 px-4 rounded-full border transition-all ${
                            formData.contactMethod === method 
-                             ? 'bg-[#0F1923] text-white border-[#0F1923]' 
-                             : 'bg-white text-[#0F1923] border-[#0F1923]/10 hover:border-[#C5A059]'
+                             ? 'bg-[#0F172A] text-white border-[#0F172A]' 
+                             : 'bg-white text-[#0F172A] border-[#0F172A]/10 hover:border-[#C5A059]'
                          }`}
                        >
                          <input 
@@ -301,7 +301,7 @@ export function Consultation() {
                   <Button variant="ghost" onClick={prevStep}>Back</Button>
                   <Button 
                     onClick={nextStep} 
-                    className="bg-[#0F1923] text-white"
+                    className="bg-[#0F172A] text-white"
                     disabled={!formData.name || !formData.email}
                   >
                     Continue
@@ -319,19 +319,19 @@ export function Consultation() {
                 className="space-y-6"
               >
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0F1923]">Preferred Travel Dates</label>
+                  <label className="text-sm font-bold text-[#0F172A]">Preferred Travel Dates</label>
                   <input 
                     type="date" 
-                    className="w-full p-4 rounded-xl border border-[#0F1923]/10 bg-white focus:outline-none focus:border-[#C5A059]"
+                    className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
                     value={formData.dateRange}
                     onChange={(e) => updateForm('dateRange', e.target.value)}
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0F1923]">Additional Notes</label>
+                  <label className="text-sm font-bold text-[#0F172A]">Additional Notes</label>
                   <textarea 
-                    className="w-full p-4 rounded-xl border border-[#0F1923]/10 bg-white h-32 focus:outline-none focus:border-[#C5A059]"
+                    className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white h-32 focus:outline-none focus:border-[#C5A059]"
                     placeholder="Tell us about your medical history or specific requirements..."
                     value={formData.notes}
                     onChange={(e) => updateForm('notes', e.target.value)}
@@ -361,7 +361,7 @@ export function Consultation() {
       </div>
 
       {/* Right Side - Trust Content */}
-      <div className="hidden md:block w-2/5 bg-[#0F1923] text-white p-12 lg:p-16 relative overflow-hidden">
+      <div className="hidden md:block w-2/5 bg-[#0F172A] text-white p-12 lg:p-16 relative overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
         

@@ -40,7 +40,7 @@ export const CostCalculatorWidget = () => {
        {/* Background decorative elements */}
        <div className="absolute top-0 right-0 w-24 h-24 bg-[#C5A059] opacity-5 rounded-bl-full -mr-4 -mt-4"></div>
 
-      <h3 className="text-lg font-bold text-[#0F1923] mb-4 font-sans relative z-10">
+      <h3 className="text-lg font-bold text-[#0F172A] mb-4 font-sans relative z-10">
         Calculate Your Savings
       </h3>
 
@@ -50,7 +50,7 @@ export const CostCalculatorWidget = () => {
           <select 
             value={selectedProcedure}
             onChange={(e) => setSelectedProcedure(e.target.value)}
-            className="w-full p-2.5 bg-white border border-gray-200 rounded-lg text-[#0F1923] font-medium focus:border-[#C5A059] focus:outline-none focus:ring-1 focus:ring-[#C5A059] cursor-pointer"
+            className="w-full p-2.5 bg-white border border-gray-200 rounded-lg text-[#0F172A] font-medium focus:border-[#C5A059] focus:outline-none focus:ring-1 focus:ring-[#C5A059] cursor-pointer"
           >
             {Object.keys(prices).map(proc => (
               <option key={proc} value={proc}>{proc}</option>
@@ -63,7 +63,7 @@ export const CostCalculatorWidget = () => {
           <select 
             value={selectedCountry}
             onChange={(e) => setSelectedCountry(e.target.value)}
-            className="w-full p-2.5 bg-white border border-gray-200 rounded-lg text-[#0F1923] font-medium focus:border-[#C5A059] focus:outline-none focus:ring-1 focus:ring-[#C5A059] cursor-pointer"
+            className="w-full p-2.5 bg-white border border-gray-200 rounded-lg text-[#0F172A] font-medium focus:border-[#C5A059] focus:outline-none focus:ring-1 focus:ring-[#C5A059] cursor-pointer"
           >
             <option value="UK">United Kingdom</option>
             <option value="US">United States</option>

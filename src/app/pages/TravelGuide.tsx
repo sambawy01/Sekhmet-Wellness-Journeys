@@ -21,7 +21,7 @@ const weatherData = [
 
 export function TravelGuide() {
   return (
-    <div className="pt-20 bg-[#FAF6EF] min-h-screen">
+    <div className="pt-20 bg-[#F0F7F4] min-h-screen">
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -30,8 +30,8 @@ export function TravelGuide() {
             alt="Airplane view over Egypt" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#0F1923]/40 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6EF] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#0F172A]/40 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#F0F7F4] via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 text-center px-6">
@@ -46,7 +46,7 @@ export function TravelGuide() {
             <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
               Your Travel Guide
             </h1>
-            <p className="font-['DM_Sans'] text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
+            <p className="font-['Outfit'] text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
               Everything you need to prepare for a seamless medical journey to Egypt.
             </p>
           </motion.div>
@@ -55,12 +55,12 @@ export function TravelGuide() {
 
       {/* Quick Navigation / Download */}
       <section className="container mx-auto px-6 -mt-16 relative z-20 mb-20">
-        <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#0F1923]/5 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#0F172A]/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F1923]">Download the Full Guide</h3>
-            <p className="text-[#0F1923]/60">Get our comprehensive 40-page PDF with detailed checklists.</p>
+            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A]">Download the Full Guide</h3>
+            <p className="text-[#0F172A]/60">Get our comprehensive 40-page PDF with detailed checklists.</p>
           </div>
-          <Button className="bg-[#0F1923] hover:bg-[#C5A059] text-white px-8 py-6 rounded-full text-lg transition-all flex items-center gap-2">
+          <Button className="bg-[#0F172A] hover:bg-[#C5A059] text-white px-8 py-6 rounded-full text-lg transition-all flex items-center gap-2">
             <Download className="w-5 h-5" />
             Download PDF Guide
           </Button>
@@ -74,10 +74,10 @@ export function TravelGuide() {
             <div className="bg-[#C5A059]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
               <Globe className="w-8 h-8 text-[#C5A059]" />
             </div>
-            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F1923] mb-6">
+            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-6">
               Visa Information
             </h2>
-            <p className="text-[#0F1923]/70 mb-8 text-lg leading-relaxed">
+            <p className="text-[#0F172A]/70 mb-8 text-lg leading-relaxed">
               Most medical tourists can obtain an e-visa before travel or a visa on arrival. For specific treatments requiring longer stays, we assist with medical entry visas.
             </p>
             <ul className="space-y-4">
@@ -89,15 +89,15 @@ export function TravelGuide() {
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-[#C5A059] mt-1 flex-shrink-0" />
-                  <span className="text-[#0F1923] font-medium">{item}</span>
+                  <span className="text-[#0F172A] font-medium">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-[#0F1923]/5 rotate-2 hover:rotate-0 transition-transform duration-500">
-            <div className="border-2 border-dashed border-[#0F1923]/10 rounded-xl p-6">
-              <h3 className="font-bold text-xl mb-4 text-[#0F1923]">E-Visa Application Steps</h3>
-              <ol className="space-y-4 list-decimal list-inside text-[#0F1923]/70">
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-[#0F172A]/5 rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="border-2 border-dashed border-[#0F172A]/10 rounded-xl p-6">
+              <h3 className="font-bold text-xl mb-4 text-[#0F172A]">E-Visa Application Steps</h3>
+              <ol className="space-y-4 list-decimal list-inside text-[#0F172A]/70">
                 <li>Visit visa2egypt.gov.eg</li>
                 <li>Create an account and fill the application</li>
                 <li>Upload passport bio page</li>
@@ -109,16 +109,16 @@ export function TravelGuide() {
         </section>
 
         {/* Packing List */}
-        <section className="bg-white rounded-3xl p-12 shadow-sm border border-[#0F1923]/5">
+        <section className="bg-white rounded-3xl p-12 shadow-sm border border-[#0F172A]/5">
           <div className="flex flex-col md:flex-row gap-12">
             <div className="md:w-1/3">
               <div className="bg-[#C5A059]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                 <Luggage className="w-8 h-8 text-[#C5A059]" />
               </div>
-              <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F1923] mb-4">
+              <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">
                 What to Pack
               </h2>
-              <p className="text-[#0F1923]/60">
+              <p className="text-[#0F172A]/60">
                 Besides your usual travel essentials, don't forget these important items for your medical trip.
               </p>
             </div>
@@ -127,7 +127,7 @@ export function TravelGuide() {
                 <h3 className="font-bold text-lg mb-4 text-[#C5A059]">Medical Essentials</h3>
                 <ul className="space-y-3">
                   {["All current medical records", "List of current medications", "Comfortable loose clothing", "Slip-on shoes for easy removal"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-[#0F1923]/80">
+                    <li key={i} className="flex items-center gap-2 text-[#0F172A]/80">
                       <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full" />
                       {item}
                     </li>
@@ -138,7 +138,7 @@ export function TravelGuide() {
                 <h3 className="font-bold text-lg mb-4 text-[#C5A059]">Documents</h3>
                 <ul className="space-y-3">
                   {["Passport & Visa copies", "Flight tickets", "Insurance policy number", "Emergency contact list"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-[#0F1923]/80">
+                    <li key={i} className="flex items-center gap-2 text-[#0F172A]/80">
                       <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full" />
                       {item}
                     </li>
@@ -152,22 +152,22 @@ export function TravelGuide() {
         {/* Weather Guide */}
         <section>
           <div className="text-center mb-12">
-            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F1923] mb-4">
+            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">
               Weather Guide
             </h2>
-            <p className="text-[#0F1923]/60 max-w-2xl mx-auto">
+            <p className="text-[#0F172A]/60 max-w-2xl mx-auto">
               Egypt enjoys a sunny climate year-round. Use this chart to plan your wardrobe.
             </p>
           </div>
           
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-[#0F1923]/5 h-[400px]">
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-[#0F172A]/5 h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={weatherData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#eee" vertical={false} />
-                <XAxis dataKey="name" stroke="#0F1923" tick={{ fill: '#0F1923', opacity: 0.5 }} tickLine={false} axisLine={false} />
-                <YAxis stroke="#0F1923" tick={{ fill: '#0F1923', opacity: 0.5 }} tickLine={false} axisLine={false} unit="°C" />
+                <XAxis dataKey="name" stroke="#0F172A" tick={{ fill: '#0F172A', opacity: 0.5 }} tickLine={false} axisLine={false} />
+                <YAxis stroke="#0F172A" tick={{ fill: '#0F172A', opacity: 0.5 }} tickLine={false} axisLine={false} unit="°C" />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#0F1923', border: 'none', borderRadius: '8px', color: 'white' }}
+                  contentStyle={{ backgroundColor: '#0F172A', border: 'none', borderRadius: '8px', color: 'white' }}
                   itemStyle={{ color: '#C5A059' }}
                 />
                 <Line 
@@ -185,23 +185,23 @@ export function TravelGuide() {
              <div className="bg-white p-6 rounded-xl text-center">
                <Sun className="w-8 h-8 text-[#C5A059] mx-auto mb-3" />
                <h4 className="font-bold mb-2">Summer (Jun-Aug)</h4>
-               <p className="text-sm text-[#0F1923]/60">Hot & Dry. Pack light cottons, sunscreen, and hats.</p>
+               <p className="text-sm text-[#0F172A]/60">Hot & Dry. Pack light cottons, sunscreen, and hats.</p>
              </div>
              <div className="bg-white p-6 rounded-xl text-center">
                <CloudSun className="w-8 h-8 text-[#C5A059] mx-auto mb-3" />
                <h4 className="font-bold mb-2">Spring/Autumn</h4>
-               <p className="text-sm text-[#0F1923]/60">Perfect weather. Light layers for evenings.</p>
+               <p className="text-sm text-[#0F172A]/60">Perfect weather. Light layers for evenings.</p>
              </div>
              <div className="bg-white p-6 rounded-xl text-center">
                <Moon className="w-8 h-8 text-[#C5A059] mx-auto mb-3" />
                <h4 className="font-bold mb-2">Winter (Dec-Feb)</h4>
-               <p className="text-sm text-[#0F1923]/60">Mild days, cool nights. Bring a jacket.</p>
+               <p className="text-sm text-[#0F172A]/60">Mild days, cool nights. Bring a jacket.</p>
              </div>
           </div>
         </section>
 
         {/* Arrival Guide */}
-        <section className="bg-[#0F1923] text-white rounded-3xl p-12 overflow-hidden relative">
+        <section className="bg-[#0F172A] text-white rounded-3xl p-12 overflow-hidden relative">
           <div className="relative z-10">
             <h2 className="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">
               What to Expect on Arrival
@@ -234,22 +234,22 @@ export function TravelGuide() {
               Emergency Numbers
             </h3>
             <div className="space-y-4">
-              <div className="flex justify-between items-center border-b border-[#0F1923]/10 pb-2">
-                <span className="text-[#0F1923]/70">Ambulance</span>
-                <span className="font-mono font-bold text-[#0F1923]">123</span>
+              <div className="flex justify-between items-center border-b border-[#0F172A]/10 pb-2">
+                <span className="text-[#0F172A]/70">Ambulance</span>
+                <span className="font-mono font-bold text-[#0F172A]">123</span>
               </div>
-              <div className="flex justify-between items-center border-b border-[#0F1923]/10 pb-2">
-                <span className="text-[#0F1923]/70">Tourist Police</span>
-                <span className="font-mono font-bold text-[#0F1923]">126</span>
+              <div className="flex justify-between items-center border-b border-[#0F172A]/10 pb-2">
+                <span className="text-[#0F172A]/70">Tourist Police</span>
+                <span className="font-mono font-bold text-[#0F172A]">126</span>
               </div>
               <div className="flex justify-between items-center pb-2">
-                <span className="text-[#0F1923]/70">General Emergency</span>
-                <span className="font-mono font-bold text-[#0F1923]">112</span>
+                <span className="text-[#0F172A]/70">General Emergency</span>
+                <span className="font-mono font-bold text-[#0F172A]">112</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#1B7A6E] p-8 rounded-2xl text-white shadow-lg flex flex-col justify-center">
+          <div className="bg-[#14B8A6] p-8 rounded-2xl text-white shadow-lg flex flex-col justify-center">
             <h3 className="font-bold text-xl mb-4 flex items-center gap-3">
               <Phone className="w-6 h-6" />
               Sekhmet 24/7 Hotline

@@ -86,7 +86,7 @@ export function PriceComparison() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-4"
+            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             Compare Prices
           </motion.h2>
@@ -95,7 +95,7 @@ export function PriceComparison() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['DM_Sans'] text-lg text-[#0F1923]/60 max-w-2xl mx-auto mb-8"
+            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto mb-8"
           >
             See exactly how much you can save by choosing Sekhmet Wellness for your dental care.
           </motion.p>
@@ -110,7 +110,7 @@ export function PriceComparison() {
                   "rounded-full px-6 transition-all duration-300",
                   currency === curr 
                     ? "bg-[#C5A059] text-white hover:bg-[#B08D45] border-transparent" 
-                    : "border-[#C5A059]/30 text-[#0F1923] hover:border-[#C5A059] hover:text-[#C5A059]"
+                    : "border-[#C5A059]/30 text-[#0F172A] hover:border-[#C5A059] hover:text-[#C5A059]"
                 )}
               >
                 {curr}
@@ -122,13 +122,13 @@ export function PriceComparison() {
         <div className="overflow-x-auto rounded-xl border border-[#C5A059]/20 shadow-lg">
           <table className="w-full min-w-[800px] border-collapse bg-white">
             <thead>
-              <tr className="bg-[#FAF6EF]">
-                <th className="p-4 text-left font-['Playfair_Display'] text-xl font-bold text-[#0F1923] border-b border-[#C5A059]/20 w-1/4 sticky left-0 bg-[#FAF6EF] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">Procedure</th>
-                <th className="p-4 text-center font-['DM_Sans'] text-lg font-bold text-[#1B7A6E] bg-[#E8F3F1] border-b border-[#1B7A6E]/20 w-1/6">Egypt (Sekhmet)</th>
-                <th className="p-4 text-center font-['DM_Sans'] text-lg font-medium text-[#0F1923]/60 border-b border-[#C5A059]/20 w-1/6">UK</th>
-                <th className="p-4 text-center font-['DM_Sans'] text-lg font-medium text-[#0F1923]/60 border-b border-[#C5A059]/20 w-1/6">US</th>
-                <th className="p-4 text-center font-['DM_Sans'] text-lg font-medium text-[#0F1923]/60 border-b border-[#C5A059]/20 w-1/6">Turkey</th>
-                <th className="p-4 text-center font-['DM_Sans'] text-lg font-bold text-[#C84B31] border-b border-[#C5A059]/20 w-1/6">Your Savings</th>
+              <tr className="bg-[#F0F7F4]">
+                <th className="p-4 text-left font-['Playfair_Display'] text-xl font-bold text-[#0F172A] border-b border-[#C5A059]/20 w-1/4 sticky left-0 bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">Procedure</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-bold text-[#14B8A6] bg-[#E8F3F1] border-b border-[#14B8A6]/20 w-1/6">Egypt (Sekhmet)</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/6">UK</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/6">US</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/6">Turkey</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-bold text-[#C84B31] border-b border-[#C5A059]/20 w-1/6">Your Savings</th>
               </tr>
             </thead>
             <tbody>
@@ -144,25 +144,25 @@ export function PriceComparison() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="hover:bg-[#FAF6EF]/50 transition-colors group"
+                    className="hover:bg-[#F0F7F4]/50 transition-colors group"
                   >
-                    <td className="p-4 font-['DM_Sans'] font-medium text-[#0F1923] border-b border-[#C5A059]/10 sticky left-0 bg-white group-hover:bg-[#FAF6EF] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] transition-colors">
+                    <td className="p-4 font-['Outfit'] font-medium text-[#0F172A] border-b border-[#C5A059]/10 sticky left-0 bg-white group-hover:bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] transition-colors">
                       {row.procedure}
                     </td>
-                    <td className="p-4 text-center font-['Space_Mono'] font-bold text-[#1B7A6E] bg-[#E8F3F1]/50 border-b border-[#1B7A6E]/10 text-lg">
+                    <td className="p-4 text-center font-['Space_Mono'] font-bold text-[#14B8A6] bg-[#E8F3F1]/50 border-b border-[#14B8A6]/10 text-lg">
                       {currencySymbols[currency]}{convert(row.egypt)}
                     </td>
-                    <td className="p-4 text-center font-['Space_Mono'] text-[#0F1923]/60 border-b border-[#C5A059]/10 relative">
+                    <td className="p-4 text-center font-['Space_Mono'] text-[#0F172A]/60 border-b border-[#C5A059]/10 relative">
                       <span className="line-through decoration-red-500/50 decoration-2">
                         {currencySymbols[currency]}{convert(row.uk)}
                       </span>
                     </td>
-                    <td className="p-4 text-center font-['Space_Mono'] text-[#0F1923]/60 border-b border-[#C5A059]/10 relative">
+                    <td className="p-4 text-center font-['Space_Mono'] text-[#0F172A]/60 border-b border-[#C5A059]/10 relative">
                       <span className="line-through decoration-red-500/50 decoration-2">
                         {currencySymbols[currency]}{convert(row.us)}
                       </span>
                     </td>
-                    <td className="p-4 text-center font-['Space_Mono'] text-[#0F1923]/60 border-b border-[#C5A059]/10 relative">
+                    <td className="p-4 text-center font-['Space_Mono'] text-[#0F172A]/60 border-b border-[#C5A059]/10 relative">
                       {currencySymbols[currency]}{convert(row.turkey)}
                     </td>
                     <td className="p-4 text-center border-b border-[#C5A059]/10">
@@ -170,7 +170,7 @@ export function PriceComparison() {
                         <span className="font-['Space_Mono'] font-bold text-[#C84B31] text-lg">
                           {currencySymbols[currency]}{convert(savings)}
                         </span>
-                        <span className="text-xs font-['DM_Sans'] text-[#C84B31] bg-[#C84B31]/10 px-2 py-1 rounded-full mt-1">
+                        <span className="text-xs font-['Outfit'] text-[#C84B31] bg-[#C84B31]/10 px-2 py-1 rounded-full mt-1">
                           Save {savingsPercent}%
                         </span>
                       </div>

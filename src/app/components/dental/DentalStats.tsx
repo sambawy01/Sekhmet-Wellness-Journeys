@@ -31,7 +31,7 @@ const stats = [
 
 export function DentalStats() {
   return (
-    <section className="py-12 bg-[#FAF6EF]">
+    <section className="py-12 bg-[#F0F7F4]">
       <div className="container mx-auto px-6">
         <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-6 md:pb-0 scrollbar-hide">
           {stats.map((stat, index) => (
@@ -44,16 +44,16 @@ export function DentalStats() {
               className="bg-[#F9F6F0] p-6 rounded-xl shadow-sm border border-[#C5A059]/20 hover:border-[#C5A059] transition-all duration-300 min-w-[240px] snap-center shrink-0 flex-1"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 bg-[#0F1923] rounded-full flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-[#0F172A] rounded-full flex items-center justify-center mb-4">
                   <stat.icon className="w-6 h-6 text-[#C5A059]" />
                 </div>
-                <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F1923] mb-1">
+                <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-1">
                   {stat.value}
                 </h3>
-                <p className="font-['DM_Sans'] text-sm font-semibold text-[#C5A059] uppercase tracking-wide mb-1">
+                <p className="font-['Outfit'] text-sm font-semibold text-[#C5A059] uppercase tracking-wide mb-1">
                   {stat.label}
                 </p>
-                <p className="font-['DM_Sans'] text-sm text-[#0F1923]/60">
+                <p className="font-['Outfit'] text-sm text-[#0F172A]/60">
                   {stat.description}
                 </p>
               </div>

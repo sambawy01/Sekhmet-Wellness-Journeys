@@ -7,42 +7,42 @@ const TestimonialCard = ({
   name: string, age: number, country: string, treatment: string, quote: string, image: string, flag: string, delay: number 
 }) => (
   <div 
-    className="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-[#B5724A] relative min-w-[340px] md:min-w-[380px] h-full flex flex-col opacity-0 animate-fade-in-right"
+    className="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-[#0D9488] relative min-w-[340px] md:min-w-[380px] h-full flex flex-col opacity-0 animate-fade-in-right"
     style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
   >
     <div className="flex items-center justify-between mb-6">
       <div className="relative">
-        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#F6F2EC]">
+        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#F0F7F4]">
           <img src={image} alt={name} className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-full cursor-pointer hover:bg-black/30 transition-colors">
           <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center pl-1">
-             <Play className="w-3 h-3 text-[#B5724A] fill-current" />
+             <Play className="w-3 h-3 text-[#0D9488] fill-current" />
           </div>
         </div>
       </div>
       <div className="flex flex-col items-end">
-        <div className="flex gap-1 text-[#B5724A] mb-2">
+        <div className="flex gap-1 text-[#0D9488] mb-2">
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="w-4 h-4 fill-current" />
           ))}
         </div>
-        <span className="px-3 py-1 bg-[#2C2825] text-white text-[10px] uppercase font-bold tracking-wider rounded-full">
+        <span className="px-3 py-1 bg-[#1A2332] text-white text-[10px] uppercase font-bold tracking-wider rounded-full">
           {treatment}
         </span>
       </div>
     </div>
     
-    <blockquote className="font-['DM_Sans'] italic text-[#3D3D3D] text-[15px] leading-relaxed mb-6 flex-grow">
+    <blockquote className="font-['Outfit'] italic text-[#3D3D3D] text-[15px] leading-relaxed mb-6 flex-grow">
       "{quote}"
     </blockquote>
     
-    <div className="mt-auto pt-6 border-t border-[#FAF7F2]">
+    <div className="mt-auto pt-6 border-t border-[#F8FAFB]">
       <div className="flex items-center gap-2">
         <span className="text-xl">{flag}</span>
         <div>
-          <h4 className="font-['DM_Sans'] font-bold text-[#2C2825] text-sm">{name}</h4>
-          <p className="font-['DM_Sans'] text-xs text-[#888]">{age} • {country}</p>
+          <h4 className="font-['Outfit'] font-bold text-[#1A2332] text-sm">{name}</h4>
+          <p className="font-['Outfit'] text-xs text-[#888]">{age} • {country}</p>
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@ export const PatientStories: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#FAF7F2] py-24 overflow-hidden relative">
+    <section className="bg-[#F8FAFB] py-24 overflow-hidden relative">
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -92,17 +92,17 @@ export const PatientStories: React.FC = () => {
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
           <div className="text-left">
-            <h2 className="font-['Inter'] text-4xl font-bold text-[#2C2825] mb-4">
+            <h2 className="font-['Outfit'] text-4xl font-bold text-[#1A2332] mb-4">
               Real Patients. Real Stories.
             </h2>
-            <div className="h-1 w-24 bg-[#B5724A]" />
+            <div className="h-1 w-24 bg-[#0D9488]" />
           </div>
           
           <div className="hidden md:flex gap-2">
-            <button className="w-12 h-12 rounded-full border border-[#B5724A] flex items-center justify-center text-[#B5724A] hover:bg-[#B5724A] hover:text-white transition-colors">
+            <button className="w-12 h-12 rounded-full border border-[#0D9488] flex items-center justify-center text-[#0D9488] hover:bg-[#0D9488] hover:text-white transition-colors">
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <button className="w-12 h-12 rounded-full bg-[#2C2825] flex items-center justify-center text-white hover:bg-[#B5724A] transition-colors">
+            <button className="w-12 h-12 rounded-full bg-[#1A2332] flex items-center justify-center text-white hover:bg-[#0D9488] transition-colors">
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
@@ -115,10 +115,10 @@ export const PatientStories: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-            <p className="font-['Space_Mono'] text-sm text-[#2C2825] mb-4">
-              4.8/5 <span className="text-[#B5724A]">★★★★★</span> Average Rating | 200+ Verified Reviews
+            <p className="font-['Space_Mono'] text-sm text-[#1A2332] mb-4">
+              4.8/5 <span className="text-[#0D9488]">★★★★★</span> Average Rating | 200+ Verified Reviews
             </p>
-            <a href="#" className="font-['DM_Sans'] font-bold text-[#2C2825] border-b-2 border-[#B5724A] hover:text-[#B5724A] transition-colors">
+            <a href="#" className="font-['Outfit'] font-bold text-[#1A2332] border-b-2 border-[#0D9488] hover:text-[#0D9488] transition-colors">
               Read All Stories →
             </a>
         </div>

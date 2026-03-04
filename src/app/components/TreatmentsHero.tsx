@@ -33,7 +33,7 @@ export const TreatmentsHero: React.FC = () => {
       <div className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col justify-center max-w-[1440px] h-full">
         <div className={cn(
             "max-w-[800px] space-y-6 text-center mx-auto",
-            isRTL ? "font-['Cairo']" : "font-['DM_Sans']"
+            isRTL ? "font-['Cairo']" : "font-['Outfit']"
           )}>
           
           <h1 className={cn(
@@ -44,7 +44,7 @@ export const TreatmentsHero: React.FC = () => {
             {isRTL ? "علاجاتنا الطبية المميزة" : "Our Signature Medical Treatments"}
           </h1>
           
-          <p className="text-[#C9A84C] text-lg md:text-xl font-medium max-w-2xl mx-auto">
+          <p className="text-[#0D9488] text-lg md:text-xl font-medium max-w-2xl mx-auto">
             {isRTL 
               ? "استكشف مجموعتنا الشاملة من إجراءات التجميل وطب الأسنان والعافية المصممة لتعزيز صحتك وجمالك." 
               : "Explore our comprehensive range of cosmetic, dental, and wellness procedures designed to enhance your health and beauty."}
@@ -52,7 +52,7 @@ export const TreatmentsHero: React.FC = () => {
           
           <button 
             onClick={scrollToTreatments}
-            className="mt-8 bg-[#C9A84C] text-[#0F1923] px-8 py-3 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 inline-flex items-center gap-2"
+            className="mt-8 bg-[#0D9488] text-[#0F172A] px-8 py-3 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 inline-flex items-center gap-2"
           >
             {isRTL ? "عرض جميع التخصصات" : "View All Specialties"}
             <ChevronDown className="w-5 h-5 animate-bounce" />

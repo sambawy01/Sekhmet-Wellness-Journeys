@@ -214,7 +214,7 @@ export function TreatmentsAccordion() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1A5276] mb-4">
             Explore Our Treatments
           </h2>
-          <p className="text-lg text-[#0F1923]/70 max-w-2xl mx-auto font-sans">
+          <p className="text-lg text-[#0F172A]/70 max-w-2xl mx-auto font-sans">
             Click any treatment to see details, what's included, and transparent average pricing.
           </p>
         </div>
@@ -255,12 +255,12 @@ export function TreatmentsAccordion() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h3 className="text-xl font-bold text-[#0F1923]">{treatment.name}</h3>
+                      <h3 className="text-xl font-bold text-[#0F172A]">{treatment.name}</h3>
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#27AE60]/10 text-[#27AE60] border border-[#27AE60]/20">
                         Save up to {treatment.savings}
                       </span>
                     </div>
-                    <p className="text-[#0F1923]/60 text-sm">{treatment.tagline}</p>
+                    <p className="text-[#0F172A]/60 text-sm">{treatment.tagline}</p>
                   </div>
                   <div className="flex items-center justify-between md:justify-end w-full md:w-auto mt-2 md:mt-0 gap-4">
                     <span className="inline-block px-4 py-1.5 rounded-full bg-[#1A5276]/5 text-[#1A5276] font-bold text-sm border border-[#1A5276]/10">
@@ -277,29 +277,29 @@ export function TreatmentsAccordion() {
                         <h4 className="font-bold text-[#1A5276] mb-2 flex items-center gap-2">
                           <Info className="w-4 h-4" /> Description
                         </h4>
-                        <p className="text-[#0F1923]/70 mb-4 leading-relaxed text-sm">
+                        <p className="text-[#0F172A]/70 mb-4 leading-relaxed text-sm">
                           {treatment.description}
                         </p>
                         
                         <h4 className="font-bold text-[#1A5276] mb-2 text-sm">What's Included</h4>
                         <ul className="grid grid-cols-1 gap-2 mb-4">
                           {treatment.includes.map((inc, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm text-[#0F1923]/70">
+                            <li key={i} className="flex items-start gap-2 text-sm text-[#0F172A]/70">
                               <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-1.5 shrink-0" />
                               {inc}
                             </li>
                           ))}
                         </ul>
                         
-                        <div className="flex gap-4 text-sm mt-4 p-3 bg-[#F5F0E5]/50 rounded-lg">
+                        <div className="flex gap-4 text-sm mt-4 p-3 bg-[#F0F7F4]/50 rounded-lg">
                           <div>
                             <span className="block text-[#1A5276] font-bold text-xs uppercase tracking-wide">Recovery</span>
-                            <span className="text-[#0F1923]">{treatment.recovery}</span>
+                            <span className="text-[#0F172A]">{treatment.recovery}</span>
                           </div>
                           <div className="w-px bg-[#1A5276]/10" />
                           <div>
                             <span className="block text-[#1A5276] font-bold text-xs uppercase tracking-wide">Duration</span>
-                            <span className="text-[#0F1923]">{treatment.duration}</span>
+                            <span className="text-[#0F172A]">{treatment.duration}</span>
                           </div>
                         </div>
                       </div>
@@ -309,7 +309,7 @@ export function TreatmentsAccordion() {
                         <div className="space-y-3 mb-6">
                           {treatment.pricing.map((p, i) => (
                             <div key={i} className="flex justify-between items-center pb-2 border-b border-dashed border-[#1A5276]/20 last:border-0">
-                              <span className="text-sm font-medium text-[#0F1923]/80">{p.item}</span>
+                              <span className="text-sm font-medium text-[#0F172A]/80">{p.item}</span>
                               <span className="font-mono font-bold text-[#1A5276]">{p.price}</span>
                             </div>
                           ))}
@@ -321,7 +321,7 @@ export function TreatmentsAccordion() {
                         >
                           Get a Quote for This Treatment
                         </a>
-                        <p className="text-xs text-center text-[#0F1923]/40 mt-3">
+                        <p className="text-xs text-center text-[#0F172A]/40 mt-3">
                           *Prices vary by complexity and clinic
                         </p>
                       </div>

@@ -31,7 +31,7 @@ const stats = [
 
 export function HollywoodKeyFacts() {
   return (
-    <section className="bg-[#FAF6EF] border-b border-[#C5A059]/20 py-8">
+    <section className="bg-[#F0F7F4] border-b border-[#C5A059]/20 py-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
@@ -44,9 +44,9 @@ export function HollywoodKeyFacts() {
               className="flex flex-col items-center justify-center text-center p-4 bg-white rounded-lg shadow-sm border border-[#C5A059]/10"
             >
               <stat.icon className="w-6 h-6 text-[#C5A059] mb-2" />
-              <h3 className="font-['Playfair_Display'] font-bold text-xl text-[#0F1923]">{stat.value}</h3>
-              <p className="font-['DM_Sans'] text-xs font-bold uppercase tracking-wide text-[#1B7A6E] mb-1">{stat.label}</p>
-              <p className="font-['DM_Sans'] text-xs text-[#0F1923]/60">{stat.description}</p>
+              <h3 className="font-['Playfair_Display'] font-bold text-xl text-[#0F172A]">{stat.value}</h3>
+              <p className="font-['Outfit'] text-xs font-bold uppercase tracking-wide text-[#14B8A6] mb-1">{stat.label}</p>
+              <p className="font-['Outfit'] text-xs text-[#0F172A]/60">{stat.description}</p>
             </motion.div>
           ))}
         </div>

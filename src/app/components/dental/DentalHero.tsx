@@ -12,7 +12,7 @@ export function DentalHero() {
           alt="Close up of perfect smile"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#0F1923]/60"></div>
+        <div className="absolute inset-0 bg-[#0F172A]/60"></div>
       </div>
 
       {/* Content */}
@@ -21,7 +21,7 @@ export function DentalHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-2 text-sm md:text-base mb-6 text-[#F9F6F0]/80 font-['DM_Sans']"
+          className="flex items-center gap-2 text-sm md:text-base mb-6 text-[#F9F6F0]/80 font-['Outfit']"
         >
           <span>Home</span>
           <ChevronRight className="w-4 h-4" />
@@ -43,7 +43,7 @@ export function DentalHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-['DM_Sans'] text-lg md:text-xl text-[#C5A059] max-w-2xl"
+          className="font-['Outfit'] text-lg md:text-xl text-[#C5A059] max-w-2xl"
         >
           World-class dental procedures at 75–90% savings
         </motion.p>

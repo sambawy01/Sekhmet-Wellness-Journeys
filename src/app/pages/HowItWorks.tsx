@@ -15,7 +15,7 @@ export function HowItWorks() {
       <ComparisonTable />
       
       {/* CTA Section */}
-      <section className="py-24 bg-[#0F1923] text-white text-center">
+      <section className="py-24 bg-[#0F172A] text-white text-center">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -23,10 +23,10 @@ export function HowItWorks() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-6 text-[#F5F0E5]">
+            <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-6 text-[#F0F7F4]">
               Ready to Begin Your Transformation?
             </h2>
-            <p className="font-['DM_Sans'] text-xl text-[#F5F0E5]/80 mb-10 leading-relaxed">
+            <p className="font-['Outfit'] text-xl text-[#F0F7F4]/80 mb-10 leading-relaxed">
               Experience the perfect blend of world-class medical care and luxury travel. 
               Let us handle every detail while you focus on your health.
             </p>
@@ -38,7 +38,7 @@ export function HowItWorks() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-[#F5F0E5] text-[#F5F0E5] hover:bg-[#F5F0E5]/10 px-8 py-6 rounded-full text-lg">
+              <Button asChild variant="outline" className="border-[#F0F7F4] text-[#F0F7F4] hover:bg-[#F0F7F4]/10 px-8 py-6 rounded-full text-lg">
                 <Link to="/contact">
                   Contact a Coordinator
                 </Link>

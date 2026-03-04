@@ -56,14 +56,14 @@ const steps = [
 
 export function Timeline() {
   return (
-    <section className="py-24 bg-[#FAF6EF] relative overflow-hidden">
+    <section className="py-24 bg-[#F0F7F4] relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-6"
+            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-6"
           >
             Your Path to Wellness
           </motion.h2>
@@ -98,12 +98,12 @@ export function Timeline() {
                       <div className="w-12 h-12 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold text-xl font-['Space_Mono'] shadow-lg">
                         {step.id}
                       </div>
-                      <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-[#0F1923]">
+                      <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-[#0F172A]">
                         {step.title}
                       </h3>
                     </div>
                     
-                    <p className={`font-['DM_Sans'] text-lg text-[#0F1923]/70 leading-relaxed max-w-lg ${
+                    <p className={`font-['Outfit'] text-lg text-[#0F172A]/70 leading-relaxed max-w-lg ${
                       index % 2 === 0 ? 'md:text-left' : 'md:text-right'
                     }`}>
                       {step.description}
@@ -112,12 +112,12 @@ export function Timeline() {
                 </div>
 
                 {/* Center Dot (Desktop only) */}
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-[#C5A059] rounded-full border-4 border-[#FAF6EF] hidden md:block z-10" />
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-[#C5A059] rounded-full border-4 border-[#F0F7F4] hidden md:block z-10" />
 
                 {/* Image Side */}
                 <div className="flex-1 w-full md:w-1/2">
                   <div className="relative group overflow-hidden rounded-2xl shadow-xl aspect-video">
-                    <div className="absolute inset-0 bg-[#0F1923]/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                    <div className="absolute inset-0 bg-[#0F172A]/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                     <img 
                       src={step.image} 
                       alt={step.title} 

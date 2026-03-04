@@ -41,9 +41,9 @@ export const ColorSwatch: React.FC<ColorSwatchProps> = ({ name, hex, role, delay
 
       {/* Info */}
       <div className="text-center flex flex-col items-center gap-1 min-h-[80px]">
-        <h3 className="font-playfair font-bold text-lg text-[#0F1923]">{name}</h3>
-        <p className="font-space-mono text-sm text-[#0F1923]/70 uppercase tracking-wide">{hex}</p>
-        <p className="font-dm-sans text-xs text-[#0F1923]/60 max-w-[140px] leading-tight">{role}</p>
+        <h3 className="font-playfair font-bold text-lg text-[#0F172A]">{name}</h3>
+        <p className="font-space-mono text-sm text-[#0F172A]/70 uppercase tracking-wide">{hex}</p>
+        <p className="font-dm-sans text-xs text-[#0F172A]/60 max-w-[140px] leading-tight">{role}</p>
       </div>
 
       {/* Tints */}
@@ -54,7 +54,7 @@ export const ColorSwatch: React.FC<ColorSwatchProps> = ({ name, hex, role, delay
               className="w-12 h-12 rounded-full shadow-sm ring-1 ring-black/5"
               style={{ backgroundColor: hex, opacity }} 
             />
-            <span className="font-space-mono text-xs text-[#0F1923]/40 w-8 text-right">
+            <span className="font-space-mono text-xs text-[#0F172A]/40 w-8 text-right">
               {opacity * 100}%
             </span>
           </div>

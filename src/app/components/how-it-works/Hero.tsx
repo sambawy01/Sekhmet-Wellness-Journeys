@@ -13,7 +13,7 @@ export function Hero() {
           alt="Patient being greeted at hospital reception" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F1923]/90 via-[#0F1923]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/90 via-[#0F172A]/70 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -27,7 +27,7 @@ export function Hero() {
             Your Journey With <span className="text-[#C5A059]">Sekhmet</span>
           </h1>
           
-          <p className="font-['DM_Sans'] text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl">
+          <p className="font-['Outfit'] text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl">
             From your first inquiry to post-return follow-up, we handle every detail of your medical experience with precision and care.
           </p>
           

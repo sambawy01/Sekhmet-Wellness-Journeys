@@ -89,9 +89,9 @@ export function OurDoctors() {
   );
 
   return (
-    <div className="pt-20 bg-[#FAF6EF] min-h-screen">
+    <div className="pt-20 bg-[#F0F7F4] min-h-screen">
       {/* Hero Section */}
-      <section className="bg-[#0F1923] text-white py-20 relative overflow-hidden">
+      <section className="bg-[#0F172A] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
              {/* Abstract background pattern could go here */}
         </div>
@@ -107,7 +107,7 @@ export function OurDoctors() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-['DM_Sans'] text-xl text-white/80 max-w-2xl mx-auto mb-12"
+            className="font-['Outfit'] text-xl text-white/80 max-w-2xl mx-auto mb-12"
           >
             UK, European, and US-trained doctors performing at Egypt’s top hospitals.
           </motion.p>
@@ -124,7 +124,7 @@ export function OurDoctors() {
                 <CheckCircle className="w-8 h-8 text-[#C5A059]" />
               </div>
               <h3 className="font-['Space_Mono'] text-3xl font-bold text-[#C5A059] mb-2">15+ Years</h3>
-              <p className="font-['DM_Sans'] text-white/60 uppercase tracking-widest text-sm">Average Experience</p>
+              <p className="font-['Outfit'] text-white/60 uppercase tracking-widest text-sm">Average Experience</p>
             </motion.div>
             
             <motion.div 
@@ -137,7 +137,7 @@ export function OurDoctors() {
                 <Globe className="w-8 h-8 text-[#C5A059]" />
               </div>
               <h3 className="font-['Space_Mono'] text-3xl font-bold text-[#C5A059] mb-2">12+ Countries</h3>
-              <p className="font-['DM_Sans'] text-white/60 uppercase tracking-widest text-sm">Training Locations</p>
+              <p className="font-['Outfit'] text-white/60 uppercase tracking-widest text-sm">Training Locations</p>
             </motion.div>
 
             <motion.div 
@@ -150,7 +150,7 @@ export function OurDoctors() {
                 <Stethoscope className="w-8 h-8 text-[#C5A059]" />
               </div>
               <h3 className="font-['Space_Mono'] text-3xl font-bold text-[#C5A059] mb-2">10,000+</h3>
-              <p className="font-['DM_Sans'] text-white/60 uppercase tracking-widest text-sm">Procedures Performed</p>
+              <p className="font-['Outfit'] text-white/60 uppercase tracking-widest text-sm">Procedures Performed</p>
             </motion.div>
           </div>
         </div>
@@ -158,15 +158,15 @@ export function OurDoctors() {
 
       {/* Filter Bar */}
       <section className="container mx-auto px-6 -mt-8 relative z-20 mb-16">
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-[#0F1923]/5 flex flex-wrap justify-center gap-4">
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-[#0F172A]/5 flex flex-wrap justify-center gap-4">
           {specialties.map(spec => (
             <button
               key={spec}
               onClick={() => setActiveSpecialty(spec)}
               className={`px-6 py-3 rounded-full text-sm font-bold transition-all ${
                 activeSpecialty === spec 
-                  ? 'bg-[#0F1923] text-white shadow-md transform -translate-y-1' 
-                  : 'bg-[#FAF6EF] text-[#0F1923]/60 hover:bg-[#C5A059]/10 hover:text-[#C5A059]'
+                  ? 'bg-[#0F172A] text-white shadow-md transform -translate-y-1' 
+                  : 'bg-[#F0F7F4] text-[#0F172A]/60 hover:bg-[#C5A059]/10 hover:text-[#C5A059]'
               }`}
             >
               {spec}
@@ -199,8 +199,8 @@ export function OurDoctors() {
 
         {filteredDoctors.length === 0 && (
           <div className="text-center py-20">
-            <h3 className="text-2xl font-['Playfair_Display'] text-[#0F1923] mb-2">No doctors found</h3>
-            <p className="text-[#0F1923]/60">Try adjusting your specialty filter.</p>
+            <h3 className="text-2xl font-['Playfair_Display'] text-[#0F172A] mb-2">No doctors found</h3>
+            <p className="text-[#0F172A]/60">Try adjusting your specialty filter.</p>
           </div>
         )}
       </section>

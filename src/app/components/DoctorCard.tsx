@@ -19,15 +19,15 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
 }) => {
   return (
     <motion.div 
-      className="group relative w-[300px] h-[400px] rounded-xl overflow-hidden cursor-pointer shadow-md bg-[#F5F0E5] border border-transparent hover:border-[#C9A84C]/50 transition-all duration-300"
+      className="group relative w-[300px] h-[400px] rounded-xl overflow-hidden cursor-pointer shadow-md bg-[#F0F7F4] border border-transparent hover:border-[#0D9488]/50 transition-all duration-300"
       whileHover={{ y: -6 }}
     >
       {/* Background Image / Decoration */}
-      <div className="h-[120px] bg-gradient-to-b from-[#0F1923]/5 to-transparent absolute top-0 w-full" />
+      <div className="h-[120px] bg-gradient-to-b from-[#0F172A]/5 to-transparent absolute top-0 w-full" />
 
       {/* Profile Image */}
       <div className="relative pt-8 px-6 pb-4 flex justify-center">
-        <div className="w-[120px] h-[120px] rounded-full p-1 border-2 border-[#C9A84C] relative bg-white shadow-sm overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <div className="w-[120px] h-[120px] rounded-full p-1 border-2 border-[#0D9488] relative bg-white shadow-sm overflow-hidden group-hover:scale-105 transition-transform duration-300">
           <img 
             src={image} 
             alt={name} 
@@ -38,17 +38,17 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
 
       {/* Details */}
       <div className="px-6 text-center space-y-3 relative z-10">
-        <h3 className="font-['Playfair_Display'] font-bold text-[20px] text-[#0F1923] leading-tight">
+        <h3 className="font-['Playfair_Display'] font-bold text-[20px] text-[#0F172A] leading-tight">
           {name}
         </h3>
         
-        <p className="font-['DM_Sans'] text-[14px] font-medium text-[#1B7A6E] uppercase tracking-wide">
+        <p className="font-['Outfit'] text-[14px] font-medium text-[#14B8A6] uppercase tracking-wide">
           {specialty}
         </p>
         
-        <div className="h-[1px] w-12 bg-[#0F1923]/10 mx-auto my-3" />
+        <div className="h-[1px] w-12 bg-[#0F172A]/10 mx-auto my-3" />
         
-        <ul className="text-sm space-y-1 font-['DM_Sans'] text-[#0F1923]/60 leading-tight">
+        <ul className="text-sm space-y-1 font-['Outfit'] text-[#0F172A]/60 leading-tight">
           {credentials.map((cred, i) => (
             <li key={i}>{cred}</li>
           ))}
@@ -56,14 +56,14 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
         
         <div className="pt-4 flex items-center justify-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
           {/* Mock Hospital Logo */}
-          <div className="w-6 h-6 bg-[#0F1923]/10 rounded-full flex items-center justify-center text-[10px] font-bold text-[#0F1923]">H</div>
-          <span className="text-xs text-[#0F1923]/50 font-['DM_Sans']">{affiliation}</span>
+          <div className="w-6 h-6 bg-[#0F172A]/10 rounded-full flex items-center justify-center text-[10px] font-bold text-[#0F172A]">H</div>
+          <span className="text-xs text-[#0F172A]/50 font-['Outfit']">{affiliation}</span>
         </div>
       </div>
 
       {/* Footer Link */}
       <div className="absolute bottom-4 w-full text-center">
-        <button className="text-[#1B7A6E] font-['DM_Sans'] text-[13px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:text-[#C9A84C] transition-colors">
+        <button className="text-[#14B8A6] font-['Outfit'] text-[13px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:text-[#0D9488] transition-colors">
           View Profile <ExternalLink size={12} />
         </button>
       </div>
@@ -73,10 +73,10 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
 
 export const DoctorShowcase: React.FC = () => {
   return (
-    <section className="bg-white p-12 rounded-3xl border border-[#0F1923]/10 space-y-8">
-       <div className="border-b border-[#0F1923]/10 pb-4">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F1923]">Medical Experts</h2>
-        <p className="font-['DM_Sans'] text-[#A89F8E]">World-class surgeons & specialists</p>
+    <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-8">
+       <div className="border-b border-[#0F172A]/10 pb-4">
+        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Medical Experts</h2>
+        <p className="font-['Outfit'] text-[#A89F8E]">World-class surgeons & specialists</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">

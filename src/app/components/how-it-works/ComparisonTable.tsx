@@ -18,10 +18,10 @@ export function ComparisonTable() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-4">
+          <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">
             Why Choose Sekhmet?
           </h2>
-          <p className="font-['DM_Sans'] text-lg text-[#0F1923]/60">
+          <p className="font-['Outfit'] text-lg text-[#0F172A]/60">
             See how we compare to planning it yourself or booking directly.
           </p>
         </div>
@@ -30,14 +30,14 @@ export function ComparisonTable() {
           <table className="w-full min-w-[800px] border-collapse">
             <thead>
               <tr>
-                <th className="p-4 text-left font-['Playfair_Display'] text-xl font-bold text-[#0F1923]">Feature</th>
-                <th className="p-4 bg-[#FAF6EF] text-center font-['Space_Mono'] text-lg font-bold text-[#C5A059] rounded-t-xl border-t-4 border-[#C5A059]">
+                <th className="p-4 text-left font-['Playfair_Display'] text-xl font-bold text-[#0F172A]">Feature</th>
+                <th className="p-4 bg-[#F0F7F4] text-center font-['Space_Mono'] text-lg font-bold text-[#C5A059] rounded-t-xl border-t-4 border-[#C5A059]">
                   Sekhmet Wellness
                 </th>
-                <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F1923]/60">
+                <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F172A]/60">
                   DIY Planning
                 </th>
-                <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F1923]/60">
+                <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F172A]/60">
                   Hospital Direct
                 </th>
               </tr>
@@ -50,14 +50,14 @@ export function ComparisonTable() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="border-b border-[#0F1923]/10 hover:bg-[#FAF6EF]/50 transition-colors"
+                  className="border-b border-[#0F172A]/10 hover:bg-[#F0F7F4]/50 transition-colors"
                 >
-                  <td className="p-4 font-['DM_Sans'] text-[#0F1923] font-medium">
+                  <td className="p-4 font-['Outfit'] text-[#0F172A] font-medium">
                     {feature.name}
                   </td>
                   
                   {/* Sekhmet Column */}
-                  <td className="p-4 bg-[#FAF6EF] text-center border-l border-r border-[#C5A059]/20">
+                  <td className="p-4 bg-[#F0F7F4] text-center border-l border-r border-[#C5A059]/20">
                     <div className="flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-[#C5A059] flex items-center justify-center text-white shadow-sm">
                         <Check className="w-5 h-5" />
@@ -69,7 +69,7 @@ export function ComparisonTable() {
                   <td className="p-4 text-center">
                     <div className="flex justify-center">
                       {feature.diy ? (
-                        <Check className="w-6 h-6 text-[#0F1923]/40" />
+                        <Check className="w-6 h-6 text-[#0F172A]/40" />
                       ) : (
                         <X className="w-6 h-6 text-red-400/60" />
                       )}
@@ -80,7 +80,7 @@ export function ComparisonTable() {
                   <td className="p-4 text-center">
                     <div className="flex justify-center">
                       {feature.hospital ? (
-                        <Check className="w-6 h-6 text-[#0F1923]/40" />
+                        <Check className="w-6 h-6 text-[#0F172A]/40" />
                       ) : (
                         <X className="w-6 h-6 text-red-400/60" />
                       )}

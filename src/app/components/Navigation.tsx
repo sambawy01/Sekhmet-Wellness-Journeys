@@ -14,17 +14,17 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ label, hasDropdown, isActive }) => (
   <div className="relative group h-full flex items-center cursor-pointer">
     <span className={cn(
-      "font-['DM_Sans'] text-[15px] transition-colors duration-300 relative pb-1",
-      isActive ? "text-[#B5724A]" : "text-white group-hover:text-[#B5724A]"
+      "font-['Outfit'] text-[15px] transition-colors duration-300 relative pb-1",
+      isActive ? "text-[#0D9488]" : "text-white group-hover:text-[#0D9488]"
     )}>
       {label}
       <span className={cn(
-        "absolute bottom-0 left-0 w-full h-[2px] bg-[#B5724A] transform origin-left transition-transform duration-300",
+        "absolute bottom-0 left-0 w-full h-[2px] bg-[#0D9488] transform origin-left transition-transform duration-300",
         isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
       )} />
     </span>
     {hasDropdown && (
-      <ChevronDown size={14} className="ml-1 transition-transform group-hover:rotate-180 text-[#B5724A]" />
+      <ChevronDown size={14} className="ml-1 transition-transform group-hover:rotate-180 text-[#0D9488]" />
     )}
   </div>
 );
@@ -40,7 +40,7 @@ const MobileNavLink = ({ to, label, delay, onClick }: { to: string, label: strin
     <Link 
       to={to} 
       onClick={onClick}
-      className="block font-playfair text-3xl text-white hover:text-[#B5724A] transition-colors py-2"
+      className="block font-playfair text-3xl text-white hover:text-[#0D9488] transition-colors py-2"
     >
       {label}
     </Link>
@@ -80,7 +80,7 @@ export const Navigation: React.FC = () => {
         className={cn(
           "fixed top-0 left-0 w-full z-40 transition-all duration-300",
           isScrolled 
-            ? "bg-[#2C2825] shadow-lg border-b border-[#B5724A]/30 py-3" 
+            ? "bg-[#1A2332] shadow-lg border-b border-[#0D9488]/30 py-3" 
             : "bg-transparent py-6"
         )}
       >
@@ -88,14 +88,14 @@ export const Navigation: React.FC = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 z-50">
-            <div className="text-[#B5724A] w-10 h-10 flex items-center justify-center border-2 border-[#B5724A] rounded-full p-2">
+            <div className="text-[#0D9488] w-10 h-10 flex items-center justify-center border-2 border-[#0D9488] rounded-full p-2">
               <IconAnkh className="w-full h-full" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-['Inter'] font-bold text-[22px] text-white tracking-wide">
+              <span className="font-['Outfit'] font-bold text-[22px] text-white tracking-wide">
                 SEKHMET
               </span>
-              <span className="font-['DM_Sans'] text-[10px] text-[#9B918A] uppercase tracking-[0.2em] ml-1">
+              <span className="font-['Outfit'] text-[10px] text-[#64748B] uppercase tracking-[0.2em] ml-1">
                 Wellness Journeys
               </span>
             </div>
@@ -122,14 +122,14 @@ export const Navigation: React.FC = () => {
           {/* CTA & Actions */}
           <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-4 border-r border-white/20 pr-6">
-              <Search className="text-white w-5 h-5 cursor-pointer hover:text-[#B5724A] transition-colors" />
-              <button onClick={toggleLanguage} className="flex items-center text-white hover:text-[#B5724A] transition-colors font-bold text-sm">
+              <Search className="text-white w-5 h-5 cursor-pointer hover:text-[#0D9488] transition-colors" />
+              <button onClick={toggleLanguage} className="flex items-center text-white hover:text-[#0D9488] transition-colors font-bold text-sm">
                  <Globe size={18} className="mr-1" />
                  {language.toUpperCase()}
               </button>
             </div>
             <Link to="/consultation">
-              <button className="bg-[#B5724A] text-[#2C2825] px-6 py-2.5 rounded-full font-['DM_Sans'] text-[14px] font-bold uppercase tracking-wider hover:bg-[#B8983B] transition-colors shadow-lg hover:shadow-[#B5724A]/20">
+              <button className="bg-[#0D9488] text-white px-6 py-2.5 rounded-full font-['Outfit'] text-[14px] font-semibold tracking-wide hover:bg-[#0F766E] transition-all duration-300 shadow-lg hover:shadow-[#0D9488]/30">
                 {t("nav.freeConsultation")}
               </button>
             </Link>
@@ -142,7 +142,7 @@ export const Navigation: React.FC = () => {
              </a>
              <button 
                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-               className="text-[#B5724A] hover:text-white transition-colors"
+               className="text-[#0D9488] hover:text-white transition-colors"
              >
                {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
              </button>
@@ -152,7 +152,7 @@ export const Navigation: React.FC = () => {
         {/* Mega Menu Dropdown */}
         <div 
           className={cn(
-            "absolute top-full left-0 w-full bg-white shadow-2xl border-t-[3px] border-[#B5724A] py-12 z-30 hidden md:block transition-all duration-300 ease-in-out origin-top",
+            "absolute top-full left-0 w-full bg-white shadow-2xl border-t-[3px] border-[#0D9488] py-12 z-30 hidden md:block transition-all duration-300 ease-in-out origin-top",
             isMegaMenuOpen ? "opacity-100 translate-y-0 scale-y-100" : "opacity-0 -translate-y-4 scale-y-95 pointer-events-none"
           )}
           onMouseEnter={() => setIsMegaMenuOpen(true)}
@@ -160,10 +160,10 @@ export const Navigation: React.FC = () => {
         >
           <div className="container mx-auto px-6 max-w-[1400px] grid grid-cols-6 gap-8">
             {/* Column 1: Dental */}
-            <div className="space-y-4 border-r border-[#2C2825]/10 pr-6 group/col">
-              <Link to="/treatments/dental" className="flex items-center gap-3 text-[#2C2825] mb-2 group-hover/col:text-[#B5724A] transition-colors">
+            <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
+              <Link to="/treatments/dental" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconLotus className="w-8 h-8" />
-                <h3 className="font-['Inter'] font-bold text-lg">Dental Care</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">Dental Care</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -172,45 +172,45 @@ export const Navigation: React.FC = () => {
                   { name: "Veneers", path: "/treatments/dental/hollywood-smile" },
                   { name: "Full Mouth Rehab", path: "/treatments/dental" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['DM_Sans'] text-[14px] text-[#3D3D3D] hover:text-[#1B7A6E] cursor-pointer transition-colors flex items-center gap-2 group/item">
-                    <span className="w-1 h-1 bg-[#B5724A] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                    <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <Link to="/treatments/dental" className="text-[#1B7A6E] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <Link to="/treatments/dental" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
 
             {/* Column 2: Vision */}
-            <div className="space-y-4 border-r border-[#2C2825]/10 pr-6 group/col">
-              <div className="flex items-center gap-3 text-[#2C2825] mb-2 group-hover/col:text-[#B5724A] transition-colors">
+            <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
+              <div className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconEyeOfHorus className="w-8 h-8" />
-                <h3 className="font-['Inter'] font-bold text-lg">Vision</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">Vision</h3>
               </div>
               <ul className="space-y-3">
                 {["LASIK Eye Surgery", "Cataract Removal", "Lens Implant", "Glaucoma"].map((item, i) => (
-                  <li key={i} className="font-['DM_Sans'] text-[14px] text-[#3D3D3D] hover:text-[#1B7A6E] cursor-pointer transition-colors flex items-center gap-2 group/item">
-                    <span className="w-1 h-1 bg-[#B5724A] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                    <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     {item}
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <span className="text-[#1B7A6E] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <span className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
                 </span>
               </div>
             </div>
 
             {/* Column 3: Fertility - NEW VERTICAL */}
-            <div className="space-y-4 border-r border-[#2C2825]/10 pr-6 group/col">
-              <Link to="/treatments/fertility" className="flex items-center gap-3 text-[#2C2825] mb-2 group-hover/col:text-[#B5724A] transition-colors">
+            <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
+              <Link to="/treatments/fertility" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconSun className="w-8 h-8" />
-                <h3 className="font-['Inter'] font-bold text-lg">Fertility</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">Fertility</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -219,78 +219,78 @@ export const Navigation: React.FC = () => {
                   { name: "Male Infertility", path: "/treatments/fertility" },
                   { name: "Genetic Screening", path: "/treatments/fertility" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['DM_Sans'] text-[14px] text-[#3D3D3D] hover:text-[#1B7A6E] cursor-pointer transition-colors flex items-center gap-2 group/item">
-                    <span className="w-1 h-1 bg-[#B5724A] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                    <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <Link to="/treatments/fertility" className="text-[#1B7A6E] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <Link to="/treatments/fertility" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
 
             {/* Column 4: Cosmetic */}
-            <div className="space-y-4 border-r border-[#2C2825]/10 pr-6 group/col">
-              <div className="flex items-center gap-3 text-[#2C2825] mb-2 group-hover/col:text-[#B5724A] transition-colors">
+            <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
+              <div className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconScarab className="w-8 h-8" />
-                <h3 className="font-['Inter'] font-bold text-lg">Cosmetic</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">Cosmetic</h3>
               </div>
               <ul className="space-y-3">
                 {["Rhinoplasty", "Breast Augmentation", "Liposuction", "Facelift"].map((item, i) => (
-                  <li key={i} className="font-['DM_Sans'] text-[14px] text-[#3D3D3D] hover:text-[#1B7A6E] cursor-pointer transition-colors flex items-center gap-2 group/item">
-                    <span className="w-1 h-1 bg-[#B5724A] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                    <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     {item}
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <span className="text-[#1B7A6E] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <span className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
                 </span>
               </div>
             </div>
 
             {/* Column 5: Wellness */}
-            <div className="space-y-4 border-r border-[#2C2825]/10 pr-6 group/col">
-              <div className="flex items-center gap-3 text-[#2C2825] mb-2 group-hover/col:text-[#B5724A] transition-colors">
+            <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
+              <div className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconCare className="w-8 h-8" />
-                <h3 className="font-['Inter'] font-bold text-lg">Wellness</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">Wellness</h3>
               </div>
               <ul className="space-y-3">
                 {["Weight Loss", "Hair Transplant", "Checkups", "Spa & Recovery"].map((item, i) => (
-                  <li key={i} className="font-['DM_Sans'] text-[14px] text-[#3D3D3D] hover:text-[#1B7A6E] cursor-pointer transition-colors flex items-center gap-2 group/item">
-                    <span className="w-1 h-1 bg-[#B5724A] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                    <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     {item}
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <span className="text-[#1B7A6E] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <span className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
                 </span>
               </div>
             </div>
 
             {/* Column 6: Featured */}
-            <div className="bg-[#F6F2EC] p-6 rounded-xl relative overflow-hidden group/card cursor-pointer">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#B5724A]/10 rounded-full -mr-8 -mt-8" />
-              <span className="bg-[#2C2825] text-white px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full mb-4 inline-block">
+            <div className="bg-[#F0F7F4] p-6 rounded-xl relative overflow-hidden group/card cursor-pointer">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#0D9488]/10 rounded-full -mr-8 -mt-8" />
+              <span className="bg-[#1A2332] text-white px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full mb-4 inline-block">
                 New Package
               </span>
-              <h4 className="font-['Inter'] font-bold text-xl text-[#2C2825] mb-2 leading-tight">
+              <h4 className="font-['Outfit'] font-bold text-xl text-[#1A2332] mb-2 leading-tight">
                 Cairo Executive Checkup
               </h4>
-              <p className="font-['DM_Sans'] text-sm text-[#9B918A] mb-6">
+              <p className="font-['Outfit'] text-sm text-[#64748B] mb-6">
                 Full body MRI + 5-Star Nile View Suite.
               </p>
               <div className="mt-auto">
-                <span className="font-['Space_Mono'] font-bold text-[#1B7A6E] text-lg block mb-1">
+                <span className="font-['Space_Mono'] font-bold text-[#14B8A6] text-lg block mb-1">
                   $1,250
                 </span>
-                <span className="text-[#B5724A] text-xs font-bold uppercase tracking-wide flex items-center gap-1 group-hover/card:gap-2 transition-all">
+                <span className="text-[#0D9488] text-xs font-bold uppercase tracking-wide flex items-center gap-1 group-hover/card:gap-2 transition-all">
                   Learn More <ArrowRight size={10} />
                 </span>
               </div>
@@ -301,13 +301,13 @@ export const Navigation: React.FC = () => {
         {/* Mobile Full Screen Menu */}
         <div
           className={cn(
-            "fixed inset-0 bg-[#2C2825]/95 backdrop-blur-md z-40 flex flex-col pt-24 px-8 pb-8 md:hidden overflow-y-auto transition-transform duration-300 ease-in-out",
+            "fixed inset-0 bg-[#1A2332]/95 backdrop-blur-md z-40 flex flex-col pt-24 px-8 pb-8 md:hidden overflow-y-auto transition-transform duration-300 ease-in-out",
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
           <nav className="flex flex-col gap-6 mb-12">
             <div className="flex flex-col gap-3">
-               <h4 className="text-[#9B918A] font-['DM_Sans'] text-xs font-bold uppercase tracking-widest pl-1">Treatments</h4>
+               <h4 className="text-[#64748B] font-['Outfit'] text-xs font-bold uppercase tracking-widest pl-1">Treatments</h4>
                <MobileNavLink to="/treatments/dental" label="Dental Care" delay={0.1} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/treatments/fertility" label="IVF & Fertility" delay={0.12} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/treatments/dental" label="Vision Correction" delay={0.14} onClick={() => setIsMobileMenuOpen(false)} />
@@ -325,7 +325,7 @@ export const Navigation: React.FC = () => {
 
           <div className="mt-auto space-y-6">
             <Link to="/consultation" onClick={() => setIsMobileMenuOpen(false)}>
-              <button className="w-full bg-[#B5724A] text-[#2C2825] py-4 rounded-lg font-['DM_Sans'] text-lg font-bold uppercase tracking-wider hover:bg-[#B8983B] transition-colors shadow-lg">
+              <button className="w-full bg-[#0D9488] text-[#1A2332] py-4 rounded-lg font-['Outfit'] text-lg font-bold uppercase tracking-wider hover:bg-[#0F766E] transition-colors shadow-lg">
                 {t("nav.freeConsultation")}
               </button>
             </Link>
@@ -334,19 +334,19 @@ export const Navigation: React.FC = () => {
               <div className="flex gap-4">
                 <button 
                   onClick={() => setLanguage('en')} 
-                  className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'en' ? "bg-white text-[#2C2825]" : "border-white/20 text-white")}
+                  className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'en' ? "bg-white text-[#1A2332]" : "border-white/20 text-white")}
                 >
                   EN
                 </button>
                 <button 
                   onClick={() => setLanguage('ar')} 
-                  className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'ar' ? "bg-white text-[#2C2825]" : "border-white/20 text-white")}
+                  className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'ar' ? "bg-white text-[#1A2332]" : "border-white/20 text-white")}
                 >
                   AR
                 </button>
                 <button 
                   onClick={() => setLanguage('fr')} 
-                  className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'fr' ? "bg-white text-[#2C2825]" : "border-white/20 text-white")}
+                  className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'fr' ? "bg-white text-[#1A2332]" : "border-white/20 text-white")}
                 >
                   FR
                 </button>

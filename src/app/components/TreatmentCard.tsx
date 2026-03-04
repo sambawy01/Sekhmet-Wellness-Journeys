@@ -20,7 +20,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
 
   return (
     <motion.div 
-      className="group relative w-[360px] h-[420px] rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 ease-out border border-transparent hover:border-[#C9A84C]/50"
+      className="group relative w-[360px] h-[420px] rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 ease-out border border-transparent hover:border-[#0D9488]/50"
       whileHover={{ y: -4 }}
       dir={currentDir}
     >
@@ -31,7 +31,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923]/90 via-[#0F1923]/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Content Container */}
       <div className={cn(
@@ -50,24 +50,24 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
         {/* Procedures List */}
         <p className={cn(
           "text-[14px] text-white/60 mb-6 font-light tracking-wide line-clamp-2",
-          isRTL ? "font-['Cairo']" : "font-['DM_Sans']"
+          isRTL ? "font-['Cairo']" : "font-['Outfit']"
         )}>
           {procedures.join(' · ')}
         </p>
         
         {/* Bottom Row: Price & Action */}
         <div className={cn(
-          "w-full flex items-end border-t border-[#C9A84C]/30 pt-4 mt-auto",
+          "w-full flex items-end border-t border-[#0D9488]/30 pt-4 mt-auto",
           isRTL ? "flex-row-reverse" : "flex-row justify-between"
         )}>
           <div className={cn("flex flex-col", isRTL ? "items-end" : "items-start")}>
             <span className={cn(
-              "text-[10px] text-[#C9A84C] uppercase tracking-widest mb-1",
-              isRTL ? "font-['Cairo']" : "font-['DM_Sans']"
+              "text-[10px] text-[#0D9488] uppercase tracking-widest mb-1",
+              isRTL ? "font-['Cairo']" : "font-['Outfit']"
             )}>
               {isRTL ? "يبدأ من" : "Starting From"}
             </span>
-            <span className="font-['Space_Mono'] font-bold text-[18px] text-[#C9A84C]">
+            <span className="font-['Space_Mono'] font-bold text-[18px] text-[#0D9488]">
               {price}
             </span>
           </div>
@@ -80,17 +80,17 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
           )}>
             <span className={cn(
               "text-[12px] font-bold uppercase tracking-wider",
-              isRTL ? "font-['Cairo']" : "font-['DM_Sans']"
+              isRTL ? "font-['Cairo']" : "font-['Outfit']"
             )}>
               {isRTL ? "اكتشف" : "Explore"}
             </span>
-            <ArrowIcon size={14} className="text-[#C9A84C]" />
+            <ArrowIcon size={14} className="text-[#0D9488]" />
           </div>
         </div>
       </div>
       
       {/* Hover Border Glow Effect */}
-      <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10 group-hover:ring-[#C9A84C]/50 transition-all duration-300 pointer-events-none" />
+      <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10 group-hover:ring-[#0D9488]/50 transition-all duration-300 pointer-events-none" />
     </motion.div>
   );
 };
@@ -127,10 +127,10 @@ export const CardShowcase: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#FAF6EF] p-12 rounded-3xl space-y-12">
-      <div className="border-b border-[#0F1923]/10 pb-4 mb-8">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F1923]">Treatment Specialty Cards</h2>
-        <p className="font-['DM_Sans'] text-[#A89F8E]">Service highlights & navigation</p>
+    <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-12">
+      <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
+        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Treatment Specialty Cards</h2>
+        <p className="font-['Outfit'] text-[#A89F8E]">Service highlights & navigation</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">
@@ -139,8 +139,8 @@ export const CardShowcase: React.FC = () => {
         ))}
       </div>
 
-      <div className="border-t border-[#0F1923]/10 pt-8 mt-12">
-         <h3 className="font-['Playfair_Display'] text-2xl text-[#0F1923] mb-6">Arabic RTL Version</h3>
+      <div className="border-t border-[#0F172A]/10 pt-8 mt-12">
+         <h3 className="font-['Playfair_Display'] text-2xl text-[#0F172A] mb-6">Arabic RTL Version</h3>
          <div className="flex flex-wrap justify-center gap-8">
             <TreatmentCard {...arabicCard} dir="rtl" />
          </div>

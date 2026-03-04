@@ -46,12 +46,12 @@ export const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F0E5] pt-12 pb-20">
+    <div className="min-h-screen bg-[#F0F7F4] pt-12 pb-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-playfair text-4xl md:text-5xl text-[#0F1923] mb-4">Get in Touch</h1>
+          <h1 className="font-playfair text-4xl md:text-5xl text-[#0F172A] mb-4">Get in Touch</h1>
           <div className="flex items-center justify-center gap-2 text-[#C5A059] font-medium font-sans">
             <Clock size={18} />
             <span>We respond to every inquiry within 24 hours</span>
@@ -71,7 +71,7 @@ export const Contact = () => {
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
                   <CheckCircle size={40} />
                 </div>
-                <h3 className="font-playfair text-3xl text-[#0F1923] mb-4">Message Sent!</h3>
+                <h3 className="font-playfair text-3xl text-[#0F172A] mb-4">Message Sent!</h3>
                 <p className="text-gray-600 mb-8 font-sans">
                   Thank you for contacting Sekhmet Wellness Journeys. A member of our concierge team will be in touch shortly.
                 </p>
@@ -85,7 +85,7 @@ export const Contact = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-[#0F1923] mb-2 uppercase tracking-wide">Full Name</label>
+                  <label htmlFor="name" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Full Name</label>
                   <input
                     type="text"
                     id="name"
@@ -100,7 +100,7 @@ export const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-[#0F1923] mb-2 uppercase tracking-wide">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Email Address</label>
                     <input
                       type="email"
                       id="email"
@@ -113,7 +113,7 @@ export const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-bold text-[#0F1923] mb-2 uppercase tracking-wide">Phone Number</label>
+                    <label htmlFor="phone" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Phone Number</label>
                     <input
                       type="tel"
                       id="phone"
@@ -127,7 +127,7 @@ export const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="interest" className="block text-sm font-bold text-[#0F1923] mb-2 uppercase tracking-wide">I'm Interested In</label>
+                  <label htmlFor="interest" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">I'm Interested In</label>
                   <select
                     id="interest"
                     name="interest"
@@ -146,7 +146,7 @@ export const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-[#0F1923] mb-2 uppercase tracking-wide">Message</label>
+                  <label htmlFor="message" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Message</label>
                   <textarea
                     id="message"
                     name="message"
@@ -183,7 +183,7 @@ export const Contact = () => {
             transition={{ delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="bg-[#0F1923] p-8 md:p-10 rounded-2xl shadow-xl text-white relative overflow-hidden">
+            <div className="bg-[#0F172A] p-8 md:p-10 rounded-2xl shadow-xl text-white relative overflow-hidden">
                <div className="absolute top-0 right-0 w-40 h-40 bg-[#C5A059] opacity-5 rounded-bl-full -mr-10 -mt-10" />
                <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#115E59] opacity-10 rounded-tr-full -ml-6 -mb-6" />
 
@@ -235,7 +235,7 @@ export const Contact = () => {
                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
                    />
                    <div className="absolute inset-0 flex items-center justify-center">
-                     <button className="bg-white/90 text-[#0F1923] px-4 py-2 rounded-lg font-bold text-sm shadow-lg hover:bg-white transition-colors">
+                     <button className="bg-white/90 text-[#0F172A] px-4 py-2 rounded-lg font-bold text-sm shadow-lg hover:bg-white transition-colors">
                        Open in Google Maps
                      </button>
                    </div>
@@ -266,15 +266,15 @@ export const Contact = () => {
                 <IconAnkh className="w-5 h-5 text-[#C5A059]" /> Common Questions
               </h3>
               <div className="space-y-3">
-                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F5F0E5] text-sm font-medium text-[#0F1923] transition-colors flex justify-between items-center group">
+                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group">
                   How much can I save?
                   <ArrowRight size={16} className="text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
-                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F5F0E5] text-sm font-medium text-[#0F1923] transition-colors flex justify-between items-center group">
+                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group">
                   Is it safe to travel to Egypt?
                   <ArrowRight size={16} className="text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
-                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F5F0E5] text-sm font-medium text-[#0F1923] transition-colors flex justify-between items-center group">
+                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group">
                   What is included in the packages?
                   <ArrowRight size={16} className="text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>

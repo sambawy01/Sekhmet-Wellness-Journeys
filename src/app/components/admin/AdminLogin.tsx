@@ -27,20 +27,20 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#2C2825] via-[#3A3530] to-[#2C2825] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#1A2332] via-[#3A3530] to-[#1A2332] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         {/* Logo / Brand */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#B5724A]/20 mb-4">
-            <Shield className="w-8 h-8 text-[#B5724A]" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#0D9488]/20 mb-4">
+            <Shield className="w-8 h-8 text-[#0D9488]" />
           </div>
           <h1 className="text-2xl font-bold text-white">Sekhmet CRM</h1>
-          <p className="text-[#9B918A] mt-1">Admin Dashboard</p>
+          <p className="text-[#64748B] mt-1">Admin Dashboard</p>
         </div>
 
         {/* Login Card */}
         <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <h2 className="text-xl font-semibold text-[#2C2825] mb-6">Sign in to your account</h2>
+          <h2 className="text-xl font-semibold text-[#1A2332] mb-6">Sign in to your account</h2>
 
           {error && (
             <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
@@ -50,19 +50,19 @@ export default function AdminLogin() {
 
           <form onSubmit={handleLogin} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-[#2C2825] mb-1.5">Email</label>
+              <label className="block text-sm font-medium text-[#1A2332] mb-1.5">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder="admin@sekhmetwellness.com"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#B5724A]/30 focus:border-[#B5724A] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/30 focus:border-[#0D9488] transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-[#2C2825] mb-1.5">Password</label>
+              <label className="block text-sm font-medium text-[#1A2332] mb-1.5">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -70,7 +70,7 @@ export default function AdminLogin() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   placeholder="Enter your password"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#B5724A]/30 focus:border-[#B5724A] transition-all pr-12"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/30 focus:border-[#0D9488] transition-all pr-12"
                 />
                 <button
                   type="button"
@@ -85,7 +85,7 @@ export default function AdminLogin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 bg-[#B5724A] hover:bg-[#9A6030] text-white font-semibold py-3 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 bg-[#0D9488] hover:bg-[#9A6030] text-white font-semibold py-3 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />
@@ -99,7 +99,7 @@ export default function AdminLogin() {
           </form>
         </div>
 
-        <p className="text-center text-[#9B918A] text-sm mt-6">
+        <p className="text-center text-[#64748B] text-sm mt-6">
           Sekhmet Wellness Journeys &mdash; Patient Management System
         </p>
       </div>

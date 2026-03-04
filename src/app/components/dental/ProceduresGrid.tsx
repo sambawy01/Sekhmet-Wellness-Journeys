@@ -65,14 +65,14 @@ const procedures = [
 
 export function ProceduresGrid() {
   return (
-    <section className="py-20 bg-[#F5F0E5]">
+    <section className="py-20 bg-[#F0F7F4]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-4"
+            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             Our Dental Procedures
           </motion.h2>
@@ -81,7 +81,7 @@ export function ProceduresGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['DM_Sans'] text-lg text-[#0F1923]/60 max-w-2xl mx-auto"
+            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             Comprehensive dental care using the latest technology and materials, performed by internationally accredited specialists.
           </motion.p>
@@ -98,28 +98,28 @@ export function ProceduresGrid() {
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 group border border-[#C5A059]/10 hover:border-[#C5A059]/40"
             >
               <div className="p-6 flex flex-col h-full">
-                <div className="w-12 h-12 bg-[#FAF6EF] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#C5A059] transition-colors duration-300">
+                <div className="w-12 h-12 bg-[#F0F7F4] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#C5A059] transition-colors duration-300">
                   <proc.icon className="w-6 h-6 text-[#C5A059] group-hover:text-white transition-colors duration-300" />
                 </div>
                 
-                <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#0F1923] mb-2 group-hover:text-[#C5A059] transition-colors">
+                <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#0F172A] mb-2 group-hover:text-[#C5A059] transition-colors">
                   {proc.title}
                 </h3>
                 
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="font-['Space_Mono'] text-[#1B7A6E] font-bold text-lg">
+                  <span className="font-['Space_Mono'] text-[#14B8A6] font-bold text-lg">
                     From {proc.price}
                   </span>
                 </div>
 
-                <p className="font-['DM_Sans'] text-sm text-[#0F1923]/60 mb-6 flex-grow">
+                <p className="font-['Outfit'] text-sm text-[#0F172A]/60 mb-6 flex-grow">
                   {proc.description}
                 </p>
 
                 <Button 
                   asChild 
                   variant="ghost" 
-                  className="w-full justify-between hover:bg-[#FAF6EF] hover:text-[#C5A059] group-hover:translate-x-1 transition-all"
+                  className="w-full justify-between hover:bg-[#F0F7F4] hover:text-[#C5A059] group-hover:translate-x-1 transition-all"
                 >
                   <Link to={proc.link} className="flex items-center w-full">
                     Learn More

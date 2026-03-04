@@ -49,7 +49,7 @@ export function HollywoodDoctors() {
   };
 
   return (
-    <section className="py-20 bg-[#F5F0E5]">
+    <section className="py-20 bg-[#F0F7F4]">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-12">
           <div>
@@ -57,7 +57,7 @@ export function HollywoodDoctors() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-4"
+              className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
             >
               Meet Our Smile Designers
             </motion.h2>
@@ -66,7 +66,7 @@ export function HollywoodDoctors() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="font-['DM_Sans'] text-lg text-[#0F1923]/60 max-w-2xl"
+              className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl"
             >
               Certified by the American Academy of Cosmetic Dentistry (AACD).
             </motion.p>

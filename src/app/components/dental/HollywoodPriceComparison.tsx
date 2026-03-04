@@ -17,10 +17,10 @@ export function HollywoodPriceComparison() {
   const convert = (val: number) => Math.round(val * rates[currency]).toLocaleString();
 
   return (
-    <section className="py-16 bg-[#F5F0E5]">
+    <section className="py-16 bg-[#F0F7F4]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-10">
-          <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F1923] mb-4">Transparent Pricing</h2>
+          <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-4">Transparent Pricing</h2>
           <div className="flex justify-center gap-2 mb-6">
             {['USD', 'GBP', 'EUR'].map(c => (
               <Button key={c} variant={currency === c ? "default" : "outline"} onClick={() => setCurrency(c)} className={`rounded-full ${currency === c ? "bg-[#C5A059]" : ""}`}>
@@ -32,23 +32,23 @@ export function HollywoodPriceComparison() {
 
         <div className="overflow-x-auto rounded-xl shadow-lg border border-[#C5A059]/20 bg-white">
           <table className="w-full min-w-[700px]">
-            <thead className="bg-[#FAF6EF]">
+            <thead className="bg-[#F0F7F4]">
               <tr>
-                <th className="p-4 text-left font-bold text-[#0F1923]">Procedure</th>
-                <th className="p-4 text-center font-bold text-[#1B7A6E] bg-[#E8F3F1]">Egypt</th>
-                <th className="p-4 text-center font-medium text-[#0F1923]/60">UK</th>
-                <th className="p-4 text-center font-medium text-[#0F1923]/60">US</th>
-                <th className="p-4 text-center font-medium text-[#0F1923]/60">Turkey</th>
+                <th className="p-4 text-left font-bold text-[#0F172A]">Procedure</th>
+                <th className="p-4 text-center font-bold text-[#14B8A6] bg-[#E8F3F1]">Egypt</th>
+                <th className="p-4 text-center font-medium text-[#0F172A]/60">UK</th>
+                <th className="p-4 text-center font-medium text-[#0F172A]/60">US</th>
+                <th className="p-4 text-center font-medium text-[#0F172A]/60">Turkey</th>
               </tr>
             </thead>
             <tbody>
               {prices.map((row, i) => (
                 <tr key={i} className="border-t border-gray-100 hover:bg-gray-50">
-                  <td className="p-4 font-medium text-[#0F1923]">{row.procedure}</td>
-                  <td className="p-4 text-center font-bold text-[#1B7A6E] bg-[#E8F3F1]/30">{currencySymbols[currency]}{convert(row.egypt)}</td>
-                  <td className="p-4 text-center text-[#0F1923]/60 line-through decoration-red-500/30">{currencySymbols[currency]}{convert(row.uk)}</td>
-                  <td className="p-4 text-center text-[#0F1923]/60 line-through decoration-red-500/30">{currencySymbols[currency]}{convert(row.us)}</td>
-                  <td className="p-4 text-center text-[#0F1923]/60">{currencySymbols[currency]}{convert(row.turkey)}</td>
+                  <td className="p-4 font-medium text-[#0F172A]">{row.procedure}</td>
+                  <td className="p-4 text-center font-bold text-[#14B8A6] bg-[#E8F3F1]/30">{currencySymbols[currency]}{convert(row.egypt)}</td>
+                  <td className="p-4 text-center text-[#0F172A]/60 line-through decoration-red-500/30">{currencySymbols[currency]}{convert(row.uk)}</td>
+                  <td className="p-4 text-center text-[#0F172A]/60 line-through decoration-red-500/30">{currencySymbols[currency]}{convert(row.us)}</td>
+                  <td className="p-4 text-center text-[#0F172A]/60">{currencySymbols[currency]}{convert(row.turkey)}</td>
                 </tr>
               ))}
             </tbody>

@@ -39,7 +39,7 @@ export default function AdminLayout() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-[#2C2825] transform transition-transform lg:translate-x-0 ${
+        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-[#1A2332] transform transition-transform lg:translate-x-0 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -47,12 +47,12 @@ export default function AdminLayout() {
           {/* Header */}
           <div className="flex items-center justify-between p-5 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-[#B5724A]/20 flex items-center justify-center">
-                <Shield className="w-5 h-5 text-[#B5724A]" />
+              <div className="w-9 h-9 rounded-lg bg-[#0D9488]/20 flex items-center justify-center">
+                <Shield className="w-5 h-5 text-[#0D9488]" />
               </div>
               <div>
                 <h2 className="text-white font-bold text-sm">Sekhmet CRM</h2>
-                <p className="text-[#9B918A] text-xs">Admin Panel</p>
+                <p className="text-[#64748B] text-xs">Admin Panel</p>
               </div>
             </div>
             <button
@@ -74,8 +74,8 @@ export default function AdminLayout() {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                     isActive
-                      ? 'bg-[#B5724A] text-white shadow-lg shadow-[#B5724A]/20'
-                      : 'text-[#9B918A] hover:text-white hover:bg-white/5'
+                      ? 'bg-[#0D9488] text-white shadow-lg shadow-[#0D9488]/20'
+                      : 'text-[#64748B] hover:text-white hover:bg-white/5'
                   }`
                 }
               >
@@ -90,7 +90,7 @@ export default function AdminLayout() {
           <div className="p-4 border-t border-white/10">
             <a
               href="#/"
-              className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-[#9B918A] hover:text-white hover:bg-white/5 transition-all"
+              className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-[#64748B] hover:text-white hover:bg-white/5 transition-all"
             >
               <ChevronRight size={18} className="rotate-180" />
               Back to Website
@@ -112,11 +112,11 @@ export default function AdminLayout() {
         <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="lg:hidden text-[#2C2825] hover:text-[#B5724A]"
+            className="lg:hidden text-[#1A2332] hover:text-[#0D9488]"
           >
             <Menu size={24} />
           </button>
-          <div className="text-sm text-[#9B918A]">
+          <div className="text-sm text-[#64748B]">
             Welcome back, Admin
           </div>
         </header>

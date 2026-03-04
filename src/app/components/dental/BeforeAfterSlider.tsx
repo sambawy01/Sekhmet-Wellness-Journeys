@@ -42,7 +42,7 @@ export function BeforeAfterSlider() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-4"
+            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             Real Patient Results
           </motion.h2>
@@ -51,7 +51,7 @@ export function BeforeAfterSlider() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['DM_Sans'] text-lg text-[#0F1923]/60 max-w-2xl mx-auto"
+            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             Browse our gallery of transformations. 
           </motion.p>
@@ -88,14 +88,14 @@ export function BeforeAfterSlider() {
             <Button 
               size="icon" 
               onClick={prev}
-              className="rounded-full bg-white/80 hover:bg-white text-[#0F1923] shadow-lg pointer-events-auto w-12 h-12"
+              className="rounded-full bg-white/80 hover:bg-white text-[#0F172A] shadow-lg pointer-events-auto w-12 h-12"
             >
               <ChevronLeft className="w-6 h-6" />
             </Button>
             <Button 
               size="icon" 
               onClick={next}
-              className="rounded-full bg-white/80 hover:bg-white text-[#0F1923] shadow-lg pointer-events-auto w-12 h-12"
+              className="rounded-full bg-white/80 hover:bg-white text-[#0F172A] shadow-lg pointer-events-auto w-12 h-12"
             >
               <ChevronRight className="w-6 h-6" />
             </Button>
@@ -103,13 +103,13 @@ export function BeforeAfterSlider() {
 
           {/* Caption */}
           <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-md p-6 border-t border-[#C5A059]/20">
-            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F1923] mb-2">
+            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-2">
               {cases[currentindex].title}
             </h3>
-            <p className="font-['DM_Sans'] text-[#0F1923]/60 mb-2 font-medium">
+            <p className="font-['Outfit'] text-[#0F172A]/60 mb-2 font-medium">
               {cases[currentindex].procedure}
             </p>
-            <p className="font-['DM_Sans'] text-sm text-[#0F1923]/60">
+            <p className="font-['Outfit'] text-sm text-[#0F172A]/60">
               {cases[currentindex].description}
             </p>
           </div>

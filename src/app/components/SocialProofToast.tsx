@@ -55,10 +55,10 @@ export const SocialProofManager = () => {
       >
         <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
            {/* Placeholder avatar */}
-           <span className="text-xs font-bold text-[#0F1923]">{name[0]}</span>
+           <span className="text-xs font-bold text-[#0F172A]">{name[0]}</span>
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-[#0F1923] truncate">
+          <p className="text-sm font-bold text-[#0F172A] truncate">
             {name} from {city}
           </p>
           <p className="text-xs text-gray-500 truncate">
@@ -92,7 +92,7 @@ export const SocialProofManager = () => {
            <Eye size={16} />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-[#0F1923]">
+          <p className="text-sm font-bold text-[#0F172A]">
             Popular right now
           </p>
           <p className="text-xs text-gray-500 truncate">

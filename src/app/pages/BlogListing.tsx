@@ -90,9 +90,9 @@ export const BlogListing = () => {
   const regularArticles = filteredArticles.filter(a => !a.featured);
 
   return (
-    <div className="min-h-screen bg-[#F5F0E5]">
+    <div className="min-h-screen bg-[#F0F7F4]">
       {/* Hero Section */}
-      <div className="bg-[#0F1923] text-white py-20 px-4 md:px-8 relative overflow-hidden">
+      <div className="bg-[#0F172A] text-white py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')]" />
         <div className="max-w-7xl mx-auto relative z-10 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl mb-4">The Sekhmet Journal</h1>
@@ -119,7 +119,7 @@ export const BlogListing = () => {
                   <span className="inline-block px-3 py-1 bg-[#115E59] text-white text-xs font-bold tracking-wider uppercase rounded-full mb-4">
                     {featuredArticle.category}
                   </span>
-                  <h2 className="font-playfair text-3xl md:text-4xl text-[#0F1923] mb-4 group-hover:text-[#C5A059] transition-colors">
+                  <h2 className="font-playfair text-3xl md:text-4xl text-[#0F172A] mb-4 group-hover:text-[#C5A059] transition-colors">
                     {featuredArticle.title}
                   </h2>
                   <p className="text-gray-600 font-sans mb-6 text-lg leading-relaxed">
@@ -149,7 +149,7 @@ export const BlogListing = () => {
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     activeCategory === category 
-                      ? "bg-[#0F1923] text-white shadow-md" 
+                      ? "bg-[#0F172A] text-white shadow-md" 
                       : "bg-white text-gray-600 hover:bg-gray-100"
                   }`}
                 >
@@ -164,7 +164,7 @@ export const BlogListing = () => {
                 regularArticles.map(article => (
                   <Link to={`/blog/${article.id}`} key={article.id} className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 flex flex-col h-full">
                     <div className="h-48 overflow-hidden relative">
-                      <span className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-2 py-1 text-xs font-bold text-[#0F1923] rounded">
+                      <span className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-2 py-1 text-xs font-bold text-[#0F172A] rounded">
                         {article.category}
                       </span>
                       <img 
@@ -174,7 +174,7 @@ export const BlogListing = () => {
                       />
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="font-playfair text-xl font-bold text-[#0F1923] mb-3 group-hover:text-[#C5A059] transition-colors leading-tight">
+                      <h3 className="font-playfair text-xl font-bold text-[#0F172A] mb-3 group-hover:text-[#C5A059] transition-colors leading-tight">
                         {article.title}
                       </h3>
                       <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">
@@ -199,7 +199,7 @@ export const BlogListing = () => {
           <div className="lg:col-span-4 space-y-8">
             {/* Search */}
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="font-playfair text-xl mb-4 text-[#0F1923]">Search</h3>
+              <h3 className="font-playfair text-xl mb-4 text-[#0F172A]">Search</h3>
               <div className="relative">
                 <input
                   type="text"
@@ -213,7 +213,7 @@ export const BlogListing = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="bg-[#0F1923] p-8 rounded-xl shadow-lg text-white relative overflow-hidden">
+            <div className="bg-[#0F172A] p-8 rounded-xl shadow-lg text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A059] opacity-10 rounded-bl-full -mr-10 -mt-10" />
               <h3 className="font-playfair text-2xl mb-2 relative z-10">Join the Circle</h3>
               <p className="text-gray-400 text-sm mb-6 relative z-10">Get insider tips, exclusive offers, and travel guides delivered to your inbox.</p>
@@ -231,7 +231,7 @@ export const BlogListing = () => {
 
             {/* Popular Articles */}
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="font-playfair text-xl mb-4 text-[#0F1923]">Popular Now</h3>
+              <h3 className="font-playfair text-xl mb-4 text-[#0F172A]">Popular Now</h3>
               <div className="space-y-4">
                 {[1, 4, 3].map((id, index) => {
                   const article = articles.find(a => a.id === id);
@@ -240,7 +240,7 @@ export const BlogListing = () => {
                     <Link to={`/blog/${article.id}`} key={id} className="flex gap-4 group">
                       <span className="text-4xl font-playfair text-gray-100 font-bold -mt-2 group-hover:text-[#C5A059] transition-colors">0{index + 1}</span>
                       <div>
-                        <h4 className="font-bold text-[#0F1923] text-sm leading-snug group-hover:text-[#C5A059] transition-colors mb-1">
+                        <h4 className="font-bold text-[#0F172A] text-sm leading-snug group-hover:text-[#C5A059] transition-colors mb-1">
                           {article.title}
                         </h4>
                         <span className="text-xs text-gray-500">{article.readTime}</span>

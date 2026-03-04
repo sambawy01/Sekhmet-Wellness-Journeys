@@ -28,14 +28,14 @@ const testimonials = [
 
 export function DentalTestimonials() {
   return (
-    <section className="py-20 bg-[#FAF6EF]">
+    <section className="py-20 bg-[#F0F7F4]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-4"
+            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             Patient Stories
           </motion.h2>
@@ -44,7 +44,7 @@ export function DentalTestimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['DM_Sans'] text-lg text-[#0F1923]/60 max-w-2xl mx-auto"
+            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             Hear from patients who have transformed their smiles and their lives with us.
           </motion.p>

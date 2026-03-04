@@ -29,11 +29,11 @@ const PackageCard: React.FC<PackageCardProps> = ({
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
   
   const isPrestige = tier === 'Prestige';
-  const tierColor = isPrestige ? 'bg-[#0F1923] text-white' : 'bg-[#C9A84C] text-[#0F1923]';
+  const tierColor = isPrestige ? 'bg-[#0F172A] text-white' : 'bg-[#0D9488] text-[#0F172A]';
 
   return (
     <motion.div 
-      className="group relative w-[380px] h-[520px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-[#F5F0E5]"
+      className="group relative w-[380px] h-[520px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-[#F0F7F4]"
       whileHover={{ y: -6 }}
       dir={currentDir}
     >
@@ -43,12 +43,12 @@ const PackageCard: React.FC<PackageCardProps> = ({
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
           style={{ backgroundImage: `url(${image})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923]/60 to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 to-transparent opacity-80" />
         
         {/* Tier Badge */}
         <div className={cn(
           `absolute top-4 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md ${tierColor}`,
-          isRTL ? "left-4 font-['Cairo']" : "right-4 font-['DM_Sans']"
+          isRTL ? "left-4 font-['Cairo']" : "right-4 font-['Outfit']"
         )}>
           {tier}
         </div>
@@ -63,7 +63,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
         <div>
           <div className={cn("flex items-start mb-2", isRTL ? "justify-end" : "justify-between")}>
             <h3 className={cn(
-              "text-[22px] leading-tight text-[#0F1923] font-medium",
+              "text-[22px] leading-tight text-[#0F172A] font-medium",
               isRTL ? "font-['Amiri'] pl-4" : "font-['Playfair_Display'] pr-4"
             )}>
               {name}
@@ -76,7 +76,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
           )}>
             <span className={cn(
               "text-[13px] flex items-center gap-1.5",
-              isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['DM_Sans']"
+              isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['Outfit']"
             )}>
               <Calendar size={14} />
               {duration}
@@ -89,13 +89,13 @@ const PackageCard: React.FC<PackageCardProps> = ({
           </div>
           
           <div className="space-y-1">
-            <div className="font-['Space_Mono'] font-bold text-[28px] text-[#1B7A6E] leading-none" dir="ltr">
+            <div className="font-['Space_Mono'] font-bold text-[28px] text-[#14B8A6] leading-none" dir="ltr">
               {/* Force LTR for numbers even in RTL */}
               {price}
             </div>
             <div className={cn(
               "text-[13px] text-[#A89F8E] line-through decoration-[#C84B31]/50 decoration-2",
-              isRTL ? "font-['Cairo']" : "font-['DM_Sans']"
+              isRTL ? "font-['Cairo']" : "font-['Outfit']"
             )}>
               {isRTL ? `المقابل في المملكة المتحدة: ${ukPrice}` : `UK Equivalent: ${ukPrice}`}
             </div>
@@ -104,19 +104,19 @@ const PackageCard: React.FC<PackageCardProps> = ({
 
         {/* Bottom Action & Icons */}
         <div className={cn(
-          "flex items-center mt-4 border-t border-[#0F1923]/10 pt-4",
+          "flex items-center mt-4 border-t border-[#0F172A]/10 pt-4",
           isRTL ? "flex-row-reverse justify-between" : "justify-between"
         )}>
            {/* Inclusions Icons */}
-           <div className="flex gap-3 text-[#C9A84C]">
+           <div className="flex gap-3 text-[#0D9488]">
             <Bed size={16} strokeWidth={2} />
             <Stethoscope size={16} strokeWidth={2} />
             <Palmtree size={16} strokeWidth={2} />
           </div>
 
           <button className={cn(
-            "flex items-center gap-2 text-[#C9A84C] font-bold uppercase tracking-wide group-hover:text-[#B8983B] transition-colors",
-            isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['DM_Sans'] text-[14px]"
+            "flex items-center gap-2 text-[#0D9488] font-bold uppercase tracking-wide group-hover:text-[#0F766E] transition-colors",
+            isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['Outfit'] text-[14px]"
           )}>
             {isRTL ? "عرض الباقة" : "View Package"} 
             <ArrowIcon size={16} />
@@ -131,10 +131,10 @@ export default PackageCard;
 
 export const PackageShowcase: React.FC = () => {
   return (
-    <section className="bg-white p-12 rounded-3xl border border-[#0F1923]/10 space-y-8">
-      <div className="border-b border-[#0F1923]/10 pb-4">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F1923]">Destination Packages</h2>
-        <p className="font-['DM_Sans'] text-[#A89F8E]">All-inclusive medical tourism experiences</p>
+    <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-8">
+      <div className="border-b border-[#0F172A]/10 pb-4">
+        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Destination Packages</h2>
+        <p className="font-['Outfit'] text-[#A89F8E]">All-inclusive medical tourism experiences</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">

@@ -2,10 +2,10 @@ import React from 'react';
 
 export const TypographyScale: React.FC = () => {
   return (
-    <section className="bg-[#FAF6EF] p-12 rounded-3xl space-y-12">
-      <div className="border-b border-[#0F1923]/10 pb-4 mb-8">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F1923]">Typography Scale</h2>
-        <p className="font-['DM_Sans'] text-[#A89F8E]">System font hierarchy</p>
+    <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-12">
+      <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
+        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Typography Scale</h2>
+        <p className="font-['Outfit'] text-[#A89F8E]">System font hierarchy</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -14,7 +14,7 @@ export const TypographyScale: React.FC = () => {
           H1 Headline • 56px
         </div>
         <div className="md:col-span-9">
-          <h1 className="font-['Playfair_Display'] font-bold text-[56px] leading-[1.1] text-[#0F1923]">
+          <h1 className="font-['Playfair_Display'] font-bold text-[56px] leading-[1.1] text-[#0F172A]">
             Ancient Wisdom, Modern Care
           </h1>
         </div>
@@ -24,7 +24,7 @@ export const TypographyScale: React.FC = () => {
           H2 Title • 36px
         </div>
         <div className="md:col-span-9">
-          <h2 className="font-['Playfair_Display'] font-bold text-[36px] leading-[1.2] text-[#0F1923]">
+          <h2 className="font-['Playfair_Display'] font-bold text-[36px] leading-[1.2] text-[#0F172A]">
             Curated Wellness Journeys
           </h2>
         </div>
@@ -34,7 +34,7 @@ export const TypographyScale: React.FC = () => {
           H3 Subtitle • 28px
         </div>
         <div className="md:col-span-9">
-          <h3 className="font-['Playfair_Display'] font-semibold text-[28px] leading-[1.3] text-[#0F1923]">
+          <h3 className="font-['Playfair_Display'] font-semibold text-[28px] leading-[1.3] text-[#0F172A]">
             Premium Dental Restoration
           </h3>
         </div>
@@ -44,7 +44,7 @@ export const TypographyScale: React.FC = () => {
           H4 Accent • 22px
         </div>
         <div className="md:col-span-9">
-          <h4 className="font-['Playfair_Display'] font-medium text-[22px] leading-[1.4] text-[#C9A84C]">
+          <h4 className="font-['Playfair_Display'] font-medium text-[22px] leading-[1.4] text-[#0D9488]">
             Exclusive Member Benefits
           </h4>
         </div>
@@ -54,7 +54,7 @@ export const TypographyScale: React.FC = () => {
           Body • 16px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['DM_Sans'] text-[16px] leading-relaxed text-[#3D3D3D] max-w-2xl">
+          <p className="font-['Outfit'] text-[16px] leading-relaxed text-[#3D3D3D] max-w-2xl">
             Experience world-class medical treatments in the heart of Egypt. 
             Our concierge service handles every detail of your journey, blending 
             cutting-edge healthcare with cultural immersion.
@@ -66,7 +66,7 @@ export const TypographyScale: React.FC = () => {
           Small • 14px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['DM_Sans'] text-[14px] leading-relaxed text-[#A89F8E]">
+          <p className="font-['Outfit'] text-[14px] leading-relaxed text-[#A89F8E]">
             *Consultation required prior to booking confirmation. Terms apply.
           </p>
         </div>
@@ -76,7 +76,7 @@ export const TypographyScale: React.FC = () => {
           Caption • 12px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['DM_Sans'] text-[12px] leading-tight text-[#A89F8E] uppercase tracking-wide">
+          <p className="font-['Outfit'] text-[12px] leading-tight text-[#A89F8E] uppercase tracking-wide">
             Fig 1.2 — Treatment Facility Interior
           </p>
         </div>
@@ -86,8 +86,8 @@ export const TypographyScale: React.FC = () => {
           Button • 15px
         </div>
         <div className="md:col-span-9">
-          <div className="inline-block bg-[#0F1923] text-white px-6 py-3 rounded">
-            <span className="font-['DM_Sans'] font-bold text-[15px] uppercase tracking-wider">
+          <div className="inline-block bg-[#0F172A] text-white px-6 py-3 rounded">
+            <span className="font-['Outfit'] font-bold text-[15px] uppercase tracking-wider">
               Book Consultation
             </span>
           </div>
@@ -98,7 +98,7 @@ export const TypographyScale: React.FC = () => {
           Price Display • 32px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['Space_Mono'] font-bold text-[32px] text-[#1B7A6E]">
+          <p className="font-['Space_Mono'] font-bold text-[32px] text-[#14B8A6]">
             $2,450
           </p>
         </div>

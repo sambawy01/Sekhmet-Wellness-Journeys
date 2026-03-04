@@ -33,7 +33,7 @@ export function GetFreeQuotes() {
   };
 
   return (
-    <section className="relative w-full py-16 md:py-24 bg-[#F5F0E5] overflow-hidden" id="get-quote">
+    <section className="relative w-full py-16 md:py-24 bg-[#F0F7F4] overflow-hidden" id="get-quote">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +53,7 @@ export function GetFreeQuotes() {
               Get Your Free Quote <br className="hidden md:block" />
               in Under 60 Seconds
             </h2>
-            <p className="text-lg text-[#0F1923]/80 mb-8 max-w-xl font-sans">
+            <p className="text-lg text-[#0F172A]/80 mb-8 max-w-xl font-sans">
               Compare prices from top-rated clinics. No hidden fees. No obligation.
               Receive a personalized treatment plan from our medical experts.
             </p>
@@ -69,7 +69,7 @@ export function GetFreeQuotes() {
                   <div className="bg-[#27AE60]/10 p-1 rounded-full">
                     <Check className="w-5 h-5 text-[#27AE60]" />
                   </div>
-                  <span className="text-[#0F1923] font-medium">{item}</span>
+                  <span className="text-[#0F172A] font-medium">{item}</span>
                 </div>
               ))}
             </div>
@@ -87,7 +87,7 @@ export function GetFreeQuotes() {
                       <Star key={s} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
                     ))}
                   </div>
-                  <p className="text-sm text-[#0F1923]/80 italic mb-2">
+                  <p className="text-sm text-[#0F172A]/80 italic mb-2">
                     "The process was incredibly smooth. I saved over $12,000 on my dental implants and the quality is outstanding."
                   </p>
                   <p className="text-xs font-bold text-[#1A5276] uppercase tracking-wide">
@@ -97,7 +97,7 @@ export function GetFreeQuotes() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-sm text-[#0F1923]/60">
+            <div className="flex items-center gap-2 text-sm text-[#0F172A]/60">
               <Shield className="w-4 h-4 text-[#1A5276]" />
               <span>Your information is 100% secure and never shared without consent.</span>
             </div>
@@ -111,7 +111,7 @@ export function GetFreeQuotes() {
                   <CheckCircle className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#1A5276] mb-2">Quote Request Received!</h3>
-                <p className="text-[#0F1923]/60 mb-6">Our team will get back to you within 24 hours with a personalized quote.</p>
+                <p className="text-[#0F172A]/60 mb-6">Our team will get back to you within 24 hours with a personalized quote.</p>
                 <button onClick={() => { setIsSubmitted(false); setFormData({ name: '', email: '', phone: '', treatment: '', destination: '', notes: '' }); }} className="text-[#1A5276] font-bold hover:underline">
                   Submit Another Request
                 </button>
@@ -127,7 +127,7 @@ export function GetFreeQuotes() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
+                    className="w-full px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
                   />
                 </div>
                 <div className="space-y-2">
@@ -139,7 +139,7 @@ export function GetFreeQuotes() {
                     placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
+                    className="w-full px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -148,7 +148,7 @@ export function GetFreeQuotes() {
                 <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</label>
                 <div className="flex gap-2">
                   <select
-                    className="w-[110px] px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
+                    className="w-[110px] px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
                     defaultValue="us"
                   >
                     <option value="us">🇺🇸 +1</option>
@@ -163,7 +163,7 @@ export function GetFreeQuotes() {
                     placeholder="Phone number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="flex-1 px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
+                    className="flex-1 px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -172,7 +172,7 @@ export function GetFreeQuotes() {
                 <label htmlFor="treatment" className="text-sm font-medium text-gray-700">Treatment Type</label>
                 <div className="relative">
                   <select
-                    className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
+                    className="w-full px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
                     value={formData.treatment}
                     onChange={(e) => setFormData({ ...formData, treatment: e.target.value })}
                   >
@@ -200,7 +200,7 @@ export function GetFreeQuotes() {
                 <label htmlFor="destination" className="text-sm font-medium text-gray-700">Preferred Destination</label>
                 <div className="relative">
                   <select
-                    className="w-full px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
+                    className="w-full px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none"
                     value={formData.destination}
                     onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
                   >
@@ -224,7 +224,7 @@ export function GetFreeQuotes() {
                   placeholder="Tell us about your needs or any questions you have..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full min-h-[80px] px-3 py-2 rounded-lg bg-[#F5F0E5]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors resize-none"
+                  className="w-full min-h-[80px] px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -239,7 +239,7 @@ export function GetFreeQuotes() {
                 {!isSubmitting && <ArrowRight className="w-5 h-5" />}
               </button>
 
-              <p className="text-xs text-center text-[#0F1923]/50 mt-4">
+              <p className="text-xs text-center text-[#0F172A]/50 mt-4">
                 By submitting this form, you agree to our privacy policy. We respect your data.
               </p>
             </form>

@@ -39,8 +39,8 @@ export const Hero: React.FC = () => {
         className={cn(
           "absolute inset-0 z-10",
           isRTL 
-            ? "bg-gradient-to-l from-[#2C2825] via-[#2C2825]/85 to-transparent" 
-            : "bg-gradient-to-r from-[#2C2825] via-[#2C2825]/85 to-transparent"
+            ? "bg-gradient-to-l from-[#1A2332] via-[#1A2332]/85 to-transparent" 
+            : "bg-gradient-to-r from-[#1A2332] via-[#1A2332]/85 to-transparent"
         )} 
       />
 
@@ -54,16 +54,16 @@ export const Hero: React.FC = () => {
           
           <h1 className={cn(
               "font-bold text-white leading-[1.1]",
-              isRTL ? "font-['Amiri'] text-5xl md:text-8xl" : "font-['Inter'] text-5xl md:text-7xl"
+              isRTL ? "font-['Amiri'] text-5xl md:text-8xl" : "font-['Outfit'] text-5xl md:text-7xl"
             )}
           >
             {t("hero.title")}
           </h1>
           
           <p className={cn(
-              "text-[#B5724A] font-medium transition-all duration-1000 delay-200 ease-out transform",
+              "text-[#14B8A6] font-medium transition-all duration-1000 delay-200 ease-out transform",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-              isRTL ? "font-['Cairo'] text-xl md:text-3xl" : "font-['DM_Sans'] text-xl md:text-2xl"
+              isRTL ? "font-['Cairo'] text-xl md:text-3xl" : "font-['Outfit'] text-xl md:text-2xl"
             )}
           >
             {t("hero.subtitle")}
@@ -76,8 +76,8 @@ export const Hero: React.FC = () => {
             )}
           >
             <Link to="/consultation" className={cn(
-              "bg-[#B5724A] text-[#2C2825] px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(201,168,76,0.3)] w-full sm:w-auto text-center inline-block",
-              isRTL ? "font-['Cairo']" : "font-['DM_Sans']"
+              "bg-[#0D9488] text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#0F766E] transition-all duration-300 shadow-[0_0_30px_rgba(13,148,136,0.25)] hover:shadow-[0_0_40px_rgba(13,148,136,0.4)] w-full sm:w-auto text-center inline-block",
+              isRTL ? "font-['Cairo']" : "font-['Outfit']"
             )}>
               {t("hero.cta.primary")}
             </Link>
@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
               onClick={scrollToTreatments}
               className={cn(
               "bg-transparent border border-white text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto",
-              isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['DM_Sans']"
+              isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['Outfit']"
             )}>
               {t("hero.cta.secondary")}
               <ArrowIcon className={cn("w-5 h-5 transition-transform", isRTL ? "group-hover:-translate-x-1" : "group-hover:translate-x-1")} />
@@ -99,19 +99,19 @@ export const Hero: React.FC = () => {
             )}
           >
             <div className={cn("flex items-center gap-2 text-white/90", isRTL && "flex-row-reverse")}>
-              <Award className="w-5 h-5 text-[#B5724A]" />
-              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['DM_Sans']")}>{t("hero.trust")}</span>
+              <Award className="w-5 h-5 text-[#0D9488]" />
+              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['Outfit']")}>{t("hero.trust")}</span>
             </div>
             
             <div className={cn("flex items-center gap-2 text-white/90", isRTL && "flex-row-reverse")}>
-              <Globe className="w-5 h-5 text-[#B5724A]" />
-              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['DM_Sans']")} suppressHydrationWarning>
+              <Globe className="w-5 h-5 text-[#0D9488]" />
+              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['Outfit']")} suppressHydrationWarning>
                 {isRTL ? "جراحون مدربون في المملكة المتحدة" : "UK-Trained Surgeons"}
               </span>
             </div>
             <div className={cn("flex items-center gap-2 text-white/90", isRTL && "flex-row-reverse")}>
-              <Clock className="w-5 h-5 text-[#B5724A]" />
-              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['DM_Sans']")} suppressHydrationWarning>
+              <Clock className="w-5 h-5 text-[#0D9488]" />
+              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['Outfit']")} suppressHydrationWarning>
                 {isRTL ? "منسق 24/7" : "24/7 Coordinator"}
               </span>
             </div>
@@ -125,7 +125,7 @@ export const Hero: React.FC = () => {
         isVisible ? "opacity-100" : "opacity-0"
       )}>
         <span className="text-[10px] font-['Space_Mono'] uppercase tracking-widest">Scroll</span>
-        <ChevronDown className="w-6 h-6 animate-bounce text-[#B5724A]" />
+        <ChevronDown className="w-6 h-6 animate-bounce text-[#0D9488]" />
       </div>
     </section>
   );

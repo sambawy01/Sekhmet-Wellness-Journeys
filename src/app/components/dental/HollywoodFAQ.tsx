@@ -33,14 +33,14 @@ export function HollywoodFAQ() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6 max-w-4xl">
-        <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F1923] mb-8 text-center">Frequently Asked Questions</h2>
+        <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-8 text-center">Frequently Asked Questions</h2>
         <Accordion type="single" collapsible className="w-full space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border border-[#C5A059]/20 rounded-lg px-6 bg-[#FAF6EF]">
-              <AccordionTrigger className="text-left font-semibold text-[#0F1923] hover:text-[#C5A059] py-4">
+            <AccordionItem key={index} value={`item-${index}`} className="border border-[#C5A059]/20 rounded-lg px-6 bg-[#F0F7F4]">
+              <AccordionTrigger className="text-left font-semibold text-[#0F172A] hover:text-[#C5A059] py-4">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-[#0F1923]/70 pb-4 text-base leading-relaxed">
+              <AccordionContent className="text-[#0F172A]/70 pb-4 text-base leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

@@ -76,7 +76,7 @@ export default function Dashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#B5724A] border-t-transparent" />
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#0D9488] border-t-transparent" />
       </div>
     );
   }
@@ -101,8 +101,8 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-[#2C2825]">Dashboard</h1>
-        <p className="text-[#9B918A] text-sm mt-1">Overview of your patient leads and pipeline</p>
+        <h1 className="text-2xl font-bold text-[#1A2332]">Dashboard</h1>
+        <p className="text-[#64748B] text-sm mt-1">Overview of your patient leads and pipeline</p>
       </div>
 
       {/* Stat Cards */}
@@ -110,30 +110,30 @@ export default function Dashboard() {
         {statCards.map((card) => (
           <div key={card.label} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-sm text-[#9B918A]">{card.label}</span>
+              <span className="text-sm text-[#64748B]">{card.label}</span>
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${card.color}`}>
                 <card.icon size={18} />
               </div>
             </div>
-            <p className="text-3xl font-bold text-[#2C2825]">{card.value}</p>
+            <p className="text-3xl font-bold text-[#1A2332]">{card.value}</p>
           </div>
         ))}
       </div>
 
       {/* Pipeline Overview */}
       <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
-        <h2 className="text-lg font-semibold text-[#2C2825] mb-4">Pipeline Stages</h2>
+        <h2 className="text-lg font-semibold text-[#1A2332] mb-4">Pipeline Stages</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
           {JOURNEY_STAGES.map((stage) => (
             <button
               key={stage}
               onClick={() => navigate(`/admin/leads?stage=${encodeURIComponent(stage)}`)}
-              className="text-center p-3 rounded-xl border border-gray-100 hover:border-[#B5724A]/30 hover:shadow-sm transition-all group"
+              className="text-center p-3 rounded-xl border border-gray-100 hover:border-[#0D9488]/30 hover:shadow-sm transition-all group"
             >
-              <p className="text-2xl font-bold text-[#2C2825] group-hover:text-[#B5724A] transition-colors">
+              <p className="text-2xl font-bold text-[#1A2332] group-hover:text-[#0D9488] transition-colors">
                 {stats.byStage[stage] || 0}
               </p>
-              <p className="text-xs text-[#9B918A] mt-1 leading-tight">{stage}</p>
+              <p className="text-xs text-[#64748B] mt-1 leading-tight">{stage}</p>
             </button>
           ))}
         </div>
@@ -142,17 +142,17 @@ export default function Dashboard() {
       {/* Recent Leads */}
       <div className="bg-white rounded-xl border border-gray-100 shadow-sm">
         <div className="flex items-center justify-between p-6 pb-4">
-          <h2 className="text-lg font-semibold text-[#2C2825]">Recent Leads</h2>
+          <h2 className="text-lg font-semibold text-[#1A2332]">Recent Leads</h2>
           <button
             onClick={() => navigate('/admin/leads')}
-            className="text-sm text-[#B5724A] hover:text-[#9A6030] flex items-center gap-1 font-medium"
+            className="text-sm text-[#0D9488] hover:text-[#9A6030] flex items-center gap-1 font-medium"
           >
             View All <ArrowRight size={14} />
           </button>
         </div>
 
         {stats.recentLeads.length === 0 ? (
-          <div className="px-6 pb-6 text-center text-[#9B918A] py-8">
+          <div className="px-6 pb-6 text-center text-[#64748B] py-8">
             <Users className="mx-auto mb-3 opacity-30" size={40} />
             <p className="font-medium">No leads yet</p>
             <p className="text-sm mt-1">Leads will appear here when visitors submit forms on your website</p>
@@ -162,11 +162,11 @@ export default function Dashboard() {
             <table className="w-full">
               <thead>
                 <tr className="border-t border-gray-100 text-left">
-                  <th className="px-6 py-3 text-xs font-medium text-[#9B918A] uppercase tracking-wider">Name</th>
-                  <th className="px-6 py-3 text-xs font-medium text-[#9B918A] uppercase tracking-wider">Treatment</th>
-                  <th className="px-6 py-3 text-xs font-medium text-[#9B918A] uppercase tracking-wider">Stage</th>
-                  <th className="px-6 py-3 text-xs font-medium text-[#9B918A] uppercase tracking-wider">Date</th>
-                  <th className="px-6 py-3 text-xs font-medium text-[#9B918A] uppercase tracking-wider">Source</th>
+                  <th className="px-6 py-3 text-xs font-medium text-[#64748B] uppercase tracking-wider">Name</th>
+                  <th className="px-6 py-3 text-xs font-medium text-[#64748B] uppercase tracking-wider">Treatment</th>
+                  <th className="px-6 py-3 text-xs font-medium text-[#64748B] uppercase tracking-wider">Stage</th>
+                  <th className="px-6 py-3 text-xs font-medium text-[#64748B] uppercase tracking-wider">Date</th>
+                  <th className="px-6 py-3 text-xs font-medium text-[#64748B] uppercase tracking-wider">Source</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-50">
@@ -178,11 +178,11 @@ export default function Dashboard() {
                   >
                     <td className="px-6 py-4">
                       <div>
-                        <p className="font-medium text-[#2C2825]">{lead.name}</p>
-                        <p className="text-sm text-[#9B918A]">{lead.email}</p>
+                        <p className="font-medium text-[#1A2332]">{lead.name}</p>
+                        <p className="text-sm text-[#64748B]">{lead.email}</p>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm text-[#2C2825]">
+                    <td className="px-6 py-4 text-sm text-[#1A2332]">
                       {lead.treatment_interest || '\u2014'}
                     </td>
                     <td className="px-6 py-4">
@@ -190,13 +190,13 @@ export default function Dashboard() {
                         {lead.status}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm text-[#9B918A]">
+                    <td className="px-6 py-4 text-sm text-[#64748B]">
                       <div className="flex items-center gap-1.5">
                         <Calendar size={14} />
                         {new Date(lead.created_at).toLocaleDateString()}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm text-[#9B918A] capitalize">
+                    <td className="px-6 py-4 text-sm text-[#64748B] capitalize">
                       {lead.source_form}
                     </td>
                   </tr>

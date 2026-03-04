@@ -19,7 +19,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <motion.div 
-      className="relative flex items-center bg-white rounded-xl shadow-lg border-l-4 border-[#C9A84C] overflow-hidden p-6 gap-6 max-w-[400px]"
+      className="relative flex items-center bg-white rounded-xl shadow-lg border-l-4 border-[#0D9488] overflow-hidden p-6 gap-6 max-w-[400px]"
       whileHover={{ y: -4, shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
     >
       {/* Texture Background */}
@@ -29,7 +29,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
       {/* Profile Image with Play Button */}
       <div className="relative flex-shrink-0">
-        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#C9A84C] relative group cursor-pointer">
+        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#0D9488] relative group cursor-pointer">
           <img 
             src={image} 
             alt={name} 
@@ -43,24 +43,24 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
       {/* Content */}
       <div className="flex-1 z-10">
-        <div className="flex gap-0.5 mb-2 text-[#C9A84C]">
+        <div className="flex gap-0.5 mb-2 text-[#0D9488]">
           {[...Array(5)].map((_, i) => (
             <Star key={i} size={14} fill="currentColor" strokeWidth={0} />
           ))}
         </div>
         
-        <p className="font-['DM_Sans'] text-[15px] italic text-[#3D3D3D] leading-relaxed mb-4 line-clamp-3">
+        <p className="font-['Outfit'] text-[15px] italic text-[#3D3D3D] leading-relaxed mb-4 line-clamp-3">
           "{quote}"
         </p>
         
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
-            <span className="font-['DM_Sans'] font-bold text-[14px] text-[#0F1923]">{name}</span>
+            <span className="font-['Outfit'] font-bold text-[14px] text-[#0F172A]">{name}</span>
             <span className="text-xs text-[#A89F8E] font-['Space_Mono']">{country}</span>
           </div>
           
           <div className="inline-flex">
-            <span className="bg-[#1B7A6E]/10 text-[#1B7A6E] px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide">
+            <span className="bg-[#14B8A6]/10 text-[#14B8A6] px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide">
               {treatment}
             </span>
           </div>
@@ -72,10 +72,10 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
 export const TestimonialShowcase: React.FC = () => {
   return (
-    <section className="bg-[#FAF6EF] p-12 rounded-3xl space-y-8">
-      <div className="border-b border-[#0F1923]/10 pb-4">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F1923]">Patient Stories</h2>
-        <p className="font-['DM_Sans'] text-[#A89F8E]">Trusted by thousands worldwide</p>
+    <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-8">
+      <div className="border-b border-[#0F172A]/10 pb-4">
+        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Patient Stories</h2>
+        <p className="font-['Outfit'] text-[#A89F8E]">Trusted by thousands worldwide</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">

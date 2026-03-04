@@ -34,7 +34,7 @@ export const ExitIntentPopup = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-[#0F1923]/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-[#0F172A]/60 backdrop-blur-sm"
             onClick={handleClose}
           />
           
@@ -55,11 +55,11 @@ export const ExitIntentPopup = () => {
             </button>
 
             <div className="relative z-10 p-8 flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-[#F5F0E5] rounded-full flex items-center justify-center mb-6 text-[#C5A059]">
+              <div className="w-12 h-12 bg-[#F0F7F4] rounded-full flex items-center justify-center mb-6 text-[#C5A059]">
                 <IconAnkh className="w-6 h-6" />
               </div>
 
-              <h2 className="font-playfair text-3xl text-[#0F1923] mb-2">
+              <h2 className="font-playfair text-3xl text-[#0F172A] mb-2">
                 Before You Go...
               </h2>
               <p className="text-[#3D3D3D] mb-8 font-sans">
@@ -69,7 +69,7 @@ export const ExitIntentPopup = () => {
               {isSubmitted ? (
                 <div className="w-full max-w-sm text-center py-4">
                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3" />
-                  <p className="font-bold text-[#0F1923] mb-1">Quote Request Sent!</p>
+                  <p className="font-bold text-[#0F172A] mb-1">Quote Request Sent!</p>
                   <p className="text-sm text-gray-500">We'll be in touch within 24 hours.</p>
                 </div>
               ) : (

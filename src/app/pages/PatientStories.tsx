@@ -84,7 +84,7 @@ export function PatientStories() {
   });
 
   return (
-    <div className="pt-20 bg-[#FAF6EF] min-h-screen">
+    <div className="pt-20 bg-[#F0F7F4] min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[500px] overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
@@ -93,7 +93,7 @@ export function PatientStories() {
             alt="Diverse patients collage" 
             className="w-full h-full object-cover opacity-90"
           />
-          <div className="absolute inset-0 bg-[#0F1923]/70" />
+          <div className="absolute inset-0 bg-[#0F172A]/70" />
         </div>
         
         <div className="relative z-10 text-center px-6">
@@ -108,7 +108,7 @@ export function PatientStories() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="font-['DM_Sans'] text-xl text-white/90 max-w-2xl mx-auto"
+            className="font-['Outfit'] text-xl text-white/90 max-w-2xl mx-auto"
           >
             Discover why thousands of patients choose Sekhmet for their medical journey.
           </motion.p>
@@ -143,16 +143,16 @@ export function PatientStories() {
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
             </div>
             <Quote className="w-10 h-10 text-[#C5A059]/20 mb-4" />
-            <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F1923] mb-4">
+            <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-4">
               "I never thought dental work could feel like a vacation."
             </h3>
-            <p className="font-['DM_Sans'] text-[#0F1923]/60 mb-8 leading-relaxed">
+            <p className="font-['Outfit'] text-[#0F172A]/60 mb-8 leading-relaxed">
               Sarah flew from London for a full smile makeover. Watch her journey from arrival to the final reveal.
             </p>
             <div className="mt-auto flex items-center gap-4">
               <div>
-                <p className="font-bold text-[#0F1923] text-lg">Sarah Jenkins</p>
-                <div className="flex items-center gap-2 text-sm text-[#0F1923]/50">
+                <p className="font-bold text-[#0F172A] text-lg">Sarah Jenkins</p>
+                <div className="flex items-center gap-2 text-sm text-[#0F172A]/50">
                   <span>🇬🇧 United Kingdom</span>
                   <span>•</span>
                   <span>Dental Implants</span>
@@ -165,26 +165,26 @@ export function PatientStories() {
 
       {/* Filter Bar */}
       <section className="container mx-auto px-6 mb-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 bg-white p-6 rounded-xl shadow-sm border border-[#0F1923]/5">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 bg-white p-6 rounded-xl shadow-sm border border-[#0F172A]/5">
           <div className="flex flex-wrap gap-2 justify-center">
-            <span className="text-[#0F1923]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2">Treatment:</span>
+            <span className="text-[#0F172A]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2">Treatment:</span>
             {treatments.map(t => (
               <button
                 key={t}
                 onClick={() => setActiveTreatment(t)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeTreatment === t 
-                    ? 'bg-[#0F1923] text-white' 
-                    : 'bg-[#FAF6EF] text-[#0F1923]/60 hover:bg-[#C5A059]/10 hover:text-[#C5A059]'
+                    ? 'bg-[#0F172A] text-white' 
+                    : 'bg-[#F0F7F4] text-[#0F172A]/60 hover:bg-[#C5A059]/10 hover:text-[#C5A059]'
                 }`}
               >
                 {t}
               </button>
             ))}
           </div>
-          <div className="w-px h-10 bg-[#0F1923]/10 hidden md:block" />
+          <div className="w-px h-10 bg-[#0F172A]/10 hidden md:block" />
           <div className="flex flex-wrap gap-2 justify-center">
-            <span className="text-[#0F1923]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2">Region:</span>
+            <span className="text-[#0F172A]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2">Region:</span>
             {origins.map(o => (
               <button
                 key={o}
@@ -192,7 +192,7 @@ export function PatientStories() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeOrigin === o 
                     ? 'bg-[#C5A059] text-white' 
-                    : 'bg-[#FAF6EF] text-[#0F1923]/60 hover:bg-[#C5A059]/10 hover:text-[#C5A059]'
+                    : 'bg-[#F0F7F4] text-[#0F172A]/60 hover:bg-[#C5A059]/10 hover:text-[#C5A059]'
                 }`}
               >
                 {o}
@@ -230,7 +230,7 @@ export function PatientStories() {
                   </div>
                 )}
 
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#0F1923] flex items-center gap-1">
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#0F172A] flex items-center gap-1">
                   <CheckCircle className="w-3 h-3 text-[#C5A059]" /> Verified
                 </div>
               </div>
@@ -241,19 +241,19 @@ export function PatientStories() {
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 fill-current" />)}
                 </div>
                 
-                <blockquote className="font-['Playfair_Display'] text-lg font-bold text-[#0F1923] mb-4 leading-tight">
+                <blockquote className="font-['Playfair_Display'] text-lg font-bold text-[#0F172A] mb-4 leading-tight">
                   "{story.quote}"
                 </blockquote>
                 
-                <div className="flex items-center justify-between border-t border-[#0F1923]/10 pt-4">
+                <div className="flex items-center justify-between border-t border-[#0F172A]/10 pt-4">
                   <div className="flex items-center gap-3">
                     <div className="flex flex-col">
-                      <span className="font-bold text-sm text-[#0F1923]">{story.name} {story.flag}</span>
-                      <span className="text-xs text-[#0F1923]/50">{story.treatment}</span>
+                      <span className="font-bold text-sm text-[#0F172A]">{story.name} {story.flag}</span>
+                      <span className="text-xs text-[#0F172A]/50">{story.treatment}</span>
                     </div>
                   </div>
                   
-                  <Button variant="ghost" className="text-[#C5A059] hover:text-[#B08D55] hover:bg-[#FAF6EF] p-0 h-auto font-bold text-sm">
+                  <Button variant="ghost" className="text-[#C5A059] hover:text-[#B08D55] hover:bg-[#F0F7F4] p-0 h-auto font-bold text-sm">
                     {story.type === 'video' ? 'Watch Story' : 'Read Story'} →
                   </Button>
                 </div>
@@ -264,13 +264,13 @@ export function PatientStories() {
 
         {filteredStories.length === 0 && (
           <div className="text-center py-20">
-            <h3 className="text-2xl font-['Playfair_Display'] text-[#0F1923] mb-2">No stories found</h3>
-            <p className="text-[#0F1923]/60">Try adjusting your filters to see more patient experiences.</p>
+            <h3 className="text-2xl font-['Playfair_Display'] text-[#0F172A] mb-2">No stories found</h3>
+            <p className="text-[#0F172A]/60">Try adjusting your filters to see more patient experiences.</p>
           </div>
         )}
         
         <div className="text-center mt-16">
-          <Button variant="outline" className="border-[#0F1923]/20 hover:bg-[#0F1923] hover:text-white px-8 py-6 rounded-full text-lg transition-all">
+          <Button variant="outline" className="border-[#0F172A]/20 hover:bg-[#0F172A] hover:text-white px-8 py-6 rounded-full text-lg transition-all">
             Load More Stories
           </Button>
         </div>

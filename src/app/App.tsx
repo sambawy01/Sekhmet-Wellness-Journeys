@@ -54,7 +54,7 @@ function ScrollToTop() {
 // Website layout wrapper (with Navigation + Footer)
 function WebsiteLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#2C2825] font-['DM_Sans'] transition-all duration-300">
+    <div className="min-h-screen bg-[#F8FAFB] text-[#1A2332] font-['Outfit'] transition-all duration-300">
       <Navigation />
       <main>{children}</main>
       <Footer />

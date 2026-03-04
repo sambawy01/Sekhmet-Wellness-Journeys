@@ -4,7 +4,7 @@ import { Phone, Mail, Globe, MessageCircle } from 'lucide-react';
 
 export const TrustBar: React.FC = () => {
   return (
-    <div className="bg-[#0F1923] text-white h-[48px] flex items-center overflow-hidden w-full relative z-50">
+    <div className="bg-[#0F172A] text-white h-[48px] flex items-center overflow-hidden w-full relative z-50">
       <div className="container mx-auto px-4 flex justify-between items-center h-full max-w-[1400px]">
         
         {/* Left: Ticker */}
@@ -21,32 +21,32 @@ export const TrustBar: React.FC = () => {
               "Save Up to 85%",
               "JCI-Accredited Hospitals", // Repeat for seamless loop feeling
             ].map((text, i) => (
-              <div key={i} className="flex items-center gap-8 font-['DM_Sans'] text-[13px] tracking-wide">
+              <div key={i} className="flex items-center gap-8 font-['Outfit'] text-[13px] tracking-wide">
                 <span>{text}</span>
-                <span className="text-[#C9A84C] text-[8px]">•</span>
+                <span className="text-[#0D9488] text-[8px]">•</span>
               </div>
             ))}
           </motion.div>
         </div>
 
         {/* Right: Contact & Lang */}
-        <div className="flex items-center gap-6 pl-8 bg-[#0F1923] relative z-10 h-full border-l border-white/10">
-          <div className="flex items-center gap-2 group cursor-pointer hover:text-[#C9A84C] transition-colors">
-            <Phone size={14} className="text-[#C9A84C]" />
+        <div className="flex items-center gap-6 pl-8 bg-[#0F172A] relative z-10 h-full border-l border-white/10">
+          <div className="flex items-center gap-2 group cursor-pointer hover:text-[#0D9488] transition-colors">
+            <Phone size={14} className="text-[#0D9488]" />
             <span className="font-['Space_Mono'] text-[12px] hidden md:inline">+20 100 123 4567</span>
           </div>
           
           <div className="flex items-center gap-4 border-l border-white/10 pl-6 ml-2">
-            <MessageCircle size={16} className="text-[#C9A84C] cursor-pointer hover:scale-110 transition-transform" />
-            <Mail size={16} className="text-[#C9A84C] cursor-pointer hover:scale-110 transition-transform" />
+            <MessageCircle size={16} className="text-[#0D9488] cursor-pointer hover:scale-110 transition-transform" />
+            <Mail size={16} className="text-[#0D9488] cursor-pointer hover:scale-110 transition-transform" />
           </div>
 
-          <div className="flex items-center gap-1 font-['DM_Sans'] text-[12px] font-bold border-l border-white/10 pl-6 ml-2 text-[#A89F8E]">
-            <span className="text-white cursor-pointer hover:text-[#C9A84C]">EN</span>
+          <div className="flex items-center gap-1 font-['Outfit'] text-[12px] font-bold border-l border-white/10 pl-6 ml-2 text-[#A89F8E]">
+            <span className="text-white cursor-pointer hover:text-[#0D9488]">EN</span>
             <span>|</span>
-            <span className="cursor-pointer hover:text-[#C9A84C]">AR</span>
+            <span className="cursor-pointer hover:text-[#0D9488]">AR</span>
             <span>|</span>
-            <span className="cursor-pointer hover:text-[#C9A84C]">FR</span>
+            <span className="cursor-pointer hover:text-[#0D9488]">FR</span>
           </div>
         </div>
       </div>

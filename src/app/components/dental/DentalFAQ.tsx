@@ -59,7 +59,7 @@ export function DentalFAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F1923] mb-4"
+            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -68,7 +68,7 @@ export function DentalFAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['DM_Sans'] text-lg text-[#0F1923]/60 max-w-2xl mx-auto"
+            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             Everything you need to know about your dental journey to Egypt.
           </motion.p>
@@ -82,11 +82,11 @@ export function DentalFAQ() {
         >
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-[#C5A059]/20 rounded-lg px-6 bg-[#FAF6EF]">
-                <AccordionTrigger className="text-left font-['Playfair_Display'] text-lg font-semibold text-[#0F1923] hover:text-[#C5A059] hover:no-underline py-6">
+              <AccordionItem key={index} value={`item-${index}`} className="border border-[#C5A059]/20 rounded-lg px-6 bg-[#F0F7F4]">
+                <AccordionTrigger className="text-left font-['Playfair_Display'] text-lg font-semibold text-[#0F172A] hover:text-[#C5A059] hover:no-underline py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="font-['DM_Sans'] text-[#0F1923]/70 pb-6 text-base leading-relaxed">
+                <AccordionContent className="font-['Outfit'] text-[#0F172A]/70 pb-6 text-base leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
