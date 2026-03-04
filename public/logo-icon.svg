@@ -2,40 +2,60 @@
   <defs>
     <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#D4A84B"/>
-      <stop offset="50%" style="stop-color:#C5A059"/>
-      <stop offset="100%" style="stop-color:#A67C38"/>
+      <stop offset="40%" style="stop-color:#C5A059"/>
+      <stop offset="100%" style="stop-color:#A07830"/>
     </linearGradient>
   </defs>
 
-  <g transform="translate(60, 68)">
+  <g transform="translate(60, 65)">
     <!-- Top circle/loop of ankh -->
-    <circle cx="0" cy="-35" r="30" stroke="url(#g)" stroke-width="7" fill="none"/>
+    <ellipse cx="0" cy="-32" rx="30" ry="33" stroke="url(#g)" stroke-width="8" fill="none"/>
 
-    <!-- Lioness face inside the loop -->
-    <!-- Ears -->
-    <path d="M-11 -53 C-14 -60, -9 -63, -6 -58" stroke="url(#g)" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <path d="M11 -53 C14 -60, 9 -63, 6 -58" stroke="url(#g)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Lioness face -->
+    <!-- Ears - pointed, upright -->
+    <path d="M-16 -56 C-20 -68, -12 -72, -9 -62" stroke="url(#g)" stroke-width="2.5" fill="url(#g)" opacity="0.9"/>
+    <path d="M16 -56 C20 -68, 12 -72, 9 -62" stroke="url(#g)" stroke-width="2.5" fill="url(#g)" opacity="0.9"/>
 
-    <!-- Eyes -->
-    <ellipse cx="-8" cy="-40" rx="3.5" ry="2.5" stroke="url(#g)" stroke-width="1.5" fill="none"/>
-    <ellipse cx="8" cy="-40" rx="3.5" ry="2.5" stroke="url(#g)" stroke-width="1.5" fill="none"/>
-    <circle cx="-8" cy="-40" r="1" fill="url(#g)"/>
-    <circle cx="8" cy="-40" r="1" fill="url(#g)"/>
+    <!-- Brow line -->
+    <path d="M-14 -44 C-8 -47, 8 -47, 14 -44" stroke="url(#g)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 
-    <!-- Nose -->
-    <path d="M-2.5 -33 L0 -30.5 L2.5 -33" stroke="url(#g)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Eyes - almond shaped, Egyptian style -->
+    <path d="M-15 -39 C-12 -43, -6 -43, -4 -39 C-6 -36, -12 -36, -15 -39Z" fill="url(#g)" opacity="0.85"/>
+    <path d="M15 -39 C12 -43, 6 -43, 4 -39 C6 -36, 12 -36, 15 -39Z" fill="url(#g)" opacity="0.85"/>
+    <!-- Eye inner -->
+    <ellipse cx="-9.5" cy="-39" rx="2.5" ry="1.8" fill="#1A1A1A"/>
+    <ellipse cx="9.5" cy="-39" rx="2.5" ry="1.8" fill="#1A1A1A"/>
 
-    <!-- Mouth -->
-    <path d="M0 -30.5 L0 -28" stroke="url(#g)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    <path d="M-4 -26 C-2 -24, 2 -24, 4 -26" stroke="url(#g)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <!-- Nose bridge -->
+    <path d="M-3 -34 L0 -28 L3 -34" stroke="url(#g)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-    <!-- Cross arms -->
-    <rect x="-25" y="-4" width="50" height="7" rx="2.5" fill="url(#g)"/>
+    <!-- Nostrils -->
+    <ellipse cx="-3" cy="-27" rx="2" ry="1.2" fill="url(#g)" opacity="0.6"/>
+    <ellipse cx="3" cy="-27" rx="2" ry="1.2" fill="url(#g)" opacity="0.6"/>
+
+    <!-- Mouth line -->
+    <path d="M0 -26 L0 -23" stroke="url(#g)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Muzzle curve -->
+    <path d="M-10 -21 C-6 -17, 6 -17, 10 -21" stroke="url(#g)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+    <!-- Inner muzzle lines -->
+    <path d="M-5 -22 C-3 -19, 3 -19, 5 -22" stroke="url(#g)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+    <!-- Cheek contour -->
+    <path d="M-18 -32 C-20 -26, -16 -20, -12 -18" stroke="url(#g)" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M18 -32 C20 -26, 16 -20, 12 -18" stroke="url(#g)" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- Cross arms of ankh -->
+    <path d="M-28 -2 L28 -2 L28 6 C28 8, 26 10, 24 10 L-24 10 C-26 10, -28 8, -28 6 Z" fill="url(#g)"/>
 
     <!-- Vertical shaft -->
-    <rect x="-4" y="3" width="8" height="55" rx="2" fill="url(#g)"/>
+    <rect x="-5" y="10" width="10" height="60" rx="2" fill="url(#g)"/>
 
-    <!-- Connection -->
-    <rect x="-4" y="-9" width="8" height="12" fill="url(#g)"/>
+    <!-- Base of shaft - slight widening -->
+    <path d="M-7 65 L7 65 L6 70 C6 72, -6 72, -6 70 Z" fill="url(#g)"/>
+
+    <!-- Connection from circle to arms -->
+    <rect x="-5" y="-5" width="10" height="8" fill="url(#g)"/>
   </g>
 </svg>
