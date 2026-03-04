@@ -9,7 +9,7 @@ const doctors = [
     name: "Dr. Ahmed El-Sayed",
     specialty: "Cosmetic",
     title: "Senior Plastic Surgeon",
-    image: "https://images.unsplash.com/photo-1762237798212-bcc000c00891?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800",
     credentials: ["FRCS (UK)", "Fellow, Cambridge Univ", "15+ Years Experience"],
     affiliation: "Cairo International Hospital"
   },
@@ -18,7 +18,7 @@ const doctors = [
     name: "Dr. Layla Hassan",
     specialty: "Cosmetic",
     title: "Dermatologist",
-    image: "https://images.unsplash.com/photo-1770130174214-477ce018479f?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800",
     credentials: ["MD, Cairo University", "Laser Specialist", "12+ Years Experience"],
     affiliation: "Nile Wellness Center"
   },
@@ -27,7 +27,7 @@ const doctors = [
     name: "Dr. Youssef Mahmoud",
     specialty: "Checkups",
     title: "Orthopedic Surgeon",
-    image: "https://images.unsplash.com/photo-1651596082255-bcb4993cee27?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1631596577204-53ad0d6e6978?auto=format&fit=crop&q=80&w=800",
     credentials: ["PhD, Munich Germany", "Sports Medicine", "20+ Years Experience"],
     affiliation: "Red Sea Medical Group"
   },
@@ -36,7 +36,7 @@ const doctors = [
     name: "Dr. Sarah Johnson",
     specialty: "Dental",
     title: "Implantologist",
-    image: "https://images.unsplash.com/photo-1611690061822-b707a67bfebb?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1565090567208-c8038cfcf6cd?auto=format&fit=crop&q=80&w=800",
     credentials: ["DDS, NYU", "Fellow, ICOI", "10+ Years Experience"],
     affiliation: "Smile Artistry Clinic"
   },
@@ -45,7 +45,7 @@ const doctors = [
     name: "Dr. Omar Farouk",
     specialty: "Vision",
     title: "Ophthalmologist",
-    image: "https://images.unsplash.com/photo-1698465281093-9f09159733b9?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1748200100041-3d815ae01dd1?auto=format&fit=crop&q=80&w=800",
     credentials: ["FRCOphth (UK)", "LASIK Expert", "18+ Years Experience"],
     affiliation: "Vision Correction Center"
   },
@@ -54,17 +54,16 @@ const doctors = [
     name: "Dr. Amira Zaki",
     specialty: "IVF",
     title: "Fertility Specialist",
-    image: "https://images.unsplash.com/photo-1770130174214-477ce018479f?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1706565029539-d09af5896340?auto=format&fit=crop&q=80&w=800",
     credentials: ["MD, London", "IVF & Embryology", "14+ Years Experience"],
     affiliation: "Life Fertility Clinic"
   },
-  // Add more mock doctors to fill the grid
   {
     id: 7,
     name: "Dr. Kareem Soliman",
     specialty: "Dental",
     title: "Cosmetic Dentist",
-    image: "https://images.unsplash.com/photo-1762237798212-bcc000c00891?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1645066928295-2506defde470?auto=format&fit=crop&q=80&w=800",
     credentials: ["DDS, Cairo", "Veneer Specialist", "8+ Years Experience"],
     affiliation: "Cairo Dental Institute"
   },
@@ -73,7 +72,7 @@ const doctors = [
     name: "Dr. Nadia Ezzat",
     specialty: "Checkups",
     title: "Cardiologist",
-    image: "https://images.unsplash.com/photo-1770130174214-477ce018479f?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800",
     credentials: ["FACC (USA)", "Interventional Cardio", "22+ Years Experience"],
     affiliation: "Heart Care Center"
   }
@@ -99,7 +98,7 @@ export function OurDoctors() {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-['Playfair_Display'] text-5xl md:text-6xl font-bold mb-4"
+            className="font-['Outfit'] text-5xl md:text-6xl font-bold mb-4"
           >
             World-Class Specialists
           </motion.h1>
