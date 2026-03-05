@@ -28,6 +28,10 @@ import { BlogArticle } from './pages/BlogArticle';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Fertility } from './pages/Fertility';
+import { VisionCorrection } from './pages/VisionCorrection';
+import { CosmeticSurgery } from './pages/CosmeticSurgery';
+import { Wellness } from './pages/Wellness';
+import { HealthCheckups } from './pages/HealthCheckups';
 import { Pricing } from './pages/Pricing';
 import { Treatments } from './pages/Treatments';
 
@@ -85,6 +89,10 @@ export default function App() {
           <Route path="/treatments/dental/implants" element={<WebsiteLayout><DentalImplants /></WebsiteLayout>} />
           <Route path="/treatments/dental/hollywood-smile" element={<WebsiteLayout><HollywoodSmile /></WebsiteLayout>} />
           <Route path="/treatments/fertility" element={<WebsiteLayout><Fertility /></WebsiteLayout>} />
+          <Route path="/treatments/vision" element={<WebsiteLayout><VisionCorrection /></WebsiteLayout>} />
+          <Route path="/treatments/cosmetic" element={<WebsiteLayout><CosmeticSurgery /></WebsiteLayout>} />
+          <Route path="/treatments/wellness" element={<WebsiteLayout><Wellness /></WebsiteLayout>} />
+          <Route path="/treatments/checkups" element={<WebsiteLayout><HealthCheckups /></WebsiteLayout>} />
           <Route path="/pricing" element={<WebsiteLayout><Pricing /></WebsiteLayout>} />
           <Route path="/how-it-works" element={<WebsiteLayout><HowItWorks /></WebsiteLayout>} />
           <Route path="/patient-stories" element={<WebsiteLayout><PatientStories /></WebsiteLayout>} />

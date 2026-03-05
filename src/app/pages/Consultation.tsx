@@ -16,17 +16,19 @@ const steps = [
 const treatments = [
   { id: 'dental', name: 'Dental Care', icon: '🦷' },
   { id: 'vision', name: 'Vision Correction', icon: '👁️' },
+  { id: 'fertility', name: 'Fertility & IVF', icon: '👶' },
   { id: 'cosmetic', name: 'Cosmetic Surgery', icon: '✨' },
+  { id: 'wellness', name: 'Wellness', icon: '🌿' },
   { id: 'checkups', name: 'Health Checkups', icon: '🩺' },
-  { id: 'ivf', name: 'IVF & Fertility', icon: '👶' },
 ];
 
-const procedures = {
-  dental: ['Implants', 'Veneers', 'Hollywood Smile', 'Whitening', 'Wisdom Tooth Removal'],
-  vision: ['LASIK', 'Cataract', 'Retina', 'Glaucoma'],
-  cosmetic: ['Rhinoplasty', 'Liposuction', 'Breast Augmentation', 'Facelift'],
-  checkups: ['Full Body', 'Cancer Screening', 'Heart Health', 'Executive Checkup'],
-  ivf: ['IVF Cycle', 'Egg Freezing', 'ICSI', 'Genetic Testing'],
+const procedures: Record<string, string[]> = {
+  dental: ['Hollywood Smile', 'Dental Implants', 'Veneers', 'All-on-4 / All-on-6', 'Dental Crowns & Bridges', 'Root Canal Treatment', 'Teeth Whitening', 'Full Mouth Rehabilitation', 'Wisdom Tooth Removal', 'Gum Treatment'],
+  vision: ['LASIK Eye Surgery', 'PRK / LASEK', 'Cataract Surgery', 'Lens Implant (ICL)', 'Glaucoma Treatment', 'Retina Treatment', 'Corneal Cross-Linking'],
+  fertility: ['IVF Treatment', 'ICSI', 'Egg Freezing', 'Embryo Freezing', 'IUI', 'Male Infertility Treatment', 'Genetic Screening (PGD/PGS)', 'Donor Programs'],
+  cosmetic: ['Rhinoplasty', 'Breast Augmentation', 'Breast Reduction & Lift', 'Liposuction', 'Tummy Tuck', 'Facelift', 'Eyelid Surgery', 'Brazilian Butt Lift (BBL)', 'Mommy Makeover', 'Otoplasty (Ear Surgery)'],
+  wellness: ['Hair Transplant (FUE/DHI)', 'Weight Loss Surgery', 'Spa & Recovery Packages', 'Physiotherapy & Rehab', 'Anti-Aging Treatments'],
+  checkups: ['Full Body Checkup', 'Executive Health Screening', 'Cancer Screening', 'Cardiac Checkup', "Women's Health Screening", "Men's Health Screening"],
 };
 
 export function Consultation() {

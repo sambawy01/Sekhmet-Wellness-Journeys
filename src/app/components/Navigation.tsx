@@ -187,22 +187,27 @@ export const Navigation: React.FC = () => {
 
             {/* Column 2: Vision */}
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
-              <div className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
+              <Link to="/treatments/vision" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconEyeOfHorus className="w-8 h-8" />
                 <h3 className="font-['Outfit'] font-bold text-lg">Vision</h3>
-              </div>
+              </Link>
               <ul className="space-y-3">
-                {["LASIK Eye Surgery", "Cataract Removal", "Lens Implant", "Glaucoma"].map((item, i) => (
+                {[
+                  { name: "LASIK Eye Surgery", path: "/treatments/vision" },
+                  { name: "Cataract Surgery", path: "/treatments/vision" },
+                  { name: "Lens Implant (ICL)", path: "/treatments/vision" },
+                  { name: "Glaucoma Treatment", path: "/treatments/vision" }
+                ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    {item}
+                    <Link to={item.path}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <span className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <Link to="/treatments/vision" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
-                </span>
+                </Link>
               </div>
             </div>
 
@@ -234,65 +239,79 @@ export const Navigation: React.FC = () => {
 
             {/* Column 4: Cosmetic */}
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
-              <div className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
+              <Link to="/treatments/cosmetic" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconScarab className="w-8 h-8" />
                 <h3 className="font-['Outfit'] font-bold text-lg">Cosmetic</h3>
-              </div>
+              </Link>
               <ul className="space-y-3">
-                {["Rhinoplasty", "Breast Augmentation", "Liposuction", "Facelift"].map((item, i) => (
+                {[
+                  { name: "Rhinoplasty", path: "/treatments/cosmetic" },
+                  { name: "Breast Augmentation", path: "/treatments/cosmetic" },
+                  { name: "Liposuction", path: "/treatments/cosmetic" },
+                  { name: "Facelift", path: "/treatments/cosmetic" }
+                ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    {item}
+                    <Link to={item.path}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <span className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <Link to="/treatments/cosmetic" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
-                </span>
+                </Link>
               </div>
             </div>
 
             {/* Column 5: Wellness */}
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
-              <div className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
+              <Link to="/treatments/wellness" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconCare className="w-8 h-8" />
                 <h3 className="font-['Outfit'] font-bold text-lg">Wellness</h3>
-              </div>
+              </Link>
               <ul className="space-y-3">
-                {["Weight Loss", "Hair Transplant", "Checkups", "Spa & Recovery"].map((item, i) => (
+                {[
+                  { name: "Hair Transplant", path: "/treatments/wellness" },
+                  { name: "Weight Loss Surgery", path: "/treatments/wellness" },
+                  { name: "Spa & Recovery", path: "/treatments/wellness" },
+                  { name: "Anti-Aging", path: "/treatments/wellness" }
+                ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    {item}
+                    <Link to={item.path}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
-                <span className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                <Link to="/treatments/wellness" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
                   View All <ArrowRight size={10} />
-                </span>
+                </Link>
               </div>
             </div>
 
-            {/* Column 6: Featured */}
-            <div className="bg-[#F0F7F4] p-6 rounded-xl relative overflow-hidden group/card cursor-pointer">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#0D9488]/10 rounded-full -mr-8 -mt-8" />
-              <span className="bg-[#1A2332] text-white px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full mb-4 inline-block">
-                New Package
-              </span>
-              <h4 className="font-['Outfit'] font-bold text-xl text-[#1A2332] mb-2 leading-tight">
-                Cairo Executive Checkup
-              </h4>
-              <p className="font-['Outfit'] text-sm text-[#64748B] mb-6">
-                Full body MRI + 5-Star Nile View Suite.
-              </p>
-              <div className="mt-auto">
-                <span className="font-['Space_Mono'] font-bold text-[#14B8A6] text-lg block mb-1">
-                  $1,250
-                </span>
-                <span className="text-[#0D9488] text-xs font-bold uppercase tracking-wide flex items-center gap-1 group-hover/card:gap-2 transition-all">
-                  Learn More <ArrowRight size={10} />
-                </span>
+            {/* Column 6: Health Checkups */}
+            <div className="space-y-4 group/col">
+              <Link to="/treatments/checkups" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
+                <IconAnkh className="w-8 h-8" />
+                <h3 className="font-['Outfit'] font-bold text-lg">Checkups</h3>
+              </Link>
+              <ul className="space-y-3">
+                {[
+                  { name: "Full Body Checkup", path: "/treatments/checkups" },
+                  { name: "Executive Screening", path: "/treatments/checkups" },
+                  { name: "Cancer Screening", path: "/treatments/checkups" },
+                  { name: "Cardiac Checkup", path: "/treatments/checkups" }
+                ].map((item, i) => (
+                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                    <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                    <Link to={item.path}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-2">
+                <Link to="/treatments/checkups" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
+                  View All <ArrowRight size={10} />
+                </Link>
               </div>
             </div>
           </div>
@@ -309,8 +328,11 @@ export const Navigation: React.FC = () => {
             <div className="flex flex-col gap-3">
                <h4 className="text-[#64748B] font-['Outfit'] text-xs font-bold uppercase tracking-widest pl-1">Treatments</h4>
                <MobileNavLink to="/treatments/dental" label="Dental Care" delay={0.1} onClick={() => setIsMobileMenuOpen(false)} />
-               <MobileNavLink to="/treatments/fertility" label="IVF & Fertility" delay={0.12} onClick={() => setIsMobileMenuOpen(false)} />
-               <MobileNavLink to="/treatments/dental" label="Vision Correction" delay={0.14} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/vision" label="Vision Correction" delay={0.11} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/fertility" label="Fertility & IVF" delay={0.12} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/cosmetic" label="Cosmetic Surgery" delay={0.13} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/wellness" label="Wellness" delay={0.14} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/checkups" label="Health Checkups" delay={0.15} onClick={() => setIsMobileMenuOpen(false)} />
             </div>
             
             <div className="h-px bg-white/10 my-1" />
