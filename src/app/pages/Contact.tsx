@@ -52,7 +52,7 @@ export const Contact = () => {
   return (
     <div className={`min-h-screen bg-[#F0F7F4] pt-12 pb-20 ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="font-playfair text-4xl md:text-5xl text-[#0F172A] mb-4">{t('contact.title')}</h1>
@@ -63,9 +63,9 @@ export const Contact = () => {
         </div>
 
         <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-start ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
-          
+
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-white p-8 md:p-10 rounded-2xl shadow-lg border-t-4 border-[#C5A059]"
@@ -79,7 +79,7 @@ export const Contact = () => {
                 <p className={`text-gray-600 mb-8 font-sans ${isRTL ? 'text-right' : ''}`}>
                   {t('contact.thankYou')}
                 </p>
-                <button 
+                <button
                   onClick={() => setIsSubmitted(false)}
                   className="text-[#C5A059] font-bold hover:underline"
                 >
@@ -181,7 +181,7 @@ export const Contact = () => {
           </motion.div>
 
           {/* Contact Info */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
@@ -222,9 +222,8 @@ export const Contact = () => {
                        <div>
                          <p className={`text-sm text-gray-400 uppercase tracking-wide mb-1 ${isRTL ? 'text-right' : ''}`}>{t('contact.visitUs')}</p>
                          <p className="font-sans text-lg">
-                           {t('contact.address.line1')}<br />
-                           {t('contact.address.line2')}<br />
-                           {t('contact.address.line3')}
+                           IFZA Free Zone,<br />
+                           Dubai, UAE
                          </p>
                        </div>
                      </div>
@@ -232,35 +231,23 @@ export const Contact = () => {
                  </div>
 
                  {/* Map Preview */}
-                 <div className="rounded-xl overflow-hidden h-48 relative border border-white/10 group cursor-pointer">
-                   <img 
-                     src="https://images.unsplash.com/photo-1572252009289-9d53c6d99a47?auto=format&fit=crop&q=80&w=800" 
-                     alt="Map location" 
+                 <a
+                   href="https://www.google.com/maps/search/IFZA+Free+Zone+Dubai"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="block rounded-xl overflow-hidden h-48 relative border border-white/10 group cursor-pointer"
+                 >
+                   <img
+                     src="https://images.unsplash.com/photo-1572252009289-9d53c6d99a47?auto=format&fit=crop&q=80&w=800"
+                     alt="Map location"
                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
                    />
                    <div className="absolute inset-0 flex items-center justify-center">
-                     <button className="bg-white/90 text-[#0F172A] px-4 py-2 rounded-lg font-bold text-sm shadow-lg hover:bg-white transition-colors">
+                     <span className="bg-white/90 text-[#0F172A] px-4 py-2 rounded-lg font-bold text-sm shadow-lg group-hover:bg-white transition-colors">
                        {t('contact.openMap')}
-                     </button>
+                     </span>
                    </div>
-                 </div>
-
-                 {/* Social Links */}
-                 <div className={`pt-6 border-t border-white/10 flex justify-between items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
-                   <span className="text-gray-400 text-sm">{t('contact.followJourney')}</span>
-                   <div className={`flex gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                     {/* Social Icons Placeholder */}
-                     <div className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A059] transition-colors cursor-pointer flex items-center justify-center">
-                       <span className="font-bold text-xs">IG</span>
-                     </div>
-                     <div className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A059] transition-colors cursor-pointer flex items-center justify-center">
-                       <span className="font-bold text-xs">FB</span>
-                     </div>
-                     <div className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A059] transition-colors cursor-pointer flex items-center justify-center">
-                       <span className="font-bold text-xs">LI</span>
-                     </div>
-                   </div>
-                 </div>
+                 </a>
                </div>
             </div>
 

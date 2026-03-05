@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { cn } from '../../lib/utils';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 
 const WhatsAppIcon = () => (
-  <svg 
-    viewBox="0 0 24 24" 
-    width="24" 
-    height="24" 
+  <svg
+    viewBox="0 0 24 24"
+    width="24"
+    height="24"
     fill="currentColor"
     className="text-white"
   >
@@ -24,18 +25,20 @@ export const MobileStickyCTA: React.FC = () => {
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#0D9488]/20 p-4 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] pb-8">
       <div className={cn("flex gap-3", isRTL && "flex-row-reverse")}>
-        <a
-          href="/consultation"
+        <Link
+          to="/consultation"
           className="flex-1 bg-[#0D9488] text-[#0F172A] font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
         >
           <span className={isRTL ? "font-['Cairo']" : "font-['Outfit'] uppercase tracking-wide text-sm"}>
             {t('mobileCta.bookPackage')}
           </span>
           <ArrowIcon size={16} />
-        </a>
-        
-        <a 
+        </Link>
+
+        <a
           href="https://wa.me/447988559541"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-[#25D366] w-12 h-12 rounded-lg flex items-center justify-center shadow-lg active:scale-95 transition-transform shrink-0"
         >
           <WhatsAppIcon />

@@ -1,14 +1,15 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, Star, Play } from 'lucide-react';
+import { Star, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../../lib/utils';
 
-const TestimonialCard = ({ 
-  name, age, country, treatment, quote, image, flag, delay 
-}: { 
-  name: string, age: number, country: string, treatment: string, quote: string, image: string, flag: string, delay: number 
+const TestimonialCard = ({
+  name, age, country, treatment, quote, image, flag, delay
+}: {
+  name: string, age: number, country: string, treatment: string, quote: string, image: string, flag: string, delay: number
 }) => (
-  <div 
+  <div
     className="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-[#0D9488] relative min-w-[340px] md:min-w-[380px] h-full flex flex-col opacity-0 animate-fade-in-right"
     style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
   >
@@ -34,11 +35,11 @@ const TestimonialCard = ({
         </span>
       </div>
     </div>
-    
+
     <blockquote className="font-['Outfit'] italic text-[#3D3D3D] text-[15px] leading-relaxed mb-6 flex-grow">
       "{quote}"
     </blockquote>
-    
+
     <div className="mt-auto pt-6 border-t border-[#F8FAFB]">
       <div className="flex items-center gap-2">
         <span className="text-xl">{flag}</span>
@@ -87,7 +88,7 @@ export const PatientStories: React.FC = () => {
 
   return (
     <section className="bg-[#F8FAFB] py-24 overflow-hidden relative">
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
@@ -102,20 +103,11 @@ export const PatientStories: React.FC = () => {
             </h2>
             <div className={cn("h-1 w-24 bg-[#0D9488]", isRTL && "ml-auto")} />
           </div>
-          
-          <div className={cn("hidden md:flex gap-2", isRTL && "flex-row-reverse")}>
-            <button className="w-12 h-12 rounded-full border border-[#0D9488] flex items-center justify-center text-[#0D9488] hover:bg-[#0D9488] hover:text-white transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-            <button className="w-12 h-12 rounded-full bg-[#1A2332] flex items-center justify-center text-white hover:bg-[#0D9488] transition-colors">
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-           {testimonials.map((t, i) => (
-             <TestimonialCard key={i} {...t} delay={i * 0.1} />
+           {testimonials.map((testimonial, i) => (
+             <TestimonialCard key={i} {...testimonial} delay={i * 0.1} />
            ))}
         </div>
 
@@ -123,9 +115,9 @@ export const PatientStories: React.FC = () => {
             <p className={cn("font-['Space_Mono'] text-sm text-[#1A2332] mb-4")}>
               {t("homeStories.rating")} <span className="text-[#0D9488]">★★★★★</span> {t("homeStories.ratingSubtitle")}
             </p>
-            <a href="#" className={cn("font-['Outfit'] font-bold text-[#1A2332] border-b-2 border-[#0D9488] hover:text-[#0D9488] transition-colors", isRTL && "font-['Cairo']")}>
+            <Link to="/patient-stories" className={cn("font-['Outfit'] font-bold text-[#1A2332] border-b-2 border-[#0D9488] hover:text-[#0D9488] transition-colors", isRTL && "font-['Cairo']")}>
               {t("homeStories.readMore")}
-            </a>
+            </Link>
         </div>
       </div>
       <style>{`

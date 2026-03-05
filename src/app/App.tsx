@@ -27,6 +27,8 @@ import { BlogListing } from './pages/BlogListing';
 import { BlogArticle } from './pages/BlogArticle';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
 import { Fertility } from './pages/Fertility';
 import { VisionCorrection } from './pages/VisionCorrection';
 import { CosmeticSurgery } from './pages/CosmeticSurgery';
@@ -104,6 +106,8 @@ export default function App() {
           <Route path="/blog/:slug" element={<WebsiteLayout><BlogArticle /></WebsiteLayout>} />
           <Route path="/about" element={<WebsiteLayout><About /></WebsiteLayout>} />
           <Route path="/contact" element={<WebsiteLayout><Contact /></WebsiteLayout>} />
+          <Route path="/privacy-policy" element={<WebsiteLayout><PrivacyPolicy /></WebsiteLayout>} />
+          <Route path="/terms-of-service" element={<WebsiteLayout><TermsOfService /></WebsiteLayout>} />
         </Routes>
       </LanguageProvider>
     </HashRouter>

@@ -19,21 +19,21 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
   const ArrowIcon = isRTL ? ArrowUpLeft : ArrowUpRight;
 
   return (
-    <Link 
+    <Link
       to={link}
       className="group relative h-[360px] md:h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-[#0D9488]/20 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up block"
       style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
       dir={direction}
     >
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
         style={{ backgroundImage: `url('${image}')` }}
       />
-      
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332] via-[#1A2332]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-      
+
       {/* Content */}
       <div className={cn(
         "absolute bottom-0 w-full p-8 flex flex-col justify-end h-full",
@@ -46,12 +46,12 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
           )}>
             {title}
           </h3>
-          
+
           <div className={cn(
             "h-0.5 w-12 bg-[#0D9488] mb-4 group-hover:w-full transition-all duration-500 ease-out",
             isRTL ? "ml-auto" : "mr-auto"
           )} />
-          
+
           <ul className={cn(
             "space-y-1 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100",
             isRTL && "pr-0"
@@ -66,7 +66,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
               </li>
             ))}
           </ul>
-          
+
           <div className={cn(
             "flex items-center justify-between border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200",
             isRTL && "flex-row-reverse"
@@ -83,7 +83,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
           </div>
         </div>
       </div>
-      
+
       {/* Border Glow on Hover */}
       <div className="absolute inset-0 border-2 border-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
     </Link>
@@ -106,21 +106,21 @@ export const SpecialtiesGrid: React.FC = () => {
       image: "https://images.unsplash.com/photo-1680730591022-3bfb2bdcaf0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxodW1hbiUyMGV5ZSUyMG1hY3JvJTIwYmx1ZSUyMGlyaXMlMjBsaWdodHxlbnwxfHx8fDE3NzEyNzUyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       procedures: [t("specialties.vision.proc1"), t("specialties.vision.proc2"), t("specialties.vision.proc3")],
       price: "$550",
-      link: "/consultation?treatment=vision"
+      link: "/treatments/vision"
     },
     {
       title: t("specialties.cosmetic.title"),
       image: "https://images.unsplash.com/photo-1767396858207-9b9519ff3a2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwd29tYW4lMjBwcm9maWxlJTIwYmVhdXR5JTIwZmFzaGlvbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MTI3NTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       procedures: [t("specialties.cosmetic.proc1"), t("specialties.cosmetic.proc2"), t("specialties.cosmetic.proc3")],
       price: "$1,800",
-      link: "/consultation?treatment=cosmetic"
+      link: "/treatments/cosmetic"
     },
     {
       title: t("specialties.checkup.title"),
       image: "https://images.unsplash.com/photo-1720180244339-95e56d52e182?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBzdGV0aG9zY29wZSUyMG1vZGVybiUyMGhvc3BpdGFsJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzcxMjc1MjcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       procedures: [t("specialties.checkup.proc1"), t("specialties.checkup.proc2"), t("specialties.checkup.proc3")],
       price: "$450",
-      link: "/consultation?treatment=checkup"
+      link: "/treatments/checkups"
     },
     {
       title: t("specialties.fertility.title"),
@@ -134,7 +134,7 @@ export const SpecialtiesGrid: React.FC = () => {
   return (
     <section id="specialties" className="bg-[#F0F7F4] py-24">
       <div className="container mx-auto px-6 max-w-[1440px]">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="font-['Outfit'] text-4xl md:text-5xl text-[#1A2332] font-bold relative inline-block">
@@ -152,7 +152,7 @@ export const SpecialtiesGrid: React.FC = () => {
             <SpecialtyCard key={i} {...spec} delay={i * 0.1} />
           ))}
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {specialties.slice(3, 5).map((spec, i) => (
             <SpecialtyCard key={i + 3} {...spec} delay={(i + 3) * 0.1} />
