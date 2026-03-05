@@ -47,7 +47,7 @@ export function TravelGuide() {
               Your Travel Guide
             </h1>
             <p className="font-['Outfit'] text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
-              Everything you need to prepare for a seamless medical journey to Egypt.
+              Everything you need for a smooth, stress-free wellness journey to Egypt — visas, transport, culture, and more.
             </p>
           </motion.div>
         </div>
@@ -58,12 +58,14 @@ export function TravelGuide() {
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#0F172A]/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A]">Download the Full Guide</h3>
-            <p className="text-[#0F172A]/60">Get our comprehensive 40-page PDF with detailed checklists.</p>
+            <p className="text-[#0F172A]/60">Get our comprehensive travel &amp; wellness guide covering visas, transport, dental &amp; medical tourism, destinations, cuisine, and Red Sea packages.</p>
           </div>
-          <Button className="bg-[#0F172A] hover:bg-[#C5A059] text-white px-8 py-6 rounded-full text-lg transition-all flex items-center gap-2">
-            <Download className="w-5 h-5" />
-            Download PDF Guide
-          </Button>
+          <a href="/Sekhmet-Egypt-Travel-Wellness-Guide.pdf" download>
+            <Button className="bg-[#0F172A] hover:bg-[#C5A059] text-white px-8 py-6 rounded-full text-lg transition-all flex items-center gap-2">
+              <Download className="w-5 h-5" />
+              Download PDF Guide
+            </Button>
+          </a>
         </div>
       </section>
 
@@ -75,15 +77,24 @@ export function TravelGuide() {
               <Globe className="w-8 h-8 text-[#C5A059]" />
             </div>
             <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-6">
-              Visa Information
+              Getting Your Visa Sorted
             </h2>
-            <p className="text-[#0F172A]/70 mb-8 text-lg leading-relaxed">
-              Most medical tourists can obtain an e-visa before travel or a visa on arrival. For specific treatments requiring longer stays, we assist with medical entry visas.
+            <p className="text-[#0F172A]/70 mb-6 text-lg leading-relaxed">
+              Citizens of the <strong>EU</strong> and <strong>UK</strong> can obtain a visa on arrival at any Egyptian airport for around $25 USD. However, we strongly recommend applying for an <strong>e-Visa</strong> beforehand — it saves you queuing at the airport, trust us!
             </p>
+            <div className="bg-[#C5A059]/10 border border-[#C5A059]/20 rounded-xl p-5 mb-6">
+              <h4 className="font-bold text-[#C5A059] mb-2 flex items-center gap-2">
+                <ArrowRight className="w-4 h-4" />
+                Visa on Arrival Countries
+              </h4>
+              <p className="text-[#0F172A]/70 text-sm leading-relaxed">
+                All <strong>EU member states</strong>, <strong>United Kingdom</strong>, USA, Canada, Australia, New Zealand, Russia, Ukraine, South Korea, Japan, and most other nationalities are eligible for visa on arrival or e-Visa.
+              </p>
+            </div>
             <ul className="space-y-4">
               {[
-                "Passport valid for at least 6 months",
-                "Printed e-Visa or cash for Visa on Arrival ($25 USD)",
+                "Passport valid for at least 6 months beyond entry date",
+                "E-Visa (~$25) or cash for Visa on Arrival ($25 USD)",
                 "Medical invitation letter (provided by Sekhmet)",
                 "Proof of accommodation (provided by Sekhmet)"
               ].map((item, i) => (
@@ -94,16 +105,25 @@ export function TravelGuide() {
               ))}
             </ul>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-[#0F172A]/5 rotate-2 hover:rotate-0 transition-transform duration-500">
-            <div className="border-2 border-dashed border-[#0F172A]/10 rounded-xl p-6">
-              <h3 className="font-bold text-xl mb-4 text-[#0F172A]">E-Visa Application Steps</h3>
-              <ol className="space-y-4 list-decimal list-inside text-[#0F172A]/70">
-                <li>Visit visa2egypt.gov.eg</li>
-                <li>Create an account and fill the application</li>
-                <li>Upload passport bio page</li>
-                <li>Pay the fee online</li>
-                <li>Receive e-Visa via email (usually within 7 days)</li>
-              </ol>
+          <div className="space-y-6">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-[#0F172A]/5 rotate-1 hover:rotate-0 transition-transform duration-500">
+              <div className="border-2 border-dashed border-[#C5A059]/30 rounded-xl p-6">
+                <h3 className="font-bold text-xl mb-1 text-[#C5A059]">E-Visa (Recommended!)</h3>
+                <p className="text-[#0F172A]/50 text-sm mb-4">Skip the airport queue — apply online in minutes</p>
+                <ol className="space-y-3 list-decimal list-inside text-[#0F172A]/70">
+                  <li>Visit <span className="font-medium text-[#0F172A]">visa2egypt.gov.eg</span></li>
+                  <li>Create an account and fill the application</li>
+                  <li>Upload your passport bio page</li>
+                  <li>Pay the fee online (~$25)</li>
+                  <li>Receive e-Visa via email (3–7 business days)</li>
+                </ol>
+              </div>
+            </div>
+            <div className="bg-[#0F172A] p-6 rounded-2xl text-white -rotate-1 hover:rotate-0 transition-transform duration-500">
+              <h3 className="font-bold text-lg mb-2">At the Airport</h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                You can also get your visa on arrival at the airport — just have $25 USD in cash ready. But the e-Visa saves you queuing and gives you peace of mind before you even board your flight.
+              </p>
             </div>
           </div>
         </section>
@@ -126,7 +146,7 @@ export function TravelGuide() {
               <div>
                 <h3 className="font-bold text-lg mb-4 text-[#C5A059]">Medical Essentials</h3>
                 <ul className="space-y-3">
-                  {["All current medical records", "List of current medications", "Comfortable loose clothing", "Slip-on shoes for easy removal"].map((item, i) => (
+                  {["All current medical records & X-rays", "List of current medications", "Sunscreen & hand sanitiser", "Comfortable loose clothing"].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-[#0F172A]/80">
                       <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full" />
                       {item}
@@ -137,7 +157,7 @@ export function TravelGuide() {
               <div>
                 <h3 className="font-bold text-lg mb-4 text-[#C5A059]">Documents</h3>
                 <ul className="space-y-3">
-                  {["Passport & Visa copies", "Flight tickets", "Insurance policy number", "Emergency contact list"].map((item, i) => (
+                  {["Passport (6+ months validity)", "Printed e-Visa confirmation", "Travel insurance covering dental", "Emergency contact list"].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-[#0F172A]/80">
                       <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full" />
                       {item}
