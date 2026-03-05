@@ -105,14 +105,14 @@ export const Hero: React.FC = () => {
             
             <div className={cn("flex items-center gap-2 text-white/90", isRTL && "flex-row-reverse")}>
               <Globe className="w-5 h-5 text-[#0D9488]" />
-              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['Outfit']")} suppressHydrationWarning>
-                {isRTL ? "جراحون مدربون في المملكة المتحدة" : "UK-Trained Surgeons"}
+              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['Outfit']")}>
+                {t("hero.surgeons")}
               </span>
             </div>
             <div className={cn("flex items-center gap-2 text-white/90", isRTL && "flex-row-reverse")}>
               <Clock className="w-5 h-5 text-[#0D9488]" />
-              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['Outfit']")} suppressHydrationWarning>
-                {isRTL ? "منسق 24/7" : "24/7 Coordinator"}
+              <span className={cn("text-sm tracking-wide", isRTL ? "font-['Cairo']" : "font-['Outfit']")}>
+                {t("hero.coordinator")}
               </span>
             </div>
           </div>
@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
         "absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 z-20 transition-opacity duration-1000 delay-[1.5s]",
         isVisible ? "opacity-100" : "opacity-0"
       )}>
-        <span className="text-[10px] font-['Space_Mono'] uppercase tracking-widest">Scroll</span>
+        <span className="text-[10px] font-['Space_Mono'] uppercase tracking-widest">{t("hero.scroll")}</span>
         <ChevronDown className="w-6 h-6 animate-bounce text-[#0D9488]" />
       </div>
     </section>

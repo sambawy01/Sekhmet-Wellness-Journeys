@@ -91,39 +91,41 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
 };
 
 export const SpecialtiesGrid: React.FC = () => {
+  const { t } = useLanguage();
+
   const specialties = [
     {
-      title: "Dental Care",
+      title: t("specialties.dental.title"),
       image: "https://images.unsplash.com/photo-1675526607070-f5cbd71dde92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJmZWN0JTIwd2hpdGUlMjB0ZWV0aCUyMHNtaWxlJTIwY2xvc2UlMjB1cHxlbnwxfHx8fDE3NzEyNzUyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      procedures: ["Implants & Veneers", "Hollywood Smile", "Full Mouth Rehab"],
+      procedures: [t("specialties.dental.proc1"), t("specialties.dental.proc2"), t("specialties.dental.proc3")],
       price: "$250",
       link: "/treatments/dental"
     },
     {
-      title: "Vision & Eye Care",
+      title: t("specialties.vision.title"),
       image: "https://images.unsplash.com/photo-1680730591022-3bfb2bdcaf0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxodW1hbiUyMGV5ZSUyMG1hY3JvJTIwYmx1ZSUyMGlyaXMlMjBsaWdodHxlbnwxfHx8fDE3NzEyNzUyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      procedures: ["LASIK / PRK", "Cataract Surgery", "Lens Replacement"],
+      procedures: [t("specialties.vision.proc1"), t("specialties.vision.proc2"), t("specialties.vision.proc3")],
       price: "$550",
       link: "/consultation?treatment=vision"
     },
     {
-      title: "Cosmetic Surgery",
+      title: t("specialties.cosmetic.title"),
       image: "https://images.unsplash.com/photo-1767396858207-9b9519ff3a2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwd29tYW4lMjBwcm9maWxlJTIwYmVhdXR5JTIwZmFzaGlvbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MTI3NTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      procedures: ["Rhinoplasty", "Breast Augmentation", "Liposuction"],
+      procedures: [t("specialties.cosmetic.proc1"), t("specialties.cosmetic.proc2"), t("specialties.cosmetic.proc3")],
       price: "$1,800",
       link: "/consultation?treatment=cosmetic"
     },
     {
-      title: "Health Checkups",
+      title: t("specialties.checkup.title"),
       image: "https://images.unsplash.com/photo-1720180244339-95e56d52e182?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBzdGV0aG9zY29wZSUyMG1vZGVybiUyMGhvc3BpdGFsJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzcxMjc1MjcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      procedures: ["Full Body MRI", "Cancer Screening", "Heart Health"],
+      procedures: [t("specialties.checkup.proc1"), t("specialties.checkup.proc2"), t("specialties.checkup.proc3")],
       price: "$450",
       link: "/consultation?treatment=checkup"
     },
     {
-      title: "IVF & Fertility",
+      title: t("specialties.fertility.title"),
       image: "https://images.unsplash.com/photo-1760415823716-5626cb617421?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdib3JuJTIwYmFieSUyMGZlZXQlMjBoYW5kcyUyMHdhcm0lMjBsaWdodGluZ3xlbnwxfHx8fDE3NzEyNzUyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      procedures: ["IVF Cycle", "Egg Freezing", "Genetic Screening"],
+      procedures: [t("specialties.fertility.proc1"), t("specialties.fertility.proc2"), t("specialties.fertility.proc3")],
       price: "$2,500",
       link: "/treatments/fertility"
     }
@@ -136,11 +138,11 @@ export const SpecialtiesGrid: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="font-['Outfit'] text-4xl md:text-5xl text-[#1A2332] font-bold relative inline-block">
-            Our Specialties
+            {t("specialties.heading")}
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#0D9488] rounded-full" />
           </h2>
           <p className="font-['Outfit'] text-[#64748B] max-w-2xl mx-auto text-lg pt-4">
-            Combining world-class medical expertise with the luxury of ancient Egyptian hospitality.
+            {t("specialties.subtitle")}
           </p>
         </div>
 

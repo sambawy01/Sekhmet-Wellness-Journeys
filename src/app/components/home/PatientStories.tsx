@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight, Star, Play } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
+import { cn } from '../../../lib/utils';
 
 const TestimonialCard = ({ 
   name, age, country, treatment, quote, image, flag, delay 
@@ -50,32 +52,35 @@ const TestimonialCard = ({
 );
 
 export const PatientStories: React.FC = () => {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
   const testimonials = [
     {
-      name: "Sarah M.",
+      name: t("homeStories.patient1.name"),
       age: 34,
-      country: "London",
+      country: t("homeStories.patient1.country"),
       flag: "🇬🇧",
-      treatment: "Dental Implants",
-      quote: "I saved over £8,000 on my full mouth reconstruction. The clinic in Cairo was more modern than my dentist in Kensington, and I spent a week in Hurghada afterwards.",
+      treatment: t("homeStories.patient1.treatment"),
+      quote: t("homeStories.patient1.quote"),
       image: "https://images.unsplash.com/photo-1758337082707-e3fbd71ed461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaWRkbGUlMjBhZ2VkJTIwd29tYW4lMjBwb3J0cmFpdCUyMHNtaWxpbmclMjBuYXR1cmFsJTIwbGlnaHR8ZW58MXx8fHwxNzcxMjc1MzkzfDA&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      name: "James D.",
+      name: t("homeStories.patient2.name"),
       age: 29,
-      country: "New York",
+      country: t("homeStories.patient2.country"),
       flag: "🇺🇸",
-      treatment: "LASIK",
-      quote: "The procedure took 15 minutes and cost 10% of what I was quoted in NYC. My vision is now 20/20 and I got to see the Pyramids with perfect sight the next day.",
+      treatment: t("homeStories.patient2.treatment"),
+      quote: t("homeStories.patient2.quote"),
       image: "https://images.unsplash.com/photo-1763745315951-7daac4821af6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMG1hbiUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsJTIwc21pbGluZ3xlbnwxfHx8fDE3NzEyNzUzOTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      name: "Elena R.",
+      name: t("homeStories.patient3.name"),
       age: 52,
-      country: "Toronto",
-      flag: "🇨y",
-      treatment: "Facelift",
-      quote: "The surgeon was trained at Cleveland Clinic and the results are so natural. The recovery villa by the Red Sea was basically a 5-star spa. Incredible value.",
+      country: t("homeStories.patient3.country"),
+      flag: "🇨🇦",
+      treatment: t("homeStories.patient3.treatment"),
+      quote: t("homeStories.patient3.quote"),
       image: "https://images.unsplash.com/photo-1634552516330-ab1ccc0f605e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjB3b21hbiUyMHBvcnRyYWl0JTIwaGFwcHklMjBoZWFsdGh5fGVufDF8fHx8MTc3MTI3NTM5OHww&ixlib=rb-4.1.0&q=80&w=1080"
     }
   ];
@@ -90,15 +95,15 @@ export const PatientStories: React.FC = () => {
       />
 
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-          <div className="text-left">
-            <h2 className="font-['Outfit'] text-4xl font-bold text-[#1A2332] mb-4">
-              Real Patients. Real Stories.
+        <div className={cn("flex flex-col md:flex-row justify-between items-end mb-12", isRTL && "flex-row-reverse")}>
+          <div className={cn("text-left", isRTL && "text-right md:text-right")}>
+            <h2 className={cn("font-['Outfit'] text-4xl font-bold text-[#1A2332] mb-4", isRTL && "font-['Amiri']")}>
+              {t("homeStories.heading")}
             </h2>
-            <div className="h-1 w-24 bg-[#0D9488]" />
+            <div className={cn("h-1 w-24 bg-[#0D9488]", isRTL && "ml-auto")} />
           </div>
           
-          <div className="hidden md:flex gap-2">
+          <div className={cn("hidden md:flex gap-2", isRTL && "flex-row-reverse")}>
             <button className="w-12 h-12 rounded-full border border-[#0D9488] flex items-center justify-center text-[#0D9488] hover:bg-[#0D9488] hover:text-white transition-colors">
               <ArrowLeft className="w-5 h-5" />
             </button>
@@ -115,11 +120,11 @@ export const PatientStories: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-            <p className="font-['Space_Mono'] text-sm text-[#1A2332] mb-4">
-              4.8/5 <span className="text-[#0D9488]">★★★★★</span> Average Rating | 200+ Verified Reviews
+            <p className={cn("font-['Space_Mono'] text-sm text-[#1A2332] mb-4")}>
+              {t("homeStories.rating")} <span className="text-[#0D9488]">★★★★★</span> {t("homeStories.ratingSubtitle")}
             </p>
-            <a href="#" className="font-['Outfit'] font-bold text-[#1A2332] border-b-2 border-[#0D9488] hover:text-[#0D9488] transition-colors">
-              Read All Stories →
+            <a href="#" className={cn("font-['Outfit'] font-bold text-[#1A2332] border-b-2 border-[#0D9488] hover:text-[#0D9488] transition-colors", isRTL && "font-['Cairo']")}>
+              {t("homeStories.readMore")}
             </a>
         </div>
       </div>
