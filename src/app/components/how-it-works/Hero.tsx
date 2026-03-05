@@ -2,8 +2,12 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext';
 
 export function Hero() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
   const scrollToTimeline = () => {
     const el = document.getElementById('process-timeline');
     if (el) {
@@ -17,7 +21,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1744912739625-1c188aa85c7a?auto=format&fit=crop&q=80&w=1920"
-          alt="Patient being greeted at hospital reception"
+          alt={t('hiw.hero.bgAlt')}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/90 via-[#0F172A]/70 to-transparent" />
@@ -28,29 +32,29 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl"
+          className={`max-w-3xl ${isRTL ? 'text-right' : 'text-left'}`}
         >
           <h1 className="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Your Journey With <span className="text-[#C5A059]">Sekhmet</span>
+            {t('hiw.hero.heading')} <span className="text-[#C5A059]">Sekhmet</span>
           </h1>
 
           <p className="font-['Outfit'] text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl">
-            From your first inquiry to post-return follow-up, we handle every detail of your medical experience with precision and care.
+            {t('hiw.hero.description')}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <Link
               to="/consultation"
-              className="inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#B08D55] text-white rounded-full px-8 py-4 text-lg font-['Outfit'] font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+              className={`inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#B08D55] text-white rounded-full px-8 py-4 text-lg font-['Outfit'] font-bold transition-all duration-300 shadow-lg hover:shadow-xl ${isRTL ? 'flex-row-reverse' : ''}`}
             >
-              Start Your Journey
+              {t('hiw.hero.ctaButton')}
               <ArrowRight className="w-5 h-5" />
             </Link>
             <button
               onClick={scrollToTimeline}
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0F172A] rounded-full px-8 py-4 text-lg font-['Outfit'] font-bold transition-all duration-300"
+              className={`inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0F172A] rounded-full px-8 py-4 text-lg font-['Outfit'] font-bold transition-all duration-300 ${isRTL ? 'flex-row-reverse' : ''}`}
             >
-              View Process
+              {t('hiw.hero.secondaryButton')}
               <ArrowDown className="w-5 h-5" />
             </button>
           </div>

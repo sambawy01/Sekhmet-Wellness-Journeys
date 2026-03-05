@@ -19,8 +19,22 @@ export const Footer: React.FC = () => {
   const { t, direction } = useLanguage();
   const isRTL = direction === 'rtl';
 
-  const treatments = ["Dental Care", "Vision Correction", "Cosmetic Surgery", "Comprehensive Checkups", "IVF & Fertility"];
-  const explore = ["Packages", "Destinations", "How It Works", "Patient Stories", "Prices", "FAQ", "Blog"];
+  const treatments = [
+    t('footer.dentalCare'),
+    t('footer.visionCorrection'),
+    t('footer.cosmeticSurgery'),
+    t('footer.comprehensiveCheckups'),
+    t('footer.ivfFertility')
+  ];
+  const explore = [
+    t('footer.packages'),
+    t('footer.destinations'),
+    t('footer.howItWorks'),
+    t('footer.patientStories'),
+    t('footer.prices'),
+    t('footer.faq'),
+    t('footer.blog')
+  ];
 
   return (
     <footer className={`relative bg-[#1A2332] text-white pt-20 pb-10 border-t-2 border-[#0D9488] overflow-hidden ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
@@ -108,7 +122,7 @@ export const Footer: React.FC = () => {
                 <Phone className="w-5 h-5 text-[#0D9488] mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col">
                   <span className="font-['Outfit'] text-[14px] text-[#F8FAFB]">+44 798 855 9541</span>
-                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">Mon-Sun, 9am - 9pm</span>
+                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">{t('footer.businessHours')}</span>
                 </div>
               </li>
               <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
@@ -161,7 +175,7 @@ export const Footer: React.FC = () => {
             {/* Language Selector */}
             <div className={`flex items-center gap-2 border border-white/20 rounded-full px-3 py-1.5 cursor-pointer hover:border-[#0D9488] transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Globe className="w-4 h-4 text-[#64748B] group-hover:text-[#0D9488] flex-shrink-0" />
-              <span className="text-[13px] font-medium text-white group-hover:text-[#0D9488]">English (UK)</span>
+              <span className="text-[13px] font-medium text-white group-hover:text-[#0D9488]">{t('footer.languageLabel')}</span>
             </div>
           </div>
         </div>

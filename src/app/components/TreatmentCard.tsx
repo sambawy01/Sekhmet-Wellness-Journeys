@@ -13,7 +13,7 @@ interface TreatmentCardProps {
 }
 
 const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedures, price, dir }) => {
-  const { direction } = useLanguage();
+  const { direction, t } = useLanguage();
   const currentDir = dir || direction;
   const isRTL = currentDir === 'rtl';
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
@@ -65,24 +65,24 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
               "text-[10px] text-[#0D9488] uppercase tracking-widest mb-1",
               isRTL ? "font-['Cairo']" : "font-['Outfit']"
             )}>
-              {isRTL ? "يبدأ من" : "Starting From"}
+              {t('treatmentCard.startingFrom')}
             </span>
             <span className="font-['Space_Mono'] font-bold text-[18px] text-[#0D9488]">
               {price}
             </span>
           </div>
-          
+
           <div className={cn(
             "flex items-center gap-2 text-white opacity-0 transition-all duration-300 delay-75 group-hover:opacity-100",
-            isRTL 
-              ? "flex-row-reverse transform translate-x-[10px] group-hover:translate-x-0 mr-auto" 
+            isRTL
+              ? "flex-row-reverse transform translate-x-[10px] group-hover:translate-x-0 mr-auto"
               : "transform translate-x-[-10px] group-hover:translate-x-0 ml-auto"
           )}>
             <span className={cn(
               "text-[12px] font-bold uppercase tracking-wider",
               isRTL ? "font-['Cairo']" : "font-['Outfit']"
             )}>
-              {isRTL ? "اكتشف" : "Explore"}
+              {t('treatmentCard.explore')}
             </span>
             <ArrowIcon size={14} className="text-[#0D9488]" />
           </div>
@@ -98,22 +98,23 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
 export default TreatmentCard;
 
 export const CardShowcase: React.FC = () => {
+  const { t } = useLanguage();
   const cards = [
     {
-      specialty: "Dental Care",
-      procedures: ["Implants", "Veneers", "Hollywood Smile"],
+      specialty: t('treatmentCard.dentalCare'),
+      procedures: [t('treatmentCard.implants'), t('treatmentCard.veneers'), t('treatmentCard.hollywoodSmile')],
       price: "$250",
       image: "https://images.unsplash.com/photo-1629909613638-0e4a1fad8f81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkZW50YWwlMjBjbGluaWMlMjBpbnRlcmlvciUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NzEyNzQyMjl8MA&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      specialty: "Vision & Eye Care",
-      procedures: ["LASIK", "Cataract Surgery", "Lens Replacement"],
+      specialty: t('treatmentCard.visionEyeCare'),
+      procedures: [t('treatmentCard.lasik'), t('treatmentCard.cataractSurgery'), t('treatmentCard.lensReplacement')],
       price: "$1,200",
       image: "https://images.unsplash.com/photo-1682663947014-445b091292e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBleWUlMjBjYXJlJTIwY2xpbmljJTIwbW9kZXJuJTIwZXF1aXBtZW50fGVufDF8fHx8MTc3MTI3NDIzMHww&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      specialty: "Cosmetic Surgery",
-      procedures: ["Rhinoplasty", "Facelift", "Body Contouring"],
+      specialty: t('treatmentCard.cosmeticSurgery'),
+      procedures: [t('treatmentCard.rhinoplasty'), t('treatmentCard.facelift'), t('treatmentCard.bodyContouring')],
       price: "$3,500",
       image: "https://images.unsplash.com/photo-1629909615957-be38d48fbbe6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhZXN0aGV0aWMlMjBzdXJnZXJ5JTIwY2xpbmljJTIwc3BhJTIwd2VsbG5lc3N8ZW58MXx8fHwxNzcxMjc0MjMwfDA&ixlib=rb-4.1.0&q=80&w=1080"
     }

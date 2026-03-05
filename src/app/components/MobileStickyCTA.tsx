@@ -17,19 +17,19 @@ const WhatsAppIcon = () => (
 );
 
 export const MobileStickyCTA: React.FC = () => {
-  const { direction } = useLanguage();
+  const { direction, t } = useLanguage();
   const isRTL = direction === 'rtl';
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#0D9488]/20 p-4 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] pb-8">
       <div className={cn("flex gap-3", isRTL && "flex-row-reverse")}>
-        <a 
-          href="/consultation" 
+        <a
+          href="/consultation"
           className="flex-1 bg-[#0D9488] text-[#0F172A] font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
         >
           <span className={isRTL ? "font-['Cairo']" : "font-['Outfit'] uppercase tracking-wide text-sm"}>
-            {isRTL ? "احجز هذه الباقة" : "Book This Package"}
+            {t('mobileCta.bookPackage')}
           </span>
           <ArrowIcon size={16} />
         </a>

@@ -1,28 +1,32 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Check, X, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 const features = [
-  { name: "Medical Expertise Verification", sekhmet: true, diy: false, hospital: true },
-  { name: "Personal Travel Coordinator", sekhmet: true, diy: false, hospital: false },
-  { name: "All-Inclusive Pricing", sekhmet: true, diy: false, hospital: false },
-  { name: "Luxury Accommodation Included", sekhmet: true, diy: true, hospital: false },
-  { name: "Post-Treatment Recovery Support", sekhmet: true, diy: false, hospital: true },
-  { name: "Legal & Insurance Assistance", sekhmet: true, diy: false, hospital: false },
-  { name: "24/7 On-Ground Support", sekhmet: true, diy: false, hospital: false },
-  { name: "Cultural & Tourism Itinerary", sekhmet: true, diy: true, hospital: false },
+  { nameKey: "hiw.comparison.feature1", sekhmet: true, diy: false, hospital: true },
+  { nameKey: "hiw.comparison.feature2", sekhmet: true, diy: false, hospital: false },
+  { nameKey: "hiw.comparison.feature3", sekhmet: true, diy: false, hospital: false },
+  { nameKey: "hiw.comparison.feature4", sekhmet: true, diy: true, hospital: false },
+  { nameKey: "hiw.comparison.feature5", sekhmet: true, diy: false, hospital: true },
+  { nameKey: "hiw.comparison.feature6", sekhmet: true, diy: false, hospital: false },
+  { nameKey: "hiw.comparison.feature7", sekhmet: true, diy: false, hospital: false },
+  { nameKey: "hiw.comparison.feature8", sekhmet: true, diy: true, hospital: false },
 ];
 
 export function ComparisonTable() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 ${isRTL ? 'text-right' : ''}`}>
           <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">
-            Why Choose Sekhmet?
+            {t('hiw.comparison.heading')}
           </h2>
           <p className="font-['Outfit'] text-lg text-[#0F172A]/60">
-            See how we compare to planning it yourself or booking directly.
+            {t('hiw.comparison.subtitle')}
           </p>
         </div>
 
@@ -30,21 +34,23 @@ export function ComparisonTable() {
           <table className="w-full min-w-[800px] border-collapse">
             <thead>
               <tr>
-                <th className="p-4 text-left font-['Playfair_Display'] text-xl font-bold text-[#0F172A]">Feature</th>
+                <th className={`p-4 font-['Playfair_Display'] text-xl font-bold text-[#0F172A] ${isRTL ? 'text-right' : 'text-left'}`}>
+                  {t('hiw.comparison.featureHeader')}
+                </th>
                 <th className="p-4 bg-[#F0F7F4] text-center font-['Space_Mono'] text-lg font-bold text-[#C5A059] rounded-t-xl border-t-4 border-[#C5A059]">
-                  Sekhmet Wellness
+                  {t('hiw.comparison.column1')}
                 </th>
                 <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F172A]/60">
-                  DIY Planning
+                  {t('hiw.comparison.column2')}
                 </th>
                 <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F172A]/60">
-                  Hospital Direct
+                  {t('hiw.comparison.column3')}
                 </th>
               </tr>
             </thead>
             <tbody>
               {features.map((feature, index) => (
-                <motion.tr 
+                <motion.tr
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -52,10 +58,10 @@ export function ComparisonTable() {
                   transition={{ delay: index * 0.05 }}
                   className="border-b border-[#0F172A]/10 hover:bg-[#F0F7F4]/50 transition-colors"
                 >
-                  <td className="p-4 font-['Outfit'] text-[#0F172A] font-medium">
-                    {feature.name}
+                  <td className={`p-4 font-['Outfit'] text-[#0F172A] font-medium ${isRTL ? 'text-right' : ''}`}>
+                    {t(feature.nameKey)}
                   </td>
-                  
+
                   {/* Sekhmet Column */}
                   <td className="p-4 bg-[#F0F7F4] text-center border-l border-r border-[#C5A059]/20">
                     <div className="flex justify-center">

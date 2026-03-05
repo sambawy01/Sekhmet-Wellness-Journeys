@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { cn } from '../../lib/utils';
 
 export const TreatmentsHero: React.FC = () => {
-  const { direction } = useLanguage();
+  const { direction, t } = useLanguage();
   const isRTL = direction === 'rtl';
 
   const scrollToTreatments = () => {
@@ -41,13 +41,11 @@ export const TreatmentsHero: React.FC = () => {
               isRTL ? "font-['Amiri'] text-4xl md:text-6xl" : "font-['Playfair_Display'] text-4xl md:text-6xl"
             )}
           >
-            {isRTL ? "علاجاتنا الطبية المميزة" : "Our Signature Medical Treatments"}
+            {t('treatmentsHero.title')}
           </h1>
-          
+
           <p className="text-[#0D9488] text-lg md:text-xl font-medium max-w-2xl mx-auto">
-            {isRTL 
-              ? "استكشف مجموعتنا الشاملة من إجراءات التجميل وطب الأسنان والعافية المصممة لتعزيز صحتك وجمالك." 
-              : "Explore our comprehensive range of cosmetic, dental, and wellness procedures designed to enhance your health and beauty."}
+            {t('treatmentsHero.description')}
           </p>
           
           <button 

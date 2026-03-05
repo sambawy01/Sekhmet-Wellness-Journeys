@@ -14,16 +14,16 @@ interface PackageCardProps {
   dir?: 'ltr' | 'rtl';
 }
 
-const PackageCard: React.FC<PackageCardProps> = ({ 
-  image, 
-  name, 
-  tier, 
-  duration, 
-  price, 
+const PackageCard: React.FC<PackageCardProps> = ({
+  image,
+  name,
+  tier,
+  duration,
+  price,
   ukPrice,
   dir
 }) => {
-  const { direction } = useLanguage();
+  const { direction, t } = useLanguage();
   const currentDir = dir || direction;
   const isRTL = currentDir === 'rtl';
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
@@ -118,7 +118,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
             "flex items-center gap-2 text-[#0D9488] font-bold uppercase tracking-wide group-hover:text-[#0F766E] transition-colors",
             isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['Outfit'] text-[14px]"
           )}>
-            {isRTL ? "عرض الباقة" : "View Package"} 
+            {t('packageCard.viewPackage')}
             <ArrowIcon size={16} />
           </button>
         </div>
@@ -138,9 +138,9 @@ export const PackageShowcase: React.FC = () => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">
-        <PackageCard 
+        <PackageCard
           image="https://images.unsplash.com/photo-1641966153139-98999b3eb6bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZWQlMjBzZWElMjByZXNvcnQlMjBlZ3lwdHxlbnwxfHx8fDE3NzEyNzQzODh8MA&ixlib=rb-4.1.0&q=80&w=1080"
-          name="Hollywood Smile + Red Sea Recovery"
+          name={t('packageCard.hollywoodSmileName')}
           tier="Comfort"
           duration="10 Days / 7 Nights"
           price="From $3,999"
