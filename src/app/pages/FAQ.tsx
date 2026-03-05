@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Search, ChevronDown, MessageCircle, Phone, Calendar } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const faqCategories = [
   "General",
@@ -66,6 +67,8 @@ const faqs = [
 ];
 
 export function FAQ() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
   const [activeCategory, setActiveCategory] = useState("General");
   const [searchQuery, setSearchQuery] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -78,7 +81,7 @@ export function FAQ() {
   });
 
   return (
-    <div className="pt-20 bg-[#F0F7F4] min-h-screen">
+    <div className={`pt-20 bg-[#F0F7F4] min-h-screen ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
       {/* Hero */}
       <section className="bg-white py-16 border-b border-[#0F172A]/10">
         <div className="container mx-auto px-6 text-center">
@@ -87,23 +90,23 @@ export function FAQ() {
             animate={{ opacity: 1, y: 0 }}
             className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
-            Frequently Asked Questions
+            {t('faq.title')}
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-['Outfit'] text-lg text-[#0F172A]/60 mb-8"
+            className={`font-['Outfit'] text-lg text-[#0F172A]/60 mb-8 ${isRTL ? 'text-right' : ''}`}
           >
-            Everything you need to know before your journey.
+            {t('faq.subtitle')}
           </motion.p>
 
           <div className="max-w-xl mx-auto relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#0F172A]/40 w-5 h-5" />
+            <Search className={`absolute ${isRTL ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 text-[#0F172A]/40 w-5 h-5`} />
             <input 
               type="text" 
-              placeholder="Search for answers..." 
-              className="w-full pl-12 pr-4 py-4 rounded-full border border-[#0F172A]/10 focus:outline-none focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] transition-all shadow-sm"
+              placeholder={t('faq.searchPlaceholder')} 
+              className={`w-full ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-4 rounded-full border border-[#0F172A]/10 focus:outline-none focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] transition-all shadow-sm`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -111,11 +114,11 @@ export function FAQ() {
         </div>
       </section>
 
-      <div className="container mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12">
+      <div className={`container mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12 ${isRTL ? 'flex-col-reverse' : ''}`}>
         {/* Main Content */}
         <div className="flex-1">
           {/* Categories */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className={`flex flex-wrap gap-2 mb-8 ${isRTL ? 'justify-end' : ''}`}>
             {faqCategories.map((cat) => (
               <button
                 key={cat}
@@ -143,16 +146,16 @@ export function FAQ() {
               >
                 <button 
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-[#F0F7F4]/50 transition-colors"
+                  className={`w-full flex items-center justify-between p-6 text-left hover:bg-[#F0F7F4]/50 transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
-                  <span className="font-['Outfit'] font-bold text-[#0F172A] text-lg pr-4">
+                  <span className={`font-['Outfit'] font-bold text-[#0F172A] text-lg ${isRTL ? 'text-right pr-4' : 'pl-4'}`}>
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronDown className="w-5 h-5 text-[#C5A059]" />
+                    <ChevronDown className="w-5 h-5 text-[#C5A059] flex-shrink-0" />
                   </motion.div>
                 </button>
                 <AnimatePresence>
@@ -163,7 +166,7 @@ export function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-6 pb-6 text-[#0F172A]/70 font-['Outfit'] leading-relaxed border-t border-[#0F172A]/5 pt-4">
+                      <div className={`px-6 pb-6 text-[#0F172A]/70 font-['Outfit'] leading-relaxed border-t border-[#0F172A]/5 pt-4 ${isRTL ? 'text-right' : ''}`}>
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -173,8 +176,8 @@ export function FAQ() {
             ))}
             
             {filteredFAQs.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-[#0F172A]/50">No questions found matching your search.</p>
+              <div className={`text-center py-12 ${isRTL ? 'text-right' : ''}`}>
+                <p className="text-[#0F172A]/50">{t('faq.noResults')}</p>
               </div>
             )}
           </div>
@@ -186,24 +189,24 @@ export function FAQ() {
             <div className="bg-[#0F172A] text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A059] rounded-full filter blur-3xl opacity-20 -mr-10 -mt-10" />
               
-              <h3 className="font-['Playfair_Display'] text-2xl font-bold mb-4 relative z-10">Still have questions?</h3>
-              <p className="text-white/70 mb-8 relative z-10">
-                Can't find the answer you're looking for? Our team is available 24/7.
+              <h3 className={`font-['Playfair_Display'] text-2xl font-bold mb-4 relative z-10 ${isRTL ? 'text-right' : ''}`}>{t('faq.stillHaveQuestions')}</h3>
+              <p className={`text-white/70 mb-8 relative z-10 ${isRTL ? 'text-right' : ''}`}>
+                {t('faq.cannotFind')}
               </p>
               
               <div className="space-y-4 relative z-10">
-                <Button className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2">
+                <Button className={`w-full bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <MessageCircle className="w-5 h-5" />
-                  Chat on WhatsApp
+                  {t('faq.chatWhatsApp')}
                 </Button>
-                <Button variant="outline" className="w-full border-white/20 hover:bg-white/10 text-white flex items-center justify-center gap-2">
+                <Button variant="outline" className={`w-full border-white/20 hover:bg-white/10 text-white flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Phone className="w-5 h-5" />
                   +20 123 456 7890
                 </Button>
-                <Button asChild variant="ghost" className="w-full text-[#C5A059] hover:text-white hover:bg-white/5">
-                  <Link to="/consultation" className="flex items-center justify-center gap-2">
+                <Button asChild variant="ghost" className={`w-full text-[#C5A059] hover:text-white hover:bg-white/5 flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <Link to="/consultation" className={`flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <Calendar className="w-5 h-5" />
-                    Book a Free Call
+                    {t('faq.bookCall')}
                   </Link>
                 </Button>
               </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Instagram, Youtube, Phone, Mail, MapPin, Globe, Shield } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { IconAnkh } from './EgyptianIcons';
 
 // Custom TikTok Icon since it's not in standard Lucide set usually, or just in case
@@ -15,8 +16,14 @@ const IconTikTok: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 export const Footer: React.FC = () => {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
+  const treatments = ["Dental Care", "Vision Correction", "Cosmetic Surgery", "Comprehensive Checkups", "IVF & Fertility"];
+  const explore = ["Packages", "Destinations", "How It Works", "Patient Stories", "Prices", "FAQ", "Blog"];
+
   return (
-    <footer className="relative bg-[#1A2332] text-white pt-20 pb-10 border-t-2 border-[#0D9488] overflow-hidden">
+    <footer className={`relative bg-[#1A2332] text-white pt-20 pb-10 border-t-2 border-[#0D9488] overflow-hidden ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
       {/* Background Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -26,31 +33,31 @@ export const Footer: React.FC = () => {
       />
 
       <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 ${isRTL ? 'text-right' : ''}`}>
           
           {/* Column 1: Brand */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
+          <div className={`space-y-6 ${isRTL ? 'lg:col-start-4' : ''}`}>
+            <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
               <img src="/logo-icon.svg" alt="Sekhmet" className="w-10 h-10" />
-              <div className="flex flex-col leading-none">
+              <div className={`flex flex-col leading-none ${isRTL ? 'text-right' : ''}`}>
                 <span className="font-['Outfit'] font-bold text-2xl tracking-wide text-[#C5A059]">
-                  SEKHMET
+                  {t('footer.brand')}
                 </span>
                 <span className="font-['Outfit'] text-[10px] text-[#C5A059]/60 uppercase tracking-[0.2em]">
-                  Wellness Journeys
+                  {t('footer.subtitle')}
                 </span>
               </div>
             </div>
             
-            <p className="font-['Outfit'] italic text-[14px] text-[#F8FAFB]">
-              "Heal where history began"
+            <p className={`font-['Outfit'] italic text-[14px] text-[#F8FAFB] ${isRTL ? 'text-right' : ''}`}>
+              {t('footer.tagline')}
             </p>
             
-            <p className="font-['Outfit'] text-[13px] text-[#64748B] leading-relaxed max-w-[280px]">
-              Premium medical tourism agency connecting global patients with Egypt's finest surgeons and 5-star recovery experiences.
+            <p className={`font-['Outfit'] text-[13px] text-[#64748B] leading-relaxed max-w-[280px] ${isRTL ? 'text-right' : ''}`}>
+              {t('footer.description')}
             </p>
             
-            <div className="flex gap-4">
+            <div className={`flex gap-4 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
               {[Instagram, IconTikTok, Youtube, Facebook].map((Icon, i) => (
                 <a 
                   key={i} 
@@ -65,12 +72,12 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Treatments */}
           <div className="space-y-6">
-            <h4 className="font-['Outfit'] text-lg text-white font-medium">Treatments</h4>
+            <h4 className={`font-['Outfit'] text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.treatments')}</h4>
             <ul className="space-y-3">
-              {["Dental Care", "Vision Correction", "Cosmetic Surgery", "Comprehensive Checkups", "IVF & Fertility"].map((item, i) => (
+              {treatments.map((item, i) => (
                 <li key={i}>
-                  <a href="#" className="font-['Outfit'] text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href="#" className={`font-['Outfit'] text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                     {item}
                   </a>
                 </li>
@@ -80,12 +87,12 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Explore */}
           <div className="space-y-6">
-            <h4 className="font-['Outfit'] text-lg text-white font-medium">Explore</h4>
+            <h4 className={`font-['Outfit'] text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.explore')}</h4>
             <ul className="space-y-3">
-              {["Packages", "Destinations", "How It Works", "Patient Stories", "Prices", "FAQ", "Blog"].map((item, i) => (
+              {explore.map((item, i) => (
                 <li key={i}>
-                  <a href="#" className="font-['Outfit'] text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href="#" className={`font-['Outfit'] text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                     {item}
                   </a>
                 </li>
@@ -94,31 +101,31 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 4: Contact */}
-          <div className="space-y-6">
-            <h4 className="font-['Outfit'] text-lg text-white font-medium">Contact Us</h4>
+          <div className={`space-y-6 ${isRTL ? 'lg:col-start-4' : ''}`}>
+            <h4 className={`font-['Outfit'] text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.contact')}</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#0D9488] mt-0.5" />
+              <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                <Phone className="w-5 h-5 text-[#0D9488] mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col">
                   <span className="font-['Outfit'] text-[14px] text-[#F8FAFB]">+44 798 855 9541</span>
                   <span className="font-['Outfit'] text-[12px] text-[#64748B]">Mon-Sun, 9am - 9pm</span>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full border border-[#0D9488] flex items-center justify-center text-[#0D9488] text-[10px] font-bold mt-0.5">W</div>
+              <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                <div className="w-5 h-5 rounded-full border border-[#0D9488] flex items-center justify-center text-[#0D9488] text-[10px] font-bold mt-0.5 flex-shrink-0">W</div>
                 <div className="flex flex-col">
                   <span className="font-['Outfit'] text-[14px] text-[#F8FAFB]">+44 798 855 9541</span>
-                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">WhatsApp Support</span>
+                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">{t('footer.whatsappSupport')}</span>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#0D9488] mt-0.5" />
+              <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                <Mail className="w-5 h-5 text-[#0D9488] mt-0.5 flex-shrink-0" />
                 <a href="mailto:info@sekhmetwellness.com" className="font-['Outfit'] text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">
                   info@sekhmetwellness.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#0D9488] mt-0.5" />
+              <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                <MapPin className="w-5 h-5 text-[#0D9488] mt-0.5 flex-shrink-0" />
                 <span className="font-['Outfit'] text-[14px] text-[#64748B]">
                   Grand Egyptian Museum Complex,<br />
                   Giza Governorate, Egypt
@@ -129,31 +136,31 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-6 text-[13px] font-['Outfit'] text-[#64748B]">
-            <span>&copy; {new Date().getFullYear()} Sekhmet Wellness.</span>
+        <div className={`border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 ${isRTL ? 'flex-col-reverse' : ''}`}>
+          <div className={`flex flex-col md:flex-row items-center gap-6 text-[13px] font-['Outfit'] text-[#64748B] ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <span>&copy; {new Date().getFullYear()} Sekhmet Wellness. {t('footer.allRights')}</span>
             <div className="hidden md:block w-1 h-1 rounded-full bg-[#64748B]/50" />
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer.privacyPolicy')}</a>
             <div className="hidden md:block w-1 h-1 rounded-full bg-[#64748B]/50" />
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer.termsService')}</a>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className={`flex items-center gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
             {/* JCI Accreditation Mockup */}
-            <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+            <div className={`flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="w-8 h-8 relative">
                  <div className="absolute inset-0 bg-[#0D9488] rounded-full animate-pulse opacity-20" />
                  <Shield className="w-8 h-8 text-[#0D9488]" fill="currentColor" fillOpacity={0.2} />
               </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-[10px] font-bold text-[#0D9488] font-['Outfit']">JCI ACCREDITED</span>
-                <span className="text-[9px] text-white/60 font-['Outfit']">Global Standard</span>
+              <div className={`flex flex-col leading-none ${isRTL ? 'text-right' : ''}`}>
+                <span className="text-[10px] font-bold text-[#0D9488] font-['Outfit']">{t('footer.jciAccredited')}</span>
+                <span className="text-[9px] text-white/60 font-['Outfit']">{t('footer.globalStandard')}</span>
               </div>
             </div>
 
             {/* Language Selector */}
-            <div className="flex items-center gap-2 border border-white/20 rounded-full px-3 py-1.5 cursor-pointer hover:border-[#0D9488] transition-colors group">
-              <Globe className="w-4 h-4 text-[#64748B] group-hover:text-[#0D9488]" />
+            <div className={`flex items-center gap-2 border border-white/20 rounded-full px-3 py-1.5 cursor-pointer hover:border-[#0D9488] transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <Globe className="w-4 h-4 text-[#64748B] group-hover:text-[#0D9488] flex-shrink-0" />
               <span className="text-[13px] font-medium text-white group-hover:text-[#0D9488]">English (UK)</span>
             </div>
           </div>

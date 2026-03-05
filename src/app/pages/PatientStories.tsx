@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Star, Quote, CheckCircle, MapPin } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import { useLanguage } from '../context/LanguageContext';
 
 // Mock Data
 const stories = [
@@ -74,6 +75,8 @@ const treatments = ["All", "Dental", "Vision", "Cosmetic", "Checkups", "IVF"];
 const origins = ["All", "UK", "Gulf", "Europe", "Africa", "USA"];
 
 export function PatientStories() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
   const [activeTreatment, setActiveTreatment] = useState("All");
   const [activeOrigin, setActiveOrigin] = useState("All");
 
@@ -84,7 +87,7 @@ export function PatientStories() {
   });
 
   return (
-    <div className="pt-20 bg-[#F0F7F4] min-h-screen">
+    <div className={`pt-20 bg-[#F0F7F4] min-h-screen ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
       {/* Hero Section */}
       <section className="relative h-[500px] overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
@@ -96,13 +99,13 @@ export function PatientStories() {
           <div className="absolute inset-0 bg-[#0F172A]/70" />
         </div>
         
-        <div className="relative z-10 text-center px-6">
+        <div className={`relative z-10 text-center px-6 ${isRTL ? 'text-right' : ''}`}>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="font-['Playfair_Display'] text-5xl md:text-6xl font-bold text-white mb-6"
           >
-            Real Patients. Real Stories.
+            {t('patientStories.title')}
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -110,18 +113,18 @@ export function PatientStories() {
             transition={{ delay: 0.2 }}
             className="font-['Outfit'] text-xl text-white/90 max-w-2xl mx-auto"
           >
-            Discover why thousands of patients choose Sekhmet for their medical journey.
+            {t('patientStories.subtitle')}
           </motion.p>
         </div>
       </section>
 
       {/* Featured Story */}
-      <section className="container mx-auto px-6 -mt-20 relative z-20 mb-20">
+      <section className={`container mx-auto px-6 -mt-20 relative z-20 mb-20 ${isRTL ? 'text-right' : ''}`}>
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-auto md:h-[500px]"
+          className={`bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-auto md:h-[500px] ${isRTL ? 'md:flex-row-reverse' : ''}`}
         >
           <div className="md:w-2/3 relative group cursor-pointer">
             <img 
@@ -134,25 +137,25 @@ export function PatientStories() {
                 <Play className="w-8 h-8 text-white fill-white ml-1" />
               </div>
             </div>
-            <div className="absolute top-6 left-6 bg-[#C5A059] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider">
-              Featured Story
+            <div className={`absolute top-6 left-6 bg-[#C5A059] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider ${isRTL ? 'left-auto right-6' : ''}`}>
+              {t('patientStories.featured')}
             </div>
           </div>
-          <div className="md:w-1/3 p-8 md:p-12 flex flex-col justify-center bg-white">
-            <div className="flex items-center gap-2 mb-4 text-[#C5A059]">
+          <div className={`md:w-1/3 p-8 md:p-12 flex flex-col justify-center bg-white ${isRTL ? 'text-right' : ''}`}>
+            <div className={`flex items-center gap-2 mb-4 text-[#C5A059] ${isRTL ? 'justify-end' : ''}`}>
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
             </div>
-            <Quote className="w-10 h-10 text-[#C5A059]/20 mb-4" />
-            <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-4">
+            <Quote className={`w-10 h-10 text-[#C5A059]/20 mb-4 ${isRTL ? 'ml-auto' : ''}`} />
+            <h3 className={`font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-4 ${isRTL ? 'text-right' : ''}`}>
               "I never thought dental work could feel like a vacation."
             </h3>
-            <p className="font-['Outfit'] text-[#0F172A]/60 mb-8 leading-relaxed">
+            <p className={`font-['Outfit'] text-[#0F172A]/60 mb-8 leading-relaxed ${isRTL ? 'text-right' : ''}`}>
               Sarah flew from London for a full smile makeover. Watch her journey from arrival to the final reveal.
             </p>
-            <div className="mt-auto flex items-center gap-4">
-              <div>
+            <div className={`mt-auto flex items-center gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <div className={isRTL ? 'text-right' : ''}>
                 <p className="font-bold text-[#0F172A] text-lg">Sarah Jenkins</p>
-                <div className="flex items-center gap-2 text-sm text-[#0F172A]/50">
+                <div className={`flex items-center gap-2 text-sm text-[#0F172A]/50 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
                   <span>🇬🇧 United Kingdom</span>
                   <span>•</span>
                   <span>Dental Implants</span>
@@ -165,9 +168,9 @@ export function PatientStories() {
 
       {/* Filter Bar */}
       <section className="container mx-auto px-6 mb-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 bg-white p-6 rounded-xl shadow-sm border border-[#0F172A]/5">
-          <div className="flex flex-wrap gap-2 justify-center">
-            <span className="text-[#0F172A]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2">Treatment:</span>
+        <div className={`flex flex-col md:flex-row justify-between items-center gap-6 bg-white p-6 rounded-xl shadow-sm border border-[#0F172A]/5 ${isRTL ? 'flex-col-reverse' : ''}`}>
+          <div className={`flex flex-wrap gap-2 justify-center ${isRTL ? 'justify-end' : ''}`}>
+            <span className={`text-[#0F172A]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2 ${isRTL ? 'order-2' : ''}`}>{t('patientStories.treatment')}:</span>
             {treatments.map(t => (
               <button
                 key={t}
@@ -182,9 +185,9 @@ export function PatientStories() {
               </button>
             ))}
           </div>
-          <div className="w-px h-10 bg-[#0F172A]/10 hidden md:block" />
-          <div className="flex flex-wrap gap-2 justify-center">
-            <span className="text-[#0F172A]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2">Region:</span>
+          <div className={`w-px h-10 bg-[#0F172A]/10 hidden md:block ${isRTL ? 'order-3' : ''}`} />
+          <div className={`flex flex-wrap gap-2 justify-center ${isRTL ? 'justify-end order-1' : ''}`}>
+            <span className={`text-[#0F172A]/40 text-sm font-bold mr-2 uppercase tracking-wide py-2`}>{t('patientStories.region')}:</span>
             {origins.map(o => (
               <button
                 key={o}
@@ -204,7 +207,7 @@ export function PatientStories() {
 
       {/* Masonry Grid with Tailwind Columns */}
       <section className="container mx-auto px-6 pb-24">
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className={`columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 ${isRTL ? 'text-right' : ''}`}>
           {filteredStories.map((story) => (
             <motion.div 
               key={story.id}
@@ -230,31 +233,31 @@ export function PatientStories() {
                   </div>
                 )}
 
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#0F172A] flex items-center gap-1">
+                <div className={`absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#0F172A] flex items-center gap-1 ${isRTL ? 'left-4 right-auto' : ''}`}>
                   <CheckCircle className="w-3 h-3 text-[#C5A059]" /> Verified
                 </div>
               </div>
 
               {/* Card Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-1 mb-3 text-[#C5A059]">
+              <div className={`p-6 ${isRTL ? 'text-right' : ''}`}>
+                <div className={`flex items-center gap-1 mb-3 text-[#C5A059] ${isRTL ? 'justify-end' : ''}`}>
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 fill-current" />)}
                 </div>
                 
-                <blockquote className="font-['Playfair_Display'] text-lg font-bold text-[#0F172A] mb-4 leading-tight">
+                <blockquote className={`font-['Playfair_Display'] text-lg font-bold text-[#0F172A] mb-4 leading-tight ${isRTL ? 'text-right' : ''}`}>
                   "{story.quote}"
                 </blockquote>
                 
-                <div className="flex items-center justify-between border-t border-[#0F172A]/10 pt-4">
-                  <div className="flex items-center gap-3">
-                    <div className="flex flex-col">
+                <div className={`flex items-center justify-between border-t border-[#0F172A]/10 pt-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <div className={isRTL ? 'text-right' : ''}>
                       <span className="font-bold text-sm text-[#0F172A]">{story.name} {story.flag}</span>
-                      <span className="text-xs text-[#0F172A]/50">{story.treatment}</span>
+                      <span className="text-xs text-[#0F172A]/50 block">{story.treatment}</span>
                     </div>
                   </div>
                   
-                  <Button variant="ghost" className="text-[#C5A059] hover:text-[#B08D55] hover:bg-[#F0F7F4] p-0 h-auto font-bold text-sm">
-                    {story.type === 'video' ? 'Watch Story' : 'Read Story'} →
+                  <Button variant="ghost" className={`text-[#C5A059] hover:text-[#B08D55] hover:bg-[#F0F7F4] p-0 h-auto font-bold text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    {story.type === 'video' ? t('patientStories.watchStory') : t('patientStories.readStory')} →
                   </Button>
                 </div>
               </div>
@@ -263,15 +266,15 @@ export function PatientStories() {
         </div>
 
         {filteredStories.length === 0 && (
-          <div className="text-center py-20">
-            <h3 className="text-2xl font-['Playfair_Display'] text-[#0F172A] mb-2">No stories found</h3>
-            <p className="text-[#0F172A]/60">Try adjusting your filters to see more patient experiences.</p>
+          <div className={`text-center py-20 ${isRTL ? 'text-right' : ''}`}>
+            <h3 className={`text-2xl font-['Playfair_Display'] text-[#0F172A] mb-2 ${isRTL ? 'text-right' : ''}`}>{t('patientStories.noStories')}</h3>
+            <p className={`text-[#0F172A]/60 ${isRTL ? 'text-right' : ''}`}>{t('patientStories.adjustFilters')}</p>
           </div>
         )}
         
         <div className="text-center mt-16">
           <Button variant="outline" className="border-[#0F172A]/20 hover:bg-[#0F172A] hover:text-white px-8 py-6 rounded-full text-lg transition-all">
-            Load More Stories
+            {t('patientStories.loadMore')}
           </Button>
         </div>
       </section>

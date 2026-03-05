@@ -4,34 +4,100 @@ import { Check, Upload, Calendar, ArrowRight, ArrowLeft, Star, ShieldCheck, Cloc
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 import { submitLead } from '../../lib/supabase';
+import { useLanguage } from '../context/LanguageContext';
+import { cn } from '../../lib/utils';
 
 const steps = [
-  { id: 1, title: "Treatment" },
-  { id: 2, title: "Procedure" },
-  { id: 3, title: "Records" },
-  { id: 4, title: "Details" },
-  { id: 5, title: "Schedule" }
+  { id: 1, key: 'consultation.step.treatment' },
+  { id: 2, key: 'consultation.step.procedure' },
+  { id: 3, key: 'consultation.step.records' },
+  { id: 4, key: 'consultation.step.details' },
+  { id: 5, key: 'consultation.step.schedule' }
 ];
 
-const treatments = [
-  { id: 'dental', name: 'Dental Care', icon: '🦷' },
-  { id: 'vision', name: 'Vision Correction', icon: '👁️' },
-  { id: 'fertility', name: 'Fertility & IVF', icon: '👶' },
-  { id: 'cosmetic', name: 'Cosmetic Surgery', icon: '✨' },
-  { id: 'wellness', name: 'Wellness', icon: '🌿' },
-  { id: 'checkups', name: 'Health Checkups', icon: '🩺' },
+const treatmentIds = [
+  { id: 'dental', icon: '🦷', key: 'consultation.treatment.dental' },
+  { id: 'vision', icon: '👁️', key: 'consultation.treatment.vision' },
+  { id: 'fertility', icon: '👶', key: 'consultation.treatment.fertility' },
+  { id: 'cosmetic', icon: '✨', key: 'consultation.treatment.cosmetic' },
+  { id: 'wellness', icon: '🌿', key: 'consultation.treatment.wellness' },
+  { id: 'checkups', icon: '🩺', key: 'consultation.treatment.checkups' },
 ];
 
 const procedures: Record<string, string[]> = {
-  dental: ['Hollywood Smile', 'Dental Implants', 'Veneers', 'All-on-4 / All-on-6', 'Dental Crowns & Bridges', 'Root Canal Treatment', 'Teeth Whitening', 'Full Mouth Rehabilitation', 'Wisdom Tooth Removal', 'Gum Treatment'],
-  vision: ['LASIK Eye Surgery', 'PRK / LASEK', 'Cataract Surgery', 'Lens Implant (ICL)', 'Glaucoma Treatment', 'Retina Treatment', 'Corneal Cross-Linking'],
-  fertility: ['IVF Treatment', 'ICSI', 'Egg Freezing', 'Embryo Freezing', 'IUI', 'Male Infertility Treatment', 'Genetic Screening (PGD/PGS)', 'Donor Programs'],
-  cosmetic: ['Rhinoplasty', 'Breast Augmentation', 'Breast Reduction & Lift', 'Liposuction', 'Tummy Tuck', 'Facelift', 'Eyelid Surgery', 'Brazilian Butt Lift (BBL)', 'Mommy Makeover', 'Otoplasty (Ear Surgery)'],
-  wellness: ['Hair Transplant (FUE/DHI)', 'Weight Loss Surgery', 'Spa & Recovery Packages', 'Physiotherapy & Rehab', 'Anti-Aging Treatments'],
-  checkups: ['Full Body Checkup', 'Executive Health Screening', 'Cancer Screening', 'Cardiac Checkup', "Women's Health Screening", "Men's Health Screening"],
+  dental: ['hollywaySmile', 'dentalImplants', 'veneers', 'allOn4', 'crowns', 'rootCanal', 'whitening', 'fullMouth', 'wisdomTooth', 'gumTreatment'],
+  vision: ['lasik', 'prk', 'cataract', 'lensImplant', 'glaucoma', 'retina', 'cornealCross'],
+  fertility: ['ivf', 'icsi', 'eggFreezing', 'embryoFreezing', 'iui', 'maleInfertility', 'geneticScreening', 'donorPrograms'],
+  cosmetic: ['rhinoplasty', 'breastAugmentation', 'breastReduction', 'liposuction', 'tummyTuck', 'facelift', 'eyelidSurgery', 'bbl', 'mommyMakeover', 'otoplasty'],
+  wellness: ['hairTransplant', 'weightLossSurgery', 'spaRecovery', 'physiotherapy', 'antiAging'],
+  checkups: ['fullBodyCheckup', 'executiveHealth', 'cancerScreening', 'cardiacCheckup', 'womensHealth', 'mensHealth'],
+};
+
+const procedureKeyMap: Record<string, Record<string, string>> = {
+  dental: {
+    'hollywaySmile': 'consultation.procedure.dental.hollywaySmile',
+    'dentalImplants': 'consultation.procedure.dental.dentalImplants',
+    'veneers': 'consultation.procedure.dental.veneers',
+    'allOn4': 'consultation.procedure.dental.allOn4',
+    'crowns': 'consultation.procedure.dental.crowns',
+    'rootCanal': 'consultation.procedure.dental.rootCanal',
+    'whitening': 'consultation.procedure.dental.whitening',
+    'fullMouth': 'consultation.procedure.dental.fullMouth',
+    'wisdomTooth': 'consultation.procedure.dental.wisdomTooth',
+    'gumTreatment': 'consultation.procedure.dental.gumTreatment',
+  },
+  vision: {
+    'lasik': 'consultation.procedure.vision.lasik',
+    'prk': 'consultation.procedure.vision.prk',
+    'cataract': 'consultation.procedure.vision.cataract',
+    'lensImplant': 'consultation.procedure.vision.lensImplant',
+    'glaucoma': 'consultation.procedure.vision.glaucoma',
+    'retina': 'consultation.procedure.vision.retina',
+    'cornealCross': 'consultation.procedure.vision.cornealCross',
+  },
+  fertility: {
+    'ivf': 'consultation.procedure.fertility.ivf',
+    'icsi': 'consultation.procedure.fertility.icsi',
+    'eggFreezing': 'consultation.procedure.fertility.eggFreezing',
+    'embryoFreezing': 'consultation.procedure.fertility.embryoFreezing',
+    'iui': 'consultation.procedure.fertility.iui',
+    'maleInfertility': 'consultation.procedure.fertility.maleInfertility',
+    'geneticScreening': 'consultation.procedure.fertility.geneticScreening',
+    'donorPrograms': 'consultation.procedure.fertility.donorPrograms',
+  },
+  cosmetic: {
+    'rhinoplasty': 'consultation.procedure.cosmetic.rhinoplasty',
+    'breastAugmentation': 'consultation.procedure.cosmetic.breastAugmentation',
+    'breastReduction': 'consultation.procedure.cosmetic.breastReduction',
+    'liposuction': 'consultation.procedure.cosmetic.liposuction',
+    'tummyTuck': 'consultation.procedure.cosmetic.tummyTuck',
+    'facelift': 'consultation.procedure.cosmetic.facelift',
+    'eyelidSurgery': 'consultation.procedure.cosmetic.eyelidSurgery',
+    'bbl': 'consultation.procedure.cosmetic.bbl',
+    'mommyMakeover': 'consultation.procedure.cosmetic.mommyMakeover',
+    'otoplasty': 'consultation.procedure.cosmetic.otoplasty',
+  },
+  wellness: {
+    'hairTransplant': 'consultation.procedure.wellness.hairTransplant',
+    'weightLossSurgery': 'consultation.procedure.wellness.weightLossSurgery',
+    'spaRecovery': 'consultation.procedure.wellness.spaRecovery',
+    'physiotherapy': 'consultation.procedure.wellness.physiotherapy',
+    'antiAging': 'consultation.procedure.wellness.antiAging',
+  },
+  checkups: {
+    'fullBodyCheckup': 'consultation.procedure.checkups.fullBodyCheckup',
+    'executiveHealth': 'consultation.procedure.checkups.executiveHealth',
+    'cancerScreening': 'consultation.procedure.checkups.cancerScreening',
+    'cardiacCheckup': 'consultation.procedure.checkups.cardiacCheckup',
+    'womensHealth': 'consultation.procedure.checkups.womensHealth',
+    'mensHealth': 'consultation.procedure.checkups.mensHealth',
+  },
 };
 
 export function Consultation() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     treatment: '',
@@ -69,7 +135,7 @@ export function Consultation() {
       });
       setIsSubmitted(true);
     } catch (err: any) {
-      setError(err.message || 'Something went wrong. Please try again.');
+      setError(err.message || t('consultation.errorGeneric'));
     } finally {
       setIsSubmitting(false);
     }
@@ -85,24 +151,24 @@ export function Consultation() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white p-12 rounded-2xl shadow-xl max-w-2xl text-center border-t-4 border-[#C5A059]"
+          className={cn("bg-white p-12 rounded-2xl shadow-xl max-w-2xl text-center border-t-4 border-[#C5A059]", isRTL && "rtl")}
         >
           <div className="w-24 h-24 bg-[#14B8A6]/10 rounded-full flex items-center justify-center mx-auto mb-6">
              <CheckCircle className="w-12 h-12 text-[#14B8A6]" />
           </div>
-          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">Request Received!</h2>
-          <p className="font-['Outfit'] text-xl text-[#0F172A]/70 mb-8">
-            Thank you, {formData.name}. Your personal medical coordinator will contact you within 24 hours via {formData.contactMethod}.
+          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">{t('consultation.requestReceived')}</h2>
+          <p className={cn("font-['Outfit'] text-xl text-[#0F172A]/70 mb-8", isRTL && "text-right")}>
+            {t('consultation.thankYou').replace('{name}', formData.name).replace('{method}', formData.contactMethod)}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className={cn("flex flex-col sm:flex-row justify-center gap-4", isRTL && "flex-row-reverse")}>
             <Button asChild className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-4">
-              <a href="https://wa.me/447988559541" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                Chat on WhatsApp Now
+              <a href="https://wa.me/447988559541" target="_blank" rel="noopener noreferrer" className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+                {t('consultation.chatWhatsApp')}
                 <ArrowRight className="w-4 h-4" />
               </a>
             </Button>
             <Button asChild variant="outline" className="border-[#0F172A]/20 rounded-full px-8 py-4">
-              <Link to="/">Back to Home</Link>
+              <Link to="/">{t('consultation.backToHome')}</Link>
             </Button>
           </div>
         </motion.div>
@@ -111,21 +177,21 @@ export function Consultation() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F0F7F4] pt-20 flex flex-col md:flex-row">
+    <div className={cn("min-h-screen bg-[#F0F7F4] pt-20 flex flex-col md:flex-row", isRTL && "rtl")}>
       {/* Left Side - Form */}
-      <div className="w-full md:w-3/5 p-6 md:p-12 lg:p-16 flex flex-col">
+      <div className={cn("w-full md:w-3/5 p-6 md:p-12 lg:p-16 flex flex-col", isRTL && "text-right")}>
         <div className="mb-8">
           <h1 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0F172A] mb-2">
-            Start Your Journey
+            {t('consultation.startJourney')}
           </h1>
           <p className="font-['Outfit'] text-[#0F172A]/60">
-            Tell us about your needs and get a personalized quote.
+            {t('consultation.tellUsNeeds')}
           </p>
         </div>
 
         {/* Progress Bar */}
         <div className="mb-10">
-          <div className="flex justify-between mb-2">
+          <div className={cn("flex justify-between mb-2", isRTL && "flex-row-reverse")}>
             {steps.map((step) => (
               <div 
                 key={step.id}
@@ -133,7 +199,7 @@ export function Consultation() {
                   step.id <= currentStep ? 'text-[#C5A059]' : 'text-[#0F172A]/20'
                 }`}
               >
-                {step.title}
+                {t(step.key)}
               </div>
             ))}
           </div>
@@ -156,23 +222,24 @@ export function Consultation() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="grid grid-cols-2 gap-4"
+                className={cn("grid grid-cols-2 gap-4", isRTL && "flex-row-reverse")}
               >
-                {treatments.map((t) => (
+                {treatmentIds.map((treatment) => (
                   <button
-                    key={t.id}
+                    key={treatment.id}
                     onClick={() => {
-                      updateForm('treatment', t.id);
+                      updateForm('treatment', treatment.id);
                       nextStep();
                     }}
-                    className={`p-6 rounded-xl border-2 text-left transition-all hover:shadow-md ${
-                      formData.treatment === t.id 
+                    className={cn("p-6 rounded-xl border-2 text-left transition-all hover:shadow-md", 
+                      isRTL && "text-right",
+                      formData.treatment === treatment.id 
                         ? 'border-[#C5A059] bg-[#F0F7F4]' 
                         : 'border-[#0F172A]/10 bg-white hover:border-[#C5A059]/50'
-                    }`}
+                    )}
                   >
-                    <span className="text-3xl mb-2 block">{t.icon}</span>
-                    <span className="font-bold text-[#0F172A]">{t.name}</span>
+                    <span className="text-3xl mb-2 block">{treatment.icon}</span>
+                    <span className="font-bold text-[#0F172A]">{t(treatment.key)}</span>
                   </button>
                 ))}
               </motion.div>
@@ -186,27 +253,36 @@ export function Consultation() {
                 exit={{ opacity: 0, x: -20 }}
                 className="space-y-4"
               >
-                <h3 className="text-xl font-bold mb-4">Select Procedure for {formData.treatment}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {procedures[formData.treatment as keyof typeof procedures]?.map((proc) => (
-                    <button
-                      key={proc}
-                      onClick={() => {
-                        updateForm('procedure', proc);
-                        nextStep();
-                      }}
-                      className={`p-4 rounded-xl border-2 text-left transition-all ${
-                        formData.procedure === proc 
-                          ? 'border-[#C5A059] bg-[#F0F7F4]' 
-                          : 'border-[#0F172A]/10 bg-white hover:border-[#C5A059]/50'
-                      }`}
-                    >
-                      <span className="font-medium text-[#0F172A]">{proc}</span>
-                    </button>
-                  ))}
+                <h3 className={cn("text-xl font-bold mb-4", isRTL && "text-right")}>
+                  {t('consultation.selectProcedure')} {t(`consultation.treatment.${formData.treatment}`)}
+                </h3>
+                <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-4", isRTL && "flex-row-reverse")}>
+                  {procedures[formData.treatment as keyof typeof procedures]?.map((procedureKey) => {
+                    const translationKey = procedureKeyMap[formData.treatment as keyof typeof procedureKeyMap]?.[procedureKey] || '';
+                    return (
+                      <button
+                        key={procedureKey}
+                        onClick={() => {
+                          updateForm('procedure', procedureKey);
+                          nextStep();
+                        }}
+                        className={cn("p-4 rounded-xl border-2 text-left transition-all", 
+                          isRTL && "text-right",
+                          formData.procedure === procedureKey 
+                            ? 'border-[#C5A059] bg-[#F0F7F4]' 
+                            : 'border-[#0F172A]/10 bg-white hover:border-[#C5A059]/50'
+                        )}
+                      >
+                        <span className="font-medium text-[#0F172A]">{t(translationKey)}</span>
+                      </button>
+                    );
+                  })}
                 </div>
-                <button onClick={prevStep} className="text-[#0F172A]/50 hover:text-[#0F172A] mt-4 flex items-center gap-2">
-                  <ArrowLeft className="w-4 h-4" /> Back
+                <button 
+                  onClick={prevStep} 
+                  className={cn("text-[#0F172A]/50 hover:text-[#0F172A] mt-4 flex items-center gap-2", isRTL && "flex-row-reverse")}
+                >
+                  <ArrowLeft className="w-4 h-4" /> {t('consultation.back')}
                 </button>
               </motion.div>
             )}
@@ -220,14 +296,14 @@ export function Consultation() {
               >
                 <div className="border-2 border-dashed border-[#C5A059]/50 rounded-xl p-10 text-center bg-[#F0F7F4] hover:bg-[#F0F7F4] transition-colors cursor-pointer group">
                   <Upload className="w-10 h-10 text-[#C5A059] mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="font-bold text-[#0F172A] mb-2">Upload Medical Records or Photos</p>
-                  <p className="text-[#0F172A]/50 text-sm mb-6">Drag and drop files here, or click to browse (Optional)</p>
-                  <Button variant="outline" className="border-[#C5A059] text-[#C5A059]">Choose Files</Button>
+                  <p className="font-bold text-[#0F172A] mb-2">{t('consultation.uploadTitle')}</p>
+                  <p className="text-[#0F172A]/50 text-sm mb-6">{t('consultation.uploadDesc')}</p>
+                  <Button variant="outline" className="border-[#C5A059] text-[#C5A059]">{t('consultation.chooseFiles')}</Button>
                 </div>
                 
-                <div className="flex justify-between mt-8">
-                  <Button variant="ghost" onClick={prevStep}>Back</Button>
-                  <Button onClick={nextStep} className="bg-[#0F172A] text-white">Skip / Continue</Button>
+                <div className={cn("flex justify-between mt-8", isRTL && "flex-row-reverse")}>
+                  <Button variant="ghost" onClick={prevStep}>{t('consultation.back')}</Button>
+                  <Button onClick={nextStep} className="bg-[#0F172A] text-white">{t('consultation.skipContinue')}</Button>
                 </div>
               </motion.div>
             )}
@@ -238,34 +314,34 @@ export function Consultation() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="space-y-6"
+                className={cn("space-y-6", isRTL && "text-right")}
               >
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0F172A]">Full Name</label>
+                  <label className={cn("text-sm font-bold text-[#0F172A]", isRTL && "block text-right")}>{t('consultation.form.name')}</label>
                   <input 
                     type="text" 
-                    className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
-                    placeholder="Enter your full name"
+                    className={cn("w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]", isRTL && "text-right")}
+                    placeholder={t('consultation.enterName')}
                     value={formData.name}
                     onChange={(e) => updateForm('name', e.target.value)}
                   />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className={cn("grid grid-cols-2 gap-4", isRTL && "flex-row-reverse")}>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0F172A]">Email</label>
+                    <label className={cn("text-sm font-bold text-[#0F172A]", isRTL && "block text-right")}>{t('consultation.form.email')}</label>
                     <input 
                       type="email" 
-                      className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
+                      className={cn("w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]", isRTL && "text-right")}
                       placeholder="name@example.com"
                       value={formData.email}
                       onChange={(e) => updateForm('email', e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0F172A]">Phone</label>
+                    <label className={cn("text-sm font-bold text-[#0F172A]", isRTL && "block text-right")}>{t('consultation.form.phone')}</label>
                     <input 
                       type="tel" 
-                      className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
+                      className={cn("w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]", isRTL && "text-right")}
                       placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => updateForm('phone', e.target.value)}
@@ -274,16 +350,17 @@ export function Consultation() {
                 </div>
                 
                 <div className="space-y-2">
-                   <label className="text-sm font-bold text-[#0F172A]">Preferred Contact Method</label>
-                   <div className="flex gap-2">
+                   <label className={cn("text-sm font-bold text-[#0F172A]", isRTL && "block text-right")}>{t('consultation.preferredContact')}</label>
+                   <div className={cn("flex gap-2", isRTL && "flex-row-reverse")}>
                      {['whatsapp', 'email', 'phone'].map((method) => (
                        <label 
                          key={method} 
-                         className={`flex-1 flex items-center justify-center gap-2 cursor-pointer py-3 px-4 rounded-full border transition-all ${
+                         className={cn("flex-1 flex items-center justify-center gap-2 cursor-pointer py-3 px-4 rounded-full border transition-all", 
+                           isRTL && "flex-row-reverse",
                            formData.contactMethod === method 
                              ? 'bg-[#0F172A] text-white border-[#0F172A]' 
                              : 'bg-white text-[#0F172A] border-[#0F172A]/10 hover:border-[#C5A059]'
-                         }`}
+                         )}
                        >
                          <input 
                            type="radio" 
@@ -299,14 +376,14 @@ export function Consultation() {
                    </div>
                 </div>
 
-                <div className="flex justify-between mt-8">
-                  <Button variant="ghost" onClick={prevStep}>Back</Button>
+                <div className={cn("flex justify-between mt-8", isRTL && "flex-row-reverse")}>
+                  <Button variant="ghost" onClick={prevStep}>{t('consultation.back')}</Button>
                   <Button 
                     onClick={nextStep} 
                     className="bg-[#0F172A] text-white"
                     disabled={!formData.name || !formData.email}
                   >
-                    Continue
+                    {t('consultation.continue')}
                   </Button>
                 </div>
               </motion.div>
@@ -318,23 +395,23 @@ export function Consultation() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="space-y-6"
+                className={cn("space-y-6", isRTL && "text-right")}
               >
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0F172A]">Preferred Travel Dates</label>
+                  <label className={cn("text-sm font-bold text-[#0F172A]", isRTL && "block text-right")}>{t('consultation.preferredDates')}</label>
                   <input 
                     type="date" 
-                    className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]"
+                    className={cn("w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white focus:outline-none focus:border-[#C5A059]", isRTL && "text-right")}
                     value={formData.dateRange}
                     onChange={(e) => updateForm('dateRange', e.target.value)}
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0F172A]">Additional Notes</label>
+                  <label className={cn("text-sm font-bold text-[#0F172A]", isRTL && "block text-right")}>{t('consultation.additionalNotes')}</label>
                   <textarea 
-                    className="w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white h-32 focus:outline-none focus:border-[#C5A059]"
-                    placeholder="Tell us about your medical history or specific requirements..."
+                    className={cn("w-full p-4 rounded-xl border border-[#0F172A]/10 bg-white h-32 focus:outline-none focus:border-[#C5A059]", isRTL && "text-right")}
+                    placeholder={t('consultation.notesPlaceholder')}
                     value={formData.notes}
                     onChange={(e) => updateForm('notes', e.target.value)}
                   />
@@ -346,14 +423,14 @@ export function Consultation() {
                   </div>
                 )}
 
-                <div className="flex justify-between mt-8">
-                  <Button variant="ghost" onClick={prevStep}>Back</Button>
+                <div className={cn("flex justify-between mt-8", isRTL && "flex-row-reverse")}>
+                  <Button variant="ghost" onClick={prevStep}>{t('consultation.back')}</Button>
                   <Button
                     onClick={handleSubmit}
                     disabled={isSubmitting}
                     className="bg-[#C5A059] hover:bg-[#B08D55] text-white px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-60"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Get My Free Quote'}
+                    {isSubmitting ? t('consultation.submitting') : t('consultation.getQuote')}
                   </Button>
                 </div>
               </motion.div>
@@ -363,63 +440,63 @@ export function Consultation() {
       </div>
 
       {/* Right Side - Trust Content */}
-      <div className="hidden md:block w-2/5 bg-[#0F172A] text-white p-12 lg:p-16 relative overflow-hidden">
+      <div className={cn("hidden md:block w-2/5 bg-[#0F172A] text-white p-12 lg:p-16 relative overflow-hidden", isRTL && "rtl")}>
         {/* Decorative Background */}
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
         
-        <div className="relative z-10 h-full flex flex-col justify-between">
+        <div className={cn("relative z-10 h-full flex flex-col justify-between", isRTL && "text-right")}>
           <div>
-            <h3 className="font-['Playfair_Display'] text-3xl font-bold mb-8">Why 10,000+ Patients Choose Sekhmet</h3>
+            <h3 className="font-['Playfair_Display'] text-3xl font-bold mb-8">{t('consultation.whyChoose')}</h3>
             
             <div className="space-y-8">
-              <div className="flex gap-4">
+              <div className={cn("flex gap-4", isRTL && "flex-row-reverse")}>
                 <div className="bg-[#C5A059]/20 p-3 rounded-full h-fit">
                   <ShieldCheck className="w-6 h-6 text-[#C5A059]" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">Internationally Accredited</h4>
-                  <p className="text-white/60 text-sm">All our partner hospitals are JCI accredited and ISO certified.</p>
+                <div className={isRTL ? "text-right" : ""}>
+                  <h4 className="font-bold text-lg mb-1">{t('consultation.accredited')}</h4>
+                  <p className="text-white/60 text-sm">{t('consultation.accreditedDesc')}</p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className={cn("flex gap-4", isRTL && "flex-row-reverse")}>
                 <div className="bg-[#C5A059]/20 p-3 rounded-full h-fit">
                   <Clock className="w-6 h-6 text-[#C5A059]" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">24-Hour Response Guarantee</h4>
-                  <p className="text-white/60 text-sm">Receive a personalized treatment plan and quote within one day.</p>
+                <div className={isRTL ? "text-right" : ""}>
+                  <h4 className="font-bold text-lg mb-1">{t('consultation.responseGuarantee')}</h4>
+                  <p className="text-white/60 text-sm">{t('consultation.responseGuaranteeDesc')}</p>
                 </div>
               </div>
               
-              <div className="flex gap-4">
+              <div className={cn("flex gap-4", isRTL && "flex-row-reverse")}>
                 <div className="bg-[#C5A059]/20 p-3 rounded-full h-fit">
                   <Star className="w-6 h-6 text-[#C5A059]" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">Luxury Experience</h4>
-                  <p className="text-white/60 text-sm">5-star accommodation and VIP airport transfers included.</p>
+                <div className={isRTL ? "text-right" : ""}>
+                  <h4 className="font-bold text-lg mb-1">{t('consultation.luxuryExperience')}</h4>
+                  <p className="text-white/60 text-sm">{t('consultation.luxuryExperienceDesc')}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 mt-12">
-            <div className="flex items-center gap-1 text-[#C5A059] mb-3">
+          <div className={cn("bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 mt-12", isRTL && "text-right")}>
+            <div className={cn("flex items-center gap-1 text-[#C5A059] mb-3", isRTL && "flex-row-reverse justify-end")}>
               {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
             </div>
             <p className="text-white/90 italic mb-4">
-              \u201CThe team at Sekhmet handled everything. I just showed up and focused on my recovery. Truly a world-class experience.\u201D
+              "{t('consultation.testimonial')}"
             </p>
-            <div className="flex items-center gap-3">
+            <div className={cn("flex items-center gap-3", isRTL && "flex-row-reverse")}>
               <img 
                 src="https://images.unsplash.com/photo-1544187702-067d81860901?auto=format&fit=crop&q=80&w=100" 
                 alt="Patient" 
                 className="w-10 h-10 rounded-full object-cover"
               />
-              <div>
-                <p className="font-bold text-sm">Emily Roberts</p>
-                <p className="text-xs text-white/50">Dental Implant Patient, UK</p>
+              <div className={isRTL ? "text-right" : ""}>
+                <p className="font-bold text-sm">{t('consultation.testimonialAuthor')}</p>
+                <p className="text-xs text-white/50">{t('consultation.testimonialRole')}</p>
               </div>
             </div>
           </div>

@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import { IconAnkh } from '../components/EgyptianIcons';
 import { submitLead } from '../../lib/supabase';
 
 export const Contact = () => {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -32,7 +36,7 @@ export const Contact = () => {
       });
       setIsSubmitted(true);
     } catch (err: any) {
-      setError(err.message || 'Something went wrong. Please try again.');
+      setError(err.message || t('common.error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -46,23 +50,23 @@ export const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F0F7F4] pt-12 pb-20">
+    <div className={`min-h-screen bg-[#F0F7F4] pt-12 pb-20 ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-playfair text-4xl md:text-5xl text-[#0F172A] mb-4">Get in Touch</h1>
-          <div className="flex items-center justify-center gap-2 text-[#C5A059] font-medium font-sans">
+          <h1 className="font-playfair text-4xl md:text-5xl text-[#0F172A] mb-4">{t('contact.title')}</h1>
+          <div className={`flex items-center justify-center gap-2 text-[#C5A059] font-medium font-sans ${isRTL ? 'flex-row-reverse' : ''}`}>
             <Clock size={18} />
-            <span>We respond to every inquiry within 24 hours</span>
+            <span>{t('contact.responseTime')}</span>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-start ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           
           {/* Contact Form */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-white p-8 md:p-10 rounded-2xl shadow-lg border-t-4 border-[#C5A059]"
           >
@@ -71,21 +75,21 @@ export const Contact = () => {
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
                   <CheckCircle size={40} />
                 </div>
-                <h3 className="font-playfair text-3xl text-[#0F172A] mb-4">Message Sent!</h3>
-                <p className="text-gray-600 mb-8 font-sans">
-                  Thank you for contacting Sekhmet Wellness Journeys. A member of our concierge team will be in touch shortly.
+                <h3 className="font-playfair text-3xl text-[#0F172A] mb-4">{t('contact.messageSent')}</h3>
+                <p className={`text-gray-600 mb-8 font-sans ${isRTL ? 'text-right' : ''}`}>
+                  {t('contact.thankYou')}
                 </p>
                 <button 
                   onClick={() => setIsSubmitted(false)}
                   className="text-[#C5A059] font-bold hover:underline"
                 >
-                  Send another message
+                  {t('contact.sendAnother')}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Full Name</label>
+                  <label htmlFor="name" className={`block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide ${isRTL ? 'text-right' : ''}`}>{t('contact.fullName')}</label>
                   <input
                     type="text"
                     id="name"
@@ -93,14 +97,14 @@ export const Contact = () => {
                     required
                     value={formState.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all"
-                    placeholder="Enter your name"
+                    className={`w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all ${isRTL ? 'text-right' : ''}`}
+                    placeholder={t('contact.enterName')}
                   />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Email Address</label>
+                    <label htmlFor="email" className={`block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide ${isRTL ? 'text-right' : ''}`}>{t('contact.email')}</label>
                     <input
                       type="email"
                       id="email"
@@ -108,45 +112,45 @@ export const Contact = () => {
                       required
                       value={formState.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all"
+                      className={`w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all ${isRTL ? 'text-right' : ''}`}
                       placeholder="john@example.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Phone Number</label>
+                    <label htmlFor="phone" className={`block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide ${isRTL ? 'text-right' : ''}`}>{t('contact.phone')}</label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formState.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all"
+                      className={`w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all ${isRTL ? 'text-right' : ''}`}
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="interest" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">I'm Interested In</label>
+                  <label htmlFor="interest" className={`block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide ${isRTL ? 'text-right' : ''}`}>{t('contact.interest')}</label>
                   <select
                     id="interest"
                     name="interest"
                     value={formState.interest}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all cursor-pointer"
+                    className={`w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all cursor-pointer ${isRTL ? 'text-right' : ''}`}
                   >
-                    <option value="">Select a treatment...</option>
-                    <option value="dental">Dental Care</option>
-                    <option value="cosmetic">Cosmetic Surgery</option>
-                    <option value="hair">Hair Transplant</option>
-                    <option value="vision">Vision Correction</option>
-                    <option value="checkup">General Checkup</option>
-                    <option value="other">Other Inquiry</option>
+                    <option value="">{t('contact.selectTreatment')}</option>
+                    <option value="dental">{t('contact.dental')}</option>
+                    <option value="cosmetic">{t('contact.cosmetic')}</option>
+                    <option value="hair">{t('contact.hair')}</option>
+                    <option value="vision">{t('contact.vision')}</option>
+                    <option value="checkup">{t('contact.checkup')}</option>
+                    <option value="other">{t('contact.other')}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide">Message</label>
+                  <label htmlFor="message" className={`block text-sm font-bold text-[#0F172A] mb-2 uppercase tracking-wide ${isRTL ? 'text-right' : ''}`}>{t('contact.message')}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -154,13 +158,13 @@ export const Contact = () => {
                     rows={4}
                     value={formState.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all resize-none"
-                    placeholder="Tell us about your needs or ask any questions..."
+                    className={`w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all resize-none ${isRTL ? 'text-right' : ''}`}
+                    placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
 
                 {error && (
-                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                  <div className={`p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm ${isRTL ? 'text-right' : ''}`}>
                     {error}
                   </div>
                 )}
@@ -168,9 +172,9 @@ export const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#C5A059] text-white font-bold py-4 rounded-lg hover:bg-[#B08D4B] transition-colors shadow-lg flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
+                  className={`w-full bg-[#C5A059] text-white font-bold py-4 rounded-lg hover:bg-[#B08D4B] transition-colors shadow-lg flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'} {!isSubmitting && <Send size={18} className="group-hover:translate-x-1 transition-transform" />}
+                  {isSubmitting ? t('contact.sending') : t('contact.sendMessage')} {!isSubmitting && <Send size={18} className="group-hover:translate-x-1 transition-transform" />}
                 </button>
               </form>
             )}
@@ -178,10 +182,10 @@ export const Contact = () => {
 
           {/* Contact Info */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-8"
+            className={`space-y-8 ${isRTL ? 'lg:flex-row-reverse' : ''}`}
           >
             <div className="bg-[#0F172A] p-8 md:p-10 rounded-2xl shadow-xl text-white relative overflow-hidden">
                <div className="absolute top-0 right-0 w-40 h-40 bg-[#C5A059] opacity-5 rounded-bl-full -mr-10 -mt-10" />
@@ -189,38 +193,38 @@ export const Contact = () => {
 
                <div className="relative z-10 space-y-8">
                  <div>
-                   <h3 className="font-playfair text-2xl text-[#C5A059] mb-6">Contact Information</h3>
-                   <div className="space-y-6">
-                     <a href="tel:+447988559541" className="flex items-start gap-4 hover:text-[#C5A059] transition-colors group">
-                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white transition-colors">
+                   <h3 className={`font-playfair text-2xl text-[#C5A059] mb-6 ${isRTL ? 'text-right' : ''}`}>{t('contact.information')}</h3>
+                   <div className={`space-y-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                     <a href="tel:+447988559541" className={`flex items-start gap-4 hover:text-[#C5A059] transition-colors group ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white transition-colors flex-shrink-0">
                          <Phone size={20} />
                        </div>
                        <div>
-                         <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">Call Us</p>
+                         <p className={`text-sm text-gray-400 uppercase tracking-wide mb-1 ${isRTL ? 'text-right' : ''}`}>{t('contact.callUs')}</p>
                          <p className="font-mono text-lg">+44 798 855 9541</p>
                        </div>
                      </a>
 
-                     <a href="mailto:info@sekhmetwellness.com" className="flex items-start gap-4 hover:text-[#C5A059] transition-colors group">
-                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white transition-colors">
+                     <a href="mailto:info@sekhmetwellness.com" className={`flex items-start gap-4 hover:text-[#C5A059] transition-colors group ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white transition-colors flex-shrink-0">
                          <Mail size={20} />
                        </div>
                        <div>
-                         <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">Email Us</p>
+                         <p className={`text-sm text-gray-400 uppercase tracking-wide mb-1 ${isRTL ? 'text-right' : ''}`}>{t('contact.emailUs')}</p>
                          <p className="font-sans text-lg">info@sekhmetwellness.com</p>
                        </div>
                      </a>
 
-                     <div className="flex items-start gap-4 group">
-                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                     <div className={`flex items-start gap-4 group ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                          <MapPin size={20} />
                        </div>
                        <div>
-                         <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">Visit Us</p>
+                         <p className={`text-sm text-gray-400 uppercase tracking-wide mb-1 ${isRTL ? 'text-right' : ''}`}>{t('contact.visitUs')}</p>
                          <p className="font-sans text-lg">
-                           The Nile Tower, Floor 15<br />
-                           Corniche El Nil, Maadi<br />
-                           Cairo, Egypt
+                           {t('contact.address.line1')}<br />
+                           {t('contact.address.line2')}<br />
+                           {t('contact.address.line3')}
                          </p>
                        </div>
                      </div>
@@ -236,15 +240,15 @@ export const Contact = () => {
                    />
                    <div className="absolute inset-0 flex items-center justify-center">
                      <button className="bg-white/90 text-[#0F172A] px-4 py-2 rounded-lg font-bold text-sm shadow-lg hover:bg-white transition-colors">
-                       Open in Google Maps
+                       {t('contact.openMap')}
                      </button>
                    </div>
                  </div>
 
                  {/* Social Links */}
-                 <div className="pt-6 border-t border-white/10 flex justify-between items-center">
-                   <span className="text-gray-400 text-sm">Follow our journey</span>
-                   <div className="flex gap-4">
+                 <div className={`pt-6 border-t border-white/10 flex justify-between items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
+                   <span className="text-gray-400 text-sm">{t('contact.followJourney')}</span>
+                   <div className={`flex gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
                      {/* Social Icons Placeholder */}
                      <div className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A059] transition-colors cursor-pointer flex items-center justify-center">
                        <span className="font-bold text-xs">IG</span>
@@ -261,22 +265,22 @@ export const Contact = () => {
             </div>
 
             {/* FAQ Shortcuts */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="font-playfair text-lg font-bold mb-4 flex items-center gap-2">
-                <IconAnkh className="w-5 h-5 text-[#C5A059]" /> Common Questions
+            <div className={`bg-white p-6 rounded-xl shadow-sm border border-gray-100 ${isRTL ? 'text-right' : ''}`}>
+              <h3 className={`font-playfair text-lg font-bold mb-4 flex items-center gap-2 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
+                <IconAnkh className="w-5 h-5 text-[#C5A059]" /> {t('contact.commonQuestions')}
               </h3>
               <div className="space-y-3">
-                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group">
-                  How much can I save?
-                  <ArrowRight size={16} className="text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Link to="/faq" className={`block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  {t('contact.question1')}
+                  <ArrowRight size={16} className={`text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
-                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group">
-                  Is it safe to travel to Egypt?
-                  <ArrowRight size={16} className="text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Link to="/faq" className={`block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  {t('contact.question2')}
+                  <ArrowRight size={16} className={`text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
-                <Link to="/faq" className="block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group">
-                  What is included in the packages?
-                  <ArrowRight size={16} className="text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Link to="/faq" className={`block p-3 rounded-lg hover:bg-[#F0F7F4] text-sm font-medium text-[#0F172A] transition-colors flex justify-between items-center group ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  {t('contact.question3')}
+                  <ArrowRight size={16} className={`text-[#C5A059] opacity-0 group-hover:opacity-100 transition-opacity ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
               </div>
             </div>

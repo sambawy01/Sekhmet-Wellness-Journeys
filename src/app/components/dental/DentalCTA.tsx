@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
+import { cn } from '../../../lib/utils';
 import { Button } from '../ui/button';
 
 export function DentalCTA() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
   return (
     <section className="py-24 bg-[#0F172A] relative overflow-hidden">
       {/* Background Elements */}
@@ -12,14 +17,14 @@ export function DentalCTA() {
         <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-[#0F172A] to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className={cn("container mx-auto px-6 relative z-10 text-center", isRTL && "text-right")}>
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6"
         >
-          Your New Smile Awaits
+          {t('dentalCta.title')}
         </motion.h2>
         
         <motion.p 
@@ -29,7 +34,7 @@ export function DentalCTA() {
           transition={{ delay: 0.1 }}
           className="font-['Outfit'] text-xl text-[#F9F6F0]/80 max-w-2xl mx-auto mb-10"
         >
-          Get a free consultation and personalized treatment plan today. Save up to 85% without compromising on quality.
+          {t('dentalCta.description')}
         </motion.p>
 
         <motion.div 
@@ -37,13 +42,13 @@ export function DentalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex flex-col sm:flex-row justify-center gap-4"
+          className={cn("flex flex-col sm:flex-row justify-center gap-4", isRTL && "flex-col-reverse sm:flex-row-reverse")}
         >
           <Button 
             size="lg" 
             className="bg-[#C5A059] hover:bg-[#B08D45] text-white font-['Outfit'] text-lg px-8 py-6 rounded-full"
           >
-            Get Free Quote <ArrowRight className="ml-2 w-5 h-5" />
+            {t('dentalCta.getFreeQuote')} <ArrowRight className={cn("ml-2 w-5 h-5", isRTL && "ml-0 mr-2")} />
           </Button>
           
           <Button 
@@ -51,7 +56,7 @@ export function DentalCTA() {
             variant="outline" 
             className="border-white/20 text-white hover:bg-white/10 hover:text-white font-['Outfit'] text-lg px-8 py-6 rounded-full"
           >
-            <MessageCircle className="mr-2 w-5 h-5" /> WhatsApp Us
+            <MessageCircle className={cn("mr-2 w-5 h-5", isRTL && "mr-0 ml-2")} /> {t('dentalCta.whatsappUs')}
           </Button>
         </motion.div>
 
@@ -62,7 +67,7 @@ export function DentalCTA() {
           transition={{ delay: 0.3 }}
           className="mt-6 text-sm text-[#F9F6F0]/40 font-['Outfit']"
         >
-          No commitment required. 100% free assessment.
+          {t('dentalCta.noCommitment')}
         </motion.p>
       </div>
     </section>

@@ -51,6 +51,7 @@ export const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
@@ -68,11 +69,11 @@ export const Navigation: React.FC = () => {
     setIsMegaMenuOpen(false);
   }, [location.pathname]);
 
-  const toggleLanguage = () => {
-    if (language === 'en') setLanguage('ar');
-    else if (language === 'ar') setLanguage('fr');
-    else setLanguage('en');
-  };
+  const languages = [
+    { code: 'en', label: 'EN' },
+    { code: 'ar', label: 'AR' },
+    { code: 'fr', label: 'FR' }
+  ];
 
   return (
     <>
@@ -111,7 +112,7 @@ export const Navigation: React.FC = () => {
               </Link>
             </div>
             <Link to="/how-it-works" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.howItWorks")} /></Link>
-            <Link to="/pricing" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label="Pricing" /></Link>
+            <Link to="/pricing" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.pricing")} /></Link>
             <Link to="/patient-stories" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.stories")} /></Link>
             <Link to="/travel-guide" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.travelGuide")} /></Link>
             <Link to="/faq" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.faq")} /></Link>
@@ -121,10 +122,47 @@ export const Navigation: React.FC = () => {
           <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-4 border-r border-white/20 pr-6">
               <Search className="text-white w-5 h-5 cursor-pointer hover:text-[#0D9488] transition-colors" />
-              <button onClick={toggleLanguage} className="flex items-center text-white hover:text-[#0D9488] transition-colors font-bold text-sm">
-                 <Globe size={18} className="mr-1" />
-                 {language.toUpperCase()}
-              </button>
+              
+              {/* Language Dropdown */}
+              <div className="relative group">
+                <button 
+                  onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                  className="flex items-center text-white hover:text-[#0D9488] transition-colors font-bold text-sm gap-1.5"
+                >
+                  <Globe size={18} />
+                  {language.toUpperCase()}
+                  <ChevronDown size={14} className={cn("transition-transform duration-200", isLanguageDropdownOpen && "rotate-180")} />
+                </button>
+                
+                {/* Dropdown Menu */}
+                <div 
+                  className={cn(
+                    "absolute right-0 mt-2 w-32 bg-[#1A2332] border border-[#0D9488]/30 rounded-lg shadow-lg overflow-hidden transition-all duration-200 origin-top",
+                    isLanguageDropdownOpen 
+                      ? "opacity-100 translate-y-0 scale-y-100 pointer-events-auto" 
+                      : "opacity-0 -translate-y-2 scale-y-95 pointer-events-none"
+                  )}
+                  onMouseLeave={() => setIsLanguageDropdownOpen(false)}
+                >
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code as 'en' | 'ar' | 'fr');
+                        setIsLanguageDropdownOpen(false);
+                      }}
+                      className={cn(
+                        "w-full px-4 py-2.5 text-left font-['Outfit'] font-semibold text-sm transition-colors duration-200",
+                        language === lang.code
+                          ? "bg-[#0D9488] text-white"
+                          : "text-white hover:bg-[#0D9488]/20"
+                      )}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
             <Link to="/consultation">
               <button className="bg-[#0D9488] text-white px-6 py-2.5 rounded-full font-['Outfit'] text-[14px] font-semibold tracking-wide hover:bg-[#0F766E] transition-all duration-300 shadow-lg hover:shadow-[#0D9488]/30">
@@ -161,25 +199,25 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/dental" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconLotus className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">Dental Care</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.dentalCare")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
-                  { name: "Hollywood Smile", path: "/treatments/dental/hollywood-smile" },
-                  { name: "Dental Implants", path: "/treatments/dental/implants" },
-                  { name: "Veneers", path: "/treatments/dental/hollywood-smile" },
-                  { name: "Full Mouth Rehab", path: "/treatments/dental" },
-                  { name: "Wisdom Tooth Removal", path: "/treatments/dental" }
+                  { key: "nav.hollywoodSmile", path: "/treatments/dental/hollywood-smile" },
+                  { key: "nav.dentalImplants", path: "/treatments/dental/implants" },
+                  { key: "nav.veneers", path: "/treatments/dental/hollywood-smile" },
+                  { key: "nav.fullMouthRehab", path: "/treatments/dental" },
+                  { key: "nav.wisdomTooth", path: "/treatments/dental" }
                 ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    <Link to={item.path}>{item.name}</Link>
+                    <Link to={item.path}>{t(item.key)}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
                 <Link to="/treatments/dental" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
-                  View All <ArrowRight size={10} />
+                  {t("nav.viewAll")} <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
@@ -188,50 +226,50 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/vision" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconEyeOfHorus className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">Vision</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.visionCorrection")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
-                  { name: "LASIK Eye Surgery", path: "/treatments/vision" },
-                  { name: "Cataract Surgery", path: "/treatments/vision" },
-                  { name: "Lens Implant (ICL)", path: "/treatments/vision" },
-                  { name: "Glaucoma Treatment", path: "/treatments/vision" }
+                  { key: "nav.lasik", path: "/treatments/vision" },
+                  { key: "nav.cataractSurgery", path: "/treatments/vision" },
+                  { key: "nav.lensImplant", path: "/treatments/vision" },
+                  { key: "nav.glaucoma", path: "/treatments/vision" }
                 ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    <Link to={item.path}>{item.name}</Link>
+                    <Link to={item.path}>{t(item.key)}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
                 <Link to="/treatments/vision" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
-                  View All <ArrowRight size={10} />
+                  {t("nav.viewAll")} <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
 
-            {/* Column 3: Fertility - NEW VERTICAL */}
+            {/* Column 3: Fertility */}
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/fertility" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconSun className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">Fertility</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.fertility")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
-                  { name: "IVF Treatment", path: "/treatments/fertility" }, 
-                  { name: "Egg Freezing", path: "/treatments/fertility" },
-                  { name: "Male Infertility", path: "/treatments/fertility" },
-                  { name: "Genetic Screening", path: "/treatments/fertility" }
+                  { key: "nav.ivfTreatment", path: "/treatments/fertility" }, 
+                  { key: "nav.eggFreezing", path: "/treatments/fertility" },
+                  { key: "nav.maleInfertility", path: "/treatments/fertility" },
+                  { key: "nav.geneticScreening", path: "/treatments/fertility" }
                 ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    <Link to={item.path}>{item.name}</Link>
+                    <Link to={item.path}>{t(item.key)}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
                 <Link to="/treatments/fertility" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
-                  View All <ArrowRight size={10} />
+                  {t("nav.viewAll")} <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
@@ -240,24 +278,24 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/cosmetic" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconScarab className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">Cosmetic</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.cosmetic")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
-                  { name: "Rhinoplasty", path: "/treatments/cosmetic" },
-                  { name: "Breast Augmentation", path: "/treatments/cosmetic" },
-                  { name: "Liposuction", path: "/treatments/cosmetic" },
-                  { name: "Facelift", path: "/treatments/cosmetic" }
+                  { key: "nav.rhinoplasty", path: "/treatments/cosmetic" },
+                  { key: "nav.breastAugmentation", path: "/treatments/cosmetic" },
+                  { key: "nav.liposuction", path: "/treatments/cosmetic" },
+                  { key: "nav.facelift", path: "/treatments/cosmetic" }
                 ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    <Link to={item.path}>{item.name}</Link>
+                    <Link to={item.path}>{t(item.key)}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
                 <Link to="/treatments/cosmetic" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
-                  View All <ArrowRight size={10} />
+                  {t("nav.viewAll")} <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
@@ -266,24 +304,24 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/wellness" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconCare className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">Wellness</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.wellness")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
-                  { name: "Hair Transplant", path: "/treatments/wellness" },
-                  { name: "Weight Loss Surgery", path: "/treatments/wellness" },
-                  { name: "Spa & Recovery", path: "/treatments/wellness" },
-                  { name: "Anti-Aging", path: "/treatments/wellness" }
+                  { key: "nav.hairTransplant", path: "/treatments/wellness" },
+                  { key: "nav.weightLossSurgery", path: "/treatments/wellness" },
+                  { key: "nav.spaRecovery", path: "/treatments/wellness" },
+                  { key: "nav.antiAging", path: "/treatments/wellness" }
                 ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    <Link to={item.path}>{item.name}</Link>
+                    <Link to={item.path}>{t(item.key)}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
                 <Link to="/treatments/wellness" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
-                  View All <ArrowRight size={10} />
+                  {t("nav.viewAll")} <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
@@ -292,24 +330,24 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 group/col">
               <Link to="/treatments/checkups" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconAnkh className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">Checkups</h3>
+                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.healthCheckups")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
-                  { name: "Full Body Checkup", path: "/treatments/checkups" },
-                  { name: "Executive Screening", path: "/treatments/checkups" },
-                  { name: "Cancer Screening", path: "/treatments/checkups" },
-                  { name: "Cardiac Checkup", path: "/treatments/checkups" }
+                  { key: "nav.fullBodyCheckup", path: "/treatments/checkups" },
+                  { key: "nav.executiveScreening", path: "/treatments/checkups" },
+                  { key: "nav.cancerScreening", path: "/treatments/checkups" },
+                  { key: "nav.cardiacCheckup", path: "/treatments/checkups" }
                 ].map((item, i) => (
                   <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    <Link to={item.path}>{item.name}</Link>
+                    <Link to={item.path}>{t(item.key)}</Link>
                   </li>
                 ))}
               </ul>
               <div className="pt-2">
                 <Link to="/treatments/checkups" className="text-[#14B8A6] text-xs font-bold uppercase tracking-wide cursor-pointer flex items-center gap-1 hover:gap-2 transition-all">
-                  View All <ArrowRight size={10} />
+                  {t("nav.viewAll")} <ArrowRight size={10} />
                 </Link>
               </div>
             </div>
@@ -325,19 +363,19 @@ export const Navigation: React.FC = () => {
         >
           <nav className="flex flex-col gap-6 mb-12">
             <div className="flex flex-col gap-3">
-               <h4 className="text-[#64748B] font-['Outfit'] text-xs font-bold uppercase tracking-widest pl-1">Treatments</h4>
-               <MobileNavLink to="/treatments/dental" label="Dental Care" delay={0.1} onClick={() => setIsMobileMenuOpen(false)} />
-               <MobileNavLink to="/treatments/vision" label="Vision Correction" delay={0.11} onClick={() => setIsMobileMenuOpen(false)} />
-               <MobileNavLink to="/treatments/fertility" label="Fertility & IVF" delay={0.12} onClick={() => setIsMobileMenuOpen(false)} />
-               <MobileNavLink to="/treatments/cosmetic" label="Cosmetic Surgery" delay={0.13} onClick={() => setIsMobileMenuOpen(false)} />
-               <MobileNavLink to="/treatments/wellness" label="Wellness" delay={0.14} onClick={() => setIsMobileMenuOpen(false)} />
-               <MobileNavLink to="/treatments/checkups" label="Health Checkups" delay={0.15} onClick={() => setIsMobileMenuOpen(false)} />
+               <h4 className="text-[#64748B] font-['Outfit'] text-xs font-bold uppercase tracking-widest pl-1">{t("nav.treatments")}</h4>
+               <MobileNavLink to="/treatments/dental" label={t("nav.dentalCare")} delay={0.1} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/vision" label={t("nav.visionCorrection")} delay={0.11} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/fertility" label={t("nav.fertility")} delay={0.12} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/cosmetic" label={t("nav.cosmetic")} delay={0.13} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/wellness" label={t("nav.wellness")} delay={0.14} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/treatments/checkups" label={t("nav.healthCheckups")} delay={0.15} onClick={() => setIsMobileMenuOpen(false)} />
             </div>
             
             <div className="h-px bg-white/10 my-1" />
 
             <MobileNavLink to="/how-it-works" label={t("nav.howItWorks")} delay={0.15} onClick={() => setIsMobileMenuOpen(false)} />
-            <MobileNavLink to="/pricing" label="Pricing" delay={0.17} onClick={() => setIsMobileMenuOpen(false)} />
+            <MobileNavLink to="/pricing" label={t("nav.pricing")} delay={0.17} onClick={() => setIsMobileMenuOpen(false)} />
             <MobileNavLink to="/patient-stories" label={t("nav.stories")} delay={0.2} onClick={() => setIsMobileMenuOpen(false)} />
             <MobileNavLink to="/travel-guide" label={t("nav.travelGuide")} delay={0.3} onClick={() => setIsMobileMenuOpen(false)} />
             <MobileNavLink to="/faq" label={t("nav.faq")} delay={0.35} onClick={() => setIsMobileMenuOpen(false)} />

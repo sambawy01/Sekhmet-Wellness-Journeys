@@ -5,10 +5,14 @@ import { ComparisonTable } from '../components/how-it-works/ComparisonTable';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '../context/LanguageContext';
 
 export function HowItWorks() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
   return (
-    <div className="pt-20">
+    <div className={`pt-20 ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
       <Hero />
       <Timeline />
       <ComparisonTable />
@@ -22,27 +26,26 @@ export function HowItWorks() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-6 text-[#F0F7F4]">
-              Ready to Begin Your Transformation?
+            <h2 className={`font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-6 text-[#F0F7F4] ${isRTL ? 'text-right' : ''}`}>
+              {t('howItWorks.title')}
             </h2>
-            <p className="font-['Outfit'] text-xl text-[#F0F7F4]/80 mb-10 leading-relaxed">
-              Experience the perfect blend of world-class medical care and luxury travel.
-              Let us handle every detail while you focus on your health.
+            <p className={`font-['Outfit'] text-xl text-[#F0F7F4]/80 mb-10 leading-relaxed ${isRTL ? 'text-right' : ''}`}>
+              {t('howItWorks.subtitle')}
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <div className={`flex flex-col sm:flex-row justify-center gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Link
                 to="/consultation"
-                className="inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#B08D55] text-white px-8 py-4 rounded-full text-lg font-['Outfit'] font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+                className={`inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#B08D55] text-white px-8 py-4 rounded-full text-lg font-['Outfit'] font-bold transition-all duration-300 shadow-lg hover:shadow-xl ${isRTL ? 'flex-row-reverse' : ''}`}
               >
-                Get Your Free Quote
+                {t('howItWorks.freeQuote')}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-full text-lg font-['Outfit'] font-bold transition-all duration-300"
+                className={`inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-full text-lg font-['Outfit'] font-bold transition-all duration-300 ${isRTL ? 'flex-row-reverse' : ''}`}
               >
-                Contact a Coordinator
+                {t('howItWorks.contact')}
               </Link>
             </div>
           </motion.div>
