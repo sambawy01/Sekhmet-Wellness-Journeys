@@ -1,37 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CircleDollarSign, Percent, Calendar, Globe } from 'lucide-react';
-
-const stats = [
-  {
-    icon: CircleDollarSign,
-    label: "Price Range",
-    value: "$250–$500",
-    description: "Per Single Implant"
-  },
-  {
-    icon: Globe,
-    label: "UK Price",
-    value: "vs $3,500",
-    description: "Average Cost"
-  },
-  {
-    icon: Percent,
-    label: "Savings",
-    value: "90%",
-    description: "Off Western Prices"
-  },
-  {
-    icon: Calendar,
-    label: "Availability",
-    value: "Same-Day",
-    description: "Appointments Possible"
-  }
-];
+import { useLanguage } from '../../context/LanguageContext';
+import { cn } from '../../../lib/utils';
 
 export function ImplantsKeyFacts() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
+  const stats = [
+    {
+      icon: CircleDollarSign,
+      label: t('implantsKeyFacts.priceRange.label'),
+      value: t('implantsKeyFacts.priceRange.value'),
+      description: t('implantsKeyFacts.priceRange.description')
+    },
+    {
+      icon: Globe,
+      label: t('implantsKeyFacts.ukPrice.label'),
+      value: t('implantsKeyFacts.ukPrice.value'),
+      description: t('implantsKeyFacts.ukPrice.description')
+    },
+    {
+      icon: Percent,
+      label: t('implantsKeyFacts.savings.label'),
+      value: t('implantsKeyFacts.savings.value'),
+      description: t('implantsKeyFacts.savings.description')
+    },
+    {
+      icon: Calendar,
+      label: t('implantsKeyFacts.availability.label'),
+      value: t('implantsKeyFacts.availability.value'),
+      description: t('implantsKeyFacts.availability.description')
+    }
+  ];
+
   return (
-    <section className="bg-[#F0F7F4] border-b border-[#C5A059]/20 py-8">
+    <section className={cn("bg-[#F0F7F4] border-b border-[#C5A059]/20 py-8", isRTL && "rtl")}>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (

@@ -3,69 +3,73 @@ import { Check, X, ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '../../../lib/utils';
 import { Button } from '../ui/button';
-
-const currencies = ['USD', 'GBP', 'EUR', 'AED'];
-
-const prices = [
-  {
-    procedure: "Dental Implant",
-    egypt: 250,
-    uk: 2500,
-    us: 3500,
-    uae: 1000
-  },
-  {
-    procedure: "Hollywood Smile",
-    egypt: 2500,
-    uk: 12000,
-    us: 18000,
-    uae: 6000
-  },
-  {
-    procedure: "All-on-4",
-    egypt: 3500,
-    uk: 15000,
-    us: 24000,
-    uae: 8000
-  },
-  {
-    procedure: "Veneers (Per Tooth)",
-    egypt: 180,
-    uk: 900,
-    us: 1500,
-    uae: 500
-  },
-  {
-    procedure: "Root Canal",
-    egypt: 100,
-    uk: 600,
-    us: 1200,
-    uae: 400
-  },
-  {
-    procedure: "Teeth Whitening",
-    egypt: 150,
-    uk: 600,
-    us: 800,
-    uae: 400
-  }
-];
-
-const exchangeRates: Record<string, number> = {
-  USD: 1,
-  GBP: 0.79,
-  EUR: 0.92,
-  AED: 3.67
-};
-
-const currencySymbols: Record<string, string> = {
-  USD: '$',
-  GBP: '£',
-  EUR: '€',
-  AED: 'AED '
-};
+import { useLanguage } from '../../context/LanguageContext';
 
 export function PriceComparison() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+
+  const currencies = ['USD', 'GBP', 'EUR', 'AED'];
+
+  const prices = [
+    {
+      procedure: t('dentalPrices.procedures.dentalImplant'),
+      egypt: 250,
+      uk: 2500,
+      us: 3500,
+      uae: 1000
+    },
+    {
+      procedure: t('dentalPrices.procedures.hollywoodSmile'),
+      egypt: 2500,
+      uk: 12000,
+      us: 18000,
+      uae: 6000
+    },
+    {
+      procedure: t('dentalPrices.procedures.allOn4'),
+      egypt: 3500,
+      uk: 15000,
+      us: 24000,
+      uae: 8000
+    },
+    {
+      procedure: t('dentalPrices.procedures.veneersPerTooth'),
+      egypt: 180,
+      uk: 900,
+      us: 1500,
+      uae: 500
+    },
+    {
+      procedure: t('dentalPrices.procedures.rootCanal'),
+      egypt: 100,
+      uk: 600,
+      us: 1200,
+      uae: 400
+    },
+    {
+      procedure: t('dentalPrices.procedures.teethWhitening'),
+      egypt: 150,
+      uk: 600,
+      us: 800,
+      uae: 400
+    }
+  ];
+
+  const exchangeRates: Record<string, number> = {
+    USD: 1,
+    GBP: 0.79,
+    EUR: 0.92,
+    AED: 3.67
+  };
+
+  const currencySymbols: Record<string, string> = {
+    USD: '$',
+    GBP: '£',
+    EUR: '€',
+    AED: 'AED '
+  };
+
   const [currency, setCurrency] = useState('USD');
 
   const convert = (price: number) => {
@@ -82,7 +86,7 @@ export function PriceComparison() {
             viewport={{ once: true }}
             className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
-            Compare Prices
+            {t('dentalPrices.title')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -91,7 +95,7 @@ export function PriceComparison() {
             transition={{ delay: 0.1 }}
             className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto mb-8"
           >
-            See exactly how much you can save by choosing Sekhmet Wellness for your dental care.
+            {t('dentalPrices.subtitle')}
           </motion.p>
 
           <div className="flex justify-center gap-2 mb-8">
@@ -113,15 +117,15 @@ export function PriceComparison() {
           </div>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-[#C5A059]/20 shadow-lg">
+        <div className={cn("overflow-x-auto rounded-xl border border-[#C5A059]/20 shadow-lg", isRTL && "rtl")}>
           <table className="w-full min-w-[700px] border-collapse bg-white">
             <thead>
               <tr className="bg-[#F0F7F4]">
-                <th className="p-4 text-left font-['Playfair_Display'] text-xl font-bold text-[#0F172A] border-b border-[#C5A059]/20 w-1/5 sticky left-0 bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">Procedure</th>
-                <th className="p-4 text-center font-['Outfit'] text-lg font-bold text-[#14B8A6] bg-[#E8F3F1] border-b border-[#14B8A6]/20 w-1/5">Egypt (Sekhmet)</th>
-                <th className="p-4 text-center font-['Outfit'] text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/5">UK</th>
-                <th className="p-4 text-center font-['Outfit'] text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/5">US</th>
-                <th className="p-4 text-center font-['Outfit'] text-lg font-bold text-[#C84B31] border-b border-[#C5A059]/20 w-1/5">Your Savings</th>
+                <th className={cn("p-4", isRTL ? "text-right" : "text-left", "font-['Playfair_Display'] text-xl font-bold text-[#0F172A] border-b border-[#C5A059]/20 w-1/5 sticky left-0 bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]")}>{t('dentalPrices.header.procedure')}</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-bold text-[#14B8A6] bg-[#E8F3F1] border-b border-[#14B8A6]/20 w-1/5">{t('dentalPrices.header.egypt')}</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/5">{t('dentalPrices.header.uk')}</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/5">{t('dentalPrices.header.us')}</th>
+                <th className="p-4 text-center font-['Outfit'] text-lg font-bold text-[#C84B31] border-b border-[#C5A059]/20 w-1/5">{t('dentalPrices.header.savings')}</th>
               </tr>
             </thead>
             <tbody>
@@ -139,7 +143,7 @@ export function PriceComparison() {
                     transition={{ delay: index * 0.05 }}
                     className="hover:bg-[#F0F7F4]/50 transition-colors group"
                   >
-                    <td className="p-4 font-['Outfit'] font-medium text-[#0F172A] border-b border-[#C5A059]/10 sticky left-0 bg-white group-hover:bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] transition-colors">
+                    <td className={cn("p-4 font-['Outfit'] font-medium text-[#0F172A] border-b border-[#C5A059]/10 sticky left-0 bg-white group-hover:bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] transition-colors", isRTL && "text-right")}>
                       {row.procedure}
                     </td>
                     <td className="p-4 text-center font-['Space_Mono'] font-bold text-[#14B8A6] bg-[#E8F3F1]/50 border-b border-[#14B8A6]/10 text-lg">
@@ -161,7 +165,7 @@ export function PriceComparison() {
                           {currencySymbols[currency]}{convert(savings)}
                         </span>
                         <span className="text-xs font-['Outfit'] text-[#C84B31] bg-[#C84B31]/10 px-2 py-1 rounded-full mt-1">
-                          Save {savingsPercent}%
+                          {t('dentalPrices.savingsLabel')} {savingsPercent}%
                         </span>
                       </div>
                     </td>

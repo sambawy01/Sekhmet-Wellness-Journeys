@@ -10,201 +10,203 @@ import {
   ChevronDown,
   ChevronUp
 } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
+import { cn } from '../../../lib/utils';
 
-// Treatment Data
+// Treatment Data with translation keys
 const treatments = [
   {
     id: "implants",
-    name: "Dental Implants",
+    nameKey: "accordion.implants.title",
     category: "Dental",
-    tagline: "Permanent solution for missing teeth",
-    price: "From $800",
-    description: "Permanent titanium posts surgically placed into the jawbone to replace missing teeth, topped with natural-looking crowns.",
-    includes: ["Consultation", "3D scan/X-ray", "Implant post", "Abutment", "Porcelain crown", "Follow-up visits"],
-    pricing: [
-      { item: "Single Implant", price: "$800 – $1,500" },
-      { item: "All-on-4 (Full Mouth)", price: "$5,000 – $10,000" }
+    taglineKey: "accordion.implants.tagline",
+    priceKey: "accordion.implants.price",
+    descriptionKey: "accordion.implants.description",
+    includesKeys: ["accordion.implants.includes.1", "accordion.implants.includes.2", "accordion.implants.includes.3", "accordion.implants.includes.4", "accordion.implants.includes.5", "accordion.implants.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.implants.pricing.1.item", priceKey: "accordion.implants.pricing.1.price" },
+      { itemKey: "accordion.implants.pricing.2.item", priceKey: "accordion.implants.pricing.2.price" }
     ],
-    recovery: "1–2 days initial downtime",
-    duration: "3–6 months integration",
+    recoveryKey: "accordion.implants.recovery",
+    durationKey: "accordion.implants.duration",
     icon: Smile,
     color: "bg-blue-100 text-blue-700",
     savings: "70%"
   },
   {
     id: "veneers",
-    name: "Dental Veneers",
+    nameKey: "accordion.veneers.title",
     category: "Dental",
-    tagline: "Hollywood smile transformation",
-    price: "From $250",
-    description: "Ultra-thin porcelain shells bonded to the front of teeth to correct shape, color, and alignment for a Hollywood smile.",
-    includes: ["Consultation", "Tooth preparation", "Temporary veneers", "Custom porcelain veneers", "Fitting & bonding"],
-    pricing: [
-      { item: "Per Veneer", price: "$250 – $450" },
-      { item: "Full Smile (16-20)", price: "$4,000 – $8,000" }
+    taglineKey: "accordion.veneers.tagline",
+    priceKey: "accordion.veneers.price",
+    descriptionKey: "accordion.veneers.description",
+    includesKeys: ["accordion.veneers.includes.1", "accordion.veneers.includes.2", "accordion.veneers.includes.3", "accordion.veneers.includes.4", "accordion.veneers.includes.5"],
+    pricingKeys: [
+      { itemKey: "accordion.veneers.pricing.1.item", priceKey: "accordion.veneers.pricing.1.price" },
+      { itemKey: "accordion.veneers.pricing.2.item", priceKey: "accordion.veneers.pricing.2.price" }
     ],
-    recovery: "Immediate",
-    duration: "2–3 visits",
+    recoveryKey: "accordion.veneers.recovery",
+    durationKey: "accordion.veneers.duration",
     icon: Sparkles,
     color: "bg-blue-100 text-blue-700",
     savings: "75%"
   },
   {
     id: "wisdom",
-    name: "Wisdom Tooth Removal",
+    nameKey: "accordion.wisdom.title",
     category: "Dental",
-    tagline: "Safe extraction of problematic wisdom teeth",
-    price: "From $80",
-    description: "Surgical removal of impacted, partially erupted, or problematic wisdom teeth using modern techniques for minimal discomfort and fast recovery.",
-    includes: ["Consultation", "Panoramic X-ray", "Local anesthesia", "Surgical extraction", "Sutures", "Post-op care kit"],
-    pricing: [
-      { item: "Simple Extraction", price: "$80 – $150" },
-      { item: "Surgical Extraction (impacted)", price: "$150 – $300" }
+    taglineKey: "accordion.wisdom.tagline",
+    priceKey: "accordion.wisdom.price",
+    descriptionKey: "accordion.wisdom.description",
+    includesKeys: ["accordion.wisdom.includes.1", "accordion.wisdom.includes.2", "accordion.wisdom.includes.3", "accordion.wisdom.includes.4", "accordion.wisdom.includes.5", "accordion.wisdom.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.wisdom.pricing.1.item", priceKey: "accordion.wisdom.pricing.1.price" },
+      { itemKey: "accordion.wisdom.pricing.2.item", priceKey: "accordion.wisdom.pricing.2.price" }
     ],
-    recovery: "2–3 days",
-    duration: "30–60 minutes",
+    recoveryKey: "accordion.wisdom.recovery",
+    durationKey: "accordion.wisdom.duration",
     icon: Activity,
     color: "bg-blue-100 text-blue-700",
     savings: "75%"
   },
   {
     id: "hair",
-    name: "Hair Transplant (FUE)",
+    nameKey: "accordion.hair.title",
     category: "Hair",
-    tagline: "Permanent natural hair restoration",
-    price: "From $1,500",
-    description: "Follicular Unit Extraction — individual hair follicles harvested from a donor area and transplanted to thinning/balding zones for permanent, natural-looking growth.",
-    includes: ["Consultation", "Blood tests", "Local anesthesia", "FUE procedure (up to 5000 grafts)", "PRP therapy", "Aftercare kit"],
-    pricing: [
-      { item: "2,000–4,000 Grafts", price: "$1,500 – $3,500" },
-      { item: "Mega Session (5000+)", price: "$3,000 – $5,000" }
+    taglineKey: "accordion.hair.tagline",
+    priceKey: "accordion.hair.price",
+    descriptionKey: "accordion.hair.description",
+    includesKeys: ["accordion.hair.includes.1", "accordion.hair.includes.2", "accordion.hair.includes.3", "accordion.hair.includes.4", "accordion.hair.includes.5", "accordion.hair.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.hair.pricing.1.item", priceKey: "accordion.hair.pricing.1.price" },
+      { itemKey: "accordion.hair.pricing.2.item", priceKey: "accordion.hair.pricing.2.price" }
     ],
-    recovery: "7–10 days",
-    duration: "6–8 hours",
+    recoveryKey: "accordion.hair.recovery",
+    durationKey: "accordion.hair.duration",
     icon: Scissors,
     color: "bg-amber-100 text-amber-700",
     savings: "80%"
   },
   {
     id: "rhinoplasty",
-    name: "Rhinoplasty",
+    nameKey: "accordion.rhino.title",
     category: "Cosmetic",
-    tagline: "Nose reshaping and refinement",
-    price: "From $2,500",
-    description: "Surgical reshaping of the nose to improve appearance and/or breathing function. Can address humps, width, tip refinement, and asymmetry.",
-    includes: ["Pre-op consultation & imaging", "General anesthesia", "Surgery", "1-night hospital stay", "Splint", "Post-op follow-ups"],
-    pricing: [
-      { item: "Primary Rhinoplasty", price: "$2,500 – $5,000" },
-      { item: "Revision Rhinoplasty", price: "$3,500 – $7,000" }
+    taglineKey: "accordion.rhino.tagline",
+    priceKey: "accordion.rhino.price",
+    descriptionKey: "accordion.rhino.description",
+    includesKeys: ["accordion.rhino.includes.1", "accordion.rhino.includes.2", "accordion.rhino.includes.3", "accordion.rhino.includes.4", "accordion.rhino.includes.5", "accordion.rhino.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.rhino.pricing.1.item", priceKey: "accordion.rhino.pricing.1.price" },
+      { itemKey: "accordion.rhino.pricing.2.item", priceKey: "accordion.rhino.pricing.2.price" }
     ],
-    recovery: "1–2 weeks off work",
-    duration: "2–3 hours",
+    recoveryKey: "accordion.rhino.recovery",
+    durationKey: "accordion.rhino.duration",
     icon: Activity,
     color: "bg-pink-100 text-pink-700",
     savings: "70%"
   },
   {
     id: "lasik",
-    name: "LASIK Eye Surgery",
+    nameKey: "accordion.lasik.title",
     category: "Eye",
-    tagline: "Vision correction for life",
-    price: "From $800/eye",
-    description: "Laser-assisted vision correction to reduce or eliminate the need for glasses/contacts by reshaping the cornea.",
-    includes: ["Comprehensive eye exam", "Wavefront mapping", "LASIK or PRK procedure", "Eye drops", "Follow-up visits"],
-    pricing: [
-      { item: "Per Eye", price: "$800 – $1,500" },
-      { item: "Both Eyes", price: "$1,500 – $2,800" }
+    taglineKey: "accordion.lasik.tagline",
+    priceKey: "accordion.lasik.price",
+    descriptionKey: "accordion.lasik.description",
+    includesKeys: ["accordion.lasik.includes.1", "accordion.lasik.includes.2", "accordion.lasik.includes.3", "accordion.lasik.includes.4", "accordion.lasik.includes.5"],
+    pricingKeys: [
+      { itemKey: "accordion.lasik.pricing.1.item", priceKey: "accordion.lasik.pricing.1.price" },
+      { itemKey: "accordion.lasik.pricing.2.item", priceKey: "accordion.lasik.pricing.2.price" }
     ],
-    recovery: "24–48 hours",
-    duration: "15 mins per eye",
+    recoveryKey: "accordion.lasik.recovery",
+    durationKey: "accordion.lasik.duration",
     icon: Eye,
     color: "bg-emerald-100 text-emerald-700",
     savings: "65%"
   },
   {
     id: "tummy",
-    name: "Tummy Tuck",
+    nameKey: "accordion.tummy.title",
     category: "Cosmetic",
-    tagline: "Flatter, firmer midsection",
-    price: "From $3,000",
-    description: "Removal of excess skin and fat from the abdomen, combined with muscle tightening, to create a flatter, firmer midsection.",
-    includes: ["Pre-op labs", "General anesthesia", "Surgery", "1–2 night hospital stay", "Compression garment", "Follow-ups"],
-    pricing: [
-      { item: "Full Tummy Tuck", price: "$3,000 – $5,500" },
-      { item: "Mini Tummy Tuck", price: "$2,000 – $3,500" }
+    taglineKey: "accordion.tummy.tagline",
+    priceKey: "accordion.tummy.price",
+    descriptionKey: "accordion.tummy.description",
+    includesKeys: ["accordion.tummy.includes.1", "accordion.tummy.includes.2", "accordion.tummy.includes.3", "accordion.tummy.includes.4", "accordion.tummy.includes.5", "accordion.tummy.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.tummy.pricing.1.item", priceKey: "accordion.tummy.pricing.1.price" },
+      { itemKey: "accordion.tummy.pricing.2.item", priceKey: "accordion.tummy.pricing.2.price" }
     ],
-    recovery: "2–3 weeks",
-    duration: "2–4 hours",
+    recoveryKey: "accordion.tummy.recovery",
+    durationKey: "accordion.tummy.duration",
     icon: Activity,
     color: "bg-pink-100 text-pink-700",
     savings: "65%"
   },
   {
     id: "breast",
-    name: "Breast Augmentation",
+    nameKey: "accordion.breast.title",
     category: "Cosmetic",
-    tagline: "Enhance volume and shape",
-    price: "From $2,500",
-    description: "Surgical enhancement of breast size and shape using silicone or saline implants, or fat transfer techniques.",
-    includes: ["Consultation", "Pre-op tests", "General anesthesia", "Implants (Mentor/Motiva)", "1-night stay", "Surgical bra"],
-    pricing: [
-      { item: "Implants", price: "$2,500 – $4,500" },
-      { item: "Fat Transfer", price: "$3,000 – $5,000" }
+    taglineKey: "accordion.breast.tagline",
+    priceKey: "accordion.breast.price",
+    descriptionKey: "accordion.breast.description",
+    includesKeys: ["accordion.breast.includes.1", "accordion.breast.includes.2", "accordion.breast.includes.3", "accordion.breast.includes.4", "accordion.breast.includes.5", "accordion.breast.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.breast.pricing.1.item", priceKey: "accordion.breast.pricing.1.price" },
+      { itemKey: "accordion.breast.pricing.2.item", priceKey: "accordion.breast.pricing.2.price" }
     ],
-    recovery: "1–2 weeks",
-    duration: "1–2 hours",
+    recoveryKey: "accordion.breast.recovery",
+    durationKey: "accordion.breast.duration",
     icon: HeartPulse,
     color: "bg-pink-100 text-pink-700",
     savings: "65%"
   },
   {
     id: "bariatric",
-    name: "Gastric Sleeve",
+    nameKey: "accordion.bariatric.title",
     category: "Bariatric",
-    tagline: "Significant weight loss solution",
-    price: "From $4,000",
-    description: "Laparoscopic removal of ~80% of the stomach to create a smaller, sleeve-shaped pouch, reducing hunger and food intake.",
-    includes: ["Pre-op evaluation", "General anesthesia", "Laparoscopic surgery", "2–3 night hospital stay", "Nutrition plan", "12-month follow-up"],
-    pricing: [
-      { item: "Gastric Sleeve", price: "$4,000 – $6,500" }
+    taglineKey: "accordion.bariatric.tagline",
+    priceKey: "accordion.bariatric.price",
+    descriptionKey: "accordion.bariatric.description",
+    includesKeys: ["accordion.bariatric.includes.1", "accordion.bariatric.includes.2", "accordion.bariatric.includes.3", "accordion.bariatric.includes.4", "accordion.bariatric.includes.5", "accordion.bariatric.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.bariatric.pricing.1.item", priceKey: "accordion.bariatric.pricing.1.price" }
     ],
-    recovery: "2–3 weeks",
-    duration: "1–2 hours",
+    recoveryKey: "accordion.bariatric.recovery",
+    durationKey: "accordion.bariatric.duration",
     icon: Activity,
     color: "bg-purple-100 text-purple-700",
     savings: "75%"
   },
   {
     id: "hollywood",
-    name: "Hollywood Smile",
+    nameKey: "accordion.hollywood.title",
     category: "Dental",
-    tagline: "Complete smile makeover",
-    price: "From $4,000",
-    description: "A comprehensive cosmetic dental package combining veneers, whitening, gum contouring, and sometimes crowns for a complete smile transformation.",
-    includes: ["Consultation", "Digital smile design", "Teeth whitening", "Gum reshaping", "20 porcelain veneers/crowns", "Fitting"],
-    pricing: [
-      { item: "Full Package", price: "$4,000 – $8,000" }
+    taglineKey: "accordion.hollywood.tagline",
+    priceKey: "accordion.hollywood.price",
+    descriptionKey: "accordion.hollywood.description",
+    includesKeys: ["accordion.hollywood.includes.1", "accordion.hollywood.includes.2", "accordion.hollywood.includes.3", "accordion.hollywood.includes.4", "accordion.hollywood.includes.5", "accordion.hollywood.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.hollywood.pricing.1.item", priceKey: "accordion.hollywood.pricing.1.price" }
     ],
-    recovery: "Immediate",
-    duration: "5–7 days",
+    recoveryKey: "accordion.hollywood.recovery",
+    durationKey: "accordion.hollywood.duration",
     icon: Sparkles,
     color: "bg-blue-100 text-blue-700",
     savings: "80%"
   },
   {
     id: "lipo",
-    name: "Liposuction",
+    nameKey: "accordion.lipo.title",
     category: "Cosmetic",
-    tagline: "Body contouring and fat removal",
-    price: "From $1,500",
-    description: "Surgical fat removal from targeted areas (abdomen, thighs, arms, chin, flanks) using suction-assisted or laser-assisted techniques.",
-    includes: ["Consultation", "Pre-op tests", "Anesthesia", "Procedure (1–3 areas)", "Compression garment", "Follow-ups"],
-    pricing: [
-      { item: "Per Area", price: "$1,500 – $3,500" },
-      { item: "3+ Areas", price: "$3,500 – $7,000" }
+    taglineKey: "accordion.lipo.tagline",
+    priceKey: "accordion.lipo.price",
+    descriptionKey: "accordion.lipo.description",
+    includesKeys: ["accordion.lipo.includes.1", "accordion.lipo.includes.2", "accordion.lipo.includes.3", "accordion.lipo.includes.4", "accordion.lipo.includes.5", "accordion.lipo.includes.6"],
+    pricingKeys: [
+      { itemKey: "accordion.lipo.pricing.1.item", priceKey: "accordion.lipo.pricing.1.price" },
+      { itemKey: "accordion.lipo.pricing.2.item", priceKey: "accordion.lipo.pricing.2.price" }
     ],
-    recovery: "1–2 weeks",
-    duration: "1–3 hours",
+    recoveryKey: "accordion.lipo.recovery",
+    durationKey: "accordion.lipo.duration",
     icon: Activity,
     color: "bg-pink-100 text-pink-700",
     savings: "55%"
@@ -212,14 +214,25 @@ const treatments = [
 ];
 
 export function TreatmentsAccordion() {
+  const { t, direction } = useLanguage();
+  const isRTL = direction === 'rtl';
+  
   const [activeTab, setActiveTab] = useState("all");
   const [openItem, setOpenItem] = useState<string | null>(null);
 
-  const categories = ["All", "Dental", "Cosmetic", "Eye", "Hair", "Bariatric"];
+  const categories = [t('accordion.tabs.all'), t('accordion.tabs.dental'), t('accordion.tabs.cosmetic'), t('accordion.tabs.eye'), t('accordion.tabs.hair'), t('accordion.tabs.bariatric')];
 
   const filteredTreatments = activeTab === "all" 
     ? treatments 
-    : treatments.filter(t => t.category === (activeTab === "Eye" ? "Eye" : activeTab)); 
+    : treatments.filter(treatment => {
+        const categoryName = t(`accordion.tabs.${treatment.category.toLowerCase()}`);
+        return treatment.category === 
+          (activeTab === t('accordion.tabs.eye') ? "Eye" : 
+           activeTab === t('accordion.tabs.dental') ? "Dental" :
+           activeTab === t('accordion.tabs.cosmetic') ? "Cosmetic" :
+           activeTab === t('accordion.tabs.hair') ? "Hair" :
+           activeTab === t('accordion.tabs.bariatric') ? "Bariatric" : activeTab);
+      }); 
 
   const toggleItem = (id: string) => {
     setOpenItem(openItem === id ? null : id);
@@ -228,29 +241,29 @@ export function TreatmentsAccordion() {
   return (
     <section className="py-16 md:py-24 bg-white" id="treatments">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className={cn("text-center mb-12", isRTL && "text-right")}>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1A5276] mb-4">
-            Explore Our Treatments
+            {t('accordion.section.title')}
           </h2>
           <p className="text-lg text-[#0F172A]/70 max-w-2xl mx-auto font-sans">
-            Click any treatment to see details, what's included, and transparent average pricing.
+            {t('accordion.section.subtitle')}
           </p>
         </div>
 
         {/* Custom Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((cat) => (
+          {["all", "dental", "cosmetic", "eye", "hair", "bariatric"].map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveTab(cat.toLowerCase() === "all" ? "all" : cat)}
+              onClick={() => setActiveTab(cat === "all" ? "all" : t(`accordion.tabs.${cat}`))}
               className={`rounded-full px-6 py-2 border transition-all text-sm font-medium
-                ${(activeTab === "all" && cat === "All") || activeTab === cat
+                ${(activeTab === "all" && cat === "all") || activeTab === t(`accordion.tabs.${cat}`)
                   ? "bg-[#1A5276] text-white border-[#1A5276]"
                   : "bg-transparent text-[#1A5276] border-[#1A5276]/20 hover:bg-[#1A5276]/5"
                 }
               `}
             >
-              {cat}
+              {cat === "all" ? t('accordion.tabs.all') : t(`accordion.tabs.${cat}`)}
             </button>
           ))}
         </div>
@@ -266,69 +279,69 @@ export function TreatmentsAccordion() {
               >
                 <button
                   onClick={() => toggleItem(treatment.id)}
-                  className="w-full text-left py-6 px-4 md:px-6 flex flex-col md:flex-row md:items-center gap-4 hover:bg-gray-50/50 transition-colors"
+                  className={cn("w-full text-left py-6 px-4 md:px-6 flex flex-col md:flex-row md:items-center gap-4 hover:bg-gray-50/50 transition-colors", isRTL && "flex-row-reverse")}
                 >
                   <div className={`p-3 rounded-full shrink-0 ${treatment.color}`}>
                     <treatment.icon className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h3 className="text-xl font-bold text-[#0F172A]">{treatment.name}</h3>
+                    <div className={cn("flex flex-wrap items-center gap-2 mb-1", isRTL && "flex-row-reverse")}>
+                      <h3 className="text-xl font-bold text-[#0F172A]">{t(treatment.nameKey)}</h3>
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#27AE60]/10 text-[#27AE60] border border-[#27AE60]/20">
-                        Save up to {treatment.savings}
+                        {t('accordion.savings', { savings: treatment.savings })}
                       </span>
                     </div>
-                    <p className="text-[#0F172A]/60 text-sm">{treatment.tagline}</p>
+                    <p className="text-[#0F172A]/60 text-sm">{t(treatment.taglineKey)}</p>
                   </div>
-                  <div className="flex items-center justify-between md:justify-end w-full md:w-auto mt-2 md:mt-0 gap-4">
+                  <div className={cn("flex items-center justify-between md:justify-end w-full md:w-auto mt-2 md:mt-0 gap-4", isRTL && "flex-row-reverse")}>
                     <span className="inline-block px-4 py-1.5 rounded-full bg-[#1A5276]/5 text-[#1A5276] font-bold text-sm border border-[#1A5276]/10">
-                      {treatment.price}
+                      {t(treatment.priceKey)}
                     </span>
                     {isOpen ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
                   </div>
                 </button>
                 
                 {isOpen && (
-                  <div className="px-4 md:px-6 pb-6 border-t border-[#1A5276]/5">
-                    <div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className={cn("px-4 md:px-6 pb-6 border-t border-[#1A5276]/5", isRTL && "text-right")}>
+                    <div className={cn("pt-4 grid grid-cols-1 md:grid-cols-2 gap-8", isRTL && "text-right")}>
                       <div>
                         <h4 className="font-bold text-[#1A5276] mb-2 flex items-center gap-2">
-                          <Info className="w-4 h-4" /> Description
+                          <Info className="w-4 h-4" /> {t('accordion.details.description')}
                         </h4>
                         <p className="text-[#0F172A]/70 mb-4 leading-relaxed text-sm">
-                          {treatment.description}
+                          {t(treatment.descriptionKey)}
                         </p>
                         
-                        <h4 className="font-bold text-[#1A5276] mb-2 text-sm">What's Included</h4>
-                        <ul className="grid grid-cols-1 gap-2 mb-4">
-                          {treatment.includes.map((inc, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm text-[#0F172A]/70">
+                        <h4 className="font-bold text-[#1A5276] mb-2 text-sm">{t('accordion.details.included')}</h4>
+                        <ul className={cn("grid grid-cols-1 gap-2 mb-4", isRTL && "text-right")}>
+                          {treatment.includesKeys.map((inc, i) => (
+                            <li key={i} className={cn("flex items-start gap-2 text-sm text-[#0F172A]/70", isRTL && "flex-row-reverse")}>
                               <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-1.5 shrink-0" />
-                              {inc}
+                              {t(inc)}
                             </li>
                           ))}
                         </ul>
                         
-                        <div className="flex gap-4 text-sm mt-4 p-3 bg-[#F0F7F4]/50 rounded-lg">
+                        <div className={cn("flex gap-4 text-sm mt-4 p-3 bg-[#F0F7F4]/50 rounded-lg", isRTL && "flex-row-reverse text-right")}>
                           <div>
-                            <span className="block text-[#1A5276] font-bold text-xs uppercase tracking-wide">Recovery</span>
-                            <span className="text-[#0F172A]">{treatment.recovery}</span>
+                            <span className="block text-[#1A5276] font-bold text-xs uppercase tracking-wide">{t('accordion.details.recovery')}</span>
+                            <span className="text-[#0F172A]">{t(treatment.recoveryKey)}</span>
                           </div>
                           <div className="w-px bg-[#1A5276]/10" />
                           <div>
-                            <span className="block text-[#1A5276] font-bold text-xs uppercase tracking-wide">Duration</span>
-                            <span className="text-[#0F172A]">{treatment.duration}</span>
+                            <span className="block text-[#1A5276] font-bold text-xs uppercase tracking-wide">{t('accordion.details.duration')}</span>
+                            <span className="text-[#0F172A]">{t(treatment.durationKey)}</span>
                           </div>
                         </div>
                       </div>
 
-                      <div className="bg-[#F8F9FA] p-5 rounded-xl border border-[#1A5276]/10 h-fit">
-                        <h4 className="font-bold text-[#1A5276] mb-4 text-center">Average Pricing</h4>
+                      <div className={cn("bg-[#F8F9FA] p-5 rounded-xl border border-[#1A5276]/10 h-fit", isRTL && "text-right")}>
+                        <h4 className="font-bold text-[#1A5276] mb-4 text-center">{t('accordion.details.pricing')}</h4>
                         <div className="space-y-3 mb-6">
-                          {treatment.pricing.map((p, i) => (
+                          {treatment.pricingKeys.map((p, i) => (
                             <div key={i} className="flex justify-between items-center pb-2 border-b border-dashed border-[#1A5276]/20 last:border-0">
-                              <span className="text-sm font-medium text-[#0F172A]/80">{p.item}</span>
-                              <span className="font-mono font-bold text-[#1A5276]">{p.price}</span>
+                              <span className="text-sm font-medium text-[#0F172A]/80">{t(p.itemKey)}</span>
+                              <span className="font-mono font-bold text-[#1A5276]">{t(p.priceKey)}</span>
                             </div>
                           ))}
                         </div>
@@ -337,10 +350,10 @@ export function TreatmentsAccordion() {
                           href="#get-quote" 
                           className="block w-full text-center bg-[#1A5276] hover:bg-[#133D58] text-white font-bold py-3 px-4 rounded-lg transition-colors"
                         >
-                          Get a Quote for This Treatment
+                          {t('accordion.details.quote')}
                         </a>
                         <p className="text-xs text-center text-[#0F172A]/40 mt-3">
-                          *Prices vary by complexity and clinic
+                          {t('accordion.details.disclaimer')}
                         </p>
                       </div>
                     </div>
