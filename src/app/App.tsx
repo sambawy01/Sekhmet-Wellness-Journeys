@@ -96,7 +96,7 @@ export default function App() {
           <Route path="/pricing" element={<WebsiteLayout><Pricing /></WebsiteLayout>} />
           <Route path="/how-it-works" element={<WebsiteLayout><HowItWorks /></WebsiteLayout>} />
           <Route path="/patient-stories" element={<WebsiteLayout><PatientStories /></WebsiteLayout>} />
-          <Route path="/doctors" element={<WebsiteLayout><OurDoctors /></WebsiteLayout>} />
+          {/* <Route path="/doctors" element={<WebsiteLayout><OurDoctors /></WebsiteLayout>} /> */}{/* Hidden until real doctor agreements are in place */}
           <Route path="/consultation" element={<WebsiteLayout><Consultation /></WebsiteLayout>} />
           <Route path="/faq" element={<WebsiteLayout><FAQ /></WebsiteLayout>} />
           <Route path="/travel-guide" element={<WebsiteLayout><TravelGuide /></WebsiteLayout>} />

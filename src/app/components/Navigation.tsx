@@ -112,7 +112,6 @@ export const Navigation: React.FC = () => {
             </div>
             <Link to="/how-it-works" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.howItWorks")} /></Link>
             <Link to="/pricing" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label="Pricing" /></Link>
-            <Link to="/doctors" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.doctors")} /></Link>
             <Link to="/patient-stories" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.stories")} /></Link>
             <Link to="/travel-guide" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.travelGuide")} /></Link>
             <Link to="/faq" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.faq")} /></Link>
@@ -339,8 +338,7 @@ export const Navigation: React.FC = () => {
 
             <MobileNavLink to="/how-it-works" label={t("nav.howItWorks")} delay={0.15} onClick={() => setIsMobileMenuOpen(false)} />
             <MobileNavLink to="/pricing" label="Pricing" delay={0.17} onClick={() => setIsMobileMenuOpen(false)} />
-            <MobileNavLink to="/doctors" label={t("nav.doctors")} delay={0.2} onClick={() => setIsMobileMenuOpen(false)} />
-            <MobileNavLink to="/patient-stories" label={t("nav.stories")} delay={0.25} onClick={() => setIsMobileMenuOpen(false)} />
+            <MobileNavLink to="/patient-stories" label={t("nav.stories")} delay={0.2} onClick={() => setIsMobileMenuOpen(false)} />
             <MobileNavLink to="/travel-guide" label={t("nav.travelGuide")} delay={0.3} onClick={() => setIsMobileMenuOpen(false)} />
             <MobileNavLink to="/faq" label={t("nav.faq")} delay={0.35} onClick={() => setIsMobileMenuOpen(false)} />
           </nav>

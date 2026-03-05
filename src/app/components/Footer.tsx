@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-6">
             <h4 className="font-['Outfit'] text-lg text-white font-medium">Explore</h4>
             <ul className="space-y-3">
-              {["Packages", "Destinations", "How It Works", "Patient Stories", "Our Doctors", "Prices", "FAQ", "Blog"].map((item, i) => (
+              {["Packages", "Destinations", "How It Works", "Patient Stories", "Prices", "FAQ", "Blog"].map((item, i) => (
                 <li key={i}>
                   <a href="#" className="font-['Outfit'] text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity" />
