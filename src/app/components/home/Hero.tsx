@@ -3,7 +3,7 @@ import { ArrowRight, ChevronDown, Award, Globe, Clock, ArrowLeft } from 'lucide-
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../../lib/utils';
-const heroImage = 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&q=80';
+const heroImage = 'https://i.ibb.co/P3rkR0x/ee4b72b34eaf772d6339ac28ef3c009e.jpg';
 
 export const Hero: React.FC = () => {
   const { t, direction } = useLanguage();
