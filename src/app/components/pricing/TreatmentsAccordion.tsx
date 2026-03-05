@@ -346,12 +346,12 @@ export function TreatmentsAccordion() {
                           ))}
                         </div>
                         
-                        <a 
-                          href="#get-quote" 
-                          className="block w-full text-center bg-[#1A5276] hover:bg-[#133D58] text-white font-bold py-3 px-4 rounded-lg transition-colors"
+                        <button
+                          onClick={() => document.getElementById('get-quote')?.scrollIntoView({ behavior: 'smooth' })}
+                          className="block w-full text-center bg-[#1A5276] hover:bg-[#133D58] text-white font-bold py-3 px-4 rounded-lg transition-colors cursor-pointer"
                         >
                           {t('accordion.details.quote')}
-                        </a>
+                        </button>
                         <p className="text-xs text-center text-[#0F172A]/40 mt-3">
                           {t('accordion.details.disclaimer')}
                         </p>

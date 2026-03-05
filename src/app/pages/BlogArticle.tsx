@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Clock, Share2, ChevronRight, Facebook, Twitter, Linkedin, Check } from 'lucide-react';
+import { Calendar, Clock, Share2, ChevronRight, Facebook, Twitter, Linkedin, Check, ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { CostCalculatorWidget } from '../components/CostCalculatorWidget';
 
@@ -160,8 +160,8 @@ export const BlogArticle = () => {
                   Dr. Hassan is a Senior Implantologist with over 15 years of experience in restorative dentistry. He has performed over 3,000 successful implant surgeries and specializes in complex rehabilitation cases.
                 </p>
                 <div className="flex gap-3 justify-center md:justify-start">
-                  <a href="#" className="text-gray-400 hover:text-[#C5A059]"><Linkedin size={20} /></a>
-                  <a href="#" className="text-gray-400 hover:text-[#C5A059]"><Twitter size={20} /></a>
+                  <span className="text-gray-300"><Linkedin size={20} /></span>
+                  <span className="text-gray-300"><Twitter size={20} /></span>
                 </div>
               </div>
             </div>
@@ -257,7 +257,7 @@ export const BlogArticle = () => {
                  <h3 className="font-playfair text-xl font-bold text-[#0F172A] group-hover:text-[#C5A059] transition-colors mb-2">
                    {i === 1 ? "Hollywood Smile Costs Explained" : i === 2 ? "Best Dental Clinics in Cairo" : "Luxury Recovery Hotels"}
                  </h3>
-                 <a href="#" className="text-[#C5A059] text-sm font-bold flex items-center hover:underline">Read More <ArrowRight size={14} className="ml-1" /></a>
+                 <Link to="/blog" className="text-[#C5A059] text-sm font-bold flex items-center hover:underline">Read More <ArrowRight size={14} className="ml-1" /></Link>
                </div>
              ))}
           </div>

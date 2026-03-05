@@ -232,12 +232,12 @@ export function ViewAllPrices() {
           </div>
           
           <div className="flex justify-center">
-            <a 
-              href="#get-quote" 
-              className="inline-block bg-[#E85D4A] hover:bg-[#d14030] text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:-translate-y-0.5 text-center"
+            <button
+              onClick={() => document.getElementById('get-quote')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-block bg-[#E85D4A] hover:bg-[#d14030] text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:-translate-y-0.5 text-center cursor-pointer"
             >
               {t('prices.ctaButton')}
-            </a>
+            </button>
           </div>
         </div>
 

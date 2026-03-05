@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, Download, MessageCircle, Phone, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '../ui/button';
 
 export function HollywoodContent() {
@@ -179,9 +180,9 @@ export function HollywoodContent() {
                 <div>
                   <h4 className="font-bold text-[#0F172A] mb-1">Lookbook & Guide</h4>
                   <p className="text-xs text-[#0F172A]/60 mb-3">See before/afters and style options.</p>
-                  <a href="#" className="text-[#C5A059] text-sm font-bold flex items-center hover:underline">
-                    Download PDF <ArrowRight className="w-3 h-3 ml-1" />
-                  </a>
+                  <Link to="/consultation" className="text-[#C5A059] text-sm font-bold flex items-center hover:underline">
+                    Request Guide <ArrowRight className="w-3 h-3 ml-1" />
+                  </Link>
                 </div>
               </div>
 
