@@ -35,7 +35,7 @@ const steps = [
     id: 5,
     title: "Treatment & On-Ground Support",
     description: "Arrive in Egypt with VIP airport pickup. Your personal coordinator accompanies you to all appointments in our world-class facilities.",
-    image: "https://images.unsplash.com/photo-1720180244462-648c13ee01e5?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800",
     icon: HeartPulse
   },
   {
