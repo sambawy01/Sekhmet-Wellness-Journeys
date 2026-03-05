@@ -55,8 +55,12 @@ export const ExitIntentPopup = () => {
             </button>
 
             <div className="relative z-10 p-8 flex flex-col items-center text-center">
-              <div className="w-14 h-14 mb-6">
-                <img src="/logo-icon.svg" alt="Sekhmet" className="w-full h-full" />
+              <div className="mb-6">
+                <img
+                  src="https://i.ibb.co/TDLgpjPZ/Logo-for-SEKHMET-WELLNESS-JOURNEYS-40-x-21-cm.png"
+                  alt="Sekhmet Wellness Journeys"
+                  className="h-12 w-auto object-contain mx-auto"
+                />
               </div>
 
               <h2 className="font-playfair text-3xl text-[#0F172A] mb-2">

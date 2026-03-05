@@ -51,16 +51,12 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand */}
           <div className={`space-y-6 ${isRTL ? 'lg:col-start-4' : ''}`}>
-            <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
-              <img src="/logo-icon.svg" alt="Sekhmet" className="w-10 h-10" />
-              <div className={`flex flex-col leading-none ${isRTL ? 'text-right' : ''}`}>
-                <span className="font-['Outfit'] font-bold text-2xl tracking-wide text-[#C5A059]">
-                  {t('footer.brand')}
-                </span>
-                <span className="font-['Outfit'] text-[10px] text-[#C5A059]/60 uppercase tracking-[0.2em]">
-                  {t('footer.subtitle')}
-                </span>
-              </div>
+            <div className={`flex items-center ${isRTL ? 'justify-end' : ''}`}>
+              <img
+                src="https://i.ibb.co/TDLgpjPZ/Logo-for-SEKHMET-WELLNESS-JOURNEYS-40-x-21-cm.png"
+                alt="Sekhmet Wellness Journeys"
+                className="h-14 w-auto object-contain"
+              />
             </div>
             
             <p className={`font-['Outfit'] italic text-[14px] text-[#F8FAFB] ${isRTL ? 'text-right' : ''}`}>

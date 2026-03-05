@@ -89,16 +89,12 @@ export const Navigation: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1400px] flex justify-between items-center h-[60px]">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 z-50">
-            <img src="/logo-icon.svg" alt="Sekhmet" className="w-10 h-10" />
-            <div className="flex flex-col leading-none">
-              <span className="font-['Outfit'] font-bold text-[22px] text-[#C5A059] tracking-wide">
-                SEKHMET
-              </span>
-              <span className="font-['Outfit'] text-[10px] text-[#C5A059]/60 uppercase tracking-[0.2em] ml-1">
-                Wellness Journeys
-              </span>
-            </div>
+          <Link to="/" className="flex items-center z-50">
+            <img
+              src="https://i.ibb.co/TDLgpjPZ/Logo-for-SEKHMET-WELLNESS-JOURNEYS-40-x-21-cm.png"
+              alt="Sekhmet Wellness Journeys"
+              className="h-12 md:h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
