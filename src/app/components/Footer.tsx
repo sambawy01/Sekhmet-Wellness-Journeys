@@ -100,21 +100,21 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#0D9488] mt-0.5" />
                 <div className="flex flex-col">
-                  <span className="font-['Outfit'] text-[14px] text-[#F8FAFB]">+20 100 123 4567</span>
-                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">Mon-Sun, 9am - 9pm EST</span>
+                  <span className="font-['Outfit'] text-[14px] text-[#F8FAFB]">+44 798 855 9541</span>
+                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">Mon-Sun, 9am - 9pm</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full border border-[#0D9488] flex items-center justify-center text-[#0D9488] text-[10px] font-bold mt-0.5">W</div>
                 <div className="flex flex-col">
-                  <span className="font-['Outfit'] text-[14px] text-[#F8FAFB]">+20 122 987 6543</span>
+                  <span className="font-['Outfit'] text-[14px] text-[#F8FAFB]">+44 798 855 9541</span>
                   <span className="font-['Outfit'] text-[12px] text-[#64748B]">WhatsApp Support</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#0D9488] mt-0.5" />
-                <a href="mailto:care@sekhmet.com" className="font-['Outfit'] text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">
-                  care@sekhmet.com
+                <a href="mailto:info@sekhmetwellness.com" className="font-['Outfit'] text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">
+                  info@sekhmetwellness.com
                 </a>
               </li>
               <li className="flex items-start gap-3">

@@ -191,23 +191,23 @@ export const Contact = () => {
                  <div>
                    <h3 className="font-playfair text-2xl text-[#C5A059] mb-6">Contact Information</h3>
                    <div className="space-y-6">
-                     <a href="tel:+201000000000" className="flex items-start gap-4 hover:text-[#C5A059] transition-colors group">
+                     <a href="tel:+447988559541" className="flex items-start gap-4 hover:text-[#C5A059] transition-colors group">
                        <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white transition-colors">
                          <Phone size={20} />
                        </div>
                        <div>
                          <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">Call Us</p>
-                         <p className="font-mono text-lg">+20 100 000 0000</p>
+                         <p className="font-mono text-lg">+44 798 855 9541</p>
                        </div>
                      </a>
 
-                     <a href="mailto:hello@sekhmet.com" className="flex items-start gap-4 hover:text-[#C5A059] transition-colors group">
+                     <a href="mailto:info@sekhmetwellness.com" className="flex items-start gap-4 hover:text-[#C5A059] transition-colors group">
                        <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white transition-colors">
                          <Mail size={20} />
                        </div>
                        <div>
                          <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">Email Us</p>
-                         <p className="font-sans text-lg">hello@sekhmet.com</p>
+                         <p className="font-sans text-lg">info@sekhmetwellness.com</p>
                        </div>
                      </a>
 

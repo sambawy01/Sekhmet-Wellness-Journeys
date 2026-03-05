@@ -94,7 +94,7 @@ export function Consultation() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-4">
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href="https://wa.me/447988559541" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 Chat on WhatsApp Now
                 <ArrowRight className="w-4 h-4" />
               </a>

@@ -278,7 +278,7 @@ export function TravelGuide() {
               Your personal coordinator is available around the clock for any medical or travel emergencies.
             </p>
             <div className="bg-white/10 p-4 rounded-xl text-center">
-              <span className="font-mono text-2xl font-bold tracking-wider">+20 100 888 9999</span>
+              <span className="font-mono text-2xl font-bold tracking-wider">+44 798 855 9541</span>
             </div>
           </div>
         </section>

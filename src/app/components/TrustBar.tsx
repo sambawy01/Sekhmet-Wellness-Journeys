@@ -33,7 +33,7 @@ export const TrustBar: React.FC = () => {
         <div className="flex items-center gap-6 pl-8 bg-[#0F172A] relative z-10 h-full border-l border-white/10">
           <div className="flex items-center gap-2 group cursor-pointer hover:text-[#0D9488] transition-colors">
             <Phone size={14} className="text-[#0D9488]" />
-            <span className="font-['Space_Mono'] text-[12px] hidden md:inline">+20 100 123 4567</span>
+            <span className="font-['Space_Mono'] text-[12px] hidden md:inline">+44 798 855 9541</span>
           </div>
           
           <div className="flex items-center gap-4 border-l border-white/10 pl-6 ml-2">

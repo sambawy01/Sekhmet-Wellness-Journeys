@@ -69,7 +69,7 @@ export const FloatingWhatsApp = () => {
       </AnimatePresence>
 
       <motion.a
-        href="https://wa.me/201000000000?text=Hello%2C%20I%27m%20interested%20in%20a%20consultation"
+        href="https://wa.me/447988559541?text=Hello%2C%20I%27m%20interested%20in%20a%20consultation"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center bg-[#25D366] text-white shadow-lg pointer-events-auto overflow-hidden relative"

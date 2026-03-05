@@ -46,12 +46,12 @@ export const FinalCTA: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-8 text-[#1A2332] font-['Outfit'] text-sm font-medium">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 opacity-70" />
-              <span>+20 100 123 4567</span>
+              <span>+44 798 855 9541</span>
             </div>
             <div className="hidden md:block w-1 h-1 bg-[#1A2332] rounded-full opacity-30" />
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 opacity-70" />
-              <span>care@sekhmet.com</span>
+              <span>info@sekhmetwellness.com</span>
             </div>
           </div>
 

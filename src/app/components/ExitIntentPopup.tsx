@@ -138,7 +138,7 @@ export const ExitIntentPopup = () => {
 
               <div className="mt-6 pt-6 border-t border-gray-100 w-full">
                 <a 
-                  href="https://wa.me/201000000000" 
+                  href="https://wa.me/447988559541" 
                   className="inline-flex items-center text-[#25D366] font-medium hover:underline gap-2 text-sm"
                 >
                   Or WhatsApp us directly <ArrowRight size={16} />

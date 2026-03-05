@@ -203,7 +203,7 @@ export const BlogArticle = () => {
                <button className="w-full bg-[#C5A059] text-white font-bold py-2.5 rounded-lg hover:bg-[#B08D4B] transition-colors mb-3">
                  Get Free Quote
                </button>
-               <a href="https://wa.me/201000000000" className="flex items-center justify-center gap-2 text-[#25D366] text-sm hover:underline">
+               <a href="https://wa.me/447988559541" className="flex items-center justify-center gap-2 text-[#25D366] text-sm hover:underline">
                  <span className="w-2 h-2 rounded-full bg-[#25D366]"></span> WhatsApp Us
                </a>
              </div>

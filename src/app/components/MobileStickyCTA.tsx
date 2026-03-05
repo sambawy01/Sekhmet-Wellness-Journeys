@@ -35,7 +35,7 @@ export const MobileStickyCTA: React.FC = () => {
         </a>
         
         <a 
-          href="https://wa.me/201000000000"
+          href="https://wa.me/447988559541"
           className="bg-[#25D366] w-12 h-12 rounded-lg flex items-center justify-center shadow-lg active:scale-95 transition-transform shrink-0"
         >
           <WhatsAppIcon />

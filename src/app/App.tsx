@@ -8,7 +8,7 @@ import { LanguageProvider } from './context/LanguageContext';
 // Components
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
-// import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 // import { ExitIntentPopup } from './components/ExitIntentPopup';
 // import { SocialProofManager } from './components/SocialProofToast';
 
@@ -58,6 +58,7 @@ function WebsiteLayout({ children }: { children: React.ReactNode }) {
       <Navigation />
       <main>{children}</main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
