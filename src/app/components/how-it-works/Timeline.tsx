@@ -7,7 +7,7 @@ const steps = [
     id: 1,
     title: "Inquire & Free Consultation",
     description: "Submit your request online or via WhatsApp. Our medical coordinators will gather your initial information and answer your questions within 24 hours.",
-    image: "https://images.unsplash.com/photo-1667424505742-0815a44fdf46?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800",
     icon: PhoneCall
   },
   {
@@ -56,7 +56,7 @@ const steps = [
 
 export function Timeline() {
   return (
-    <section className="py-24 bg-[#F0F7F4] relative overflow-hidden">
+    <section id="process-timeline" className="py-24 bg-[#F0F7F4] relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <motion.h2 
