@@ -2,7 +2,6 @@ import React from 'react';
 import { Hero } from '../components/how-it-works/Hero';
 import { Timeline } from '../components/how-it-works/Timeline';
 import { ComparisonTable } from '../components/how-it-works/ComparisonTable';
-import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -13,7 +12,7 @@ export function HowItWorks() {
       <Hero />
       <Timeline />
       <ComparisonTable />
-      
+
       {/* CTA Section */}
       <section className="py-24 bg-[#0F172A] text-white text-center">
         <div className="container mx-auto px-6">
@@ -27,22 +26,24 @@ export function HowItWorks() {
               Ready to Begin Your Transformation?
             </h2>
             <p className="font-['Outfit'] text-xl text-[#F0F7F4]/80 mb-10 leading-relaxed">
-              Experience the perfect blend of world-class medical care and luxury travel. 
+              Experience the perfect blend of world-class medical care and luxury travel.
               Let us handle every detail while you focus on your health.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button asChild className="bg-[#C5A059] hover:bg-[#B08D55] text-white px-8 py-6 rounded-full text-lg">
-                <Link to="/consultation" className="flex items-center gap-2">
-                  Get Your Free Quote
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-[#F0F7F4] text-[#F0F7F4] hover:bg-[#F0F7F4]/10 px-8 py-6 rounded-full text-lg">
-                <Link to="/contact">
-                  Contact a Coordinator
-                </Link>
-              </Button>
+              <Link
+                to="/consultation"
+                className="inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#B08D55] text-white px-8 py-4 rounded-full text-lg font-['Outfit'] font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Get Your Free Quote
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-full text-lg font-['Outfit'] font-bold transition-all duration-300"
+              >
+                Contact a Coordinator
+              </Link>
             </div>
           </motion.div>
         </div>
