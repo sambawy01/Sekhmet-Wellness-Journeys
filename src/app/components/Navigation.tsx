@@ -33,7 +33,7 @@ const MobileNavLink = ({ to, label, onClick }: { to: string, label: string, onCl
   <Link
     to={to}
     onClick={onClick}
-    className="block font-playfair text-3xl text-white hover:text-[#0D9488] transition-colors py-2"
+    className="block font-['Outfit'] text-lg text-white hover:text-[#0D9488] transition-colors py-2"
   >
     {label}
   </Link>
@@ -342,12 +342,19 @@ export const Navigation: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Full Screen Menu */}
+      </header>
+
+      {/* Mobile Menu - OUTSIDE header to avoid inheriting header transitions */}
+      {isMobileMenuOpen && (
+        <>
+        {/* Backdrop overlay - click to close */}
         <div
-          className={cn(
-            "fixed inset-0 bg-[#1A2332] z-[60] flex flex-col pt-24 px-8 pb-8 md:hidden overflow-y-auto transition-all duration-200 ease-out",
-            isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          )}
+          className="fixed inset-0 bg-black/50 z-[55] md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+        {/* Menu panel - slides from right */}
+        <div
+          className="fixed top-0 right-0 h-full w-[80vw] max-w-[320px] bg-[#1A2332] z-[60] flex flex-col pt-24 px-8 pb-8 md:hidden overflow-y-auto shadow-2xl"
         >
           <nav className="flex flex-col gap-6 mb-12">
             <div className="flex flex-col gap-3">
@@ -378,20 +385,20 @@ export const Navigation: React.FC = () => {
 
             <div className="flex flex-col items-center gap-6 pt-6 border-t border-white/10">
               <div className="flex gap-4">
-                <button 
-                  onClick={() => setLanguage('en')} 
+                <button
+                  onClick={() => setLanguage('en')}
                   className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'en' ? "bg-white text-[#1A2332]" : "border-white/20 text-white")}
                 >
                   EN
                 </button>
-                <button 
-                  onClick={() => setLanguage('ar')} 
+                <button
+                  onClick={() => setLanguage('ar')}
                   className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'ar' ? "bg-white text-[#1A2332]" : "border-white/20 text-white")}
                 >
                   AR
                 </button>
-                <button 
-                  onClick={() => setLanguage('fr')} 
+                <button
+                  onClick={() => setLanguage('fr')}
                   className={cn("px-4 py-2 rounded-full border text-sm font-bold", language === 'fr' ? "bg-white text-[#1A2332]" : "border-white/20 text-white")}
                 >
                   FR
@@ -400,7 +407,8 @@ export const Navigation: React.FC = () => {
             </div>
           </div>
         </div>
-      </header>
+        </>
+      )}
     </>
   );
 };
