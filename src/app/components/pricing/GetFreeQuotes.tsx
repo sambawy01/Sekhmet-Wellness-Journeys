@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Check, Star, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Check, Star, Shield, ArrowRight, CheckCircle, ChevronDown } from 'lucide-react';
 import { submitLead } from '../../../lib/supabase';
 import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../../lib/utils';
@@ -9,8 +9,11 @@ export function GetFreeQuotes() {
   const isRTL = direction === 'rtl';
 
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', treatment: '', destination: '', notes: '',
+    name: '', email: '', phone: '', countryCode: '+1', treatment: '', destination: '', notes: '',
   });
+  const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+  const [countrySearch, setCountrySearch] = useState('🇺🇸 +1');
+  const countryRef = useRef<HTMLDivElement>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -24,7 +27,7 @@ export function GetFreeQuotes() {
       await submitLead({
         name: formData.name,
         email: formData.email,
-        phone: formData.phone || undefined,
+        phone: formData.phone ? `${formData.countryCode} ${formData.phone}` : undefined,
         treatment_interest: formData.treatment || undefined,
         message: [formData.destination ? `Destination: ${formData.destination}` : '', formData.notes].filter(Boolean).join('\n') || undefined,
         source_form: 'get-free-quote',
@@ -73,6 +76,17 @@ export function GetFreeQuotes() {
     { value: 'alexandria', label: t('quotes.destination.alexandria') },
     { value: 'any', label: t('quotes.destination.any') },
   ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (countryRef.current && !countryRef.current.contains(event.target as Node)) {
+        setShowCountryDropdown(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const countryOptions = [
     { flag: '🇺🇸', code: '+1', country: 'us' },
@@ -150,6 +164,15 @@ export function GetFreeQuotes() {
     { flag: '🇺🇿', code: '+998', country: 'uz' },
   ];
 
+  const filteredCountryOptions = countryOptions.filter((option) => {
+    const search = countrySearch.toLowerCase().replace(/[^\w+]/g, '');
+    if (!search) return true;
+    return (
+      option.code.toLowerCase().includes(search) ||
+      option.country.toLowerCase().includes(search)
+    );
+  });
+
   return (
     <section className="relative w-full py-16 md:py-24 bg-[#F0F7F4] overflow-hidden" id="get-quote">
       {/* Background Pattern */}
@@ -225,7 +248,7 @@ export function GetFreeQuotes() {
                 </div>
                 <h3 className="text-2xl font-bold text-[#1A5276] mb-2">{t('quotes.successTitle')}</h3>
                 <p className="text-[#0F172A]/60 mb-6">{t('quotes.successMessage')}</p>
-                <button onClick={() => { setIsSubmitted(false); setFormData({ name: '', email: '', phone: '', treatment: '', destination: '', notes: '' }); }} className="text-[#1A5276] font-bold hover:underline">
+                <button onClick={() => { setIsSubmitted(false); setFormData({ name: '', email: '', phone: '', countryCode: '+1', treatment: '', destination: '', notes: '' }); setCountrySearch('🇺🇸 +1'); }} className="text-[#1A5276] font-bold hover:underline">
                   {t('quotes.submitAnother')}
                 </button>
               </div>
@@ -260,14 +283,61 @@ export function GetFreeQuotes() {
               <div className="space-y-2">
                 <label htmlFor="phone" className={cn("text-sm font-medium text-gray-700", isRTL && "text-right block")}>{t('quotes.labelPhone')}</label>
                 <div className={cn("flex gap-2", isRTL && "flex-row-reverse")}>
-                  <select
-                    className={cn("w-[110px] px-3 py-2 rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus:border-[#1A5276] outline-none transition-colors appearance-none", isRTL && "text-right")}
-                    defaultValue="us"
-                  >
-                    {countryOptions.map((option) => (
-                      <option key={option.country} value={option.country}>{option.flag} {option.code}</option>
-                    ))}
-                  </select>
+                  {/* Writable + Selectable Country Code Combobox */}
+                  <div className="relative" ref={countryRef}>
+                    <div className={cn("flex items-center w-[120px] rounded-lg bg-[#F0F7F4]/30 border border-[#1A5276]/10 focus-within:border-[#1A5276] transition-colors", isRTL && "flex-row-reverse")}>
+                      <input
+                        type="text"
+                        value={countrySearch}
+                        onChange={(e) => {
+                          setCountrySearch(e.target.value);
+                          setShowCountryDropdown(true);
+                          // If user types a valid dial code, update formData
+                          const typed = e.target.value.trim();
+                          const match = countryOptions.find(o => `${o.flag} ${o.code}` === typed || o.code === typed);
+                          if (match) {
+                            setFormData(prev => ({ ...prev, countryCode: match.code }));
+                          } else if (typed.startsWith('+')) {
+                            setFormData(prev => ({ ...prev, countryCode: typed }));
+                          }
+                        }}
+                        onFocus={() => setShowCountryDropdown(true)}
+                        className={cn("w-full px-2 py-2 bg-transparent outline-none text-sm", isRTL && "text-right")}
+                        placeholder="+1"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowCountryDropdown(!showCountryDropdown)}
+                        className="px-1 py-2 text-gray-400 hover:text-gray-600 flex-shrink-0"
+                      >
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+                    </div>
+                    {showCountryDropdown && (
+                      <div className={cn("absolute top-full mt-1 w-[200px] max-h-[200px] overflow-y-auto bg-white border border-[#1A5276]/10 rounded-lg shadow-lg z-50", isRTL ? "right-0" : "left-0")}>
+                        {filteredCountryOptions.length > 0 ? (
+                          filteredCountryOptions.map((option) => (
+                            <button
+                              key={option.country}
+                              type="button"
+                              className={cn("w-full px-3 py-2 text-left text-sm hover:bg-[#F0F7F4] transition-colors flex items-center gap-2", isRTL && "flex-row-reverse text-right")}
+                              onClick={() => {
+                                setCountrySearch(`${option.flag} ${option.code}`);
+                                setFormData(prev => ({ ...prev, countryCode: option.code }));
+                                setShowCountryDropdown(false);
+                              }}
+                            >
+                              <span>{option.flag}</span>
+                              <span className="font-medium">{option.code}</span>
+                              <span className="text-gray-400 uppercase text-xs">{option.country}</span>
+                            </button>
+                          ))
+                        ) : (
+                          <div className="px-3 py-2 text-sm text-gray-400">No match</div>
+                        )}
+                      </div>
+                    )}
+                  </div>
                   <input
                     id="phone"
                     type="tel"
