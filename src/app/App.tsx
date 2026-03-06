@@ -36,6 +36,9 @@ import { Wellness } from './pages/Wellness';
 import { HealthCheckups } from './pages/HealthCheckups';
 import { Pricing } from './pages/Pricing';
 import { Treatments } from './pages/Treatments';
+import { DestinationCairo } from './pages/DestinationCairo';
+import { DestinationHurghada } from './pages/DestinationHurghada';
+import { DestinationSharm } from './pages/DestinationSharm';
 
 // Admin CRM Components
 import AdminLogin from './components/admin/AdminLogin';
@@ -96,6 +99,9 @@ export default function App() {
           <Route path="/treatments/wellness" element={<WebsiteLayout><Wellness /></WebsiteLayout>} />
           <Route path="/treatments/checkups" element={<WebsiteLayout><HealthCheckups /></WebsiteLayout>} />
           <Route path="/pricing" element={<WebsiteLayout><Pricing /></WebsiteLayout>} />
+          <Route path="/destinations/cairo" element={<WebsiteLayout><DestinationCairo /></WebsiteLayout>} />
+          <Route path="/destinations/hurghada" element={<WebsiteLayout><DestinationHurghada /></WebsiteLayout>} />
+          <Route path="/destinations/sharm-el-sheikh" element={<WebsiteLayout><DestinationSharm /></WebsiteLayout>} />
           <Route path="/how-it-works" element={<WebsiteLayout><HowItWorks /></WebsiteLayout>} />
           <Route path="/patient-stories" element={<WebsiteLayout><PatientStories /></WebsiteLayout>} />
           {/* <Route path="/doctors" element={<WebsiteLayout><OurDoctors /></WebsiteLayout>} /> */}{/* Hidden until real doctor agreements are in place */}

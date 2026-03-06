@@ -3,7 +3,6 @@ import { Hero } from '../components/home/Hero';
 import { SavingsShockBar } from '../components/home/SavingsShockBar';
 import { SpecialtiesGrid } from '../components/home/SpecialtiesGrid';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
-import { DestinationShowcase } from '../components/home/DestinationShowcase';
 import { PatientJourney } from '../components/home/PatientJourney';
 import { PatientStories } from '../components/home/PatientStories';
 import { TrustSignals } from '../components/home/TrustSignals';
@@ -17,7 +16,6 @@ export function Home() {
       <SavingsShockBar />
       <SpecialtiesGrid />
       <WhyChooseUs />
-      <DestinationShowcase />
       <PatientJourney />
       <PatientStories />
       <TrustSignals />

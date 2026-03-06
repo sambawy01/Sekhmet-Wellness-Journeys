@@ -42,6 +42,7 @@ const MobileNavLink = ({ to, label, onClick }: { to: string, label: string, onCl
 export const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isDestMenuOpen, setIsDestMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
@@ -59,6 +60,7 @@ export const Navigation: React.FC = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
+    setIsDestMenuOpen(false);
   }, [location.pathname]);
 
   const languages = [
@@ -76,10 +78,10 @@ export const Navigation: React.FC = () => {
             ? "bg-[#1A2332] shadow-lg border-b border-[#0D9488]/30 py-3"
             : "bg-[#1A2332]/90 backdrop-blur-sm py-6"
         )}
-        onMouseLeave={() => setIsMegaMenuOpen(false)}
+        onMouseLeave={() => { setIsMegaMenuOpen(false); setIsDestMenuOpen(false); }}
       >
         <div className="container mx-auto px-6 max-w-[1400px] flex justify-between items-center h-[60px]">
-          
+
           {/* Logo */}
           <Link to="/" className="flex items-center z-[70]">
             <img
@@ -93,17 +95,23 @@ export const Navigation: React.FC = () => {
           <nav className="hidden md:flex items-center gap-10 h-full">
             <div
               className="h-full flex items-center"
-              onMouseEnter={() => setIsMegaMenuOpen(true)}
+              onMouseEnter={() => { setIsMegaMenuOpen(true); setIsDestMenuOpen(false); }}
             >
               <Link to="/consultation" className="h-full flex items-center">
                 <NavItem label={t("nav.treatments")} hasDropdown isActive={isMegaMenuOpen} />
               </Link>
             </div>
-            <Link to="/how-it-works" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.howItWorks")} /></Link>
-            <Link to="/pricing" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.pricing")} /></Link>
-            <Link to="/patient-stories" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.stories")} /></Link>
-            <Link to="/travel-guide" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.travelGuide")} /></Link>
-            <Link to="/faq" className="h-full flex items-center" onMouseEnter={() => setIsMegaMenuOpen(false)}><NavItem label={t("nav.faq")} /></Link>
+            <div
+              className="h-full flex items-center"
+              onMouseEnter={() => { setIsDestMenuOpen(true); setIsMegaMenuOpen(false); }}
+            >
+              <NavItem label={t("nav.destinations")} hasDropdown isActive={isDestMenuOpen} />
+            </div>
+            <Link to="/how-it-works" className="h-full flex items-center" onMouseEnter={() => { setIsMegaMenuOpen(false); setIsDestMenuOpen(false); }}><NavItem label={t("nav.howItWorks")} /></Link>
+            <Link to="/pricing" className="h-full flex items-center" onMouseEnter={() => { setIsMegaMenuOpen(false); setIsDestMenuOpen(false); }}><NavItem label={t("nav.pricing")} /></Link>
+            <Link to="/patient-stories" className="h-full flex items-center" onMouseEnter={() => { setIsMegaMenuOpen(false); setIsDestMenuOpen(false); }}><NavItem label={t("nav.stories")} /></Link>
+            <Link to="/travel-guide" className="h-full flex items-center" onMouseEnter={() => { setIsMegaMenuOpen(false); setIsDestMenuOpen(false); }}><NavItem label={t("nav.travelGuide")} /></Link>
+            <Link to="/faq" className="h-full flex items-center" onMouseEnter={() => { setIsMegaMenuOpen(false); setIsDestMenuOpen(false); }}><NavItem label={t("nav.faq")} /></Link>
           </nav>
 
           {/* CTA & Actions */}
@@ -342,6 +350,70 @@ export const Navigation: React.FC = () => {
           </div>
         </div>
 
+        {/* Destinations Mega Menu */}
+        <div
+          className={cn(
+            "absolute top-full left-0 w-full bg-white shadow-2xl border-t-[3px] border-[#0D9488] py-12 z-30 hidden md:block transition-all duration-300 ease-in-out origin-top",
+            isDestMenuOpen ? "opacity-100 translate-y-0 scale-y-100" : "opacity-0 -translate-y-4 scale-y-95 pointer-events-none"
+          )}
+          onMouseEnter={() => setIsDestMenuOpen(true)}
+          onMouseLeave={() => setIsDestMenuOpen(false)}
+        >
+          <div className="container mx-auto px-6 max-w-[1400px] grid grid-cols-3 gap-12">
+            {/* Cairo */}
+            <Link to="/destinations/cairo" className="group cursor-pointer">
+              <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+                <img src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&q=80&w=600" alt="Cairo" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/80 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="font-['Outfit'] font-bold text-xl text-white">{t("nav.destCairo")}</h3>
+                  <p className="font-['Outfit'] text-sm text-white/80">{t("nav.destCairoTag")}</p>
+                </div>
+              </div>
+              <ul className="space-y-2 px-1">
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH1")}</li>
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH2")}</li>
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH3")}</li>
+              </ul>
+            </Link>
+
+            {/* Hurghada */}
+            <Link to="/destinations/hurghada" className="group cursor-pointer">
+              <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+                <img src="https://images.unsplash.com/photo-1671739961405-add4f0ece0c3?auto=format&fit=crop&q=80&w=600" alt="Hurghada" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/80 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="font-['Outfit'] font-bold text-xl text-white">{t("nav.destHurghada")}</h3>
+                  <p className="font-['Outfit'] text-sm text-white/80">{t("nav.destHurghadaTag")}</p>
+                </div>
+                <div className="absolute top-3 right-3 bg-[#0D9488] text-white text-[10px] font-bold px-2 py-1 rounded-full">{t("nav.destRecommended")}</div>
+              </div>
+              <ul className="space-y-2 px-1">
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH1")}</li>
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH2")}</li>
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH3")}</li>
+              </ul>
+            </Link>
+
+            {/* Sharm El Sheikh */}
+            <Link to="/destinations/sharm-el-sheikh" className="group cursor-pointer">
+              <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+                <img src="https://images.unsplash.com/photo-1705765280828-074feefd8aee?auto=format&fit=crop&q=80&w=600" alt="Sharm El Sheikh" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/80 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="font-['Outfit'] font-bold text-xl text-white">{t("nav.destSharm")}</h3>
+                  <p className="font-['Outfit'] text-sm text-white/80">{t("nav.destSharmTag")}</p>
+                </div>
+              </div>
+              <ul className="space-y-2 px-1">
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH1")}</li>
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH2")}</li>
+                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH3")}</li>
+              </ul>
+            </Link>
+          </div>
+        </div>
+
       </header>
 
       {/* Mobile Menu - OUTSIDE header to avoid inheriting header transitions */}
@@ -365,6 +437,15 @@ export const Navigation: React.FC = () => {
                <MobileNavLink to="/treatments/cosmetic" label={t("nav.cosmetic")} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/treatments/wellness" label={t("nav.wellness")} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/treatments/checkups" label={t("nav.healthCheckups")} onClick={() => setIsMobileMenuOpen(false)} />
+            </div>
+
+            <div className="h-px bg-white/10 my-1" />
+
+            <div className="flex flex-col gap-3">
+               <h4 className="text-[#64748B] font-['Outfit'] text-xs font-bold uppercase tracking-widest pl-1">{t("nav.destinations")}</h4>
+               <MobileNavLink to="/destinations/cairo" label={t("nav.destCairo")} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/destinations/hurghada" label={t("nav.destHurghada")} onClick={() => setIsMobileMenuOpen(false)} />
+               <MobileNavLink to="/destinations/sharm-el-sheikh" label={t("nav.destSharm")} onClick={() => setIsMobileMenuOpen(false)} />
             </div>
 
             <div className="h-px bg-white/10 my-1" />
