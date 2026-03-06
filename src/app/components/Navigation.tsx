@@ -93,7 +93,7 @@ export const Navigation: React.FC = () => {
             <img
               src="https://i.ibb.co/TDLgpjPZ/Logo-for-SEKHMET-WELLNESS-JOURNEYS-40-x-21-cm.png"
               alt="Sekhmet Wellness Journeys"
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-[62px] md:h-[73px] w-auto object-contain"
             />
           </Link>
 
