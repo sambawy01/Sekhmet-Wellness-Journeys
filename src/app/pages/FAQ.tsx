@@ -74,7 +74,7 @@ export function FAQ() {
   const [searchQuery, setSearchQuery] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [showCallForm, setShowCallForm] = useState(false);
-  const [callFormData, setCallFormData] = useState({ name: '', email: '', phone: '', preferredTime: '' });
+  const [callFormData, setCallFormData] = useState({ name: '', email: '', phone: '', preferredDate: '', preferredTime: '' });
   const [callFormStatus, setCallFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleCallFormSubmit = async (e: React.FormEvent) => {
@@ -85,14 +85,14 @@ export function FAQ() {
         name: callFormData.name,
         email: callFormData.email,
         phone: callFormData.phone,
-        message: `Call request – Preferred time: ${callFormData.preferredTime}`,
+        message: `Call request – Date: ${callFormData.preferredDate || 'ASAP'}, Time: ${callFormData.preferredTime}`,
         source_form: 'faq-book-call',
       });
       setCallFormStatus('success');
       setTimeout(() => {
         setShowCallForm(false);
         setCallFormStatus('idle');
-        setCallFormData({ name: '', email: '', phone: '', preferredTime: '' });
+        setCallFormData({ name: '', email: '', phone: '', preferredDate: '', preferredTime: '' });
       }, 2500);
     } catch {
       setCallFormStatus('error');
@@ -339,6 +339,25 @@ export function FAQ() {
                       </div>
                     </div>
 
+                    {/* Preferred Date */}
+                    <div>
+                      <label className={`block text-sm font-['Outfit'] font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
+                        {t('faq.callFormDate')}
+                      </label>
+                      <div className="relative">
+                        <Calendar className={`absolute ${isRTL ? 'right-3' : 'left-3'} top-1/2 -translate-y-1/2 text-[#0F172A]/30 w-4 h-4 pointer-events-none`} />
+                        <input
+                          type="date"
+                          value={callFormData.preferredDate}
+                          onChange={(e) => setCallFormData({ ...callFormData, preferredDate: e.target.value })}
+                          min={new Date().toISOString().split('T')[0]}
+                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-['Outfit'] text-sm`}
+                          placeholder={t('faq.callFormDatePlaceholder')}
+                        />
+                      </div>
+                      <p className={`text-xs text-[#0F172A]/40 mt-1 font-['Outfit'] ${isRTL ? 'text-right' : ''}`}>{t('faq.callFormDateHint')}</p>
+                    </div>
+
                     {/* Preferred Time */}
                     <div>
                       <label className={`block text-sm font-['Outfit'] font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
@@ -353,6 +372,7 @@ export function FAQ() {
                           className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-['Outfit'] text-sm appearance-none bg-white`}
                         >
                           <option value="">{t('faq.callFormTimePlaceholder')}</option>
+                          <option value="asap">{t('faq.callTimeASAP')}</option>
                           <option value="morning">{t('faq.callTimeMorning')}</option>
                           <option value="afternoon">{t('faq.callTimeAfternoon')}</option>
                           <option value="evening">{t('faq.callTimeEvening')}</option>
