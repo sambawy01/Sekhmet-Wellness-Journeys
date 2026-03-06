@@ -140,12 +140,25 @@ export const Contact = () => {
                     className={`w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059] transition-all cursor-pointer ${isRTL ? 'text-right' : ''}`}
                   >
                     <option value="">{t('contact.selectTreatment')}</option>
-                    <option value="dental">{t('contact.dental')}</option>
-                    <option value="cosmetic">{t('contact.cosmetic')}</option>
-                    <option value="hair">{t('contact.hair')}</option>
-                    <option value="vision">{t('contact.vision')}</option>
-                    <option value="checkup">{t('contact.checkup')}</option>
-                    <option value="other">{t('contact.other')}</option>
+                    <option value="implants">{t('quotes.treatment.implants')}</option>
+                    <option value="veneers">{t('quotes.treatment.veneers')}</option>
+                    <option value="smile">{t('quotes.treatment.smile')}</option>
+                    <option value="wisdom">{t('quotes.treatment.wisdom')}</option>
+                    <option value="whitening">{t('quotes.treatment.whitening')}</option>
+                    <option value="lasik">{t('quotes.treatment.lasik')}</option>
+                    <option value="ivf">{t('quotes.treatment.ivf')}</option>
+                    <option value="eggFreezing">{t('quotes.treatment.eggFreezing')}</option>
+                    <option value="iui">{t('quotes.treatment.iui')}</option>
+                    <option value="rhinoplasty">{t('quotes.treatment.rhinoplasty')}</option>
+                    <option value="facelift">{t('quotes.treatment.facelift')}</option>
+                    <option value="breast">{t('quotes.treatment.breast')}</option>
+                    <option value="tummy">{t('quotes.treatment.tummy')}</option>
+                    <option value="liposuction">{t('quotes.treatment.liposuction')}</option>
+                    <option value="bbl">{t('quotes.treatment.bbl')}</option>
+                    <option value="hair">{t('quotes.treatment.hair')}</option>
+                    <option value="bariatric">{t('quotes.treatment.bariatric')}</option>
+                    <option value="checkup">{t('quotes.treatment.checkup')}</option>
+                    <option value="other">{t('quotes.treatment.other')}</option>
                   </select>
                 </div>
 
@@ -195,8 +208,8 @@ export const Contact = () => {
                  <div>
                    <h3 className={`font-playfair text-2xl text-[#C5A059] mb-6 ${isRTL ? 'text-right' : ''}`}>{t('contact.information')}</h3>
                    <div className={`space-y-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                     <a href="tel:+447988559541" className={`flex items-start gap-4 hover:text-[#C5A059] transition-colors group ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
-                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white transition-colors flex-shrink-0">
+                     <a href="https://wa.me/447988559541" target="_blank" rel="noopener noreferrer" className={`flex items-start gap-4 hover:text-[#25D366] transition-colors group ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#25D366] group-hover:text-white transition-colors flex-shrink-0">
                          <Phone size={20} />
                        </div>
                        <div>
