@@ -107,7 +107,7 @@ export function Timeline() {
                         ? (isRTL ? 'md:justify-end' : 'md:justify-start')
                         : (isRTL ? 'md:justify-start' : 'md:justify-end')
                     } ${isRTL ? 'flex-row-reverse' : ''}`}>
-                      <div className="w-12 h-12 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold text-xl font-['Space_Mono'] shadow-lg">
+                      <div className="w-12 h-12 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold text-xl font-heading shadow-lg">
                         {step.id}
                       </div>
                       <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-[#0F172A]">
@@ -115,7 +115,7 @@ export function Timeline() {
                       </h3>
                     </div>
 
-                    <p className={`font-['Outfit'] text-lg text-[#0F172A]/70 leading-relaxed max-w-lg ${
+                    <p className={`font-sans text-lg text-[#0F172A]/70 leading-relaxed max-w-lg ${
                       index % 2 === 0
                         ? (isRTL ? 'md:text-right' : 'md:text-left')
                         : (isRTL ? 'md:text-left' : 'md:text-right')

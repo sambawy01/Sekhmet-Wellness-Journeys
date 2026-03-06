@@ -24,10 +24,10 @@ export function HollywoodContent() {
               <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-6">
                 Achieve Flawless Aesthetics with a Hollywood Smile
               </h2>
-              <p className="font-['Outfit'] text-lg text-[#0F172A]/70 leading-relaxed mb-6">
+              <p className="font-sans text-lg text-[#0F172A]/70 leading-relaxed mb-6">
                 A "Hollywood Smile" isn't just about white teeth—it's about designing a smile that perfectly complements your facial features. Using ultra-thin Emax or Porcelain veneers, we correct discoloration, chips, gaps, and misalignment to give you a radiant, symmetrical smile.
               </p>
-              <p className="font-['Outfit'] text-lg text-[#0F172A]/70 leading-relaxed mb-6">
+              <p className="font-sans text-lg text-[#0F172A]/70 leading-relaxed mb-6">
                 Our partner clinics in Cairo and Hurghada utilize Digital Smile Design (DSD) technology, allowing you to "test drive" your new smile before any treatment begins. We use premium German and Swiss materials (Ivoclar Vivadent) that mimic the natural translucency of tooth enamel, ensuring your result looks luxurious yet natural.
               </p>
             </motion.div>
@@ -57,7 +57,7 @@ export function HollywoodContent() {
                     <div className="w-5 h-5 bg-[#14B8A6] rounded-full flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-['Outfit'] text-[#0F172A]/80">{item}</span>
+                    <span className="font-sans text-[#0F172A]/80">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -75,7 +75,7 @@ export function HollywoodContent() {
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-['Space_Mono']">1</div>
+                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-heading">1</div>
                     <div className="w-0.5 h-full bg-[#C5A059]/20 my-2"></div>
                   </div>
                   <div>
@@ -85,7 +85,7 @@ export function HollywoodContent() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-['Space_Mono']">2</div>
+                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-heading">2</div>
                     <div className="w-0.5 h-full bg-[#C5A059]/20 my-2"></div>
                   </div>
                   <div>
@@ -95,7 +95,7 @@ export function HollywoodContent() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-['Space_Mono']">3</div>
+                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-heading">3</div>
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-[#0F172A] mb-1">Final Fitting (Day 5-7)</h4>
@@ -117,7 +117,7 @@ export function HollywoodContent() {
                 </h3>
                 
                 <div className="mb-6">
-                  <label className="block text-sm font-['Outfit'] mb-2 text-white/80">Number of Veneers</label>
+                  <label className="block text-sm font-sans mb-2 text-white/80">Number of Veneers</label>
                   <input 
                     type="range" 
                     min="4" 
@@ -146,7 +146,7 @@ export function HollywoodContent() {
                   <div className="h-[1px] w-full bg-white/10 my-3"></div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold text-[#C5A059]">You Save:</span>
-                    <span className="font-['Space_Mono'] font-bold text-2xl text-[#C5A059]">
+                    <span className="font-heading font-bold text-2xl text-[#C5A059]">
                       ${(veneerCount * (ukPrice - veneerPrice)).toLocaleString()}
                     </span>
                   </div>

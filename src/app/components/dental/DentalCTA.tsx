@@ -32,7 +32,7 @@ export function DentalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-['Outfit'] text-xl text-[#F9F6F0]/80 max-w-2xl mx-auto mb-10"
+          className="font-sans text-xl text-[#F9F6F0]/80 max-w-2xl mx-auto mb-10"
         >
           {t('dentalCta.description')}
         </motion.p>
@@ -46,7 +46,7 @@ export function DentalCTA() {
         >
           <Button 
             size="lg" 
-            className="bg-[#C5A059] hover:bg-[#B08D45] text-white font-['Outfit'] text-lg px-8 py-6 rounded-full"
+            className="bg-[#C5A059] hover:bg-[#B08D45] text-white font-sans text-lg px-8 py-6 rounded-full"
           >
             {t('dentalCta.getFreeQuote')} <ArrowRight className={cn("ml-2 w-5 h-5", isRTL && "ml-0 mr-2")} />
           </Button>
@@ -54,7 +54,7 @@ export function DentalCTA() {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-white/20 text-white hover:bg-white/10 hover:text-white font-['Outfit'] text-lg px-8 py-6 rounded-full"
+            className="border-white/20 text-white hover:bg-white/10 hover:text-white font-sans text-lg px-8 py-6 rounded-full"
           >
             <MessageCircle className={cn("mr-2 w-5 h-5", isRTL && "mr-0 ml-2")} /> {t('dentalCta.whatsappUs')}
           </Button>
@@ -65,7 +65,7 @@ export function DentalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-6 text-sm text-[#F9F6F0]/40 font-['Outfit']"
+          className="mt-6 text-sm text-[#F9F6F0]/40 font-sans"
         >
           {t('dentalCta.noCommitment')}
         </motion.p>

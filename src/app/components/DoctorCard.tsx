@@ -42,13 +42,13 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
           {name}
         </h3>
         
-        <p className="font-['Outfit'] text-[14px] font-medium text-[#14B8A6] uppercase tracking-wide">
+        <p className="font-sans text-[14px] font-medium text-[#14B8A6] uppercase tracking-wide">
           {specialty}
         </p>
         
         <div className="h-[1px] w-12 bg-[#0F172A]/10 mx-auto my-3" />
         
-        <ul className="text-sm space-y-1 font-['Outfit'] text-[#0F172A]/60 leading-tight">
+        <ul className="text-sm space-y-1 font-sans text-[#0F172A]/60 leading-tight">
           {credentials.map((cred, i) => (
             <li key={i}>{cred}</li>
           ))}
@@ -57,13 +57,13 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
         <div className="pt-4 flex items-center justify-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
           {/* Mock Hospital Logo */}
           <div className="w-6 h-6 bg-[#0F172A]/10 rounded-full flex items-center justify-center text-[10px] font-bold text-[#0F172A]">H</div>
-          <span className="text-xs text-[#0F172A]/50 font-['Outfit']">{affiliation}</span>
+          <span className="text-xs text-[#0F172A]/50 font-sans">{affiliation}</span>
         </div>
       </div>
 
       {/* Footer Link */}
       <div className="absolute bottom-4 w-full text-center">
-        <button className="text-[#14B8A6] font-['Outfit'] text-[13px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:text-[#0D9488] transition-colors">
+        <button className="text-[#14B8A6] font-sans text-[13px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:text-[#0D9488] transition-colors">
           View Profile <ExternalLink size={12} />
         </button>
       </div>
@@ -76,7 +76,7 @@ export const DoctorShowcase: React.FC = () => {
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-8">
        <div className="border-b border-[#0F172A]/10 pb-4">
         <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Medical Experts</h2>
-        <p className="font-['Outfit'] text-[#A89F8E]">World-class surgeons & specialists</p>
+        <p className="font-sans text-[#A89F8E]">World-class surgeons & specialists</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">

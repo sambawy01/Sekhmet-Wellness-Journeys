@@ -29,18 +29,18 @@ export const FinalCTA: React.FC = () => {
           className="max-w-3xl mx-auto space-y-8 opacity-0 animate-fade-in-up"
           style={{ animationFillMode: 'forwards' }}
         >
-          <h2 className={cn("font-['Outfit'] text-4xl md:text-5xl font-bold text-[#1A2332] leading-tight", isRTL && "font-['Amiri']")}>
+          <h2 className={cn("font-sans text-4xl md:text-5xl font-bold text-[#1A2332] leading-tight", isRTL && "font-['Amiri']")}>
             {t('finalCta.heading')}
           </h2>
 
-          <p className={cn("font-['Outfit'] text-xl text-[#1A2332]/80 leading-relaxed font-medium", isRTL && "font-['Cairo']")}>
+          <p className={cn("font-sans text-xl text-[#1A2332]/80 leading-relaxed font-medium", isRTL && "font-['Cairo']")}>
             {t('finalCta.subtitle')}
           </p>
 
           <div className={cn("flex flex-col sm:flex-row items-center justify-center gap-4 pt-6", isRTL && "sm:flex-row-reverse")}>
             <Link
               to="/consultation"
-              className="bg-[#1A2332] text-white px-8 py-4 rounded-full font-['Outfit'] font-bold text-lg hover:bg-white hover:text-[#1A2332] transition-all duration-300 shadow-xl flex items-center gap-3 group min-w-[260px] justify-center"
+              className="bg-[#1A2332] text-white px-8 py-4 rounded-full font-sans font-bold text-lg hover:bg-white hover:text-[#1A2332] transition-all duration-300 shadow-xl flex items-center gap-3 group min-w-[260px] justify-center"
             >
               <CalendarCheck className="w-5 h-5 group-hover:scale-110 transition-transform" />
               {t('finalCta.bookConsultation')}
@@ -50,14 +50,14 @@ export const FinalCTA: React.FC = () => {
               href="https://wa.me/447988559541"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-8 py-4 rounded-full font-['Outfit'] font-bold text-lg hover:bg-white hover:text-[#25D366] transition-all duration-300 shadow-xl flex items-center gap-3 group min-w-[260px] justify-center"
+              className="bg-[#25D366] text-white px-8 py-4 rounded-full font-sans font-bold text-lg hover:bg-white hover:text-[#25D366] transition-all duration-300 shadow-xl flex items-center gap-3 group min-w-[260px] justify-center"
             >
               <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
               {t('finalCta.whatsapp')}
             </a>
           </div>
 
-          <div className={cn("flex flex-col md:flex-row items-center justify-center gap-8 pt-8 text-[#1A2332] font-['Outfit'] text-sm font-medium", isRTL && "md:flex-row-reverse")}>
+          <div className={cn("flex flex-col md:flex-row items-center justify-center gap-8 pt-8 text-[#1A2332] font-sans text-sm font-medium", isRTL && "md:flex-row-reverse")}>
             <a href="tel:+447988559541" className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone className="w-4 h-4 opacity-70" />
               <span>+44 798 855 9541</span>

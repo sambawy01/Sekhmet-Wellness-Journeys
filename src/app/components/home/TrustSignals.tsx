@@ -5,7 +5,7 @@ export const TrustSignals: React.FC = () => {
   // Mock logos since we don't have real asset URLs for specific hospitals
   const LogoPlaceholder = ({ name }: { name: string }) => (
     <div className="h-10 px-4 flex items-center justify-center border border-gray-200 rounded opacity-60 hover:opacity-100 hover:border-[#0D9488] hover:text-[#0D9488] transition-all duration-300 cursor-pointer grayscale hover:grayscale-0">
-      <span className="font-['Outfit'] font-bold text-sm text-center uppercase tracking-wider">{name}</span>
+      <span className="font-sans font-bold text-sm text-center uppercase tracking-wider">{name}</span>
     </div>
   );
 
@@ -18,14 +18,14 @@ export const TrustSignals: React.FC = () => {
           {/* Trust Stats */}
           <div className="flex items-center gap-8 md:gap-12 flex-shrink-0">
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <span className="font-['Space_Mono'] text-2xl md:text-3xl font-bold text-[#1A2332]">500+</span>
-              <span className="font-['Outfit'] text-sm text-[#64748B] uppercase tracking-wide">Procedures</span>
+              <span className="font-heading text-2xl md:text-3xl font-bold text-[#1A2332]">500+</span>
+              <span className="font-sans text-sm text-[#64748B] uppercase tracking-wide">Procedures</span>
               <div className="w-full h-0.5 bg-[#0D9488] mt-2" />
             </div>
             
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <span className="font-['Space_Mono'] text-2xl md:text-3xl font-bold text-[#1A2332]">97%</span>
-              <span className="font-['Outfit'] text-sm text-[#64748B] uppercase tracking-wide">Satisfaction</span>
+              <span className="font-heading text-2xl md:text-3xl font-bold text-[#1A2332]">97%</span>
+              <span className="font-sans text-sm text-[#64748B] uppercase tracking-wide">Satisfaction</span>
               <div className="w-full h-0.5 bg-[#0D9488] mt-2" />
             </div>
           </div>

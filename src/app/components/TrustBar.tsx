@@ -21,7 +21,7 @@ export const TrustBar: React.FC = () => {
               "Save Up to 85%",
               "JCI-Accredited Hospitals", // Repeat for seamless loop feeling
             ].map((text, i) => (
-              <div key={i} className="flex items-center gap-8 font-['Outfit'] text-[13px] tracking-wide">
+              <div key={i} className="flex items-center gap-8 font-sans text-[13px] tracking-wide">
                 <span>{text}</span>
                 <span className="text-[#0D9488] text-[8px]">•</span>
               </div>
@@ -33,7 +33,7 @@ export const TrustBar: React.FC = () => {
         <div className="flex items-center gap-6 pl-8 bg-[#0F172A] relative z-10 h-full border-l border-white/10">
           <div className="flex items-center gap-2 group cursor-pointer hover:text-[#0D9488] transition-colors">
             <Phone size={14} className="text-[#0D9488]" />
-            <span className="font-['Space_Mono'] text-[12px] hidden md:inline">+44 798 855 9541</span>
+            <span className="font-heading text-[12px] hidden md:inline">+44 798 855 9541</span>
           </div>
           
           <div className="flex items-center gap-4 border-l border-white/10 pl-6 ml-2">
@@ -41,7 +41,7 @@ export const TrustBar: React.FC = () => {
             <Mail size={16} className="text-[#0D9488] cursor-pointer hover:scale-110 transition-transform" />
           </div>
 
-          <div className="flex items-center gap-1 font-['Outfit'] text-[12px] font-bold border-l border-white/10 pl-6 ml-2 text-[#A89F8E]">
+          <div className="flex items-center gap-1 font-sans text-[12px] font-bold border-l border-white/10 pl-6 ml-2 text-[#A89F8E]">
             <span className="text-white cursor-pointer hover:text-[#0D9488]">EN</span>
             <span>|</span>
             <span className="cursor-pointer hover:text-[#0D9488]">AR</span>

@@ -19,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props 
 }) => {
-  const baseStyles = "relative inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-['Outfit'] text-[15px] font-semibold tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/30 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none";
+  const baseStyles = "relative inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-sans text-[15px] font-semibold tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0D9488]/30 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none";
 
   const variants = {
     primary: "bg-[#0D9488] text-white hover:bg-[#0F766E] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:shadow-sm",
@@ -62,27 +62,27 @@ export const ButtonSet: React.FC = () => {
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
         <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Button Components</h2>
-        <p className="font-['Outfit'] text-[#A89F8E]">Interactive elements & states</p>
+        <p className="font-sans text-[#A89F8E]">Interactive elements & states</p>
       </div>
 
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-[#0F172A]/10">
-              <th className="py-4 px-6 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Type</th>
-              <th className="py-4 px-6 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Default</th>
-              <th className="py-4 px-6 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Hover State (Demo)</th>
-              <th className="py-4 px-6 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Disabled</th>
+              <th className="py-4 px-6 font-heading text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Type</th>
+              <th className="py-4 px-6 font-heading text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Default</th>
+              <th className="py-4 px-6 font-heading text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Hover State (Demo)</th>
+              <th className="py-4 px-6 font-heading text-xs text-[#A89F8E] uppercase tracking-widest w-1/4">Disabled</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[#0F172A]/5">
             {/* Primary */}
             <tr>
-              <td className="py-8 px-6 font-['Outfit'] font-medium text-[#0F172A]">Primary Action</td>
+              <td className="py-8 px-6 font-sans font-medium text-[#0F172A]">Primary Action</td>
               <td className="py-8 px-6"><Button>Book Now</Button></td>
               <td className="py-8 px-6">
                 {/* Forced hover state simulation visually or just interactive */}
-                <div className="bg-[#0F766E] text-[#0F172A] inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-['Outfit'] text-[15px] font-bold uppercase tracking-wider shadow-lg transform -translate-y-0.5 pointer-events-none">
+                <div className="bg-[#0F766E] text-[#0F172A] inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-sans text-[15px] font-bold uppercase tracking-wider shadow-lg transform -translate-y-0.5 pointer-events-none">
                   Book Now
                 </div>
               </td>
@@ -91,10 +91,10 @@ export const ButtonSet: React.FC = () => {
 
             {/* Secondary */}
             <tr>
-              <td className="py-8 px-6 font-['Outfit'] font-medium text-[#0F172A]">Secondary / Ghost</td>
+              <td className="py-8 px-6 font-sans font-medium text-[#0F172A]">Secondary / Ghost</td>
               <td className="py-8 px-6"><Button variant="secondary">View Details</Button></td>
               <td className="py-8 px-6">
-                 <div className="bg-[#0D9488]/10 border-2 border-[#0D9488] text-[#0D9488] inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-['Outfit'] text-[15px] font-bold uppercase tracking-wider pointer-events-none">
+                 <div className="bg-[#0D9488]/10 border-2 border-[#0D9488] text-[#0D9488] inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-sans text-[15px] font-bold uppercase tracking-wider pointer-events-none">
                   View Details
                 </div>
               </td>
@@ -103,10 +103,10 @@ export const ButtonSet: React.FC = () => {
 
             {/* WhatsApp */}
             <tr>
-              <td className="py-8 px-6 font-['Outfit'] font-medium text-[#0F172A]">WhatsApp CTA</td>
+              <td className="py-8 px-6 font-sans font-medium text-[#0F172A]">WhatsApp CTA</td>
               <td className="py-8 px-6"><Button variant="whatsapp" icon={<MessageCircle size={18} />}>Chat With Us</Button></td>
               <td className="py-8 px-6">
-                <div className="bg-[#20BD5A] text-white inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-['Outfit'] text-[15px] font-bold uppercase tracking-wider shadow-lg transform -translate-y-0.5 pointer-events-none">
+                <div className="bg-[#20BD5A] text-white inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-sans text-[15px] font-bold uppercase tracking-wider shadow-lg transform -translate-y-0.5 pointer-events-none">
                   <span className="mr-1"><MessageCircle size={18} /></span> Chat With Us
                 </div>
               </td>
@@ -115,10 +115,10 @@ export const ButtonSet: React.FC = () => {
 
             {/* Dark */}
             <tr>
-              <td className="py-8 px-6 font-['Outfit'] font-medium text-[#0F172A]">Dark / Footer</td>
+              <td className="py-8 px-6 font-sans font-medium text-[#0F172A]">Dark / Footer</td>
               <td className="py-8 px-6"><Button variant="dark">My Account</Button></td>
               <td className="py-8 px-6">
-                 <div className="bg-[#1A2632] text-white inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-['Outfit'] text-[15px] font-bold uppercase tracking-wider shadow-lg transform -translate-y-0.5 pointer-events-none">
+                 <div className="bg-[#1A2632] text-white inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-sans text-[15px] font-bold uppercase tracking-wider shadow-lg transform -translate-y-0.5 pointer-events-none">
                   My Account
                 </div>
               </td>
@@ -127,10 +127,10 @@ export const ButtonSet: React.FC = () => {
 
             {/* Text Link */}
             <tr>
-              <td className="py-8 px-6 font-['Outfit'] font-medium text-[#0F172A]">Text Link</td>
+              <td className="py-8 px-6 font-sans font-medium text-[#0F172A]">Text Link</td>
               <td className="py-8 px-6"><Button variant="link">Read Full Story</Button></td>
               <td className="py-8 px-6">
-                <span className="text-[#0D9488] underline decoration-2 underline-offset-4 decoration-[#0D9488] font-['Outfit'] font-medium cursor-pointer">
+                <span className="text-[#0D9488] underline decoration-2 underline-offset-4 decoration-[#0D9488] font-sans font-medium cursor-pointer">
                   Read Full Story
                 </span>
               </td>

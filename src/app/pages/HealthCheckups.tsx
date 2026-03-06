@@ -64,7 +64,7 @@ export function HealthCheckups() {
           <div className="absolute inset-0 bg-[#0F172A]/60" />
         </div>
         <div className={cn("relative h-full container mx-auto px-6 flex flex-col justify-center text-white pt-20", isRTL && "rtl")}>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className={cn("flex items-center gap-2 text-sm mb-6 text-[#F9F6F0]/80 font-['Outfit']", isRTL && "flex-row-reverse")}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className={cn("flex items-center gap-2 text-sm mb-6 text-[#F9F6F0]/80 font-sans", isRTL && "flex-row-reverse")}>
             <Link to="/" className="hover:text-[#C5A059] transition-colors">{t('common.home')}</Link>
             <ChevronRight className="w-4 h-4" />
             <span>{t('common.treatments')}</span>
@@ -74,12 +74,12 @@ export function HealthCheckups() {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight">
             {t('checkups.hero.title')} <br /><span className="text-[#C5A059]">{t('checkups.hero.subtitle')}</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="font-['Outfit'] text-lg md:text-xl text-[#F9F6F0]/90 max-w-2xl mb-8 leading-relaxed">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="font-sans text-lg md:text-xl text-[#F9F6F0]/90 max-w-2xl mb-8 leading-relaxed">
             {t('checkups.hero.description')}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
             <Link to="/consultation">
-              <button className="bg-[#0D9488] text-[#0F172A] px-8 py-4 rounded-full font-['Outfit'] text-base font-bold uppercase tracking-wider hover:bg-[#0F766E] transition-colors shadow-lg">
+              <button className="bg-[#0D9488] text-[#0F172A] px-8 py-4 rounded-full font-sans text-base font-bold uppercase tracking-wider hover:bg-[#0F766E] transition-colors shadow-lg">
                 {t('checkups.hero.cta')}
               </button>
             </Link>
@@ -93,14 +93,14 @@ export function HealthCheckups() {
           <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-16 items-center", isRTL && "rtl")}>
             <div>
               <h2 className="font-['Playfair_Display'] text-4xl text-[#0F172A] font-bold mb-6">{t('checkups.whyTitle')}</h2>
-              <p className="font-['Outfit'] text-[#5D5D5D] text-lg leading-relaxed mb-8">
+              <p className="font-sans text-[#5D5D5D] text-lg leading-relaxed mb-8">
                 {t('checkups.whyDesc')}
               </p>
               <ul className="space-y-4">
                 {[1, 2, 3, 4].map((i) => (
                   <li key={i} className={cn("flex items-start gap-3", isRTL && "flex-row-reverse")}>
                     <div className="w-6 h-6 rounded-full bg-[#0D9488]/20 flex items-center justify-center text-[#0D9488] flex-shrink-0 mt-0.5"><Check size={14} strokeWidth={3} /></div>
-                    <span className="font-['Outfit'] text-[#0F172A]">{t(`checkups.whyPoints.${i}`)}</span>
+                    <span className="font-sans text-[#0F172A]">{t(`checkups.whyPoints.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -108,15 +108,15 @@ export function HealthCheckups() {
             <div className={cn("grid grid-cols-2 gap-6", isRTL && "rtl")}>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0D9488] text-center">
                 <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('checkups.stat.1.value')}</span>
-                <span className="font-['Outfit'] text-sm text-[#5D5D5D] uppercase tracking-wide">{t('checkups.stat.1.label')}</span>
+                <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('checkups.stat.1.label')}</span>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#14B8A6] text-center">
                 <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('checkups.stat.2.value')}</span>
-                <span className="font-['Outfit'] text-sm text-[#5D5D5D] uppercase tracking-wide">{t('checkups.stat.2.label')}</span>
+                <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('checkups.stat.2.label')}</span>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0F172A] text-center col-span-2">
                 <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('checkups.stat.3.value')}</span>
-                <span className="font-['Outfit'] text-sm text-[#5D5D5D] uppercase tracking-wide">{t('checkups.stat.3.label')}</span>
+                <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('checkups.stat.3.label')}</span>
               </div>
             </div>
           </div>
@@ -139,9 +139,9 @@ export function HealthCheckups() {
                 </div>
                 <div className="p-8">
                   <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors">{t(proc.titleKey)}</h3>
-                  <p className="font-['Outfit'] text-[#5D5D5D] mb-6 line-clamp-3">{t(proc.descKey)}</p>
+                  <p className="font-sans text-[#5D5D5D] mb-6 line-clamp-3">{t(proc.descKey)}</p>
                   <div className={cn("flex items-center justify-between border-t border-[#0F172A]/10 pt-6", isRTL && "flex-row-reverse")}>
-                    <span className="font-['Space_Mono'] font-bold text-[#14B8A6]">{t(proc.priceKey)}</span>
+                    <span className="font-heading font-bold text-[#14B8A6]">{t(proc.priceKey)}</span>
                     <Link to="/consultation" className="text-[#0D9488] text-sm font-bold uppercase tracking-wide group-hover:underline">{t('checkups.bookNow')}</Link>
                   </div>
                 </div>

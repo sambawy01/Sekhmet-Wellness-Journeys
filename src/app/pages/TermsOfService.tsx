@@ -15,11 +15,11 @@ export const TermsOfService: React.FC = () => {
           <div className="w-16 h-16 bg-[#0D9488]/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <FileText className="w-8 h-8 text-[#0D9488]" />
           </div>
-          <h1 className="font-['Outfit'] text-4xl md:text-5xl font-bold text-[#1A2332] mb-4">Terms of Service</h1>
-          <p className="font-['Outfit'] text-[#64748B]">Last updated: March 2026</p>
+          <h1 className="font-sans text-4xl md:text-5xl font-bold text-[#1A2332] mb-4">Terms of Service</h1>
+          <p className="font-sans text-[#64748B]">Last updated: March 2026</p>
         </div>
 
-        <div className={`bg-white rounded-2xl shadow-lg p-8 md:p-12 space-y-8 font-['Outfit'] text-[#3D3D3D] leading-relaxed ${isRTL ? 'text-right' : ''}`}>
+        <div className={`bg-white rounded-2xl shadow-lg p-8 md:p-12 space-y-8 font-sans text-[#3D3D3D] leading-relaxed ${isRTL ? 'text-right' : ''}`}>
 
           <section>
             <h2 className="text-2xl font-bold text-[#1A2332] mb-4">1. Agreement to Terms</h2>

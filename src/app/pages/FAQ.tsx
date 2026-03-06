@@ -122,7 +122,7 @@ export function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className={`font-['Outfit'] text-lg text-[#0F172A]/60 mb-8 ${isRTL ? 'text-right' : ''}`}
+            className={`font-sans text-lg text-[#0F172A]/60 mb-8 ${isRTL ? 'text-right' : ''}`}
           >
             {t('faq.subtitle')}
           </motion.p>
@@ -174,7 +174,7 @@ export function FAQ() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className={`w-full flex items-center justify-between p-6 text-left hover:bg-[#F0F7F4]/50 transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
-                  <span className={`font-['Outfit'] font-bold text-[#0F172A] text-lg ${isRTL ? 'text-right pr-4' : 'pl-4'}`}>
+                  <span className={`font-sans font-bold text-[#0F172A] text-lg ${isRTL ? 'text-right pr-4' : 'pl-4'}`}>
                     {faq.question}
                   </span>
                   <motion.div
@@ -192,7 +192,7 @@ export function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className={`px-6 pb-6 text-[#0F172A]/70 font-['Outfit'] leading-relaxed border-t border-[#0F172A]/5 pt-4 ${isRTL ? 'text-right' : ''}`}>
+                      <div className={`px-6 pb-6 text-[#0F172A]/70 font-sans leading-relaxed border-t border-[#0F172A]/5 pt-4 ${isRTL ? 'text-right' : ''}`}>
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -264,7 +264,7 @@ export function FAQ() {
                   <h3 className={`font-['Playfair_Display'] text-xl font-bold text-white ${isRTL ? 'text-right' : ''}`}>
                     {t('faq.bookCall')}
                   </h3>
-                  <p className={`text-white/60 text-sm mt-1 font-['Outfit'] ${isRTL ? 'text-right' : ''}`}>
+                  <p className={`text-white/60 text-sm mt-1 font-sans ${isRTL ? 'text-right' : ''}`}>
                     {t('faq.callFormSubtitle')}
                   </p>
                 </div>
@@ -280,14 +280,14 @@ export function FAQ() {
                     <div className="w-16 h-16 bg-[#0D9488]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Calendar className="w-8 h-8 text-[#0D9488]" />
                     </div>
-                    <h4 className="font-['Outfit'] font-bold text-lg text-[#0F172A] mb-2">{t('faq.callFormSuccess')}</h4>
-                    <p className="text-[#0F172A]/60 font-['Outfit'] text-sm">{t('faq.callFormSuccessMsg')}</p>
+                    <h4 className="font-sans font-bold text-lg text-[#0F172A] mb-2">{t('faq.callFormSuccess')}</h4>
+                    <p className="text-[#0F172A]/60 font-sans text-sm">{t('faq.callFormSuccessMsg')}</p>
                   </div>
                 ) : (
                   <form onSubmit={handleCallFormSubmit} className="space-y-4" dir={direction}>
                     {/* Name */}
                     <div>
-                      <label className={`block text-sm font-['Outfit'] font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
+                      <label className={`block text-sm font-sans font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
                         {t('faq.callFormName')}
                       </label>
                       <div className="relative">
@@ -297,7 +297,7 @@ export function FAQ() {
                           required
                           value={callFormData.name}
                           onChange={(e) => setCallFormData({ ...callFormData, name: e.target.value })}
-                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-['Outfit'] text-sm`}
+                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-sans text-sm`}
                           placeholder={t('faq.callFormNamePlaceholder')}
                         />
                       </div>
@@ -305,7 +305,7 @@ export function FAQ() {
 
                     {/* Email */}
                     <div>
-                      <label className={`block text-sm font-['Outfit'] font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
+                      <label className={`block text-sm font-sans font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
                         {t('faq.callFormEmail')}
                       </label>
                       <div className="relative">
@@ -315,7 +315,7 @@ export function FAQ() {
                           required
                           value={callFormData.email}
                           onChange={(e) => setCallFormData({ ...callFormData, email: e.target.value })}
-                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-['Outfit'] text-sm`}
+                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-sans text-sm`}
                           placeholder={t('faq.callFormEmailPlaceholder')}
                         />
                       </div>
@@ -323,7 +323,7 @@ export function FAQ() {
 
                     {/* Phone */}
                     <div>
-                      <label className={`block text-sm font-['Outfit'] font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
+                      <label className={`block text-sm font-sans font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
                         {t('faq.callFormPhone')}
                       </label>
                       <div className="relative">
@@ -333,7 +333,7 @@ export function FAQ() {
                           required
                           value={callFormData.phone}
                           onChange={(e) => setCallFormData({ ...callFormData, phone: e.target.value })}
-                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-['Outfit'] text-sm`}
+                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-sans text-sm`}
                           placeholder={t('faq.callFormPhonePlaceholder')}
                         />
                       </div>
@@ -341,7 +341,7 @@ export function FAQ() {
 
                     {/* Preferred Date */}
                     <div>
-                      <label className={`block text-sm font-['Outfit'] font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
+                      <label className={`block text-sm font-sans font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
                         {t('faq.callFormDate')}
                       </label>
                       <div className="relative">
@@ -351,16 +351,16 @@ export function FAQ() {
                           value={callFormData.preferredDate}
                           onChange={(e) => setCallFormData({ ...callFormData, preferredDate: e.target.value })}
                           min={new Date().toISOString().split('T')[0]}
-                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-['Outfit'] text-sm`}
+                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-sans text-sm`}
                           placeholder={t('faq.callFormDatePlaceholder')}
                         />
                       </div>
-                      <p className={`text-xs text-[#0F172A]/40 mt-1 font-['Outfit'] ${isRTL ? 'text-right' : ''}`}>{t('faq.callFormDateHint')}</p>
+                      <p className={`text-xs text-[#0F172A]/40 mt-1 font-sans ${isRTL ? 'text-right' : ''}`}>{t('faq.callFormDateHint')}</p>
                     </div>
 
                     {/* Preferred Time */}
                     <div>
-                      <label className={`block text-sm font-['Outfit'] font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
+                      <label className={`block text-sm font-sans font-semibold text-[#0F172A] mb-1.5 ${isRTL ? 'text-right' : ''}`}>
                         {t('faq.callFormTime')}
                       </label>
                       <div className="relative">
@@ -369,7 +369,7 @@ export function FAQ() {
                           required
                           value={callFormData.preferredTime}
                           onChange={(e) => setCallFormData({ ...callFormData, preferredTime: e.target.value })}
-                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-['Outfit'] text-sm appearance-none bg-white`}
+                          className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-3 rounded-lg border border-[#0F172A]/10 focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-all font-sans text-sm appearance-none bg-white`}
                         >
                           <option value="">{t('faq.callFormTimePlaceholder')}</option>
                           <option value="asap">{t('faq.callTimeASAP')}</option>
@@ -381,13 +381,13 @@ export function FAQ() {
                     </div>
 
                     {callFormStatus === 'error' && (
-                      <p className="text-red-500 text-sm font-['Outfit']">{t('faq.callFormError')}</p>
+                      <p className="text-red-500 text-sm font-sans">{t('faq.callFormError')}</p>
                     )}
 
                     <button
                       type="submit"
                       disabled={callFormStatus === 'submitting'}
-                      className="w-full bg-[#0D9488] text-white py-3 rounded-lg font-['Outfit'] font-bold hover:bg-[#0F766E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-[#0D9488] text-white py-3 rounded-lg font-sans font-bold hover:bg-[#0F766E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {callFormStatus === 'submitting' ? t('faq.callFormSubmitting') : t('faq.callFormSubmit')}
                     </button>

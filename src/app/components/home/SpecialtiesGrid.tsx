@@ -42,7 +42,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
           <h3 className={cn(
             "text-3xl text-white mb-2",
-            isRTL ? "font-['Amiri']" : "font-['Outfit']"
+            isRTL ? "font-['Amiri']" : "font-sans"
           )}>
             {title}
           </h3>
@@ -59,7 +59,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
             {procedures.map((proc, i) => (
               <li key={i} className={cn(
                 "text-white/80 text-sm flex items-center gap-2",
-                isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['Outfit']"
+                isRTL ? "font-['Cairo'] flex-row-reverse" : "font-sans"
               )}>
                 <span className="w-1 h-1 rounded-full bg-[#0D9488]" />
                 {proc}
@@ -72,7 +72,7 @@ const SpecialtyCard: React.FC<SpecialtyCardProps> = ({ title, image, procedures,
             isRTL && "flex-row-reverse"
           )}>
             <span className={cn(
-              "font-['Space_Mono'] text-[#0D9488] text-lg font-bold",
+              "font-heading text-[#0D9488] text-lg font-bold",
               isRTL && "text-right"
             )}>
               {isRTL ? `من ${price}` : `From ${price}`}
@@ -137,11 +137,11 @@ export const SpecialtiesGrid: React.FC = () => {
 
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <h2 className="font-['Outfit'] text-4xl md:text-5xl text-[#1A2332] font-bold relative inline-block">
+          <h2 className="font-sans text-4xl md:text-5xl text-[#1A2332] font-bold relative inline-block">
             {t("specialties.heading")}
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#0D9488] rounded-full" />
           </h2>
-          <p className="font-['Outfit'] text-[#64748B] max-w-2xl mx-auto text-lg pt-4">
+          <p className="font-sans text-[#64748B] max-w-2xl mx-auto text-lg pt-4">
             {t("specialties.subtitle")}
           </p>
         </div>

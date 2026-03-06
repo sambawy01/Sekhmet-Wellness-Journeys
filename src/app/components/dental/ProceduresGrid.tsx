@@ -88,7 +88,7 @@ export function ProceduresGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
+            className="font-sans text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             Comprehensive dental care using the latest technology and materials, performed by internationally accredited specialists.
           </motion.p>
@@ -114,12 +114,12 @@ export function ProceduresGrid() {
                 </h3>
                 
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="font-['Space_Mono'] text-[#14B8A6] font-bold text-lg">
+                  <span className="font-heading text-[#14B8A6] font-bold text-lg">
                     From {proc.price}
                   </span>
                 </div>
 
-                <p className="font-['Outfit'] text-sm text-[#0F172A]/60 mb-6 flex-grow">
+                <p className="font-sans text-sm text-[#0F172A]/60 mb-6 flex-grow">
                   {proc.description}
                 </p>
 

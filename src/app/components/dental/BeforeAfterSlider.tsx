@@ -63,7 +63,7 @@ export function BeforeAfterSlider() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
+            className="font-sans text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             {t('beforeAfter.subheading')}
           </motion.p>
@@ -122,10 +122,10 @@ export function BeforeAfterSlider() {
             <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-2">
               {t(cases[currentindex].titleKey)}
             </h3>
-            <p className="font-['Outfit'] text-[#0F172A]/60 mb-2 font-medium">
+            <p className="font-sans text-[#0F172A]/60 mb-2 font-medium">
               {t(cases[currentindex].procedureKey)}
             </p>
-            <p className="font-['Outfit'] text-sm text-[#0F172A]/60">
+            <p className="font-sans text-sm text-[#0F172A]/60">
               {t(cases[currentindex].descriptionKey)}
             </p>
           </div>

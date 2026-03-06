@@ -91,7 +91,7 @@ export function TravelGuide() {
             <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
               {t('travel.heroTitle')}
             </h1>
-            <p className="font-['Outfit'] text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
+            <p className="font-sans text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
               {t('travel.heroSubtitle')}
             </p>
           </motion.div>

@@ -54,7 +54,7 @@ export function DestinationHurghada() {
           {/* Title */}
           <h1
             className={cn(
-              "font-['Outfit'] text-6xl md:text-7xl font-bold text-white tracking-tight",
+              "font-sans text-6xl md:text-7xl font-bold text-white tracking-tight",
               isRTL && 'text-right'
             )}
           >
@@ -103,7 +103,7 @@ export function DestinationHurghada() {
         >
           {/* Main Overview Text */}
           <motion.div variants={itemVariants} className={cn('space-y-6', isRTL && 'text-right')}>
-            <h2 className="font-['Outfit'] text-4xl md:text-5xl font-bold text-[#1A2332]">
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#1A2332]">
               {t('dest.hurghada.overviewTitle')}
             </h2>
             <p className="text-lg text-[#4A6B62] leading-relaxed max-w-3xl">
@@ -157,7 +157,7 @@ export function DestinationHurghada() {
                 {t('dest.hurghada.recommended')}
               </span>
             </div>
-            <h2 className="font-['Outfit'] text-4xl md:text-5xl font-bold text-[#1A2332]">
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#1A2332]">
               {t('dest.hurghada.elGounaTitle')}
             </h2>
             <p className="text-lg text-[#4A6B62] leading-relaxed max-w-2xl">
@@ -220,7 +220,7 @@ export function DestinationHurghada() {
                 className="bg-[#F0F7F4] p-6 rounded-lg border border-[#0D9488]/10 hover:shadow-md hover:border-[#0D9488]/30 transition-all"
               >
                 <p className="text-3xl mb-3">{highlight.icon}</p>
-                <h3 className="font-['Outfit'] text-lg font-semibold text-[#1A2332] mb-2">
+                <h3 className="font-sans text-lg font-semibold text-[#1A2332] mb-2">
                   {t(highlight.title)}
                 </h3>
                 <p className="text-sm text-[#4A6B62]">{t(highlight.desc)}</p>
@@ -250,7 +250,7 @@ export function DestinationHurghada() {
                 {t('dest.hurghada.recommended')}
               </span>
             </div>
-            <h2 className="font-['Outfit'] text-4xl md:text-5xl font-bold text-[#1A2332]">
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#1A2332]">
               {t('dest.hurghada.somaBayTitle')}
             </h2>
             <p className="text-lg text-[#4A6B62] leading-relaxed max-w-2xl">
@@ -309,7 +309,7 @@ export function DestinationHurghada() {
                 )}
               >
                 <p className="text-3xl mb-3">{highlight.icon}</p>
-                <h3 className="font-['Outfit'] text-lg font-semibold text-[#1A2332] mb-2">
+                <h3 className="font-sans text-lg font-semibold text-[#1A2332] mb-2">
                   {t(highlight.title)}
                 </h3>
                 <p className="text-sm text-[#4A6B62]">{t(highlight.desc)}</p>
@@ -334,7 +334,7 @@ export function DestinationHurghada() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className={cn('space-y-4', isRTL && 'text-right')}>
-            <h2 className="font-['Outfit'] text-4xl md:text-5xl font-bold text-[#1A2332]">
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#1A2332]">
               {t('dest.hurghada.activitiesTitle')}
             </h2>
             <p className="text-lg text-[#4A6B62] max-w-2xl">
@@ -369,7 +369,7 @@ export function DestinationHurghada() {
                 <p className="text-4xl mb-4 group-hover:scale-110 transition-transform">
                   {activity.icon}
                 </p>
-                <h3 className="font-['Outfit'] text-lg font-semibold text-[#1A2332]">
+                <h3 className="font-sans text-lg font-semibold text-[#1A2332]">
                   {t(activity.title)}
                 </h3>
               </motion.div>
@@ -393,7 +393,7 @@ export function DestinationHurghada() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className={cn('space-y-4', isRTL && 'text-right')}>
-            <h2 className="font-['Outfit'] text-4xl md:text-5xl font-bold text-[#1A2332]">
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#1A2332]">
               {t('dest.hurghada.hotelsTitle')}
             </h2>
           </motion.div>
@@ -425,7 +425,7 @@ export function DestinationHurghada() {
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-2xl">✨</span>
                     <div className={isRTL ? 'text-right' : ''}>
-                      <h4 className="font-['Outfit'] font-semibold text-[#1A2332]">
+                      <h4 className="font-sans font-semibold text-[#1A2332]">
                         {t(hotel.name)}
                       </h4>
                       <p className="text-sm text-[#4A6B62] mt-1">{t(hotel.desc)}</p>
@@ -462,7 +462,7 @@ export function DestinationHurghada() {
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-2xl">✨</span>
                     <div className={isRTL ? 'text-right' : ''}>
-                      <h4 className="font-['Outfit'] font-semibold text-[#1A2332]">
+                      <h4 className="font-sans font-semibold text-[#1A2332]">
                         {t(hotel.name)}
                       </h4>
                       <p className="text-sm text-[#4A6B62] mt-1">{t(hotel.desc)}</p>
@@ -489,7 +489,7 @@ export function DestinationHurghada() {
           className="space-y-8"
         >
           <motion.div variants={itemVariants} className={cn('space-y-4', isRTL && 'text-right')}>
-            <h3 className="font-['Outfit'] text-2xl font-semibold text-[#4A6B62]">
+            <h3 className="font-sans text-2xl font-semibold text-[#4A6B62]">
               {t('dest.hurghada.medicalTitle')}
             </h3>
             <p className="text-base text-[#4A6B62] leading-relaxed max-w-2xl">
@@ -518,7 +518,7 @@ export function DestinationHurghada() {
           className="space-y-6"
         >
           <motion.div variants={itemVariants} className="space-y-4">
-            <h2 className="font-['Outfit'] text-3xl md:text-4xl font-bold text-white">
+            <h2 className="font-sans text-3xl md:text-4xl font-bold text-white">
               {t('dest.hurghada.ctaTitle')}
             </h2>
             <p className="text-lg text-[#E8F2F0]">

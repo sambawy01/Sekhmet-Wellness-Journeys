@@ -27,7 +27,7 @@ export function HollywoodHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className={cn("flex items-center gap-2 text-sm md:text-base mb-6 text-[#F9F6F0]/80 font-['Outfit']", isRTL && "flex-row-reverse")}
+          className={cn("flex items-center gap-2 text-sm md:text-base mb-6 text-[#F9F6F0]/80 font-sans", isRTL && "flex-row-reverse")}
         >
           <Link to="/" className="hover:text-[#C5A059] transition-colors">{t('hollywood.breadcrumb.home')}</Link>
           <ChevronRight className="w-4 h-4" />
@@ -51,7 +51,7 @@ export function HollywoodHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-['Outfit'] text-lg md:text-xl text-[#C5A059] max-w-2xl"
+          className="font-sans text-lg md:text-xl text-[#C5A059] max-w-2xl"
         >
           {t('hollywood.subtitle')}
         </motion.p>

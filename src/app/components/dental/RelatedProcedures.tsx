@@ -32,7 +32,7 @@ export function RelatedProcedures() {
                 <proc.icon className="w-6 h-6" />
               </div>
               <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#0F172A] mb-2">{proc.title}</h3>
-              <p className="font-['Space_Mono'] text-[#14B8A6] font-bold mb-2">From {proc.price}</p>
+              <p className="font-heading text-[#14B8A6] font-bold mb-2">From {proc.price}</p>
               <p className="text-sm text-[#0F172A]/60 mb-4">{proc.desc}</p>
               <Button asChild variant="ghost" className="w-full justify-between hover:bg-[#F0F7F4] hover:text-[#C5A059]">
                 <Link to={proc.link}>Learn More <ArrowRight className="w-4 h-4" /></Link>

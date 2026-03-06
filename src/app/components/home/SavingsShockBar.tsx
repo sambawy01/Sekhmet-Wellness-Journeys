@@ -18,11 +18,11 @@ export const SavingsShockBar: React.FC = () => {
           
           {/* Column 1 */}
           <div className="flex flex-col items-center justify-center p-4 group hover:bg-white/5 transition-colors rounded-xl">
-            <span className="font-['Outfit'] text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">Dental Implant</span>
+            <span className="font-sans text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">Dental Implant</span>
             <div className="flex items-baseline gap-3 mb-2">
-              <span className="font-['Space_Mono'] text-3xl font-bold text-white">$350</span>
-              <span className="font-['Outfit'] text-white/40 text-sm">vs</span>
-              <span className="font-['Space_Mono'] text-lg text-[#64748B] line-through decoration-[#D4764E]">$3,500</span>
+              <span className="font-heading text-3xl font-bold text-white">$350</span>
+              <span className="font-sans text-white/40 text-sm">vs</span>
+              <span className="font-heading text-lg text-[#64748B] line-through decoration-[#D4764E]">$3,500</span>
             </div>
             <div className="bg-[#D4764E] text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-wide shadow-lg shadow-[#D4764E]/20">
               SAVE 90%
@@ -31,11 +31,11 @@ export const SavingsShockBar: React.FC = () => {
           
           {/* Column 2 */}
           <div className="flex flex-col items-center justify-center p-4 group hover:bg-white/5 transition-colors rounded-xl">
-            <span className="font-['Outfit'] text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">LASIK (Both Eyes)</span>
+            <span className="font-sans text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">LASIK (Both Eyes)</span>
             <div className="flex items-baseline gap-3 mb-2">
-              <span className="font-['Space_Mono'] text-3xl font-bold text-white">$550</span>
-              <span className="font-['Outfit'] text-white/40 text-sm">vs</span>
-              <span className="font-['Space_Mono'] text-lg text-[#64748B] line-through decoration-[#D4764E]">$5,000</span>
+              <span className="font-heading text-3xl font-bold text-white">$550</span>
+              <span className="font-sans text-white/40 text-sm">vs</span>
+              <span className="font-heading text-lg text-[#64748B] line-through decoration-[#D4764E]">$5,000</span>
             </div>
             <div className="bg-[#D4764E] text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-wide shadow-lg shadow-[#D4764E]/20">
               SAVE 89%
@@ -44,11 +44,11 @@ export const SavingsShockBar: React.FC = () => {
           
           {/* Column 3 */}
           <div className="flex flex-col items-center justify-center p-4 group hover:bg-white/5 transition-colors rounded-xl">
-            <span className="font-['Outfit'] text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">Rhinoplasty</span>
+            <span className="font-sans text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">Rhinoplasty</span>
             <div className="flex items-baseline gap-3 mb-2">
-              <span className="font-['Space_Mono'] text-3xl font-bold text-white">$3,000</span>
-              <span className="font-['Outfit'] text-white/40 text-sm">vs</span>
-              <span className="font-['Space_Mono'] text-lg text-[#64748B] line-through decoration-[#D4764E]">$12,000</span>
+              <span className="font-heading text-3xl font-bold text-white">$3,000</span>
+              <span className="font-sans text-white/40 text-sm">vs</span>
+              <span className="font-heading text-lg text-[#64748B] line-through decoration-[#D4764E]">$12,000</span>
             </div>
             <div className="bg-[#D4764E] text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-wide shadow-lg shadow-[#D4764E]/20">
               SAVE 75%
@@ -57,17 +57,17 @@ export const SavingsShockBar: React.FC = () => {
           
           {/* Column 4 */}
           <div className="flex flex-col items-center justify-center p-4 group hover:bg-white/5 transition-colors rounded-xl relative">
-            <span className="font-['Outfit'] text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">IVF Cycle</span>
+            <span className="font-sans text-[#0D9488] text-[13px] uppercase tracking-wider mb-2 font-bold">IVF Cycle</span>
             <div className="flex items-baseline gap-3 mb-2">
-              <span className="font-['Space_Mono'] text-3xl font-bold text-white">$2,500</span>
-              <span className="font-['Outfit'] text-white/40 text-sm">vs</span>
-              <span className="font-['Space_Mono'] text-lg text-[#64748B] line-through decoration-[#D4764E]">$6,500</span>
+              <span className="font-heading text-3xl font-bold text-white">$2,500</span>
+              <span className="font-sans text-white/40 text-sm">vs</span>
+              <span className="font-heading text-lg text-[#64748B] line-through decoration-[#D4764E]">$6,500</span>
             </div>
             <div className="bg-[#D4764E] text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-wide shadow-lg shadow-[#D4764E]/20 mb-4">
               SAVE 62%
             </div>
             
-            <Link to="/pricing" className="absolute -right-4 top-1/2 -translate-y-1/2 hidden xl:flex items-center gap-2 text-[#0D9488] hover:text-white transition-colors font-['Outfit'] text-sm font-medium pr-8 pl-4 py-2 border-l border-[#0D9488]/20">
+            <Link to="/pricing" className="absolute -right-4 top-1/2 -translate-y-1/2 hidden xl:flex items-center gap-2 text-[#0D9488] hover:text-white transition-colors font-sans text-sm font-medium pr-8 pl-4 py-2 border-l border-[#0D9488]/20">
               See All Prices <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -75,7 +75,7 @@ export const SavingsShockBar: React.FC = () => {
         </div>
         
         <div className="flex xl:hidden justify-center mt-8 col-span-2">
-            <Link to="/pricing" className="flex items-center gap-2 text-[#0D9488] hover:text-white transition-colors font-['Outfit'] text-sm font-medium px-6 py-3 border border-[#0D9488]/30 rounded-full hover:bg-[#0D9488]/10">
+            <Link to="/pricing" className="flex items-center gap-2 text-[#0D9488] hover:text-white transition-colors font-sans text-sm font-medium px-6 py-3 border border-[#0D9488]/30 rounded-full hover:bg-[#0D9488]/10">
               See All Prices <ArrowRight className="w-4 h-4" />
             </Link>
         </div>

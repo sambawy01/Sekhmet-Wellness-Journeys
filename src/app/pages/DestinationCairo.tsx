@@ -281,7 +281,7 @@ export function DestinationCairo() {
   const isRTL = direction === 'rtl';
 
   return (
-    <div className="min-h-screen bg-[#F0F7F4] font-['Outfit']">
+    <div className="min-h-screen bg-[#F0F7F4] font-sans">
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden">
         <div

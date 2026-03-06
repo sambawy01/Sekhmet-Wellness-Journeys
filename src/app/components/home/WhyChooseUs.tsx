@@ -19,11 +19,11 @@ const FeatureBlock = ({ icon: Icon, titleKey, descKey, delay }: { icon: any, tit
         <Icon className="w-7 h-7 text-[#0D9488] group-hover:text-white transition-colors" />
       </div>
       
-      <h3 className={cn("font-['Outfit'] text-xl font-bold text-[#1A2332] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "font-['Cairo']")}>
+      <h3 className={cn("font-sans text-xl font-bold text-[#1A2332] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "font-['Cairo']")}>
         {t(titleKey)}
       </h3>
       
-      <p className={cn("font-['Outfit'] text-[#3D3D3D] leading-relaxed text-[15px]", isRTL && "font-['Cairo']")}>
+      <p className={cn("font-sans text-[#3D3D3D] leading-relaxed text-[15px]", isRTL && "font-['Cairo']")}>
         {t(descKey)}
       </p>
     </div>
@@ -76,7 +76,7 @@ export const WhyChooseUs: React.FC = () => {
 
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
         <div className="text-center mb-16">
-          <h2 className={cn("font-['Outfit'] text-4xl font-bold text-[#1A2332] relative inline-block", isRTL && "font-['Amiri']")}>
+          <h2 className={cn("font-sans text-4xl font-bold text-[#1A2332] relative inline-block", isRTL && "font-['Amiri']")}>
             {t("whyUs.heading")}
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#0D9488]" />
           </h2>

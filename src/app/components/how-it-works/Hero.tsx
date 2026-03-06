@@ -38,21 +38,21 @@ export function Hero() {
             {t('hiw.hero.heading')} <span className="text-[#C5A059]">Sekhmet</span>
           </h1>
 
-          <p className="font-['Outfit'] text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl">
+          <p className="font-sans text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl">
             {t('hiw.hero.description')}
           </p>
 
           <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <Link
               to="/consultation"
-              className={`inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#B08D55] text-white rounded-full px-8 py-4 text-lg font-['Outfit'] font-bold transition-all duration-300 shadow-lg hover:shadow-xl ${isRTL ? 'flex-row-reverse' : ''}`}
+              className={`inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#B08D55] text-white rounded-full px-8 py-4 text-lg font-sans font-bold transition-all duration-300 shadow-lg hover:shadow-xl ${isRTL ? 'flex-row-reverse' : ''}`}
             >
               {t('hiw.hero.ctaButton')}
               <ArrowRight className="w-5 h-5" />
             </Link>
             <button
               onClick={scrollToTimeline}
-              className={`inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0F172A] rounded-full px-8 py-4 text-lg font-['Outfit'] font-bold transition-all duration-300 ${isRTL ? 'flex-row-reverse' : ''}`}
+              className={`inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0F172A] rounded-full px-8 py-4 text-lg font-sans font-bold transition-all duration-300 ${isRTL ? 'flex-row-reverse' : ''}`}
             >
               {t('hiw.hero.secondaryButton')}
               <ArrowDown className="w-5 h-5" />

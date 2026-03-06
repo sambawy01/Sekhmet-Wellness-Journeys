@@ -50,10 +50,10 @@ export function DentalStats() {
                 <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-1">
                   {stat.value}
                 </h3>
-                <p className="font-['Outfit'] text-sm font-semibold text-[#C5A059] uppercase tracking-wide mb-1">
+                <p className="font-sans text-sm font-semibold text-[#C5A059] uppercase tracking-wide mb-1">
                   {stat.label}
                 </p>
-                <p className="font-['Outfit'] text-sm text-[#0F172A]/60">
+                <p className="font-sans text-sm text-[#0F172A]/60">
                   {stat.description}
                 </p>
               </div>

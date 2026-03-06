@@ -49,20 +49,20 @@ const ColorSwatch: React.FC<{
       {/* Info */}
       <div className="text-center flex flex-col items-center gap-2 h-[100px]">
         <h3 className="font-['Playfair_Display'] font-bold text-xl text-[#0F172A]">{name}</h3>
-        <p className="font-['Space_Mono'] text-sm text-[#0F172A]/70 uppercase tracking-widest">{hex}</p>
-        <p className="font-['Outfit'] text-xs text-[#0F172A]/60 max-w-[160px] leading-relaxed italic">{role}</p>
+        <p className="font-heading text-sm text-[#0F172A]/70 uppercase tracking-widest">{hex}</p>
+        <p className="font-sans text-xs text-[#0F172A]/60 max-w-[160px] leading-relaxed italic">{role}</p>
       </div>
 
       {/* Tints */}
       <div className="flex flex-col gap-3 w-full items-center mt-2">
-        <div className="text-xs font-['Space_Mono'] text-[#0F172A]/30 tracking-widest mb-1">TINTS</div>
+        <div className="text-xs font-heading text-[#0F172A]/30 tracking-widest mb-1">TINTS</div>
         {[0.8, 0.5, 0.2].map((opacity) => (
           <div key={opacity} className="flex items-center gap-4 w-full justify-center group/tint">
              <div 
               className="w-16 h-8 rounded-full shadow-sm ring-1 ring-black/5 transition-transform group-hover/tint:scale-110"
               style={{ backgroundColor: hex, opacity }} 
             />
-            <span className="font-['Space_Mono'] text-xs text-[#0F172A]/40 w-8 text-left">
+            <span className="font-heading text-xs text-[#0F172A]/40 w-8 text-left">
               {opacity * 100}%
             </span>
           </div>
@@ -77,7 +77,7 @@ export const ColorPalette: React.FC = () => {
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
         <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Brand Color Palette</h2>
-        <p className="font-['Outfit'] text-[#A89F8E]">Primary, secondary & functional colors</p>
+        <p className="font-sans text-[#A89F8E]">Primary, secondary & functional colors</p>
       </div>
       <div className="flex flex-wrap justify-center gap-x-12 gap-y-20">
         {colors.map((color, index) => (

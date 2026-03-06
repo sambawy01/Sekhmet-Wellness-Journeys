@@ -25,7 +25,7 @@ export function ComparisonTable() {
           <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">
             {t('hiw.comparison.heading')}
           </h2>
-          <p className="font-['Outfit'] text-lg text-[#0F172A]/60">
+          <p className="font-sans text-lg text-[#0F172A]/60">
             {t('hiw.comparison.subtitle')}
           </p>
         </div>
@@ -37,13 +37,13 @@ export function ComparisonTable() {
                 <th className={`p-4 font-['Playfair_Display'] text-xl font-bold text-[#0F172A] ${isRTL ? 'text-right' : 'text-left'}`}>
                   {t('hiw.comparison.featureHeader')}
                 </th>
-                <th className="p-4 bg-[#F0F7F4] text-center font-['Space_Mono'] text-lg font-bold text-[#C5A059] rounded-t-xl border-t-4 border-[#C5A059]">
+                <th className="p-4 bg-[#F0F7F4] text-center font-heading text-lg font-bold text-[#C5A059] rounded-t-xl border-t-4 border-[#C5A059]">
                   {t('hiw.comparison.column1')}
                 </th>
-                <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F172A]/60">
+                <th className="p-4 text-center font-heading text-lg font-bold text-[#0F172A]/60">
                   {t('hiw.comparison.column2')}
                 </th>
-                <th className="p-4 text-center font-['Space_Mono'] text-lg font-bold text-[#0F172A]/60">
+                <th className="p-4 text-center font-heading text-lg font-bold text-[#0F172A]/60">
                   {t('hiw.comparison.column3')}
                 </th>
               </tr>
@@ -58,7 +58,7 @@ export function ComparisonTable() {
                   transition={{ delay: index * 0.05 }}
                   className="border-b border-[#0F172A]/10 hover:bg-[#F0F7F4]/50 transition-colors"
                 >
-                  <td className={`p-4 font-['Outfit'] text-[#0F172A] font-medium ${isRTL ? 'text-right' : ''}`}>
+                  <td className={`p-4 font-sans text-[#0F172A] font-medium ${isRTL ? 'text-right' : ''}`}>
                     {t(feature.nameKey)}
                   </td>
 

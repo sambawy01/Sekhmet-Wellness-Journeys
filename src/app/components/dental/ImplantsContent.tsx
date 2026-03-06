@@ -24,10 +24,10 @@ export function ImplantsContent() {
               <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-6">
                 Restore Your Smile with Premium Dental Implants
               </h2>
-              <p className="font-['Outfit'] text-lg text-[#0F172A]/70 leading-relaxed mb-6">
+              <p className="font-sans text-lg text-[#0F172A]/70 leading-relaxed mb-6">
                 Dental implants are the gold standard for replacing missing teeth. Unlike dentures or bridges, implants are surgically placed into the jawbone, providing a permanent, stable foundation for artificial teeth that look, feel, and function just like natural ones.
               </p>
-              <p className="font-['Outfit'] text-lg text-[#0F172A]/70 leading-relaxed mb-6">
+              <p className="font-sans text-lg text-[#0F172A]/70 leading-relaxed mb-6">
                 At Sekhmet Wellness, we partner with Egypt’s leading implantologists who use only FDA-approved, top-tier implant systems from Switzerland and Germany (Straumann, Nobel Biocare). By choosing Egypt, you access the same world-class materials and expertise available in the UK or US, but at a fraction of the cost.
               </p>
             </motion.div>
@@ -57,7 +57,7 @@ export function ImplantsContent() {
                     <div className="w-5 h-5 bg-[#14B8A6] rounded-full flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-['Outfit'] text-[#0F172A]/80">{item}</span>
+                    <span className="font-sans text-[#0F172A]/80">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -75,7 +75,7 @@ export function ImplantsContent() {
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-['Space_Mono']">1</div>
+                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-heading">1</div>
                     <div className="w-0.5 h-full bg-[#C5A059]/20 my-2"></div>
                   </div>
                   <div>
@@ -85,7 +85,7 @@ export function ImplantsContent() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-['Space_Mono']">2</div>
+                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-heading">2</div>
                     <div className="w-0.5 h-full bg-[#C5A059]/20 my-2"></div>
                   </div>
                   <div>
@@ -95,7 +95,7 @@ export function ImplantsContent() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-['Space_Mono']">3</div>
+                    <div className="w-8 h-8 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold font-heading">3</div>
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-[#0F172A] mb-1">Second Visit (5–7 Days)</h4>
@@ -117,7 +117,7 @@ export function ImplantsContent() {
                 </h3>
                 
                 <div className="mb-6">
-                  <label className="block text-sm font-['Outfit'] mb-2 text-white/80">Number of Implants</label>
+                  <label className="block text-sm font-sans mb-2 text-white/80">Number of Implants</label>
                   <input 
                     type="range" 
                     min="1" 
@@ -145,7 +145,7 @@ export function ImplantsContent() {
                   <div className="h-[1px] w-full bg-white/10 my-3"></div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold text-[#C5A059]">You Save:</span>
-                    <span className="font-['Space_Mono'] font-bold text-2xl text-[#C5A059]">
+                    <span className="font-heading font-bold text-2xl text-[#C5A059]">
                       ${(implantCount * (ukPrice - implantPrice)).toLocaleString()}
                     </span>
                   </div>

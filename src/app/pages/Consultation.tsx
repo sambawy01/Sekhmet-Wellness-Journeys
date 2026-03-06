@@ -157,7 +157,7 @@ export function Consultation() {
              <CheckCircle className="w-12 h-12 text-[#14B8A6]" />
           </div>
           <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">{t('consultation.requestReceived')}</h2>
-          <p className={cn("font-['Outfit'] text-xl text-[#0F172A]/70 mb-8", isRTL && "text-right")}>
+          <p className={cn("font-sans text-xl text-[#0F172A]/70 mb-8", isRTL && "text-right")}>
             {t('consultation.thankYou').replace('{name}', formData.name).replace('{method}', formData.contactMethod)}
           </p>
           <div className={cn("flex flex-col sm:flex-row justify-center gap-4", isRTL && "flex-row-reverse")}>
@@ -184,7 +184,7 @@ export function Consultation() {
           <h1 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0F172A] mb-2">
             {t('consultation.startJourney')}
           </h1>
-          <p className="font-['Outfit'] text-[#0F172A]/60">
+          <p className="font-sans text-[#0F172A]/60">
             {t('consultation.tellUsNeeds')}
           </p>
         </div>

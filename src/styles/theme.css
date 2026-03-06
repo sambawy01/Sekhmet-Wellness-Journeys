@@ -119,6 +119,9 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-heading: 'Syne', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
 }
 
 @keyframes accordion-down {
@@ -149,53 +152,72 @@
     font-size: var(--font-size);
   }
 
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+  }
+
   h1 {
     font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
   }
 
   h2 {
     font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.2em;
   }
 
   h3 {
     font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.15em;
   }
 
   h4 {
     font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.15em;
+  }
+
+  h5, h6 {
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
   }
 
   label {
+    font-family: var(--font-sans);
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
   }
 
   button {
+    font-family: var(--font-heading);
     font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
+    font-weight: 600;
     line-height: 1.5;
+    letter-spacing: 0.05em;
   }
 
-  input {
+  input, textarea, select {
+    font-family: var(--font-sans);
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+
+  nav a, nav button {
+    font-family: var(--font-heading);
   }
 }

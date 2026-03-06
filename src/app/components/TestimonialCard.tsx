@@ -49,14 +49,14 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
           ))}
         </div>
         
-        <p className="font-['Outfit'] text-[15px] italic text-[#3D3D3D] leading-relaxed mb-4 line-clamp-3">
+        <p className="font-sans text-[15px] italic text-[#3D3D3D] leading-relaxed mb-4 line-clamp-3">
           "{quote}"
         </p>
         
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
-            <span className="font-['Outfit'] font-bold text-[14px] text-[#0F172A]">{name}</span>
-            <span className="text-xs text-[#A89F8E] font-['Space_Mono']">{country}</span>
+            <span className="font-sans font-bold text-[14px] text-[#0F172A]">{name}</span>
+            <span className="text-xs text-[#A89F8E] font-heading">{country}</span>
           </div>
           
           <div className="inline-flex">
@@ -75,7 +75,7 @@ export const TestimonialShowcase: React.FC = () => {
     <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-8">
       <div className="border-b border-[#0F172A]/10 pb-4">
         <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Patient Stories</h2>
-        <p className="font-['Outfit'] text-[#A89F8E]">Trusted by thousands worldwide</p>
+        <p className="font-sans text-[#A89F8E]">Trusted by thousands worldwide</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">

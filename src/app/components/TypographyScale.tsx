@@ -5,12 +5,12 @@ export const TypographyScale: React.FC = () => {
     <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
         <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Typography Scale</h2>
-        <p className="font-['Outfit'] text-[#A89F8E]">System font hierarchy</p>
+        <p className="font-sans text-[#A89F8E]">System font hierarchy</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         {/* H1 */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           H1 Headline • 56px
         </div>
         <div className="md:col-span-9">
@@ -20,7 +20,7 @@ export const TypographyScale: React.FC = () => {
         </div>
 
         {/* H2 */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           H2 Title • 36px
         </div>
         <div className="md:col-span-9">
@@ -30,7 +30,7 @@ export const TypographyScale: React.FC = () => {
         </div>
 
         {/* H3 */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           H3 Subtitle • 28px
         </div>
         <div className="md:col-span-9">
@@ -40,7 +40,7 @@ export const TypographyScale: React.FC = () => {
         </div>
 
         {/* H4 */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           H4 Accent • 22px
         </div>
         <div className="md:col-span-9">
@@ -50,11 +50,11 @@ export const TypographyScale: React.FC = () => {
         </div>
 
         {/* Body */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           Body • 16px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['Outfit'] text-[16px] leading-relaxed text-[#3D3D3D] max-w-2xl">
+          <p className="font-sans text-[16px] leading-relaxed text-[#3D3D3D] max-w-2xl">
             Experience world-class medical treatments in the heart of Egypt. 
             Our concierge service handles every detail of your journey, blending 
             cutting-edge healthcare with cultural immersion.
@@ -62,43 +62,43 @@ export const TypographyScale: React.FC = () => {
         </div>
 
         {/* Small */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           Small • 14px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['Outfit'] text-[14px] leading-relaxed text-[#A89F8E]">
+          <p className="font-sans text-[14px] leading-relaxed text-[#A89F8E]">
             *Consultation required prior to booking confirmation. Terms apply.
           </p>
         </div>
 
         {/* Caption */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           Caption • 12px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['Outfit'] text-[12px] leading-tight text-[#A89F8E] uppercase tracking-wide">
+          <p className="font-sans text-[12px] leading-tight text-[#A89F8E] uppercase tracking-wide">
             Fig 1.2 — Treatment Facility Interior
           </p>
         </div>
 
         {/* Button Text */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           Button • 15px
         </div>
         <div className="md:col-span-9">
           <div className="inline-block bg-[#0F172A] text-white px-6 py-3 rounded">
-            <span className="font-['Outfit'] font-bold text-[15px] uppercase tracking-wider">
+            <span className="font-sans font-bold text-[15px] uppercase tracking-wider">
               Book Consultation
             </span>
           </div>
         </div>
 
         {/* Price Display */}
-        <div className="md:col-span-3 font-['Space_Mono'] text-xs text-[#A89F8E] uppercase tracking-widest">
+        <div className="md:col-span-3 font-heading text-xs text-[#A89F8E] uppercase tracking-widest">
           Price Display • 32px
         </div>
         <div className="md:col-span-9">
-          <p className="font-['Space_Mono'] font-bold text-[32px] text-[#14B8A6]">
+          <p className="font-heading font-bold text-[32px] text-[#14B8A6]">
             $2,450
           </p>
         </div>

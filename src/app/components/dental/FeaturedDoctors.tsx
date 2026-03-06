@@ -66,7 +66,7 @@ export function FeaturedDoctors() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl"
+              className="font-sans text-lg text-[#0F172A]/60 max-w-2xl"
             >
               Expertly trained in the UK, US, and Europe, our dental team delivers world-class care.
             </motion.p>

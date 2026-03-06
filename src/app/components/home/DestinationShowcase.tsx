@@ -18,7 +18,7 @@ const DestinationCard = ({
     
     <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2 text-white">
       <Sun className="w-4 h-4 text-[#0D9488]" />
-      <span className="font-['Outfit'] text-sm font-medium">{temp}</span>
+      <span className="font-sans text-sm font-medium">{temp}</span>
     </div>
 
     <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end h-full">
@@ -27,19 +27,19 @@ const DestinationCard = ({
           {badge}
         </div>
         
-        <h3 className="font-['Outfit'] text-4xl text-white mb-2">{city}</h3>
+        <h3 className="font-sans text-4xl text-white mb-2">{city}</h3>
         <div className="h-1 w-12 bg-[#0D9488] mb-6 group-hover:w-24 transition-all duration-500" />
         
         <div className="space-y-2 mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
           {highlights.map((h, i) => (
-            <div key={i} className="flex items-center gap-2 text-white/90 font-['Outfit'] text-sm">
+            <div key={i} className="flex items-center gap-2 text-white/90 font-sans text-sm">
               <MapPin className="w-3 h-3 text-[#0D9488]" />
               {h}
             </div>
           ))}
         </div>
         
-        <button className="flex items-center gap-2 text-[#0D9488] group-hover:text-white transition-colors font-['Outfit'] font-medium text-lg group/btn">
+        <button className="flex items-center gap-2 text-[#0D9488] group-hover:text-white transition-colors font-sans font-medium text-lg group/btn">
           Explore {city} <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
         </button>
       </div>
@@ -60,7 +60,7 @@ export const DestinationShowcase: React.FC = () => {
 
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-['Outfit'] text-4xl md:text-5xl text-white font-bold relative inline-block">
+          <h2 className="font-sans text-4xl md:text-5xl text-white font-bold relative inline-block">
             Where Will You Heal?
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#0D9488]" />
           </h2>

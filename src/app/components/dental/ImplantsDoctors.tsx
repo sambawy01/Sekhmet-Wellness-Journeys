@@ -46,7 +46,7 @@ export function ImplantsDoctors() {
             <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-2">
               Meet Your Implant Specialists
             </h2>
-            <p className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl">
+            <p className="font-sans text-lg text-[#0F172A]/60 max-w-2xl">
               Leaders in the field of implantology with international certifications.
             </p>
           </div>

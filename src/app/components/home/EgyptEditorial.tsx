@@ -19,7 +19,7 @@ export const EgyptEditorial: React.FC = () => {
           
           <div className="absolute bottom-0 left-0 w-full p-12 md:p-24 text-center">
             <h2 
-              className="font-['Outfit'] text-5xl md:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-in-up"
+              className="font-sans text-5xl md:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-in-up"
               style={{ animationFillMode: 'forwards' }}
             >
               Where Healing Began
@@ -43,12 +43,12 @@ export const EgyptEditorial: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-[#F0F7F4] border border-[#0D9488] flex items-center justify-center">
                 <IconAnkh className="w-6 h-6 text-[#0D9488]" />
               </div>
-              <h3 className="font-['Outfit'] text-2xl text-[#1A2332]">5,000 Years of Medicine</h3>
+              <h3 className="font-sans text-2xl text-[#1A2332]">5,000 Years of Medicine</h3>
             </div>
-            <p className="font-['Outfit'] text-[#3D3D3D] leading-relaxed">
+            <p className="font-sans text-[#3D3D3D] leading-relaxed">
               From the Edwin Smith Papyrus to modern surgery, Egypt has been the cradle of medical innovation. We continue this legacy today.
             </p>
-            <div className="flex items-center gap-3 text-[#64748B] text-sm font-['Space_Mono'] pt-4 border-t border-[#0D9488]/10">
+            <div className="flex items-center gap-3 text-[#64748B] text-sm font-heading pt-4 border-t border-[#0D9488]/10">
               <ScrollText className="w-4 h-4" />
               <span>Edwin Smith Papyrus, c. 1600 BCE</span>
             </div>
@@ -66,8 +66,8 @@ export const EgyptEditorial: React.FC = () => {
                />
                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
             </div>
-            <h3 className="font-['Outfit'] text-2xl text-[#1A2332]">Modern Excellence</h3>
-            <p className="font-['Outfit'] text-[#3D3D3D] leading-relaxed">
+            <h3 className="font-sans text-2xl text-[#1A2332]">Modern Excellence</h3>
+            <p className="font-sans text-[#3D3D3D] leading-relaxed">
               11 JCI-accredited hospitals. Surgeons trained at the Royal College, Cleveland Clinic, and Stanford, returning to practice in state-of-the-art facilities.
             </p>
           </div>
@@ -77,12 +77,12 @@ export const EgyptEditorial: React.FC = () => {
             className="bg-white p-8 rounded-2xl shadow-sm border border-[#0D9488]/10 opacity-0 animate-fade-in-up"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <h3 className="font-['Outfit'] text-2xl text-[#1A2332] mb-6">Perfect Healing Climate</h3>
+            <h3 className="font-sans text-2xl text-[#1A2332] mb-6">Perfect Healing Climate</h3>
             
             <div className="space-y-6">
               {/* Jan Comparison */}
               <div className="space-y-2">
-                <div className="flex justify-between text-xs font-['Outfit'] text-[#888] uppercase tracking-wide">
+                <div className="flex justify-between text-xs font-sans text-[#888] uppercase tracking-wide">
                   <span>London (Jan)</span>
                   <span>Cairo (Jan)</span>
                 </div>
@@ -96,7 +96,7 @@ export const EgyptEditorial: React.FC = () => {
                   </div>
                   <Sun className="w-4 h-4 text-[#0D9488]" />
                 </div>
-                <div className="flex justify-between font-['Space_Mono'] text-sm font-bold">
+                <div className="flex justify-between font-heading text-sm font-bold">
                   <span className="text-gray-500">5°C</span>
                   <span className="text-[#0D9488]">24°C</span>
                 </div>
@@ -104,7 +104,7 @@ export const EgyptEditorial: React.FC = () => {
 
               {/* July Comparison */}
                <div className="space-y-2">
-                <div className="flex justify-between text-xs font-['Outfit'] text-[#888] uppercase tracking-wide">
+                <div className="flex justify-between text-xs font-sans text-[#888] uppercase tracking-wide">
                   <span>London (Jul)</span>
                   <span>Cairo (Jul)</span>
                 </div>
@@ -118,14 +118,14 @@ export const EgyptEditorial: React.FC = () => {
                   </div>
                   <Sun className="w-4 h-4 text-[#0D9488]" />
                 </div>
-                <div className="flex justify-between font-['Space_Mono'] text-sm font-bold">
+                <div className="flex justify-between font-heading text-sm font-bold">
                   <span className="text-gray-500">18°C</span>
                   <span className="text-[#0D9488]">35°C</span>
                 </div>
               </div>
 
               <div className="pt-6 border-t border-[#F8FAFB] mt-4">
-                 <div className="flex items-center gap-2 text-[#1A2332] text-sm font-['Outfit'] font-medium">
+                 <div className="flex items-center gap-2 text-[#1A2332] text-sm font-sans font-medium">
                    <Clock className="w-4 h-4 text-[#0D9488]" />
                    <span>Flight Time: London 4.5h • Dubai 3.5h</span>
                  </div>

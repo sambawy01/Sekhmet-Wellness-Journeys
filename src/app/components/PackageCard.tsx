@@ -48,7 +48,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
         {/* Tier Badge */}
         <div className={cn(
           `absolute top-4 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md ${tierColor}`,
-          isRTL ? "left-4 font-['Cairo']" : "right-4 font-['Outfit']"
+          isRTL ? "left-4 font-['Cairo']" : "right-4 font-sans"
         )}>
           {tier}
         </div>
@@ -76,7 +76,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
           )}>
             <span className={cn(
               "text-[13px] flex items-center gap-1.5",
-              isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['Outfit']"
+              isRTL ? "font-['Cairo'] flex-row-reverse" : "font-sans"
             )}>
               <Calendar size={14} />
               {duration}
@@ -89,13 +89,13 @@ const PackageCard: React.FC<PackageCardProps> = ({
           </div>
           
           <div className="space-y-1">
-            <div className="font-['Space_Mono'] font-bold text-[28px] text-[#14B8A6] leading-none" dir="ltr">
+            <div className="font-heading font-bold text-[28px] text-[#14B8A6] leading-none" dir="ltr">
               {/* Force LTR for numbers even in RTL */}
               {price}
             </div>
             <div className={cn(
               "text-[13px] text-[#A89F8E] line-through decoration-[#C84B31]/50 decoration-2",
-              isRTL ? "font-['Cairo']" : "font-['Outfit']"
+              isRTL ? "font-['Cairo']" : "font-sans"
             )}>
               {isRTL ? `المقابل في المملكة المتحدة: ${ukPrice}` : `UK Equivalent: ${ukPrice}`}
             </div>
@@ -116,7 +116,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
 
           <button className={cn(
             "flex items-center gap-2 text-[#0D9488] font-bold uppercase tracking-wide group-hover:text-[#0F766E] transition-colors",
-            isRTL ? "font-['Cairo'] flex-row-reverse" : "font-['Outfit'] text-[14px]"
+            isRTL ? "font-['Cairo'] flex-row-reverse" : "font-sans text-[14px]"
           )}>
             {t('packageCard.viewPackage')}
             <ArrowIcon size={16} />
@@ -134,7 +134,7 @@ export const PackageShowcase: React.FC = () => {
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-8">
       <div className="border-b border-[#0F172A]/10 pb-4">
         <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Destination Packages</h2>
-        <p className="font-['Outfit'] text-[#A89F8E]">All-inclusive medical tourism experiences</p>
+        <p className="font-sans text-[#A89F8E]">All-inclusive medical tourism experiences</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">

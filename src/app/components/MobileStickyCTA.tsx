@@ -29,7 +29,7 @@ export const MobileStickyCTA: React.FC = () => {
           to="/consultation"
           className="flex-1 bg-[#0D9488] text-[#0F172A] font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
         >
-          <span className={isRTL ? "font-['Cairo']" : "font-['Outfit'] uppercase tracking-wide text-sm"}>
+          <span className={isRTL ? "font-['Cairo']" : "font-sans uppercase tracking-wide text-sm"}>
             {t('mobileCta.bookPackage')}
           </span>
           <ArrowIcon size={16} />

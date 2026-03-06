@@ -111,7 +111,7 @@ export function PatientStories() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="font-['Outfit'] text-xl text-white/90 max-w-2xl mx-auto"
+            className="font-sans text-xl text-white/90 max-w-2xl mx-auto"
           >
             {t('patientStories.subtitle')}
           </motion.p>
@@ -149,7 +149,7 @@ export function PatientStories() {
             <h3 className={`font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-4 ${isRTL ? 'text-right' : ''}`}>
               "I never thought dental work could feel like a vacation."
             </h3>
-            <p className={`font-['Outfit'] text-[#0F172A]/60 mb-8 leading-relaxed ${isRTL ? 'text-right' : ''}`}>
+            <p className={`font-sans text-[#0F172A]/60 mb-8 leading-relaxed ${isRTL ? 'text-right' : ''}`}>
               Sarah flew from London for a full smile makeover. Watch her journey from arrival to the final reveal.
             </p>
             <div className={`mt-auto flex items-center gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>

@@ -44,7 +44,7 @@ export function DentalTestimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
+            className="font-sans text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             Hear from patients who have transformed their smiles and their lives with us.
           </motion.p>

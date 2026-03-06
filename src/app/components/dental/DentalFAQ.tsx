@@ -68,7 +68,7 @@ export function DentalFAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-['Outfit'] text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
+            className="font-sans text-lg text-[#0F172A]/60 max-w-2xl mx-auto"
           >
             Everything you need to know about your dental journey to Egypt.
           </motion.p>
@@ -86,7 +86,7 @@ export function DentalFAQ() {
                 <AccordionTrigger className="text-left font-['Playfair_Display'] text-lg font-semibold text-[#0F172A] hover:text-[#C5A059] hover:no-underline py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="font-['Outfit'] text-[#0F172A]/70 pb-6 text-base leading-relaxed">
+                <AccordionContent className="font-sans text-[#0F172A]/70 pb-6 text-base leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

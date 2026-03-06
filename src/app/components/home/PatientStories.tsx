@@ -36,7 +36,7 @@ const TestimonialCard = ({
       </div>
     </div>
 
-    <blockquote className="font-['Outfit'] italic text-[#3D3D3D] text-[15px] leading-relaxed mb-6 flex-grow">
+    <blockquote className="font-sans italic text-[#3D3D3D] text-[15px] leading-relaxed mb-6 flex-grow">
       "{quote}"
     </blockquote>
 
@@ -44,8 +44,8 @@ const TestimonialCard = ({
       <div className="flex items-center gap-2">
         <span className="text-xl">{flag}</span>
         <div>
-          <h4 className="font-['Outfit'] font-bold text-[#1A2332] text-sm">{name}</h4>
-          <p className="font-['Outfit'] text-xs text-[#888]">{age} • {country}</p>
+          <h4 className="font-sans font-bold text-[#1A2332] text-sm">{name}</h4>
+          <p className="font-sans text-xs text-[#888]">{age} • {country}</p>
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ export const PatientStories: React.FC = () => {
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
         <div className={cn("flex flex-col md:flex-row justify-between items-end mb-12", isRTL && "flex-row-reverse")}>
           <div className={cn("text-left", isRTL && "text-right md:text-right")}>
-            <h2 className={cn("font-['Outfit'] text-4xl font-bold text-[#1A2332] mb-4", isRTL && "font-['Amiri']")}>
+            <h2 className={cn("font-sans text-4xl font-bold text-[#1A2332] mb-4", isRTL && "font-['Amiri']")}>
               {t("homeStories.heading")}
             </h2>
             <div className={cn("h-1 w-24 bg-[#0D9488]", isRTL && "ml-auto")} />
@@ -112,10 +112,10 @@ export const PatientStories: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-            <p className={cn("font-['Space_Mono'] text-sm text-[#1A2332] mb-4")}>
+            <p className={cn("font-heading text-sm text-[#1A2332] mb-4")}>
               {t("homeStories.rating")} <span className="text-[#0D9488]">★★★★★</span> {t("homeStories.ratingSubtitle")}
             </p>
-            <Link to="/patient-stories" className={cn("font-['Outfit'] font-bold text-[#1A2332] border-b-2 border-[#0D9488] hover:text-[#0D9488] transition-colors", isRTL && "font-['Cairo']")}>
+            <Link to="/patient-stories" className={cn("font-sans font-bold text-[#1A2332] border-b-2 border-[#0D9488] hover:text-[#0D9488] transition-colors", isRTL && "font-['Cairo']")}>
               {t("homeStories.readMore")}
             </Link>
         </div>

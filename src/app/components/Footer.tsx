@@ -46,22 +46,22 @@ export const Footer: React.FC = () => {
               />
             </div>
 
-            <p className={`font-['Outfit'] italic text-[14px] text-[#F8FAFB] ${isRTL ? 'text-right' : ''}`}>
+            <p className={`font-sans italic text-[14px] text-[#F8FAFB] ${isRTL ? 'text-right' : ''}`}>
               {t('footer.tagline')}
             </p>
 
-            <p className={`font-['Outfit'] text-[13px] text-[#64748B] leading-relaxed max-w-[280px] ${isRTL ? 'text-right' : ''}`}>
+            <p className={`font-sans text-[13px] text-[#64748B] leading-relaxed max-w-[280px] ${isRTL ? 'text-right' : ''}`}>
               {t('footer.description')}
             </p>
           </div>
 
           {/* Column 2: Treatments */}
           <div className="space-y-6">
-            <h4 className={`font-['Outfit'] text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.treatments')}</h4>
+            <h4 className={`font-sans text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.treatments')}</h4>
             <ul className="space-y-3">
               {treatments.map((item, i) => (
                 <li key={i}>
-                  <Link to={item.link} className={`font-['Outfit'] text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
+                  <Link to={item.link} className={`font-sans text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                     {item.label}
                   </Link>
@@ -72,11 +72,11 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Explore */}
           <div className="space-y-6">
-            <h4 className={`font-['Outfit'] text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.explore')}</h4>
+            <h4 className={`font-sans text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.explore')}</h4>
             <ul className="space-y-3">
               {explore.map((item, i) => (
                 <li key={i}>
-                  <Link to={item.link} className={`font-['Outfit'] text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
+                  <Link to={item.link} className={`font-sans text-[14px] text-[#64748B] hover:text-[#0D9488] transition-colors flex items-center gap-2 group ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                     {item.label}
                   </Link>
@@ -87,31 +87,31 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Contact */}
           <div className={`space-y-6 ${isRTL ? 'lg:col-start-4' : ''}`}>
-            <h4 className={`font-['Outfit'] text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.contact')}</h4>
+            <h4 className={`font-sans text-lg text-white font-medium ${isRTL ? 'text-right' : ''}`}>{t('footer.contact')}</h4>
             <ul className="space-y-4">
               <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                 <Phone className="w-5 h-5 text-[#0D9488] mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <a href="tel:+447988559541" className="font-['Outfit'] text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">+44 798 855 9541</a>
-                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">{t('footer.businessHours')}</span>
+                  <a href="tel:+447988559541" className="font-sans text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">+44 798 855 9541</a>
+                  <span className="font-sans text-[12px] text-[#64748B]">{t('footer.businessHours')}</span>
                 </div>
               </li>
               <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                 <div className="w-5 h-5 rounded-full border border-[#0D9488] flex items-center justify-center text-[#0D9488] text-[10px] font-bold mt-0.5 flex-shrink-0">W</div>
                 <div className="flex flex-col">
-                  <a href="https://wa.me/447988559541" target="_blank" rel="noopener noreferrer" className="font-['Outfit'] text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">+44 798 855 9541</a>
-                  <span className="font-['Outfit'] text-[12px] text-[#64748B]">{t('footer.whatsappSupport')}</span>
+                  <a href="https://wa.me/447988559541" target="_blank" rel="noopener noreferrer" className="font-sans text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">+44 798 855 9541</a>
+                  <span className="font-sans text-[12px] text-[#64748B]">{t('footer.whatsappSupport')}</span>
                 </div>
               </li>
               <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                 <Mail className="w-5 h-5 text-[#0D9488] mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@sekhmetwellness.com" className="font-['Outfit'] text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">
+                <a href="mailto:info@sekhmetwellness.com" className="font-sans text-[14px] text-[#F8FAFB] hover:text-[#0D9488] transition-colors">
                   info@sekhmetwellness.com
                 </a>
               </li>
               <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                 <MapPin className="w-5 h-5 text-[#0D9488] mt-0.5 flex-shrink-0" />
-                <span className="font-['Outfit'] text-[14px] text-[#64748B]">
+                <span className="font-sans text-[14px] text-[#64748B]">
                   IFZA Free Zone,<br />
                   Dubai, UAE
                 </span>
@@ -122,7 +122,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className={`border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 ${isRTL ? 'flex-col-reverse' : ''}`}>
-          <div className={`flex flex-col md:flex-row items-center gap-6 text-[13px] font-['Outfit'] text-[#64748B] ${isRTL ? 'flex-row-reverse' : ''}`}>
+          <div className={`flex flex-col md:flex-row items-center gap-6 text-[13px] font-sans text-[#64748B] ${isRTL ? 'flex-row-reverse' : ''}`}>
             <span>&copy; {new Date().getFullYear()} Sekhmet Wellness. {t('footer.allRights')}</span>
             <div className="hidden md:block w-1 h-1 rounded-full bg-[#64748B]/50" />
             <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('footer.privacyPolicy')}</Link>
@@ -138,8 +138,8 @@ export const Footer: React.FC = () => {
                  <Shield className="w-8 h-8 text-[#0D9488]" fill="currentColor" fillOpacity={0.2} />
               </div>
               <div className={`flex flex-col leading-none ${isRTL ? 'text-right' : ''}`}>
-                <span className="text-[10px] font-bold text-[#0D9488] font-['Outfit']">{t('footer.jciAccredited')}</span>
-                <span className="text-[9px] text-white/60 font-['Outfit']">{t('footer.globalStandard')}</span>
+                <span className="text-[10px] font-bold text-[#0D9488] font-sans">{t('footer.jciAccredited')}</span>
+                <span className="text-[9px] text-white/60 font-sans">{t('footer.globalStandard')}</span>
               </div>
             </div>
 

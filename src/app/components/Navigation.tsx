@@ -14,7 +14,7 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ label, hasDropdown, isActive }) => (
   <div className="relative group h-full flex items-center cursor-pointer">
     <span className={cn(
-      "font-['Outfit'] text-[15px] transition-colors duration-300 relative pb-1",
+      "font-sans text-[15px] transition-colors duration-300 relative pb-1",
       isActive ? "text-[#0D9488]" : "text-white group-hover:text-[#0D9488]"
     )}>
       {label}
@@ -33,7 +33,7 @@ const MobileNavLink = ({ to, label, onClick }: { to: string, label: string, onCl
   <Link
     to={to}
     onClick={onClick}
-    className="block font-['Outfit'] text-lg text-white hover:text-[#0D9488] transition-colors py-2"
+    className="block font-sans text-lg text-white hover:text-[#0D9488] transition-colors py-2"
   >
     {label}
   </Link>
@@ -148,7 +148,7 @@ export const Navigation: React.FC = () => {
                         setIsLanguageDropdownOpen(false);
                       }}
                       className={cn(
-                        "w-full px-4 py-2.5 text-left font-['Outfit'] font-semibold text-sm transition-colors duration-200",
+                        "w-full px-4 py-2.5 text-left font-sans font-semibold text-sm transition-colors duration-200",
                         language === lang.code
                           ? "bg-[#0D9488] text-white"
                           : "text-white hover:bg-[#0D9488]/20"
@@ -161,7 +161,7 @@ export const Navigation: React.FC = () => {
               </div>
             </div>
             <Link to="/consultation">
-              <button className="bg-[#0D9488] text-white px-6 py-2.5 rounded-full font-['Outfit'] text-[14px] font-semibold tracking-wide hover:bg-[#0F766E] transition-all duration-300 shadow-lg hover:shadow-[#0D9488]/30">
+              <button className="bg-[#0D9488] text-white px-6 py-2.5 rounded-full font-sans text-[14px] font-semibold tracking-wide hover:bg-[#0F766E] transition-all duration-300 shadow-lg hover:shadow-[#0D9488]/30">
                 {t("nav.freeConsultation")}
               </button>
             </Link>
@@ -195,7 +195,7 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/dental" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconLotus className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.dentalCare")}</h3>
+                <h3 className="font-sans font-bold text-lg">{t("nav.dentalCare")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -205,7 +205,7 @@ export const Navigation: React.FC = () => {
                   { key: "nav.fullMouthRehab", path: "/treatments/dental" },
                   { key: "nav.wisdomTooth", path: "/treatments/dental" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                  <li key={i} className="font-sans text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{t(item.key)}</Link>
                   </li>
@@ -222,7 +222,7 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/vision" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconEyeOfHorus className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.visionCorrection")}</h3>
+                <h3 className="font-sans font-bold text-lg">{t("nav.visionCorrection")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -231,7 +231,7 @@ export const Navigation: React.FC = () => {
                   { key: "nav.lensImplant", path: "/treatments/vision" },
                   { key: "nav.glaucoma", path: "/treatments/vision" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                  <li key={i} className="font-sans text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{t(item.key)}</Link>
                   </li>
@@ -248,7 +248,7 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/fertility" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconSun className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.fertility")}</h3>
+                <h3 className="font-sans font-bold text-lg">{t("nav.fertility")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -257,7 +257,7 @@ export const Navigation: React.FC = () => {
                   { key: "nav.maleInfertility", path: "/treatments/fertility" },
                   { key: "nav.geneticScreening", path: "/treatments/fertility" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                  <li key={i} className="font-sans text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{t(item.key)}</Link>
                   </li>
@@ -274,7 +274,7 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/cosmetic" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconScarab className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.cosmetic")}</h3>
+                <h3 className="font-sans font-bold text-lg">{t("nav.cosmetic")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -283,7 +283,7 @@ export const Navigation: React.FC = () => {
                   { key: "nav.liposuction", path: "/treatments/cosmetic" },
                   { key: "nav.facelift", path: "/treatments/cosmetic" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                  <li key={i} className="font-sans text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{t(item.key)}</Link>
                   </li>
@@ -300,7 +300,7 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 border-r border-[#1A2332]/10 pr-6 group/col">
               <Link to="/treatments/wellness" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconCare className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.wellness")}</h3>
+                <h3 className="font-sans font-bold text-lg">{t("nav.wellness")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -309,7 +309,7 @@ export const Navigation: React.FC = () => {
                   { key: "nav.spaRecovery", path: "/treatments/wellness" },
                   { key: "nav.antiAging", path: "/treatments/wellness" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                  <li key={i} className="font-sans text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{t(item.key)}</Link>
                   </li>
@@ -326,7 +326,7 @@ export const Navigation: React.FC = () => {
             <div className="space-y-4 group/col">
               <Link to="/treatments/checkups" className="flex items-center gap-3 text-[#1A2332] mb-2 group-hover/col:text-[#0D9488] transition-colors">
                 <IconAnkh className="w-8 h-8" />
-                <h3 className="font-['Outfit'] font-bold text-lg">{t("nav.healthCheckups")}</h3>
+                <h3 className="font-sans font-bold text-lg">{t("nav.healthCheckups")}</h3>
               </Link>
               <ul className="space-y-3">
                 {[
@@ -335,7 +335,7 @@ export const Navigation: React.FC = () => {
                   { key: "nav.cancerScreening", path: "/treatments/checkups" },
                   { key: "nav.cardiacCheckup", path: "/treatments/checkups" }
                 ].map((item, i) => (
-                  <li key={i} className="font-['Outfit'] text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
+                  <li key={i} className="font-sans text-[14px] text-[#3D3D3D] hover:text-[#14B8A6] cursor-pointer transition-colors flex items-center gap-2 group/item">
                     <span className="w-1 h-1 bg-[#0D9488] rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity" />
                     <Link to={item.path}>{t(item.key)}</Link>
                   </li>
@@ -366,14 +366,14 @@ export const Navigation: React.FC = () => {
                 <img src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&q=80&w=600" alt="Cairo" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/80 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <h3 className="font-['Outfit'] font-bold text-xl text-white">{t("nav.destCairo")}</h3>
-                  <p className="font-['Outfit'] text-sm text-white/80">{t("nav.destCairoTag")}</p>
+                  <h3 className="font-sans font-bold text-xl text-white">{t("nav.destCairo")}</h3>
+                  <p className="font-sans text-sm text-white/80">{t("nav.destCairoTag")}</p>
                 </div>
               </div>
               <ul className="space-y-2 px-1">
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH1")}</li>
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH2")}</li>
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH3")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH1")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH2")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destCairoH3")}</li>
               </ul>
             </Link>
 
@@ -383,15 +383,15 @@ export const Navigation: React.FC = () => {
                 <img src="https://images.unsplash.com/photo-1671739961405-add4f0ece0c3?auto=format&fit=crop&q=80&w=600" alt="Hurghada" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/80 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <h3 className="font-['Outfit'] font-bold text-xl text-white">{t("nav.destHurghada")}</h3>
-                  <p className="font-['Outfit'] text-sm text-white/80">{t("nav.destHurghadaTag")}</p>
+                  <h3 className="font-sans font-bold text-xl text-white">{t("nav.destHurghada")}</h3>
+                  <p className="font-sans text-sm text-white/80">{t("nav.destHurghadaTag")}</p>
                 </div>
                 <div className="absolute top-3 right-3 bg-[#0D9488] text-white text-[10px] font-bold px-2 py-1 rounded-full">{t("nav.destRecommended")}</div>
               </div>
               <ul className="space-y-2 px-1">
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH1")}</li>
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH2")}</li>
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH3")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH1")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH2")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destHurghadaH3")}</li>
               </ul>
             </Link>
 
@@ -401,14 +401,14 @@ export const Navigation: React.FC = () => {
                 <img src="https://images.unsplash.com/photo-1705765280828-074feefd8aee?auto=format&fit=crop&q=80&w=600" alt="Sharm El Sheikh" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/80 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <h3 className="font-['Outfit'] font-bold text-xl text-white">{t("nav.destSharm")}</h3>
-                  <p className="font-['Outfit'] text-sm text-white/80">{t("nav.destSharmTag")}</p>
+                  <h3 className="font-sans font-bold text-xl text-white">{t("nav.destSharm")}</h3>
+                  <p className="font-sans text-sm text-white/80">{t("nav.destSharmTag")}</p>
                 </div>
               </div>
               <ul className="space-y-2 px-1">
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH1")}</li>
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH2")}</li>
-                <li className="font-['Outfit'] text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH3")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH1")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH2")}</li>
+                <li className="font-sans text-[13px] text-[#3D3D3D] flex items-center gap-2"><MapPin size={12} className="text-[#0D9488]" />{t("nav.destSharmH3")}</li>
               </ul>
             </Link>
           </div>
@@ -430,7 +430,7 @@ export const Navigation: React.FC = () => {
         >
           <nav className="flex flex-col gap-6 mb-12">
             <div className="flex flex-col gap-3">
-               <h4 className="text-[#64748B] font-['Outfit'] text-xs font-bold uppercase tracking-widest pl-1">{t("nav.treatments")}</h4>
+               <h4 className="text-[#64748B] font-sans text-xs font-bold uppercase tracking-widest pl-1">{t("nav.treatments")}</h4>
                <MobileNavLink to="/treatments/dental" label={t("nav.dentalCare")} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/treatments/vision" label={t("nav.visionCorrection")} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/treatments/fertility" label={t("nav.fertility")} onClick={() => setIsMobileMenuOpen(false)} />
@@ -442,7 +442,7 @@ export const Navigation: React.FC = () => {
             <div className="h-px bg-white/10 my-1" />
 
             <div className="flex flex-col gap-3">
-               <h4 className="text-[#64748B] font-['Outfit'] text-xs font-bold uppercase tracking-widest pl-1">{t("nav.destinations")}</h4>
+               <h4 className="text-[#64748B] font-sans text-xs font-bold uppercase tracking-widest pl-1">{t("nav.destinations")}</h4>
                <MobileNavLink to="/destinations/cairo" label={t("nav.destCairo")} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/destinations/hurghada" label={t("nav.destHurghada")} onClick={() => setIsMobileMenuOpen(false)} />
                <MobileNavLink to="/destinations/sharm-el-sheikh" label={t("nav.destSharm")} onClick={() => setIsMobileMenuOpen(false)} />
@@ -459,7 +459,7 @@ export const Navigation: React.FC = () => {
 
           <div className="mt-auto space-y-6">
             <Link to="/consultation" onClick={() => setIsMobileMenuOpen(false)}>
-              <button className="w-full bg-[#0D9488] text-[#1A2332] py-4 rounded-lg font-['Outfit'] text-lg font-bold uppercase tracking-wider hover:bg-[#0F766E] transition-colors shadow-lg">
+              <button className="w-full bg-[#0D9488] text-[#1A2332] py-4 rounded-lg font-sans text-lg font-bold uppercase tracking-wider hover:bg-[#0F766E] transition-colors shadow-lg">
                 {t("nav.freeConsultation")}
               </button>
             </Link>

@@ -33,7 +33,7 @@ export const TreatmentsHero: React.FC = () => {
       <div className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col justify-center max-w-[1440px] h-full">
         <div className={cn(
             "max-w-[800px] space-y-6 text-center mx-auto",
-            isRTL ? "font-['Cairo']" : "font-['Outfit']"
+            isRTL ? "font-['Cairo']" : "font-sans"
           )}>
           
           <h1 className={cn(

@@ -81,7 +81,7 @@ export function CosmeticSurgery() {
           <div className="absolute inset-0 bg-[#0F172A]/60" />
         </div>
         <div className="relative h-full container mx-auto px-6 flex flex-col justify-center text-white pt-20">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className={cn("flex items-center gap-2 text-sm mb-6 text-[#F9F6F0]/80 font-['Outfit']", isRTL && "flex-row-reverse")}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className={cn("flex items-center gap-2 text-sm mb-6 text-[#F9F6F0]/80 font-sans", isRTL && "flex-row-reverse")}>
             <Link to="/" className="hover:text-[#C5A059] transition-colors">{t('common.home')}</Link>
             <ChevronRight className="w-4 h-4" />
             <span>{t('common.treatments')}</span>
@@ -91,12 +91,12 @@ export function CosmeticSurgery() {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className={cn("font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight", isRTL && "text-right")}>
             {t('cosmetic.hero.title')} <br /><span className="text-[#C5A059]">{t('cosmetic.hero.subtitle')}</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className={cn("font-['Outfit'] text-lg md:text-xl text-[#F9F6F0]/90 max-w-2xl mb-8 leading-relaxed", isRTL && "text-right")}>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className={cn("font-sans text-lg md:text-xl text-[#F9F6F0]/90 max-w-2xl mb-8 leading-relaxed", isRTL && "text-right")}>
             {t('cosmetic.hero.description')}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
             <Link to="/consultation">
-              <button className="bg-[#0D9488] text-[#0F172A] px-8 py-4 rounded-full font-['Outfit'] text-base font-bold uppercase tracking-wider hover:bg-[#0F766E] transition-colors shadow-lg">
+              <button className="bg-[#0D9488] text-[#0F172A] px-8 py-4 rounded-full font-sans text-base font-bold uppercase tracking-wider hover:bg-[#0F766E] transition-colors shadow-lg">
                 {t('cosmetic.hero.cta')}
               </button>
             </Link>
@@ -112,14 +112,14 @@ export function CosmeticSurgery() {
               <h2 className={cn("font-['Playfair_Display'] text-4xl text-[#0F172A] font-bold mb-6", isRTL && "text-right")}>
                 {t('cosmetic.whyTitle')}
               </h2>
-              <p className={cn("font-['Outfit'] text-[#5D5D5D] text-lg leading-relaxed mb-8", isRTL && "text-right")}>
+              <p className={cn("font-sans text-[#5D5D5D] text-lg leading-relaxed mb-8", isRTL && "text-right")}>
                 {t('cosmetic.whyDesc')}
               </p>
               <ul className={cn("space-y-4", isRTL && "text-right")}>
                 {[1, 2, 3, 4].map((i) => (
                   <li key={i} className={cn("flex items-start gap-3", isRTL && "flex-row-reverse")}>
                     <div className="w-6 h-6 rounded-full bg-[#0D9488]/20 flex items-center justify-center text-[#0D9488] flex-shrink-0 mt-0.5"><Check size={14} strokeWidth={3} /></div>
-                    <span className="font-['Outfit'] text-[#0F172A]">{t(`cosmetic.whyPoints.${i}`)}</span>
+                    <span className="font-sans text-[#0F172A]">{t(`cosmetic.whyPoints.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -129,7 +129,7 @@ export function CosmeticSurgery() {
                 <span className={cn("block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
                   {t('cosmetic.stat.1.value')}
                 </span>
-                <span className={cn("font-['Outfit'] text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
+                <span className={cn("font-sans text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
                   {t('cosmetic.stat.1.label')}
                 </span>
               </div>
@@ -137,7 +137,7 @@ export function CosmeticSurgery() {
                 <span className={cn("block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
                   {t('cosmetic.stat.2.value')}
                 </span>
-                <span className={cn("font-['Outfit'] text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
+                <span className={cn("font-sans text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
                   {t('cosmetic.stat.2.label')}
                 </span>
               </div>
@@ -145,7 +145,7 @@ export function CosmeticSurgery() {
                 <span className={cn("block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
                   {t('cosmetic.stat.3.value')}
                 </span>
-                <span className={cn("font-['Outfit'] text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
+                <span className={cn("font-sans text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
                   {t('cosmetic.stat.3.label')}
                 </span>
               </div>
@@ -174,11 +174,11 @@ export function CosmeticSurgery() {
                   <h3 className={cn("font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
                     {t(proc.titleKey)}
                   </h3>
-                  <p className={cn("font-['Outfit'] text-[#5D5D5D] mb-6 line-clamp-3", isRTL && "text-right")}>
+                  <p className={cn("font-sans text-[#5D5D5D] mb-6 line-clamp-3", isRTL && "text-right")}>
                     {t(proc.descKey)}
                   </p>
                   <div className={cn("flex items-center justify-between border-t border-[#0F172A]/10 pt-6", isRTL && "flex-row-reverse")}>
-                    <span className="font-['Space_Mono'] font-bold text-[#14B8A6]">{t(proc.priceKey)}</span>
+                    <span className="font-heading font-bold text-[#14B8A6]">{t(proc.priceKey)}</span>
                     <Link to="/consultation" className="text-[#0D9488] text-sm font-bold uppercase tracking-wide group-hover:underline">
                       {t('vision.getQuote')}
                     </Link>

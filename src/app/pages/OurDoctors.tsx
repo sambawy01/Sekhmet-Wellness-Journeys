@@ -98,7 +98,7 @@ export function OurDoctors() {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-['Outfit'] text-5xl md:text-6xl font-bold mb-4"
+            className="font-sans text-5xl md:text-6xl font-bold mb-4"
           >
             World-Class Specialists
           </motion.h1>
@@ -106,7 +106,7 @@ export function OurDoctors() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-['Outfit'] text-xl text-white/80 max-w-2xl mx-auto mb-12"
+            className="font-sans text-xl text-white/80 max-w-2xl mx-auto mb-12"
           >
             UK, European, and US-trained doctors performing at Egypt’s top hospitals.
           </motion.p>
@@ -122,8 +122,8 @@ export function OurDoctors() {
               <div className="bg-[#C5A059]/20 p-3 rounded-full mb-4">
                 <CheckCircle className="w-8 h-8 text-[#C5A059]" />
               </div>
-              <h3 className="font-['Space_Mono'] text-3xl font-bold text-[#C5A059] mb-2">15+ Years</h3>
-              <p className="font-['Outfit'] text-white/60 uppercase tracking-widest text-sm">Average Experience</p>
+              <h3 className="font-heading text-3xl font-bold text-[#C5A059] mb-2">15+ Years</h3>
+              <p className="font-sans text-white/60 uppercase tracking-widest text-sm">Average Experience</p>
             </motion.div>
             
             <motion.div 
@@ -135,8 +135,8 @@ export function OurDoctors() {
               <div className="bg-[#C5A059]/20 p-3 rounded-full mb-4">
                 <Globe className="w-8 h-8 text-[#C5A059]" />
               </div>
-              <h3 className="font-['Space_Mono'] text-3xl font-bold text-[#C5A059] mb-2">12+ Countries</h3>
-              <p className="font-['Outfit'] text-white/60 uppercase tracking-widest text-sm">Training Locations</p>
+              <h3 className="font-heading text-3xl font-bold text-[#C5A059] mb-2">12+ Countries</h3>
+              <p className="font-sans text-white/60 uppercase tracking-widest text-sm">Training Locations</p>
             </motion.div>
 
             <motion.div 
@@ -148,8 +148,8 @@ export function OurDoctors() {
               <div className="bg-[#C5A059]/20 p-3 rounded-full mb-4">
                 <Stethoscope className="w-8 h-8 text-[#C5A059]" />
               </div>
-              <h3 className="font-['Space_Mono'] text-3xl font-bold text-[#C5A059] mb-2">10,000+</h3>
-              <p className="font-['Outfit'] text-white/60 uppercase tracking-widest text-sm">Procedures Performed</p>
+              <h3 className="font-heading text-3xl font-bold text-[#C5A059] mb-2">10,000+</h3>
+              <p className="font-sans text-white/60 uppercase tracking-widest text-sm">Procedures Performed</p>
             </motion.div>
           </div>
         </div>

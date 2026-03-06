@@ -50,7 +50,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
         {/* Procedures List */}
         <p className={cn(
           "text-[14px] text-white/60 mb-6 font-light tracking-wide line-clamp-2",
-          isRTL ? "font-['Cairo']" : "font-['Outfit']"
+          isRTL ? "font-['Cairo']" : "font-sans"
         )}>
           {procedures.join(' · ')}
         </p>
@@ -63,11 +63,11 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
           <div className={cn("flex flex-col", isRTL ? "items-end" : "items-start")}>
             <span className={cn(
               "text-[10px] text-[#0D9488] uppercase tracking-widest mb-1",
-              isRTL ? "font-['Cairo']" : "font-['Outfit']"
+              isRTL ? "font-['Cairo']" : "font-sans"
             )}>
               {t('treatmentCard.startingFrom')}
             </span>
-            <span className="font-['Space_Mono'] font-bold text-[18px] text-[#0D9488]">
+            <span className="font-heading font-bold text-[18px] text-[#0D9488]">
               {price}
             </span>
           </div>
@@ -80,7 +80,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
           )}>
             <span className={cn(
               "text-[12px] font-bold uppercase tracking-wider",
-              isRTL ? "font-['Cairo']" : "font-['Outfit']"
+              isRTL ? "font-['Cairo']" : "font-sans"
             )}>
               {t('treatmentCard.explore')}
             </span>
@@ -131,7 +131,7 @@ export const CardShowcase: React.FC = () => {
     <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
         <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Treatment Specialty Cards</h2>
-        <p className="font-['Outfit'] text-[#A89F8E]">Service highlights & navigation</p>
+        <p className="font-sans text-[#A89F8E]">Service highlights & navigation</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8">
