@@ -23,7 +23,7 @@ const faqs = [
   {
     category: "General",
     question: "Is it safe to travel to Egypt for surgery?",
-    answer: "Yes. We only partner with JCI-accredited hospitals and clinics located in safe, tourist-friendly areas. Your personal coordinator and chauffeur ensure your safety and comfort throughout your entire stay."
+    answer: "Absolutely. Egypt is a very safe country and one of the world's most popular tourist destinations, welcoming over 14 million visitors each year. Our partner hospitals and clinics are JCI-accredited and located in modern, tourist-friendly areas. Throughout your stay, you'll also have a dedicated personal coordinator and private chauffeur for seamless comfort and convenience."
   },
   {
     category: "Travel & Logistics",
