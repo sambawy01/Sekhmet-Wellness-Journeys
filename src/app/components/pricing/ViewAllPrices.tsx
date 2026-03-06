@@ -103,7 +103,7 @@ export function ViewAllPrices() {
         
         {/* Header Section */}
         <div className={cn("text-center mb-12", isRTL && "text-right")}>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A5276] mb-4 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1A5276] mb-4 font-heading uppercase tracking-[0.2em]">
             {t('prices.heading')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">

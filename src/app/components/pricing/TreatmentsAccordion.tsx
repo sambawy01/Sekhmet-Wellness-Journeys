@@ -242,7 +242,7 @@ export function TreatmentsAccordion() {
     <section className="py-16 md:py-24 bg-white" id="treatments">
       <div className="container mx-auto px-4">
         <div className={cn("text-center mb-12", isRTL && "text-right")}>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1A5276] mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A5276] mb-4 uppercase tracking-[0.2em]">
             {t('accordion.section.title')}
           </h2>
           <p className="text-lg text-[#0F172A]/70 max-w-2xl mx-auto font-sans">

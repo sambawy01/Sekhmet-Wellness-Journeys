@@ -190,7 +190,7 @@ export function GetFreeQuotes() {
           
           {/* Left Panel: Trust Signals */}
           <div className="flex-1 lg:pt-8">
-            <h2 className={cn("text-4xl md:text-5xl font-serif font-bold text-[#1A5276] mb-6 leading-tight", isRTL && "text-right")}>
+            <h2 className={cn("text-4xl md:text-5xl font-heading font-bold text-[#1A5276] mb-6 leading-tight uppercase tracking-[0.2em]", isRTL && "text-right")}>
               {t('quotes.mainHeading')}
               <br className="hidden md:block" />
               {t('quotes.mainSubheading')}
