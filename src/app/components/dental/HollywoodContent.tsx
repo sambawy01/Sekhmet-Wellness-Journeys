@@ -152,8 +152,8 @@ export function HollywoodContent() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-[#C5A059] hover:bg-[#B08D45] text-white font-bold">
-                  Get This Package
+                <Button asChild className="w-full bg-[#C5A059] hover:bg-[#B08D45] text-white font-bold">
+                  <Link to="/consultation">Get This Package</Link>
                 </Button>
               </div>
 
@@ -163,11 +163,15 @@ export function HollywoodContent() {
                   Speak to a Smile Designer
                 </h3>
                 <div className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start gap-3 border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10">
-                    <MessageCircle className="w-5 h-5" /> WhatsApp Us
+                  <Button asChild variant="outline" className="w-full justify-start gap-3 border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10">
+                    <a href="https://wa.me/447988559541?text=Hi%2C%20I%27m%20interested%20in%20the%20Hollywood%20Smile%20package" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="w-5 h-5" /> WhatsApp Us
+                    </a>
                   </Button>
-                  <Button variant="outline" className="w-full justify-start gap-3 border-[#0F172A]/20 text-[#0F172A]">
-                    <Phone className="w-5 h-5" /> Request Callback
+                  <Button asChild variant="outline" className="w-full justify-start gap-3 border-[#0F172A]/20 text-[#0F172A]">
+                    <Link to="/consultation">
+                      <Phone className="w-5 h-5" /> Request Callback
+                    </Link>
                   </Button>
                 </div>
               </div>
