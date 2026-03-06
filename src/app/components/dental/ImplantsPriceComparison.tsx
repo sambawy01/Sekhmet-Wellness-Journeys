@@ -26,7 +26,7 @@ export function ImplantsPriceComparison() {
     <section className="py-16 bg-[#F0F7F4]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-10">
-          <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-4">{t('implantsPrices.title')}</h2>
+          <h2 className="font-heading text-3xl font-bold text-[#0F172A] mb-4">{t('implantsPrices.title')}</h2>
           <div className="flex justify-center gap-2 mb-6">
             {['USD', 'GBP', 'EUR'].map(c => (
               <Button key={c} variant={currency === c ? "default" : "outline"} onClick={() => setCurrency(c)} className={cn("rounded-full", currency === c ? "bg-[#C5A059]" : "")}>

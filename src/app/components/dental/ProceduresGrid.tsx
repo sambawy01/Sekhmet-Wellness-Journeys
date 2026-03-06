@@ -79,7 +79,7 @@ export function ProceduresGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
+            className="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             Our Dental Procedures
           </motion.h2>
@@ -109,7 +109,7 @@ export function ProceduresGrid() {
                   <proc.icon className="w-6 h-6 text-[#C5A059] group-hover:text-white transition-colors duration-300" />
                 </div>
                 
-                <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#0F172A] mb-2 group-hover:text-[#C5A059] transition-colors">
+                <h3 className="font-heading text-xl font-bold text-[#0F172A] mb-2 group-hover:text-[#C5A059] transition-colors">
                   {proc.title}
                 </h3>
                 

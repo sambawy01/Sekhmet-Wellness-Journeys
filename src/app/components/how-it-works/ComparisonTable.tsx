@@ -22,7 +22,7 @@ export function ComparisonTable() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className={`text-center mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">
             {t('hiw.comparison.heading')}
           </h2>
           <p className="font-sans text-lg text-[#0F172A]/60">
@@ -34,7 +34,7 @@ export function ComparisonTable() {
           <table className="w-full min-w-[800px] border-collapse">
             <thead>
               <tr>
-                <th className={`p-4 font-['Playfair_Display'] text-xl font-bold text-[#0F172A] ${isRTL ? 'text-right' : 'text-left'}`}>
+                <th className={`p-4 font-heading text-xl font-bold text-[#0F172A] ${isRTL ? 'text-right' : 'text-left'}`}>
                   {t('hiw.comparison.featureHeader')}
                 </th>
                 <th className="p-4 bg-[#F0F7F4] text-center font-heading text-lg font-bold text-[#C5A059] rounded-t-xl border-t-4 border-[#C5A059]">

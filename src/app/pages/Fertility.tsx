@@ -41,7 +41,7 @@ export function Fertility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight"
+            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight"
           >
             {t('fertilityPage.hero.title')} <br/>
             <span className="text-[#C5A059]">{t('fertilityPage.hero.subtitle')}</span>
@@ -75,7 +75,7 @@ export function Fertility() {
         <div className="container mx-auto px-6 max-w-[1200px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className={isRTL ? "md:order-2" : ""}>
-              <h2 className={cn("font-['Playfair_Display'] text-4xl text-[#0F172A] font-bold mb-6", isRTL && "text-right")}>
+              <h2 className={cn("font-heading text-4xl text-[#0F172A] font-bold mb-6", isRTL && "text-right")}>
                 {t('fertilityPage.whyTitle')}
               </h2>
               <p className={cn("font-sans text-[#5D5D5D] text-lg leading-relaxed mb-8", isRTL && "text-right")}>
@@ -96,15 +96,15 @@ export function Fertility() {
             
             <div className={cn("grid grid-cols-2 gap-6", isRTL && "md:order-1")}>
               <div className={cn("bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0D9488] text-center")}>
-                <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('fertilityPage.stat.1.value')}</span>
+                <span className="block font-heading text-4xl font-bold text-[#0F172A] mb-2">{t('fertilityPage.stat.1.value')}</span>
                 <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('fertilityPage.stat.1.label')}</span>
               </div>
               <div className={cn("bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#14B8A6] text-center")}>
-                <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('fertilityPage.stat.2.value')}</span>
+                <span className="block font-heading text-4xl font-bold text-[#0F172A] mb-2">{t('fertilityPage.stat.2.value')}</span>
                 <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('fertilityPage.stat.2.label')}</span>
               </div>
               <div className={cn("bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0F172A] text-center col-span-2")}>
-                <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('fertilityPage.stat.3.value')}</span>
+                <span className="block font-heading text-4xl font-bold text-[#0F172A] mb-2">{t('fertilityPage.stat.3.value')}</span>
                 <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('fertilityPage.stat.3.label')}</span>
               </div>
             </div>
@@ -116,7 +116,7 @@ export function Fertility() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-[1400px]">
           <div className="text-center mb-16">
-            <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl text-[#0F172A] font-bold mb-4">
+            <h2 className="font-heading text-4xl md:text-5xl text-[#0F172A] font-bold mb-4">
               {t('fertilityPage.sectionTitle')}
             </h2>
             <div className="w-24 h-1 bg-[#0D9488] mx-auto rounded-full" />
@@ -136,7 +136,7 @@ export function Fertility() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className={cn("font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
+                <h3 className={cn("font-heading text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
                   {t('fertilityPage.proc.ivf.title')}
                 </h3>
                 <p className={cn("font-sans text-[#5D5D5D] mb-6 line-clamp-3", isRTL && "text-right")}>
@@ -159,7 +159,7 @@ export function Fertility() {
                 />
               </div>
               <div className="p-8">
-                <h3 className={cn("font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
+                <h3 className={cn("font-heading text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
                   {t('fertilityPage.proc.egg.title')}
                 </h3>
                 <p className={cn("font-sans text-[#5D5D5D] mb-6 line-clamp-3", isRTL && "text-right")}>
@@ -182,7 +182,7 @@ export function Fertility() {
                 />
               </div>
               <div className="p-8">
-                <h3 className={cn("font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
+                <h3 className={cn("font-heading text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
                   {t('fertilityPage.proc.genetic.title')}
                 </h3>
                 <p className={cn("font-sans text-[#5D5D5D] mb-6 line-clamp-3", isRTL && "text-right")}>

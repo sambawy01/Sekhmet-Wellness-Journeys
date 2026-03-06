@@ -4,7 +4,7 @@ export const TypographyScale: React.FC = () => {
   return (
     <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Typography Scale</h2>
+        <h2 className="font-heading text-3xl text-[#0F172A]">Typography Scale</h2>
         <p className="font-sans text-[#A89F8E]">System font hierarchy</p>
       </div>
 
@@ -14,7 +14,7 @@ export const TypographyScale: React.FC = () => {
           H1 Headline • 56px
         </div>
         <div className="md:col-span-9">
-          <h1 className="font-['Playfair_Display'] font-bold text-[56px] leading-[1.1] text-[#0F172A]">
+          <h1 className="font-heading font-bold text-[56px] leading-[1.1] text-[#0F172A]">
             Ancient Wisdom, Modern Care
           </h1>
         </div>
@@ -24,7 +24,7 @@ export const TypographyScale: React.FC = () => {
           H2 Title • 36px
         </div>
         <div className="md:col-span-9">
-          <h2 className="font-['Playfair_Display'] font-bold text-[36px] leading-[1.2] text-[#0F172A]">
+          <h2 className="font-heading font-bold text-[36px] leading-[1.2] text-[#0F172A]">
             Curated Wellness Journeys
           </h2>
         </div>
@@ -34,7 +34,7 @@ export const TypographyScale: React.FC = () => {
           H3 Subtitle • 28px
         </div>
         <div className="md:col-span-9">
-          <h3 className="font-['Playfair_Display'] font-semibold text-[28px] leading-[1.3] text-[#0F172A]">
+          <h3 className="font-heading font-semibold text-[28px] leading-[1.3] text-[#0F172A]">
             Premium Dental Restoration
           </h3>
         </div>
@@ -44,7 +44,7 @@ export const TypographyScale: React.FC = () => {
           H4 Accent • 22px
         </div>
         <div className="md:col-span-9">
-          <h4 className="font-['Playfair_Display'] font-medium text-[22px] leading-[1.4] text-[#0D9488]">
+          <h4 className="font-heading font-medium text-[22px] leading-[1.4] text-[#0D9488]">
             Exclusive Member Benefits
           </h4>
         </div>

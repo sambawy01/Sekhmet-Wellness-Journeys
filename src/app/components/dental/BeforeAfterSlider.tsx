@@ -54,7 +54,7 @@ export function BeforeAfterSlider() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
+            className="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             {t('beforeAfter.heading')}
           </motion.h2>
@@ -119,7 +119,7 @@ export function BeforeAfterSlider() {
 
           {/* Caption */}
           <div className={cn("absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-md p-6 border-t border-[#C5A059]/20", isRTL && "text-right")}>
-            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-2">
+            <h3 className="font-heading text-2xl font-bold text-[#0F172A] mb-2">
               {t(cases[currentindex].titleKey)}
             </h3>
             <p className="font-sans text-[#0F172A]/60 mb-2 font-medium">

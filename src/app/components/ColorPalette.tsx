@@ -48,7 +48,7 @@ const ColorSwatch: React.FC<{
 
       {/* Info */}
       <div className="text-center flex flex-col items-center gap-2 h-[100px]">
-        <h3 className="font-['Playfair_Display'] font-bold text-xl text-[#0F172A]">{name}</h3>
+        <h3 className="font-heading font-bold text-xl text-[#0F172A]">{name}</h3>
         <p className="font-heading text-sm text-[#0F172A]/70 uppercase tracking-widest">{hex}</p>
         <p className="font-sans text-xs text-[#0F172A]/60 max-w-[160px] leading-relaxed italic">{role}</p>
       </div>
@@ -76,7 +76,7 @@ export const ColorPalette: React.FC = () => {
   return (
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Brand Color Palette</h2>
+        <h2 className="font-heading text-3xl text-[#0F172A]">Brand Color Palette</h2>
         <p className="font-sans text-[#A89F8E]">Primary, secondary & functional colors</p>
       </div>
       <div className="flex flex-wrap justify-center gap-x-12 gap-y-20">

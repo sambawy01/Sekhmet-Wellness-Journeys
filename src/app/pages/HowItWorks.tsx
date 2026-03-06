@@ -26,7 +26,7 @@ export function HowItWorks() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className={`font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-6 text-[#F0F7F4] ${isRTL ? 'text-right' : ''}`}>
+            <h2 className={`font-heading text-4xl md:text-5xl font-bold mb-6 text-[#F0F7F4] ${isRTL ? 'text-right' : ''}`}>
               {t('howItWorks.title')}
             </h2>
             <p className={`font-sans text-xl text-[#F0F7F4]/80 mb-10 leading-relaxed ${isRTL ? 'text-right' : ''}`}>

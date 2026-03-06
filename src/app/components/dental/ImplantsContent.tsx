@@ -21,7 +21,7 @@ export function ImplantsContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-6">
+              <h2 className="font-heading text-3xl font-bold text-[#0F172A] mb-6">
                 Restore Your Smile with Premium Dental Implants
               </h2>
               <p className="font-sans text-lg text-[#0F172A]/70 leading-relaxed mb-6">
@@ -39,7 +39,7 @@ export function ImplantsContent() {
               transition={{ delay: 0.1 }}
               className="bg-[#F0F7F4] p-8 rounded-xl border border-[#C5A059]/20"
             >
-              <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-4">
+              <h3 className="font-heading text-2xl font-bold text-[#0F172A] mb-4">
                 What’s Included in Your Package?
               </h3>
               <ul className="grid md:grid-cols-2 gap-4">
@@ -69,7 +69,7 @@ export function ImplantsContent() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-4">
+              <h3 className="font-heading text-2xl font-bold text-[#0F172A] mb-4">
                 Recovery Timeline
               </h3>
               <div className="space-y-6">
@@ -112,7 +112,7 @@ export function ImplantsContent() {
               
               {/* Cost Calculator Widget */}
               <div className="bg-[#0F172A] text-white p-6 rounded-xl shadow-xl border border-[#C5A059]/30">
-                <h3 className="font-['Playfair_Display'] text-xl font-bold mb-4 text-[#C5A059]">
+                <h3 className="font-heading text-xl font-bold mb-4 text-[#C5A059]">
                   Calculate Your Savings
                 </h3>
                 
@@ -158,7 +158,7 @@ export function ImplantsContent() {
 
               {/* Quick Contact */}
               <div className="bg-white p-6 rounded-xl shadow-md border border-[#0F172A]/10">
-                <h3 className="font-['Playfair_Display'] text-lg font-bold text-[#0F172A] mb-4">
+                <h3 className="font-heading text-lg font-bold text-[#0F172A] mb-4">
                   Speak to an Expert
                 </h3>
                 <div className="space-y-3">

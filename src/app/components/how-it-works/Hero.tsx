@@ -34,7 +34,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className={`max-w-3xl ${isRTL ? 'text-right' : 'text-left'}`}
         >
-          <h1 className="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             {t('hiw.hero.heading')} <span className="text-[#C5A059]">Sekhmet</span>
           </h1>
 

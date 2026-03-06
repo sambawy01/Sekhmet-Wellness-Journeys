@@ -74,7 +74,7 @@ export const TestimonialShowcase: React.FC = () => {
   return (
     <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-8">
       <div className="border-b border-[#0F172A]/10 pb-4">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Patient Stories</h2>
+        <h2 className="font-heading text-3xl text-[#0F172A]">Patient Stories</h2>
         <p className="font-sans text-[#A89F8E]">Trusted by thousands worldwide</p>
       </div>
 

@@ -38,7 +38,7 @@ export const DoctorCard: React.FC<DoctorCardProps> = ({
 
       {/* Details */}
       <div className="px-6 text-center space-y-3 relative z-10">
-        <h3 className="font-['Playfair_Display'] font-bold text-[20px] text-[#0F172A] leading-tight">
+        <h3 className="font-heading font-bold text-[20px] text-[#0F172A] leading-tight">
           {name}
         </h3>
         
@@ -75,7 +75,7 @@ export const DoctorShowcase: React.FC = () => {
   return (
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-8">
        <div className="border-b border-[#0F172A]/10 pb-4">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Medical Experts</h2>
+        <h2 className="font-heading text-3xl text-[#0F172A]">Medical Experts</h2>
         <p className="font-sans text-[#A89F8E]">World-class surgeons & specialists</p>
       </div>
 

@@ -198,7 +198,7 @@ export function OurDoctors() {
 
         {filteredDoctors.length === 0 && (
           <div className="text-center py-20">
-            <h3 className="text-2xl font-['Playfair_Display'] text-[#0F172A] mb-2">No doctors found</h3>
+            <h3 className="text-2xl font-heading text-[#0F172A] mb-2">No doctors found</h3>
             <p className="text-[#0F172A]/60">Try adjusting your specialty filter.</p>
           </div>
         )}

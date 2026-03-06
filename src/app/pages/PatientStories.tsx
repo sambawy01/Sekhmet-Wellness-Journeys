@@ -103,7 +103,7 @@ export function PatientStories() {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-['Playfair_Display'] text-5xl md:text-6xl font-bold text-white mb-6"
+            className="font-heading text-5xl md:text-6xl font-bold text-white mb-6"
           >
             {t('patientStories.title')}
           </motion.h1>
@@ -146,7 +146,7 @@ export function PatientStories() {
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
             </div>
             <Quote className={`w-10 h-10 text-[#C5A059]/20 mb-4 ${isRTL ? 'ml-auto' : ''}`} />
-            <h3 className={`font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-4 ${isRTL ? 'text-right' : ''}`}>
+            <h3 className={`font-heading text-3xl font-bold text-[#0F172A] mb-4 ${isRTL ? 'text-right' : ''}`}>
               "I never thought dental work could feel like a vacation."
             </h3>
             <p className={`font-sans text-[#0F172A]/60 mb-8 leading-relaxed ${isRTL ? 'text-right' : ''}`}>
@@ -244,7 +244,7 @@ export function PatientStories() {
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 fill-current" />)}
                 </div>
                 
-                <blockquote className={`font-['Playfair_Display'] text-lg font-bold text-[#0F172A] mb-4 leading-tight ${isRTL ? 'text-right' : ''}`}>
+                <blockquote className={`font-heading text-lg font-bold text-[#0F172A] mb-4 leading-tight ${isRTL ? 'text-right' : ''}`}>
                   "{story.quote}"
                 </blockquote>
                 
@@ -267,7 +267,7 @@ export function PatientStories() {
 
         {filteredStories.length === 0 && (
           <div className={`text-center py-20 ${isRTL ? 'text-right' : ''}`}>
-            <h3 className={`text-2xl font-['Playfair_Display'] text-[#0F172A] mb-2 ${isRTL ? 'text-right' : ''}`}>{t('patientStories.noStories')}</h3>
+            <h3 className={`text-2xl font-heading text-[#0F172A] mb-2 ${isRTL ? 'text-right' : ''}`}>{t('patientStories.noStories')}</h3>
             <p className={`text-[#0F172A]/60 ${isRTL ? 'text-right' : ''}`}>{t('patientStories.adjustFilters')}</p>
           </div>
         )}

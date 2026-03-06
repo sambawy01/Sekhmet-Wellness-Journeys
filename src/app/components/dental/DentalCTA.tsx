@@ -22,7 +22,7 @@ export function DentalCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6"
+          className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6"
         >
           {t('dentalCta.title')}
         </motion.h2>

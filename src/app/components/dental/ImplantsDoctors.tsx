@@ -43,7 +43,7 @@ export function ImplantsDoctors() {
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-2">
+            <h2 className="font-heading text-3xl font-bold text-[#0F172A] mb-2">
               Meet Your Implant Specialists
             </h2>
             <p className="font-sans text-lg text-[#0F172A]/60 max-w-2xl">

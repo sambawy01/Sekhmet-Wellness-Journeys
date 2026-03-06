@@ -47,7 +47,7 @@ export function DentalStats() {
                 <div className="w-12 h-12 bg-[#0F172A] rounded-full flex items-center justify-center mb-4">
                   <stat.icon className="w-6 h-6 text-[#C5A059]" />
                 </div>
-                <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#0F172A] mb-1">
+                <h3 className="font-heading text-3xl font-bold text-[#0F172A] mb-1">
                   {stat.value}
                 </h3>
                 <p className="font-sans text-sm font-semibold text-[#C5A059] uppercase tracking-wide mb-1">

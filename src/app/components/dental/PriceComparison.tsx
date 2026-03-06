@@ -84,7 +84,7 @@ export function PriceComparison() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
+            className="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             {t('dentalPrices.title')}
           </motion.h2>
@@ -121,7 +121,7 @@ export function PriceComparison() {
           <table className="w-full min-w-[700px] border-collapse bg-white">
             <thead>
               <tr className="bg-[#F0F7F4]">
-                <th className={cn("p-4", isRTL ? "text-right" : "text-left", "font-['Playfair_Display'] text-xl font-bold text-[#0F172A] border-b border-[#C5A059]/20 w-1/5 sticky left-0 bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]")}>{t('dentalPrices.header.procedure')}</th>
+                <th className={cn("p-4", isRTL ? "text-right" : "text-left", "font-heading text-xl font-bold text-[#0F172A] border-b border-[#C5A059]/20 w-1/5 sticky left-0 bg-[#F0F7F4] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]")}>{t('dentalPrices.header.procedure')}</th>
                 <th className="p-4 text-center font-sans text-lg font-bold text-[#14B8A6] bg-[#E8F3F1] border-b border-[#14B8A6]/20 w-1/5">{t('dentalPrices.header.egypt')}</th>
                 <th className="p-4 text-center font-sans text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/5">{t('dentalPrices.header.uk')}</th>
                 <th className="p-4 text-center font-sans text-lg font-medium text-[#0F172A]/60 border-b border-[#C5A059]/20 w-1/5">{t('dentalPrices.header.us')}</th>

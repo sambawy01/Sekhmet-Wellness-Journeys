@@ -70,7 +70,7 @@ export function VisionCorrection() {
             <ChevronRight className="w-4 h-4" />
             <span className="text-[#C5A059]">{t('vision.hero.title')}</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className={cn("font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight", isRTL && "text-right")}>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className={cn("font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight", isRTL && "text-right")}>
             {t('vision.hero.title')} <br /><span className="text-[#C5A059]">{t('vision.hero.subtitle')}</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className={cn("font-sans text-lg md:text-xl text-[#F9F6F0]/90 max-w-2xl mb-8 leading-relaxed", isRTL && "text-right")}>
@@ -91,7 +91,7 @@ export function VisionCorrection() {
         <div className="container mx-auto px-6 max-w-[1200px]">
           <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-16 items-center", isRTL && "text-right")}>
             <div>
-              <h2 className={cn("font-['Playfair_Display'] text-4xl text-[#0F172A] font-bold mb-6", isRTL && "text-right")}>
+              <h2 className={cn("font-heading text-4xl text-[#0F172A] font-bold mb-6", isRTL && "text-right")}>
                 {t('vision.whyTitle')}
               </h2>
               <p className={cn("font-sans text-[#5D5D5D] text-lg leading-relaxed mb-8", isRTL && "text-right")}>
@@ -108,7 +108,7 @@ export function VisionCorrection() {
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0D9488] text-center">
-                <span className={cn("block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
+                <span className={cn("block font-heading text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
                   {t('vision.stat.1.value')}
                 </span>
                 <span className={cn("font-sans text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
@@ -116,7 +116,7 @@ export function VisionCorrection() {
                 </span>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#14B8A6] text-center">
-                <span className={cn("block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
+                <span className={cn("block font-heading text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
                   {t('vision.stat.2.value')}
                 </span>
                 <span className={cn("font-sans text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
@@ -124,7 +124,7 @@ export function VisionCorrection() {
                 </span>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0F172A] text-center col-span-2">
-                <span className={cn("block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
+                <span className={cn("block font-heading text-4xl font-bold text-[#0F172A] mb-2", isRTL && "text-right")}>
                   {t('vision.stat.3.value')}
                 </span>
                 <span className={cn("font-sans text-sm text-[#5D5D5D] uppercase tracking-wide", isRTL && "text-right block")}>
@@ -140,7 +140,7 @@ export function VisionCorrection() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-[1400px]">
           <div className="text-center mb-16">
-            <h2 className={cn("font-['Playfair_Display'] text-4xl md:text-5xl text-[#0F172A] font-bold mb-4", isRTL && "text-right")}>
+            <h2 className={cn("font-heading text-4xl md:text-5xl text-[#0F172A] font-bold mb-4", isRTL && "text-right")}>
               {t('vision.sectionTitle')}
             </h2>
             <div className={cn("w-24 h-1 bg-[#0D9488] mx-auto rounded-full", isRTL && "mr-auto ml-0")} />
@@ -153,7 +153,7 @@ export function VisionCorrection() {
                   {proc.tagKey && <div className="absolute top-4 right-4 bg-[#0F172A] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">{t(proc.tagKey)}</div>}
                 </div>
                 <div className={cn("p-8", isRTL && "text-right")}>
-                  <h3 className={cn("font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
+                  <h3 className={cn("font-heading text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors", isRTL && "text-right")}>
                     {t(proc.titleKey)}
                   </h3>
                   <p className={cn("font-sans text-[#5D5D5D] mb-6 line-clamp-3", isRTL && "text-right")}>

@@ -64,7 +64,7 @@ export function Wellness() {
             <ChevronRight className="w-4 h-4" />
             <span className="text-[#C5A059]">{t('wellness.hero.title')}</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#F9F6F0] mb-6 leading-tight">
             {t('wellness.hero.title')} <br /><span className="text-[#C5A059]">{t('wellness.hero.subtitle')}</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="font-sans text-lg md:text-xl text-[#F9F6F0]/90 max-w-2xl mb-8 leading-relaxed">
@@ -85,7 +85,7 @@ export function Wellness() {
         <div className="container mx-auto px-6 max-w-[1200px]">
           <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-16 items-center", isRTL && "rtl")}>
             <div>
-              <h2 className="font-['Playfair_Display'] text-4xl text-[#0F172A] font-bold mb-6">{t('wellness.whyTitle')}</h2>
+              <h2 className="font-heading text-4xl text-[#0F172A] font-bold mb-6">{t('wellness.whyTitle')}</h2>
               <p className="font-sans text-[#5D5D5D] text-lg leading-relaxed mb-8">
                 {t('wellness.whyDesc')}
               </p>
@@ -100,15 +100,15 @@ export function Wellness() {
             </div>
             <div className={cn("grid grid-cols-2 gap-6", isRTL && "rtl")}>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0D9488] text-center">
-                <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('wellness.stat.1.value')}</span>
+                <span className="block font-heading text-4xl font-bold text-[#0F172A] mb-2">{t('wellness.stat.1.value')}</span>
                 <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('wellness.stat.1.label')}</span>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#14B8A6] text-center">
-                <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('wellness.stat.2.value')}</span>
+                <span className="block font-heading text-4xl font-bold text-[#0F172A] mb-2">{t('wellness.stat.2.value')}</span>
                 <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('wellness.stat.2.label')}</span>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0F172A] text-center col-span-2">
-                <span className="block font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-2">{t('wellness.stat.3.value')}</span>
+                <span className="block font-heading text-4xl font-bold text-[#0F172A] mb-2">{t('wellness.stat.3.value')}</span>
                 <span className="font-sans text-sm text-[#5D5D5D] uppercase tracking-wide">{t('wellness.stat.3.label')}</span>
               </div>
             </div>
@@ -120,7 +120,7 @@ export function Wellness() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-[1400px]">
           <div className="text-center mb-16">
-            <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl text-[#0F172A] font-bold mb-4">{t('wellness.sectionTitle')}</h2>
+            <h2 className="font-heading text-4xl md:text-5xl text-[#0F172A] font-bold mb-4">{t('wellness.sectionTitle')}</h2>
             <div className="w-24 h-1 bg-[#0D9488] mx-auto rounded-full" />
           </div>
           <div className={cn("grid grid-cols-1 md:grid-cols-3 gap-8", isRTL && "rtl")}>
@@ -131,7 +131,7 @@ export function Wellness() {
                   {proc.tagKey && <div className={cn("absolute top-4 right-4 bg-[#0F172A] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider", isRTL && "left-4 right-auto")}>{t(proc.tagKey)}</div>}
                 </div>
                 <div className="p-8">
-                  <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors">{t(proc.titleKey)}</h3>
+                  <h3 className="font-heading text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#0D9488] transition-colors">{t(proc.titleKey)}</h3>
                   <p className="font-sans text-[#5D5D5D] mb-6 line-clamp-3">{t(proc.descKey)}</p>
                   <div className={cn("flex items-center justify-between border-t border-[#0F172A]/10 pt-6", isRTL && "flex-row-reverse")}>
                     <span className="font-heading font-bold text-[#14B8A6]">{t(proc.priceKey)}</span>

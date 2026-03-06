@@ -38,7 +38,7 @@ export const TreatmentsHero: React.FC = () => {
           
           <h1 className={cn(
               "font-bold text-white leading-tight",
-              isRTL ? "font-['Amiri'] text-4xl md:text-6xl" : "font-['Playfair_Display'] text-4xl md:text-6xl"
+              isRTL ? "font-['Amiri'] text-4xl md:text-6xl" : "font-heading text-4xl md:text-6xl"
             )}
           >
             {t('treatmentsHero.title')}

@@ -88,7 +88,7 @@ export function TravelGuide() {
             <div className="inline-block bg-[#C5A059] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
               {t('travel.heroLabel')}
             </div>
-            <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
               {t('travel.heroTitle')}
             </h1>
             <p className="font-sans text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
@@ -102,7 +102,7 @@ export function TravelGuide() {
       <section className="container mx-auto px-6 -mt-16 relative z-20 mb-20">
         <div className={cn("bg-white p-8 rounded-2xl shadow-xl border border-[#0F172A]/5 flex flex-col md:flex-row items-center justify-between gap-6", isRTL && "flex-row-reverse text-right")}>
           <div>
-            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#0F172A]">{t('travel.downloadTitle')}</h3>
+            <h3 className="font-heading text-2xl font-bold text-[#0F172A]">{t('travel.downloadTitle')}</h3>
             <p className="text-[#0F172A]/60">{t('travel.downloadDesc')}</p>
           </div>
           <a href="/Sekhmet-Egypt-Travel-Wellness-Guide.pdf" download>
@@ -121,7 +121,7 @@ export function TravelGuide() {
             <div className="bg-[#C5A059]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
               <Globe className="w-8 h-8 text-[#C5A059]" />
             </div>
-            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-6">
+            <h2 className="font-heading text-4xl font-bold text-[#0F172A] mb-6">
               {t('travel.visaTitle')}
             </h2>
             <p className="text-[#0F172A]/70 mb-6 text-lg leading-relaxed">
@@ -175,7 +175,7 @@ export function TravelGuide() {
               <div className="bg-[#C5A059]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                 <Luggage className="w-8 h-8 text-[#C5A059]" />
               </div>
-              <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">
+              <h2 className="font-heading text-4xl font-bold text-[#0F172A] mb-4">
                 {t('travel.packingTitle')}
               </h2>
               <p className="text-[#0F172A]/60">
@@ -212,7 +212,7 @@ export function TravelGuide() {
         {/* Weather Guide */}
         <section className={isRTL ? "text-right" : ""}>
           <div className="text-center mb-12">
-            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">
+            <h2 className="font-heading text-4xl font-bold text-[#0F172A] mb-4">
               {t('travel.weatherTitle')}
             </h2>
             <p className="text-[#0F172A]/60 max-w-2xl mx-auto">
@@ -258,14 +258,14 @@ export function TravelGuide() {
         {/* Arrival Guide */}
         <section className={cn("bg-[#0F172A] text-white rounded-3xl p-12 overflow-hidden relative", isRTL && "text-right")}>
           <div className="relative z-10">
-            <h2 className="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">
+            <h2 className="font-heading text-4xl font-bold mb-12 text-center">
               {t('travel.arrivalTitle')}
             </h2>
             
             <div className={cn("grid grid-cols-1 md:grid-cols-4 gap-8", isRTL && "md:grid-cols-4")}>
               {arrivalSteps.map((step, i) => (
                 <div key={i} className={cn("relative", isRTL && "text-right")}>
-                  <div className={cn("text-6xl font-['Playfair_Display'] font-bold text-[#C5A059]/20 absolute -top-8 -left-4", isRTL && "-top-8 -right-4 -left-auto")}>
+                  <div className={cn("text-6xl font-heading font-bold text-[#C5A059]/20 absolute -top-8 -left-4", isRTL && "-top-8 -right-4 -left-auto")}>
                     {i + 1}
                   </div>
                   <h3 className="text-xl font-bold mb-2 relative z-10 text-[#C5A059]">{t(step.titleKey)}</h3>

@@ -61,7 +61,7 @@ export const ButtonSet: React.FC = () => {
   return (
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Button Components</h2>
+        <h2 className="font-heading text-3xl text-[#0F172A]">Button Components</h2>
         <p className="font-sans text-[#A89F8E]">Interactive elements & states</p>
       </div>
 

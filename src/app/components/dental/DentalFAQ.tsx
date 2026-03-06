@@ -59,7 +59,7 @@ export function DentalFAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
+            className="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -83,7 +83,7 @@ export function DentalFAQ() {
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border border-[#C5A059]/20 rounded-lg px-6 bg-[#F0F7F4]">
-                <AccordionTrigger className="text-left font-['Playfair_Display'] text-lg font-semibold text-[#0F172A] hover:text-[#C5A059] hover:no-underline py-6">
+                <AccordionTrigger className="text-left font-heading text-lg font-semibold text-[#0F172A] hover:text-[#C5A059] hover:no-underline py-6">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-[#0F172A]/70 pb-6 text-base leading-relaxed">

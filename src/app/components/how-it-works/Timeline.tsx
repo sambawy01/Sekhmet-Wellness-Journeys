@@ -67,7 +67,7 @@ export function Timeline() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-6"
+            className="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] mb-6"
           >
             {t('hiw.timeline.heading')}
           </motion.h2>
@@ -110,7 +110,7 @@ export function Timeline() {
                       <div className="w-12 h-12 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-bold text-xl font-heading shadow-lg">
                         {step.id}
                       </div>
-                      <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-[#0F172A]">
+                      <h3 className="font-heading text-2xl md:text-3xl font-bold text-[#0F172A]">
                         {t(step.titleKey)}
                       </h3>
                     </div>

@@ -49,7 +49,7 @@ export function ImplantsKeyFacts() {
               className="flex flex-col items-center justify-center text-center p-4 bg-white rounded-lg shadow-sm border border-[#C5A059]/10"
             >
               <stat.icon className="w-6 h-6 text-[#C5A059] mb-2" />
-              <h3 className="font-['Playfair_Display'] font-bold text-xl text-[#0F172A]">{stat.value}</h3>
+              <h3 className="font-heading font-bold text-xl text-[#0F172A]">{stat.value}</h3>
               <p className="font-sans text-xs font-bold uppercase tracking-wide text-[#14B8A6] mb-1">{stat.label}</p>
               <p className="font-sans text-xs text-[#0F172A]/60">{stat.description}</p>
             </motion.div>

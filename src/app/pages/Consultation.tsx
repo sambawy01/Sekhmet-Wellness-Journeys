@@ -156,7 +156,7 @@ export function Consultation() {
           <div className="w-24 h-24 bg-[#14B8A6]/10 rounded-full flex items-center justify-center mx-auto mb-6">
              <CheckCircle className="w-12 h-12 text-[#14B8A6]" />
           </div>
-          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-[#0F172A] mb-4">{t('consultation.requestReceived')}</h2>
+          <h2 className="font-heading text-4xl font-bold text-[#0F172A] mb-4">{t('consultation.requestReceived')}</h2>
           <p className={cn("font-sans text-xl text-[#0F172A]/70 mb-8", isRTL && "text-right")}>
             {t('consultation.thankYou').replace('{name}', formData.name).replace('{method}', formData.contactMethod)}
           </p>
@@ -181,7 +181,7 @@ export function Consultation() {
       {/* Left Side - Form */}
       <div className={cn("w-full md:w-3/5 p-6 md:p-12 lg:p-16 flex flex-col", isRTL && "text-right")}>
         <div className="mb-8">
-          <h1 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0F172A] mb-2">
+          <h1 className="font-heading text-3xl md:text-4xl font-bold text-[#0F172A] mb-2">
             {t('consultation.startJourney')}
           </h1>
           <p className="font-sans text-[#0F172A]/60">
@@ -446,7 +446,7 @@ export function Consultation() {
         
         <div className={cn("relative z-10 h-full flex flex-col justify-between", isRTL && "text-right")}>
           <div>
-            <h3 className="font-['Playfair_Display'] text-3xl font-bold mb-8">{t('consultation.whyChoose')}</h3>
+            <h3 className="font-heading text-3xl font-bold mb-8">{t('consultation.whyChoose')}</h3>
             
             <div className="space-y-8">
               <div className={cn("flex gap-4", isRTL && "flex-row-reverse")}>

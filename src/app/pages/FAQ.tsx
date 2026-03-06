@@ -114,7 +114,7 @@ export function FAQ() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
+            className="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] mb-4"
           >
             {t('faq.title')}
           </motion.h1>
@@ -215,7 +215,7 @@ export function FAQ() {
             <div className="bg-[#0F172A] text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A059] rounded-full filter blur-3xl opacity-20 -mr-10 -mt-10" />
               
-              <h3 className={`font-['Playfair_Display'] text-2xl font-bold mb-4 relative z-10 ${isRTL ? 'text-right' : ''}`}>{t('faq.stillHaveQuestions')}</h3>
+              <h3 className={`font-heading text-2xl font-bold mb-4 relative z-10 ${isRTL ? 'text-right' : ''}`}>{t('faq.stillHaveQuestions')}</h3>
               <p className={`text-white/70 mb-8 relative z-10 ${isRTL ? 'text-right' : ''}`}>
                 {t('faq.cannotFind')}
               </p>
@@ -261,7 +261,7 @@ export function FAQ() {
               {/* Modal Header */}
               <div className="bg-[#0F172A] p-6 flex items-center justify-between">
                 <div>
-                  <h3 className={`font-['Playfair_Display'] text-xl font-bold text-white ${isRTL ? 'text-right' : ''}`}>
+                  <h3 className={`font-heading text-xl font-bold text-white ${isRTL ? 'text-right' : ''}`}>
                     {t('faq.bookCall')}
                   </h3>
                   <p className={`text-white/60 text-sm mt-1 font-sans ${isRTL ? 'text-right' : ''}`}>

@@ -64,7 +64,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
           <div className={cn("flex items-start mb-2", isRTL ? "justify-end" : "justify-between")}>
             <h3 className={cn(
               "text-[22px] leading-tight text-[#0F172A] font-medium",
-              isRTL ? "font-['Amiri'] pl-4" : "font-['Playfair_Display'] pr-4"
+              isRTL ? "font-['Amiri'] pl-4" : "font-heading pr-4"
             )}>
               {name}
             </h3>
@@ -133,7 +133,7 @@ export const PackageShowcase: React.FC = () => {
   return (
     <section className="bg-white p-12 rounded-3xl border border-[#0F172A]/10 space-y-8">
       <div className="border-b border-[#0F172A]/10 pb-4">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Destination Packages</h2>
+        <h2 className="font-heading text-3xl text-[#0F172A]">Destination Packages</h2>
         <p className="font-sans text-[#A89F8E]">All-inclusive medical tourism experiences</p>
       </div>
 

@@ -42,7 +42,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({ image, specialty, procedu
         {/* Specialty Name */}
         <h3 className={cn(
           "font-medium text-[24px] text-white mb-2 leading-tight drop-shadow-sm",
-          isRTL ? "font-['Amiri']" : "font-['Playfair_Display']"
+          isRTL ? "font-['Amiri']" : "font-heading"
         )}>
           {specialty}
         </h3>
@@ -130,7 +130,7 @@ export const CardShowcase: React.FC = () => {
   return (
     <section className="bg-[#F0F7F4] p-12 rounded-3xl space-y-12">
       <div className="border-b border-[#0F172A]/10 pb-4 mb-8">
-        <h2 className="font-['Playfair_Display'] text-3xl text-[#0F172A]">Treatment Specialty Cards</h2>
+        <h2 className="font-heading text-3xl text-[#0F172A]">Treatment Specialty Cards</h2>
         <p className="font-sans text-[#A89F8E]">Service highlights & navigation</p>
       </div>
 
@@ -141,7 +141,7 @@ export const CardShowcase: React.FC = () => {
       </div>
 
       <div className="border-t border-[#0F172A]/10 pt-8 mt-12">
-         <h3 className="font-['Playfair_Display'] text-2xl text-[#0F172A] mb-6">Arabic RTL Version</h3>
+         <h3 className="font-heading text-2xl text-[#0F172A] mb-6">Arabic RTL Version</h3>
          <div className="flex flex-wrap justify-center gap-8">
             <TreatmentCard {...arabicCard} dir="rtl" />
          </div>
