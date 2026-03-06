@@ -169,7 +169,7 @@ export function HollywoodContent() {
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="w-full justify-start gap-3 border-[#0F172A]/20 text-[#0F172A]">
-                    <Link to="/consultation">
+                    <Link to="/consultation?contact=phone">
                       <Phone className="w-5 h-5" /> Request Callback
                     </Link>
                   </Button>

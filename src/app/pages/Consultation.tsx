@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Upload, Calendar, ArrowRight, ArrowLeft, Star, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { submitLead } from '../../lib/supabase';
 import { useLanguage } from '../context/LanguageContext';
 import { cn } from '../../lib/utils';
@@ -97,6 +97,7 @@ const procedureKeyMap: Record<string, Record<string, string>> = {
 export function Consultation() {
   const { t, direction } = useLanguage();
   const isRTL = direction === 'rtl';
+  const [searchParams] = useSearchParams();
 
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -111,6 +112,14 @@ export function Consultation() {
     dateRange: '',
     notes: ''
   });
+
+  // Pre-select contact method from URL param (e.g. ?contact=phone for callback requests)
+  useEffect(() => {
+    const contactParam = searchParams.get('contact');
+    if (contactParam && ['whatsapp', 'email', 'phone'].includes(contactParam)) {
+      setFormData(prev => ({ ...prev, contactMethod: contactParam }));
+    }
+  }, [searchParams]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
